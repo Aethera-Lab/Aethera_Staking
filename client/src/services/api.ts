@@ -1,14 +1,22 @@
-import axios from 'axios';
+import axios from "axios";
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000/api';
+if (!import.meta.env.VITE_API_URL && import.meta.env.PROD) {
+  throw new Error(
+    "[api.ts] VITE_API_URL is not set. " +
+      "Add it to your Vercel environment variables so the client does not call localhost in production.",
+  );
+}
+
+const API_BASE_URL =
+  import.meta.env.VITE_API_URL || "http://localhost:3000/api";
 
 const api = axios.create({
   baseURL: API_BASE_URL,
   headers: {
-    'Content-Type': 'application/json',
-    'Cache-Control': 'no-cache, no-store, must-revalidate',
-    'Pragma': 'no-cache',
-    'Expires': '0',
+    "Content-Type": "application/json",
+    "Cache-Control": "no-cache, no-store, must-revalidate",
+    Pragma: "no-cache",
+    Expires: "0",
   },
 });
 
@@ -71,7 +79,9 @@ export const getVaultInfo = async (): Promise<ApiResponse<VaultInfo>> => {
   return response.data;
 };
 
-export const getPlayerInfo = async (address: string): Promise<ApiResponse<PlayerInfo>> => {
+export const getPlayerInfo = async (
+  address: string,
+): Promise<ApiResponse<PlayerInfo>> => {
   const response = await api.get(`/player/${address}?_t=${Date.now()}`);
   return response.data;
 };
@@ -81,7 +91,9 @@ export const getStats = async (): Promise<ApiResponse<StakingStats>> => {
   return response.data;
 };
 
-export const getBalance = async (address: string): Promise<ApiResponse<BalanceInfo>> => {
+export const getBalance = async (
+  address: string,
+): Promise<ApiResponse<BalanceInfo>> => {
   // Add timestamp to bust cache
   const response = await api.get(`/balance/${address}?_t=${Date.now()}`);
   return response.data;
@@ -89,9 +101,9 @@ export const getBalance = async (address: string): Promise<ApiResponse<BalanceIn
 
 export const simulateStake = async (
   amount: string,
-  durationSeconds: number
+  durationSeconds: number,
 ): Promise<ApiResponse<SimulationResult>> => {
-  const response = await api.post('/stake/simulate', {
+  const response = await api.post("/stake/simulate", {
     amount,
     duration_seconds: durationSeconds,
   });
@@ -99,27 +111,31 @@ export const simulateStake = async (
 };
 
 // Admin endpoints (if needed)
-export const adminDeposit = async (amount: string): Promise<ApiResponse<any>> => {
-  const response = await api.post('/admin/deposit', { amount });
+export const adminDeposit = async (
+  amount: string,
+): Promise<ApiResponse<any>> => {
+  const response = await api.post("/admin/deposit", { amount });
   return response.data;
 };
 
 export const adminWithdraw = async (): Promise<ApiResponse<any>> => {
-  const response = await api.post('/admin/withdraw');
+  const response = await api.post("/admin/withdraw");
   return response.data;
 };
 
-export const adminUpdateConfig = async (apyRate: number): Promise<ApiResponse<any>> => {
-  const response = await api.post('/admin/config', { apy_rate: apyRate });
+export const adminUpdateConfig = async (
+  apyRate: number,
+): Promise<ApiResponse<any>> => {
+  const response = await api.post("/admin/config", { apy_rate: apyRate });
   return response.data;
 };
 
 // Utility functions
 export const formatApt = (octas: string | number): string => {
   const value = Number(octas) / 100_000_000;
-  return value.toLocaleString(undefined, { 
-    minimumFractionDigits: 2, 
-    maximumFractionDigits: 4 
+  return value.toLocaleString(undefined, {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 4,
   });
 };
 
@@ -128,12 +144,12 @@ export const aptToOctas = (apt: number): string => {
 };
 
 export const formatDuration = (seconds: number): string => {
-  if (seconds <= 0) return 'Unlocked';
-  
+  if (seconds <= 0) return "Unlocked";
+
   const days = Math.floor(seconds / 86400);
   const hours = Math.floor((seconds % 86400) / 3600);
   const minutes = Math.floor((seconds % 3600) / 60);
-  
+
   if (days > 0) return `${days}d ${hours}h`;
   if (hours > 0) return `${hours}h ${minutes}m`;
   return `${minutes}m`;
@@ -144,4 +160,3 @@ export const formatTimestamp = (timestamp: number): string => {
 };
 
 export default api;
-

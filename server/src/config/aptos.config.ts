@@ -1,5 +1,5 @@
-import { Aptos, AptosConfig, Network } from '@aptos-labs/ts-sdk';
-import * as dotenv from 'dotenv';
+import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
+import * as dotenv from "dotenv";
 
 dotenv.config();
 
@@ -7,21 +7,30 @@ dotenv.config();
 const getNetwork = (): Network => {
   const network = process.env.APTOS_NETWORK?.toLowerCase();
   switch (network) {
-    case 'mainnet':
+    case "mainnet":
       return Network.MAINNET;
-    case 'testnet':
+    case "testnet":
       return Network.TESTNET;
-    case 'devnet':
+    case "devnet":
       return Network.DEVNET;
     default:
       return Network.TESTNET;
   }
 };
 
+// Devnet requires api.devnet.aptoslabs.com — fullnode.devnet.aptoslabs.com
+// returns "Indexer reader doesn't exist" for resource queries.
+const getFullnodeUrl = (): string | undefined => {
+  if (process.env.APTOS_NODE_URL) return process.env.APTOS_NODE_URL;
+  const network = process.env.APTOS_NETWORK?.toLowerCase();
+  if (network === "devnet") return "https://api.devnet.aptoslabs.com/v1";
+  return undefined; // let SDK use its default for testnet/mainnet
+};
+
 // Initialize Aptos configuration
 const config = new AptosConfig({
   network: getNetwork(),
-  fullnode: process.env.APTOS_NODE_URL,
+  fullnode: getFullnodeUrl(),
   faucet: process.env.APTOS_FAUCET_URL,
 });
 
@@ -32,7 +41,7 @@ export const aptos = new Aptos(config);
 export const CONTRACT_CONFIG = {
   CONTRACT_ADDRESS: process.env.CONTRACT_ADDRESS!,
   VAULT_AUTHORITY: process.env.VAULT_AUTHORITY_ADDRESS!,
-  MODULE_NAME: 'aethera_staking',
+  MODULE_NAME: "aethera_staking",
 };
 
 // Module functions
@@ -74,11 +83,13 @@ export const apyBasisPointsToPercent = (basisPoints: number): number => {
 
 // Validation
 if (!process.env.CONTRACT_ADDRESS) {
-  throw new Error('CONTRACT_ADDRESS is not defined in environment variables');
+  throw new Error("CONTRACT_ADDRESS is not defined in environment variables");
 }
 
 if (!process.env.VAULT_AUTHORITY_ADDRESS) {
-  throw new Error('VAULT_AUTHORITY_ADDRESS is not defined in environment variables');
+  throw new Error(
+    "VAULT_AUTHORITY_ADDRESS is not defined in environment variables",
+  );
 }
 
 console.log(`🚀 Aptos SDK initialized on ${getNetwork()}`);
