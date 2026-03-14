@@ -89,6 +89,42 @@ app.get("/health", (req: Request, res: Response) => {
   });
 });
 
+// Debug endpoint — exposes config state, NO secrets
+app.get("/debug", (req: Request, res: Response) => {
+  const contractAddress = process.env.CONTRACT_ADDRESS;
+  const vaultAuthority = process.env.VAULT_AUTHORITY_ADDRESS;
+  const network = process.env.APTOS_NETWORK;
+  const nodeUrl = process.env.APTOS_NODE_URL;
+  const corsOrigin = process.env.CORS_ORIGIN;
+
+  // Derive what fullnode URL the SDK will actually use
+  const resolvedNodeUrl =
+    nodeUrl ||
+    (network?.toLowerCase() === "devnet"
+      ? "https://api.devnet.aptoslabs.com/v1"
+      : network?.toLowerCase() === "testnet"
+        ? "https://fullnode.testnet.aptoslabs.com/v1"
+        : network?.toLowerCase() === "mainnet"
+          ? "https://fullnode.mainnet.aptoslabs.com/v1"
+          : "(SDK default — APTOS_NETWORK not set)");
+
+  res.json({
+    env: {
+      NODE_ENV: process.env.NODE_ENV || "(not set)",
+      APTOS_NETWORK: network || "(not set)",
+      APTOS_NODE_URL_set: !!nodeUrl,
+      resolved_fullnode_url: resolvedNodeUrl,
+      CONTRACT_ADDRESS: contractAddress
+        ? `${contractAddress.slice(0, 10)}...${contractAddress.slice(-6)}`
+        : "(not set — WILL CRASH ON START)",
+      VAULT_AUTHORITY_ADDRESS: vaultAuthority
+        ? `${vaultAuthority.slice(0, 10)}...${vaultAuthority.slice(-6)}`
+        : "(not set — WILL CRASH ON START)",
+      CORS_ORIGIN: corsOrigin || "(not set — open in dev, blocked in prod)",
+    },
+  });
+});
+
 // Public endpoints
 app.get(
   "/api/vault/info",
