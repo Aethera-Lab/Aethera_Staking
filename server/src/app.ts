@@ -108,11 +108,20 @@ app.get("/debug", (req: Request, res: Response) => {
           ? "https://fullnode.mainnet.aptoslabs.com/v1"
           : "(SDK default — APTOS_NETWORK not set)");
 
+  // Collect ALL env vars that start with APTOS_ so we can see everything Render injects
+  const aptosEnvVars: Record<string, string> = {};
+  for (const [key, value] of Object.entries(process.env)) {
+    if (key.startsWith("APTOS_")) {
+      aptosEnvVars[key] = value ?? "(empty string)";
+    }
+  }
+
   res.json({
     env: {
       NODE_ENV: process.env.NODE_ENV || "(not set)",
       APTOS_NETWORK: network || "(not set)",
       APTOS_NODE_URL_set: !!nodeUrl,
+      APTOS_NODE_URL_value: nodeUrl || "(not set)",
       resolved_fullnode_url: resolvedNodeUrl,
       CONTRACT_ADDRESS: contractAddress
         ? `${contractAddress.slice(0, 10)}...${contractAddress.slice(-6)}`
@@ -122,6 +131,7 @@ app.get("/debug", (req: Request, res: Response) => {
         : "(not set — WILL CRASH ON START)",
       CORS_ORIGIN: corsOrigin || "(not set — open in dev, blocked in prod)",
     },
+    all_APTOS_env_vars: aptosEnvVars,
   });
 });
 
