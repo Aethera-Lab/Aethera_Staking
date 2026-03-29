@@ -71,13 +71,19 @@ app.use(express.urlencoded({ extended: true }));
 app.use(morgan("combined"));
 
 // Rate limiting
-const limiter = rateLimit({
-  windowMs: parseInt(process.env.API_RATE_LIMIT_WINDOW_MS || "900000"), // 15 minutes
-  max: parseInt(process.env.API_RATE_LIMIT_MAX_REQUESTS || "100"),
-  message: "Too many requests from this IP, please try again later.",
+const adminLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 50,
 });
-app.use("/api/", limiter);
 
+// Relaxed limiter for public APIs
+const publicLimiter = rateLimit({
+  windowMs: 60 * 1000,
+  max: 1000,
+});
+
+app.use("/api/admin", adminLimiter);
+app.use("/api", publicLimiter);
 // ============ Routes ============
 
 // Health check
