@@ -1,14 +1,14 @@
 module aethera_staking::state {
     use std::signer;
     use std::timestamp;
-    use aptos_framework::coin;     
+    use aptos_framework::coin;
     use aptos_framework::coin::Coin;
     use aptos_framework::aptos_coin::AptosCoin;
     use aptos_std::simple_map::{Self, SimpleMap};
 
     // use aptos_framework::error;
 
-    use aethera_staking::helpers; 
+    use aethera_staking::helpers;
     use aethera_staking::project_listing;
     // Error codes
     const E_AMOUNT_ZERO: u64 = 1;
@@ -34,18 +34,18 @@ module aethera_staking::state {
         reward_amount: u64,
     }
 
-    // adding new wrappers structs 
+    // adding new wrappers structs
     // Replacing the single VaultAccount and PlayerAccount structs with wrappers
     struct StakingHub has key {
         authority : address,
         project_authority: address,
         vaults: SimpleMap<u64, VaultAccount>,
     }
-    
+
     struct PlayerHub has key { // Replaced the single global PlayerAccount — holds one PlayerAccount per project
         stakes: SimpleMap<u64, PlayerAccount>,
     }
-    
+
     // modified: takes project_authority instead of apy_rate
     public entry fun initialize(authority: &signer, project_authority: address){
         move_to(authority,StakingHub {
@@ -55,7 +55,7 @@ module aethera_staking::state {
         });
     }
 
-    // Adding : admin creates a vault for approved projects 
+    // Adding : admin creates a vault for approved projects
     public entry fun create_project_vault(
             authority: &signer,
             hub_authority: address,
@@ -69,7 +69,7 @@ module aethera_staking::state {
                 E_PROJECT_NOT_APPROVED
             );
             assert!(!simple_map::contains_key(&hub.vaults, &project_id), E_VAULT_ALREADY_EXISTS);
-    
+
             simple_map::add(&mut hub.vaults, project_id, VaultAccount {
                 authority: signer::address_of(authority),
                 staked_amount: 0,
@@ -77,7 +77,7 @@ module aethera_staking::state {
                 vault_coins: coin::zero<AptosCoin>(),
             });
         }
-    
+
     public entry fun deposit( // target a specific vaults
     player: &signer,
     hub_authority: address,
@@ -86,27 +86,27 @@ module aethera_staking::state {
     )
      acquires StakingHub {
         assert!(amount > 0, E_AMOUNT_ZERO);
-    
+
         let hub = borrow_global_mut<StakingHub>(hub_authority);
                 assert!(simple_map::contains_key(&hub.vaults, &project_id), E_VAULT_NOT_FOUND);
-        
+
                 let vault_data = simple_map::borrow_mut(&mut hub.vaults, &project_id);
                         vault_data.staked_amount = vault_data.staked_amount + amount;
 
         let coins = helpers::transfer_lamports(player, amount);
         coin::merge(&mut vault_data.vault_coins, coins);
     }
-    
+
 
 
     public entry fun sol_stake(
-        player: &signer, 
+        player: &signer,
         hub_authority: address,
         project_id: u64,
         // vault_authority: address,
         amount: u64,
-        duration: u64) // sol stake now take project id 
-    
+        duration: u64) // sol stake now take project id
+
         acquires StakingHub, PlayerHub {
        assert!(amount > 0, E_AMOUNT_ZERO);
 
@@ -123,7 +123,7 @@ module aethera_staking::state {
             });
         };
         let player_hub = borrow_global_mut<PlayerHub>(player_addr);
-        
+
                 if (simple_map::contains_key(&player_hub.stakes, &project_id)) {
                     let player_data = simple_map::borrow_mut(&mut player_hub.stakes, &project_id);
                     player_data.staked_amount = player_data.staked_amount + amount;
@@ -144,11 +144,11 @@ module aethera_staking::state {
         let coins = helpers::transfer_lamports(player, amount);
         coin::merge(&mut vault_data.vault_coins, coins);
     }
-    
 
 
 
-// unstake with project id 
+
+// unstake with project id
     public entry fun sol_unstake(
         player: &signer,
         hub_authority: address,
@@ -157,12 +157,12 @@ module aethera_staking::state {
         let player_addr = signer::address_of(player);
         let hub = borrow_global_mut<StakingHub>(hub_authority);
         assert!(simple_map::contains_key(&hub.vaults, &project_id), E_VAULT_NOT_FOUND);
-        
+
         let vault_data = simple_map::borrow_mut(&mut hub.vaults, &project_id);
         let player_hub = borrow_global_mut<PlayerHub>(player_addr);
         assert!(simple_map::contains_key(&player_hub.stakes, &project_id), E_NOT_STAKED);
 
-        
+
         let player_data = simple_map::borrow_mut(&mut player_hub.stakes, &project_id);
         let current_time = timestamp::now_seconds();
         let staked_duration = current_time - player_data.staked_time;
@@ -176,9 +176,9 @@ module aethera_staking::state {
         let coins = coin::extract(&mut vault_data.vault_coins, amount);
         helpers::transfer_coins_to_player(player, coins);
     }
-    
 
-// claim rewards with project id 
+
+// claim rewards with project id
     public entry fun claim_rewards(
         player: &signer,
         hub_authority: address,
@@ -187,11 +187,11 @@ module aethera_staking::state {
         let player_addr = signer::address_of(player);
         let hub = borrow_global_mut<StakingHub>(hub_authority);
         assert!(simple_map::contains_key(&hub.vaults, &project_id), E_VAULT_NOT_FOUND);
-        
+
         let vault_data = simple_map::borrow_mut(&mut hub.vaults, &project_id);
         let player_hub = borrow_global_mut<PlayerHub>(player_addr);
         assert!(simple_map::contains_key(&player_hub.stakes, &project_id), E_NOT_STAKED);
-        
+
         let player_data = simple_map::borrow_mut(&mut player_hub.stakes, &project_id);
         let current_time = timestamp::now_seconds();
         let elapsed_time = current_time - player_data.reward_time;
@@ -216,14 +216,14 @@ module aethera_staking::state {
         let hub = borrow_global_mut<StakingHub>(hub_authority);
         assert!(signer::address_of(authority) == hub.authority, E_NOT_ADMIN);
         assert!(simple_map::contains_key(&hub.vaults, &project_id), E_VAULT_NOT_FOUND);
-        
+
         let vault_data = simple_map::borrow_mut(&mut hub.vaults, &project_id);
+        let amount = vault_data.staked_amount;
         vault_data.staked_amount = 0;
-        let coins = coin::extract(&mut vault_data.vault_coins, vault_data.staked_amount);
+        let coins = coin::extract(&mut vault_data.vault_coins, amount);
         helpers::transfer_coins_to_player(authority, coins);
-        vault_data.staked_amount = 0;
     }
-    
+
     public entry fun config(
         authority: &signer,
         hub_authority: address,
@@ -233,7 +233,7 @@ module aethera_staking::state {
         let hub = borrow_global_mut<StakingHub>(hub_authority);
         assert!(signer::address_of(authority) == hub.authority, E_NOT_ADMIN);
         assert!(simple_map::contains_key(&hub.vaults, &project_id), E_VAULT_NOT_FOUND);
-        
+
         let vault_data = simple_map::borrow_mut(&mut hub.vaults, &project_id);
         vault_data.apy_rate = new_apy_rate;
     }
@@ -244,14 +244,14 @@ module aethera_staking::state {
         assert!(simple_map::contains_key(&hub.vaults, &project_id), E_VAULT_NOT_FOUND);
         simple_map::borrow(&hub.vaults, &project_id).staked_amount
     }
-    
+
     #[view]
     public fun get_project_apy(hub_authority: address, project_id: u64): u64 acquires StakingHub {
         let hub = borrow_global<StakingHub>(hub_authority);
         assert!(simple_map::contains_key(&hub.vaults, &project_id), E_VAULT_NOT_FOUND);
         simple_map::borrow(&hub.vaults, &project_id).apy_rate
     }
-    
+
     #[view]
     public fun get_player_stake(player_addr: address, project_id: u64): u64 acquires PlayerHub {
         if (!exists<PlayerHub>(player_addr)) return 0;
@@ -261,4 +261,3 @@ module aethera_staking::state {
     }
 
 }
-
