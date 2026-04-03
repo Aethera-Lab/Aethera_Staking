@@ -7,12 +7,11 @@ const getNetwork = (): Network => {
   switch (network) {
     case "mainnet":
       return Network.MAINNET;
-    case "testnet":
-      return Network.TESTNET;
     case "devnet":
       return Network.DEVNET;
+    case "testnet":
     default:
-      return Network.TESTNET;
+      return Network.TESTNET; // contracts are on testnet
   }
 };
 
@@ -20,9 +19,9 @@ const getFullnodeUrl = (): string | undefined => {
   if (process.env.APTOS_NODE_URL) return process.env.APTOS_NODE_URL;
   const network = process.env.APTOS_NETWORK?.toLowerCase();
   if (network === "devnet") return "https://api.devnet.aptoslabs.com/v1";
-  if (network === "testnet") return "https://api.testnet.aptoslabs.com/v1";
   if (network === "mainnet") return "https://api.mainnet.aptoslabs.com/v1";
-  return undefined;
+  // default → testnet (contracts are deployed on testnet)
+  return "https://api.testnet.aptoslabs.com/v1";
 };
 
 const config = new AptosConfig({
@@ -40,18 +39,20 @@ export const CONTRACT_CONFIG = {
   CONTRACT_ADDRESS: process.env.CONTRACT_ADDRESS!,
   MODULE_NAME: "aethera_staking",
 
-  // state.move — StakingHub stored here (admin address)
-  HUB_AUTHORITY: process.env.HUB_AUTHORITY_ADDRESS!,
+  // All 3 contracts deployed from the same admin wallet — fall back to
+  // CONTRACT_ADDRESS if the specific authority env var is not set.
+  HUB_AUTHORITY:
+    process.env.HUB_AUTHORITY_ADDRESS || process.env.CONTRACT_ADDRESS!,
 
-  // installer_registry.move — InstallerRegistry stored here (admin address)
-  REGISTRY_AUTHORITY: process.env.REGISTRY_AUTHORITY_ADDRESS!,
+  REGISTRY_AUTHORITY:
+    process.env.REGISTRY_AUTHORITY_ADDRESS || process.env.CONTRACT_ADDRESS!,
 
-  // project_listing.move — ProjectRegistry stored here (admin address)
-  PROJECT_AUTHORITY: process.env.PROJECT_AUTHORITY_ADDRESS!,
+  PROJECT_AUTHORITY:
+    process.env.PROJECT_AUTHORITY_ADDRESS || process.env.CONTRACT_ADDRESS!,
 
   // kept for legacy routes
   VAULT_AUTHORITY:
-    process.env.VAULT_AUTHORITY_ADDRESS || process.env.HUB_AUTHORITY_ADDRESS!,
+    process.env.VAULT_AUTHORITY_ADDRESS || process.env.CONTRACT_ADDRESS!,
 };
 
 // ── Module Functions — state.move (updated) ───────────────────────────────────
@@ -128,13 +129,18 @@ export const formatApt = (octas: string | number): string =>
 // ── Validation ────────────────────────────────────────────────────────────────
 if (!process.env.CONTRACT_ADDRESS)
   throw new Error("CONTRACT_ADDRESS is not set");
-if (!process.env.HUB_AUTHORITY_ADDRESS)
+
+// All authority addresses fall back to CONTRACT_ADDRESS since all 3 contracts
+// are deployed from the same admin wallet on testnet.
+if (!process.env.HUB_AUTHORITY_ADDRESS && !process.env.CONTRACT_ADDRESS)
   throw new Error("HUB_AUTHORITY_ADDRESS is not set");
-if (!process.env.REGISTRY_AUTHORITY_ADDRESS)
+if (!process.env.REGISTRY_AUTHORITY_ADDRESS && !process.env.CONTRACT_ADDRESS)
   throw new Error("REGISTRY_AUTHORITY_ADDRESS is not set");
-if (!process.env.PROJECT_AUTHORITY_ADDRESS)
+if (!process.env.PROJECT_AUTHORITY_ADDRESS && !process.env.CONTRACT_ADDRESS)
   throw new Error("PROJECT_AUTHORITY_ADDRESS is not set");
 
-console.log(` Aptos SDK initialized on ${getNetwork()}`);
-console.log(` Contract: ${CONTRACT_CONFIG.CONTRACT_ADDRESS}`);
-console.log(` Hub Authority: ${CONTRACT_CONFIG.HUB_AUTHORITY}`);
+console.log(`🚀 Aptos SDK initialized on ${getNetwork()}`);
+console.log(`📝 Contract:           ${CONTRACT_CONFIG.CONTRACT_ADDRESS}`);
+console.log(`🏦 Hub Authority:      ${CONTRACT_CONFIG.HUB_AUTHORITY}`);
+console.log(`📋 Registry Authority: ${CONTRACT_CONFIG.REGISTRY_AUTHORITY}`);
+console.log(`🏗️  Project Authority:  ${CONTRACT_CONFIG.PROJECT_AUTHORITY}`);

@@ -161,9 +161,14 @@ app.post("/api/installer/submit-kyc", submitKyc);
 app.get("/api/installer/:address", getInstaller);
 
 // ── Project Listing (project_listing.move) ───────────────────────────────────
+// GET   /api/project/locations                → get all oracle locations
 // POST  /api/project/submit                   → KYC-approved installer submits project
 // GET   /api/project/location/:location_id    → get all approved projects for a location
 // GET   /api/project/:project_id              → get single project details
+app.get(
+  "/api/project/locations",
+  projectController.getLocations.bind(projectController),
+);
 app.post(
   "/api/project/submit",
   projectController.submitProject.bind(projectController),

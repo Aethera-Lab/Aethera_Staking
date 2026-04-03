@@ -21,20 +21,47 @@ export class InstallerService {
    */
   async getInstallerInfo(installerAddress: string): Promise<InstallerInfo | null> {
     try {
+      // Normalize address to full format (0x + 64 hex chars)
+      const normalizedAddress = this.normalizeAddress(installerAddress);
+      console.log(`[getInstallerInfo] Querying for address: ${installerAddress} (normalized: ${normalizedAddress})`);
+      console.log(`[getInstallerInfo] Registry Authority: ${CONTRACT_CONFIG.REGISTRY_AUTHORITY}`);
+      console.log(`[getInstallerInfo] Contract Address: ${CONTRACT_CONFIG.CONTRACT_ADDRESS}`);
+
       const resourceType = `${CONTRACT_CONFIG.CONTRACT_ADDRESS}::installer_registry::InstallerRegistry` as `${string}::${string}::${string}`;
+      console.log(`[getInstallerInfo] Resource Type: ${resourceType}`);
 
       const resource = await aptos.getAccountResource({
         accountAddress: CONTRACT_CONFIG.REGISTRY_AUTHORITY,
         resourceType,
       });
 
+      console.log(`[getInstallerInfo] Resource fetched successfully`);
+      console.log(`[getInstallerInfo] Resource data:`, JSON.stringify(resource, null, 2));
+
       const data = (resource as any).data || resource;
       // SimpleMap stores entries as [{ key, value }] array
       const entries: any[] = data?.installers?.data || [];
-      const entry = entries.find((e: any) => e.key === installerAddress);
+      console.log(`[getInstallerInfo] Found ${entries.length} total installers in registry`);
 
-      if (!entry) return null;
+      // Try exact match first
+      let entry = entries.find((e: any) => e.key === normalizedAddress);
+      
+      // If no exact match, try normalized comparison
+      if (!entry) {
+        entry = entries.find((e: any) => {
+          const normalizedKey = this.normalizeAddress(e.key);
+          return normalizedKey === normalizedAddress;
+        });
+      }
 
+      if (!entry) {
+        console.log(`[getInstallerInfo] No installer found for address: ${normalizedAddress}`);
+        // Log first 5 addresses for debugging
+        console.log(`[getInstallerInfo] Sample addresses in registry:`, entries.slice(0, 5).map(e => e.key));
+        return null;
+      }
+
+      console.log(`[getInstallerInfo] Found installer entry`);
       const v = entry.value;
       return {
         wallet:          v.wallet,
@@ -47,10 +74,30 @@ export class InstallerService {
         project_id:      Number(v.project_id),
       };
     } catch (error: any) {
-      if (error.status === 404) return null;
-      console.error('Error fetching installer info:', error.message || error);
+      console.error('[getInstallerInfo] ERROR:', {
+        status: error.status,
+        message: error.message,
+        code: error.code,
+        fullError: error,
+      });
+      if (error.status === 404) {
+        console.error('[getInstallerInfo] Resource not found (404) - InstallerRegistry may not be initialized');
+        return null;
+      }
+      console.error('[getInstallerInfo] Error fetching installer info:', error.message || error);
       return null;
     }
+  }
+
+  /**
+   * Normalize Aptos address to standard format: 0x + 64 lowercase hex chars
+   */
+  private normalizeAddress(address: string): string {
+    // Remove 0x prefix if present and pad with zeros
+    let addr = address.startsWith("0x") ? address.slice(2) : address;
+    // Pad to 64 characters
+    addr = addr.padStart(64, "0");
+    return `0x${addr.toLowerCase()}`;
   }
 
   /**
@@ -207,10 +254,104 @@ export const installerService = new InstallerService();
 export const register = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const { privateKey, name, businessReg } = req.body;
-    const installerAccount = Account.fromPrivateKey({privateKey: new Ed25519PrivateKey(privateKey),});    
+    
+    if (!privateKey) {
+      return res.status(400).json({ success: false, error: "Private key is required" });
+    }
+
+    const installerAccount = Account.fromPrivateKey({
+      privateKey: new Ed25519PrivateKey(privateKey),
+    });
+    const address = installerAccount.accountAddress.toString();
+    console.log(`[Register] Checking if installer already exists at address: ${address}`);
+
+    // Check if already registered
+    const existingInfo = await installerService.getInstallerInfo(address);
+    console.log(`[Register] Existing info query result:`, existingInfo);
+    
+    if (existingInfo) {
+      console.log(`[Register] Installer already registered with KYC status: ${existingInfo.kyc_status}`);
+      // Already registered — guide based on KYC status
+      switch (existingInfo.kyc_status) {
+        case KycStatus.PENDING:
+          return res.status(200).json({
+            success: true,
+            message: "You are registered but have not submitted KYC yet. Please proceed to KYC verification.",
+            next_step: "submit_kyc",
+            installer: existingInfo,
+          });
+        case KycStatus.SUBMITTED:
+          return res.status(200).json({
+            success: true,
+            message: "KYC submitted and awaiting admin approval. Check back later.",
+            next_step: "await_approval",
+            installer: existingInfo,
+          });
+        case KycStatus.APPROVED:
+          return res.status(200).json({
+            success: true,
+            message: "KYC approved. You can now submit projects.",
+            next_step: "submit_project",
+            installer: existingInfo,
+          });
+        case KycStatus.REJECTED:
+          return res.status(200).json({
+            success: false,
+            message: "KYC was rejected. Contact admin for details.",
+            next_step: "contact_admin",
+            installer: existingInfo,
+          });
+        default:
+          return res.status(200).json({
+            success: true,
+            message: "Registration complete. Please submit KYC to proceed.",
+            next_step: "submit_kyc",
+            installer: existingInfo,
+          });
+      }
+    }
+
+    // Not registered — proceed with registration
+    console.log(`[Register] No existing registration found. Proceeding with new registration...`);
     const result = await installerService.register(installerAccount, name, businessReg);
-    res.json(result);
-  } catch (error) {
+    console.log(`[Register] Registration result:`, result);
+    
+    if (result.success) {
+      return res.status(200).json({
+        success: true,
+        transaction_hash: result.transaction_hash,
+        message: 'Installer registered successfully. Please submit KYC next.',
+        next_step: "submit_kyc",
+      });
+    } else {
+      // Check for E_ALREADY_REGISTERED in error message
+      if (result.error?.includes("E_ALREADY_REGISTERED") || result.error?.includes("abort 0x2")) {
+        console.log(`[Register] Contract returned E_ALREADY_REGISTERED. Fetching installer info again...`);
+        // Try fetching info again after small delay
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        const retryInfo = await installerService.getInstallerInfo(address);
+        if (retryInfo) {
+          return res.status(200).json({
+            success: true,
+            message: "You are already registered. Please proceed to KYC verification.",
+            next_step: "submit_kyc",
+            installer: retryInfo,
+          });
+        }
+        return res.status(400).json({
+          success: false,
+          error: "Installer is already registered. Please proceed to KYC verification.",
+          next_step: "submit_kyc",
+        });
+      } else {
+        return res.status(400).json({
+          success: false,
+          error: result.error || 'Registration failed',
+        });
+      }
+    }
+  } catch (error: any) {
+    console.error('[Register] Error:', error);
     next(error);
   }
 };

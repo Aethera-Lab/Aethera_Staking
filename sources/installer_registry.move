@@ -101,23 +101,41 @@ module aethera_staking::installer_registry {
         });
     }
 
+
+// submitkyc 
+public entry fun submit_kyc(
+    installer:          &signer,
+    registry_authority: address,
+    documents_hash:     String,
+    location_id:        u64,
+) acquires InstallerRegistry {
+    let registry = borrow_global_mut<InstallerRegistry>(registry_authority);
+    let addr = signer::address_of(installer);
+
+    assert!(
+        simple_map::contains_key(&registry.installers, &addr),
+        E_NOT_REGISTERED
+    );
+
+    let info = simple_map::borrow_mut(&mut registry.installers, &addr);
+
+    // prevent resubmission
+    assert!(
+        info.kyc_status == KYC_PENDING,
+        E_KYC_NOT_SUBMITTED
+    );
+
+    info.documents_hash = documents_hash;
+    info.location_id    = location_id;
+    info.kyc_status     = KYC_SUBMITTED;
+}
+
+
+
     /// Step 2 — Installer uploads IPFS doc hash + picks their oracle location
     ///          This moves status from PENDING → SUBMITTED
-    public entry fun submit_kyc(
-        installer:          &signer,
-        registry_authority: address,
-        documents_hash:     String,
-        location_id:        u64,
-    ) acquires InstallerRegistry {
-        let registry = borrow_global_mut<InstallerRegistry>(registry_authority);
-        let addr = signer::address_of(installer);
-        assert!(simple_map::contains_key(&registry.installers, &addr), E_NOT_REGISTERED);
-
-        let info = simple_map::borrow_mut(&mut registry.installers, &addr);
-        info.documents_hash = documents_hash;
-        info.location_id    = location_id;
-        info.kyc_status     = KYC_SUBMITTED;
-    }
+   
+   
 
     /// Called internally by project_listing when a project is submitted
     public fun set_project_id(
