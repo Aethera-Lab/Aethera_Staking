@@ -203,13 +203,16 @@
 
 .stat-value {
   font-size: 32px;
-  font-weight: 700;
-  color: #0f172a;
+  font-weight: 1000;
+  color: #000000;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 }
 
 .stat-label {
   font-size: 14px;
-  color: #64748b;
+  color: #000000;
+  font-weight: 1000;
+  letter-spacing: 0.3px;
 }
 
 .stat-divider {

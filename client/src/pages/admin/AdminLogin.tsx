@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Admin.css";
 
-const ADMIN_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD || "aethera-admin-2024";
+const ADMIN_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD ;
 
 export default function AdminLogin() {
   const navigate = useNavigate();
