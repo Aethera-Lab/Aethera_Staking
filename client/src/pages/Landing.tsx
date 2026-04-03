@@ -336,11 +336,9 @@ export default function Landing() {
             <div className="footer-links-grid">
               <div className="footer-column">
                 <h4>Products</h4>
-                <a href="/installer">Installer Portal</a>
-                <a href="/invest">Investor Dashboard</a>
-                <a href="/oracle">Solar Oracle</a>
-                <a href="/staking">Staking</a>
-              </div>
+                <a onClick={()=>navigate("/installer")}>Installer Portal</a>
+                <a onClick={()=>navigate("/invest")}>Investor Dashboard</a>
+                <a href='https://solar-oracle-lime.vercel.app/' target="_blank" rel="noopener noreferrer">Solar Oracle</a></div>
               <div className="footer-column">
                 <h4>Resources</h4>
                 <a href="https://github.com/Aethera-Lab" target="_blank" rel="noopener noreferrer">Documentation</a>
