@@ -5,6 +5,13 @@ import morgan from "morgan";
 import dotenv from "dotenv";
 import rateLimit from "express-rate-limit";
 import { stakingController } from "./controllers/staking.controllers";
+import {
+  register,
+  submitKyc,
+  getInstaller,
+} from "./controllers/installer.controllers";
+import { projectController } from "./controllers/project.contollers";
+import { adminController } from "./controllers/admin.controllers";
 
 // Load environment variables
 dotenv.config();
@@ -125,23 +132,126 @@ app.get("/debug", (req: Request, res: Response) => {
   res.json({
     env: {
       NODE_ENV: process.env.NODE_ENV || "(not set)",
-      APTOS_NETWORK: network || "(not set)",
-      APTOS_NODE_URL_set: !!nodeUrl,
-      APTOS_NODE_URL_value: nodeUrl || "(not set)",
-      resolved_fullnode_url: resolvedNodeUrl,
-      CONTRACT_ADDRESS: contractAddress
-        ? `${contractAddress.slice(0, 10)}...${contractAddress.slice(-6)}`
-        : "(not set — WILL CRASH ON START)",
-      VAULT_AUTHORITY_ADDRESS: vaultAuthority
-        ? `${vaultAuthority.slice(0, 10)}...${vaultAuthority.slice(-6)}`
-        : "(not set — WILL CRASH ON START)",
-      CORS_ORIGIN: corsOrigin || "(not set — open in dev, blocked in prod)",
+      APTOS_NETWORK: process.env.APTOS_NETWORK || "(not set)",
+      CONTRACT_ADDRESS: process.env.CONTRACT_ADDRESS
+        ? `${process.env.CONTRACT_ADDRESS.slice(0, 10)}...`
+        : "(not set)",
+      HUB_AUTHORITY_ADDRESS: process.env.HUB_AUTHORITY_ADDRESS
+        ? `${process.env.HUB_AUTHORITY_ADDRESS.slice(0, 10)}...`
+        : "(not set)",
+      REGISTRY_AUTHORITY_ADDRESS: process.env.REGISTRY_AUTHORITY_ADDRESS
+        ? `${process.env.REGISTRY_AUTHORITY_ADDRESS.slice(0, 10)}...`
+        : "(not set)",
+      PROJECT_AUTHORITY_ADDRESS: process.env.PROJECT_AUTHORITY_ADDRESS
+        ? `${process.env.PROJECT_AUTHORITY_ADDRESS.slice(0, 10)}...`
+        : "(not set)",
     },
-    all_APTOS_env_vars: aptosEnvVars,
   });
 });
 
 // Public endpoints
+// ============ Routes ============
+
+// ── Installer Registry (installer_registry.move) ─────────────────────────────
+// POST  /api/installer/register        → register wallet + basic info
+// POST  /api/installer/submit-kyc      → upload IPFS doc hash + pick location
+// GET   /api/installer/:address        → get installer info + KYC status
+app.post("/api/installer/register", register);
+app.post("/api/installer/submit-kyc", submitKyc);
+app.get("/api/installer/:address", getInstaller);
+
+// ── Project Listing (project_listing.move) ───────────────────────────────────
+// POST  /api/project/submit                   → KYC-approved installer submits project
+// GET   /api/project/location/:location_id    → get all approved projects for a location
+// GET   /api/project/:project_id              → get single project details
+app.post(
+  "/api/project/submit",
+  projectController.submitProject.bind(projectController),
+);
+app.get(
+  "/api/project/location/:location_id",
+  projectController.getProjectsByLocation.bind(projectController),
+);
+app.get(
+  "/api/project/:project_id",
+  projectController.getProject.bind(projectController),
+);
+
+// ── Per-Project Staking (state.move updated) ─────────────────────────────────
+// POST  /api/staking/stake                            → stake APT on a project
+// POST  /api/staking/unstake                          → unstake after lock expires
+// POST  /api/staking/claim                            → claim APY rewards
+// GET   /api/staking/project/:project_id              → vault info for a project
+// GET   /api/staking/player/:address/project/:id      → player's stake in a project
+// POST  /api/staking/simulate                         → estimate rewards (no tx)
+app.post("/api/staking/stake", stakingController.stake.bind(stakingController));
+app.post(
+  "/api/staking/unstake",
+  stakingController.unstake.bind(stakingController),
+);
+app.post(
+  "/api/staking/claim",
+  stakingController.claimRewards.bind(stakingController),
+);
+app.get(
+  "/api/staking/project/:project_id",
+  stakingController.getProjectVault.bind(stakingController),
+);
+app.get(
+  "/api/staking/player/:address/project/:project_id",
+  stakingController.getPlayerStake.bind(stakingController),
+);
+app.post(
+  "/api/staking/simulate",
+  stakingController.simulateStake.bind(stakingController),
+);
+
+// ── Admin (all 3 contracts) ───────────────────────────────────────────────────
+// KYC
+// POST  /api/admin/kyc/approve          → approve installer KYC
+// POST  /api/admin/kyc/reject           → reject installer KYC
+// Projects
+// POST  /api/admin/project/approve      → approve project (makes it visible to investors)
+// POST  /api/admin/project/reject       → reject project
+// Vaults
+// POST  /api/admin/vault/create         → create staking vault for approved project
+// POST  /api/admin/vault/deposit        → deposit APT into reward pool
+// POST  /api/admin/vault/withdraw       → withdraw from vault
+// POST  /api/admin/vault/config         → update APY rate for a project
+app.post(
+  "/api/admin/kyc/approve",
+  adminController.approveKyc.bind(adminController),
+);
+app.post(
+  "/api/admin/kyc/reject",
+  adminController.rejectKyc.bind(adminController),
+);
+app.post(
+  "/api/admin/project/approve",
+  adminController.approveProject.bind(adminController),
+);
+app.post(
+  "/api/admin/project/reject",
+  adminController.rejectProject.bind(adminController),
+);
+app.post(
+  "/api/admin/vault/create",
+  adminController.createVault.bind(adminController),
+);
+app.post(
+  "/api/admin/vault/deposit",
+  adminController.depositRewards.bind(adminController),
+);
+app.post(
+  "/api/admin/vault/withdraw",
+  adminController.withdraw.bind(adminController),
+);
+app.post(
+  "/api/admin/vault/config",
+  adminController.updateConfig.bind(adminController),
+);
+
+// ── Legacy routes (your original endpoints — kept for backward compat) ────────
 app.get(
   "/api/vault/info",
   stakingController.getVaultInfo.bind(stakingController),
@@ -155,54 +265,30 @@ app.get(
   "/api/balance/:address",
   stakingController.getBalance.bind(stakingController),
 );
-app.post(
-  "/api/stake/simulate",
-  stakingController.simulateStake.bind(stakingController),
-);
-
-// Admin endpoints ( protected with authentication middleware)
-app.post(
-  "/api/admin/config",
-  stakingController.updateConfig.bind(stakingController),
-);
-app.post(
-  "/api/admin/deposit",
-  stakingController.deposit.bind(stakingController),
-);
-app.post(
-  "/api/admin/withdraw",
-  stakingController.withdraw.bind(stakingController),
-);
 
 // ============ Error Handling ============
 
-// 404 handler
 app.use((req: Request, res: Response) => {
-  res.status(404).json({
-    success: false,
-    error: "Route not found",
-  });
+  res.status(404).json({ success: false, error: "Route not found" });
 });
 
-// Global error handler
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
   console.error("Error:", err);
-  res.status(500).json({
-    success: false,
-    error: err.message || "Internal server error",
-  });
+  res
+    .status(500)
+    .json({ success: false, error: err.message || "Internal server error" });
 });
 
-// ============ Start Server ============
+// ============ Start ============
 
 app.listen(PORT, () => {
   console.log(`
   ╔═══════════════════════════════════════╗
-  ║   Aethera Staking API Server         ║
+  ║        Aethera API Server             ║
   ╠═══════════════════════════════════════╣
-  ║   Environment: ${process.env.NODE_ENV || "development"}
-  ║   Port: ${PORT}
-  ║   Network: ${process.env.APTOS_NETWORK || "testnet"}
+  ║  ENV:      ${process.env.NODE_ENV || "development"}
+  ║  PORT:     ${PORT}
+  ║  NETWORK:  ${process.env.APTOS_NETWORK || "devnet"}
   ╚═══════════════════════════════════════╝
   `);
 });

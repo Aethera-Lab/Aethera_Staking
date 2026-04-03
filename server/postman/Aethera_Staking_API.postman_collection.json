@@ -1,174 +1,929 @@
 {
   "info": {
     "name": "Aethera Staking API",
-    "description": "Complete API collection for Aethera renewable energy staking platform",
+    "_postman_id": "aethera-staking-api-v2",
+    "description": "Complete API collection for Aethera Solar Staking Platform.\n\nFlow:\n1. Admin initializes all 3 contracts on-chain (one-time)\n2. Installer registers → submits KYC docs\n3. Admin approves KYC\n4. Installer submits project\n5. Admin approves project\n6. Admin creates staking vault for the project\n7. Admin deposits reward APT into vault\n8. Investors stake APT on the project\n9. Investors claim rewards or unstake after lock expires\n\nBase URL: https://aethera-staking.onrender.com\nLocal URL: http://localhost:3000",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "variable": [
     {
       "key": "base_url",
-      "value": "http://localhost:3000",
+      "value": "https://aethera-staking.onrender.com",
       "type": "string"
     },
     {
-      "key": "player_address",
-      "value": "0x123...",
+      "key": "admin_private_key",
+      "value": "YOUR_ADMIN_PRIVATE_KEY_HERE",
+      "type": "string"
+    },
+    {
+      "key": "installer_private_key",
+      "value": "YOUR_INSTALLER_PRIVATE_KEY_HERE",
+      "type": "string"
+    },
+    {
+      "key": "investor_private_key",
+      "value": "YOUR_INVESTOR_PRIVATE_KEY_HERE",
+      "type": "string"
+    },
+    {
+      "key": "installer_address",
+      "value": "0xINSTALLER_ADDRESS_HERE",
+      "type": "string"
+    },
+    {
+      "key": "investor_address",
+      "value": "0xINVESTOR_ADDRESS_HERE",
+      "type": "string"
+    },
+    {
+      "key": "project_id",
+      "value": "1",
+      "type": "string"
+    },
+    {
+      "key": "location_id",
+      "value": "1",
       "type": "string"
     }
   ],
   "item": [
     {
-      "name": "1. Health Check",
-      "request": {
-        "method": "GET",
-        "header": [],
-        "url": {
-          "raw": "{{base_url}}/health",
-          "host": ["{{base_url}}"],
-          "path": ["health"]
+      "name": "🟢 Health",
+      "item": [
+        {
+          "name": "Health Check",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/health",
+              "host": ["{{base_url}}"],
+              "path": ["health"]
+            },
+            "description": "Verify the API server is running."
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "status": "OK",
+              "code": 200,
+              "body": "{\n  \"success\": true,\n  \"message\": \"Aethera Staking API is running\",\n  \"timestamp\": \"2024-01-01T00:00:00.000Z\"\n}"
+            }
+          ]
         },
-        "description": "Check if the API server is running"
-      }
+        {
+          "name": "Debug — Config State",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/debug",
+              "host": ["{{base_url}}"],
+              "path": ["debug"]
+            },
+            "description": "Returns current env config (no secrets). Use this to verify Render env vars are correct."
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "status": "OK",
+              "code": 200,
+              "body": "{\n  \"env\": {\n    \"NODE_ENV\": \"production\",\n    \"APTOS_NETWORK\": \"devnet\",\n    \"CONTRACT_ADDRESS\": \"0x3894481b...\",\n    \"HUB_AUTHORITY_ADDRESS\": \"0x3894481b...\",\n    \"REGISTRY_AUTHORITY_ADDRESS\": \"0x3894481b...\",\n    \"PROJECT_AUTHORITY_ADDRESS\": \"0x3894481b...\"\n  }\n}"
+            }
+          ]
+        }
+      ]
     },
     {
-      "name": "2. Get Vault Info",
-      "request": {
-        "method": "GET",
-        "header": [],
-        "url": {
-          "raw": "{{base_url}}/api/vault/info",
-          "host": ["{{base_url}}"],
-          "path": ["api", "vault", "info"]
+      "name": "🔧 Installer Registry",
+      "description": "Handles installer onboarding: wallet registration, KYC doc submission, and status lookup.\n\nInstaller flow:\n  Step 1 → POST /api/installer/register\n  Step 2 → POST /api/installer/submit-kyc\n  Step 3 → Admin approves via /api/admin/kyc/approve\n  Step 4 → Installer can now submit a project",
+      "item": [
+        {
+          "name": "Step 1 — Register Installer",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/installer/register",
+              "host": ["{{base_url}}"],
+              "path": ["api", "installer", "register"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"privateKey\": \"{{installer_private_key}}\",\n  \"name\": \"SunPower Installations Ltd\",\n  \"businessReg\": \"BRN-2024-001\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Installer connects wallet and registers basic business info on-chain.\nThis sets KYC status to PENDING (0).\n\nRequired fields:\n- privateKey: Installer's Aptos wallet private key\n- name: Company or individual name\n- businessReg: Business registration number"
+          },
+          "response": [
+            {
+              "name": "200 Success",
+              "status": "OK",
+              "code": 200,
+              "body": "{\n  \"success\": true,\n  \"transaction_hash\": \"0xabc123...\",\n  \"message\": \"Installer registered successfully\"\n}"
+            },
+            {
+              "name": "400 Missing Fields",
+              "status": "Bad Request",
+              "code": 400,
+              "body": "{\n  \"success\": false,\n  \"error\": \"privateKey, name, and businessReg are required\"\n}"
+            }
+          ]
         },
-        "description": "Get vault configuration and balance"
-      }
+        {
+          "name": "Step 2 — Submit KYC Docs",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/installer/submit-kyc",
+              "host": ["{{base_url}}"],
+              "path": ["api", "installer", "submit-kyc"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"privateKey\": \"{{installer_private_key}}\",\n  \"documentsHash\": \"QmYwAPJzv5CZsnA625s3Xf2nemtYgPpHdWEz79ojWnPbdG\",\n  \"locationId\": {{location_id}}\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Installer uploads IPFS hash of KYC documents and selects their oracle location.\nThis moves KYC status from PENDING (0) → SUBMITTED (1).\n\nRequired fields:\n- privateKey: Installer's Aptos wallet private key\n- documentsHash: IPFS CID / hash of the uploaded KYC documents\n- locationId: On-chain oracle location ID chosen by the installer"
+          },
+          "response": [
+            {
+              "name": "200 Success",
+              "status": "OK",
+              "code": 200,
+              "body": "{\n  \"success\": true,\n  \"transaction_hash\": \"0xdef456...\",\n  \"message\": \"KYC submitted successfully — awaiting admin review\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Installer Info",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/installer/{{installer_address}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "installer", "{{installer_address}}"]
+            },
+            "description": "Fetch on-chain installer data including KYC status.\n\nKYC Status values:\n  0 = Pending (registered, docs not uploaded)\n  1 = Submitted (docs uploaded, awaiting admin)\n  2 = Approved\n  3 = Rejected"
+          },
+          "response": [
+            {
+              "name": "200 Success",
+              "status": "OK",
+              "code": 200,
+              "body": "{\n  \"success\": true,\n  \"installer\": {\n    \"wallet\": \"0xINSTALLER_ADDRESS\",\n    \"name\": \"SunPower Installations Ltd\",\n    \"business_reg\": \"BRN-2024-001\",\n    \"documents_hash\": \"QmYwAPJzv5CZsnA625s3Xf2nemtYgPpHdWEz79ojWnPbdG\",\n    \"kyc_status\": 2,\n    \"kyc_status_label\": \"Approved\",\n    \"location_id\": 1,\n    \"project_id\": 1\n  }\n}"
+            },
+            {
+              "name": "404 Not Found",
+              "status": "Not Found",
+              "code": 404,
+              "body": "{\n  \"success\": false,\n  \"error\": \"Installer not found\"\n}"
+            }
+          ]
+        }
+      ]
     },
     {
-      "name": "3. Get Player Info",
-      "request": {
-        "method": "GET",
-        "header": [],
-        "url": {
-          "raw": "{{base_url}}/api/player/{{player_address}}",
-          "host": ["{{base_url}}"],
-          "path": ["api", "player", "{{player_address}}"]
+      "name": "🏗️ Project Listing",
+      "description": "Installer submits solar projects for admin review. Only APPROVED projects are visible to investors.\n\nProject flow:\n  Step 1 → POST /api/project/submit  (installer must be KYC approved)\n  Step 2 → Admin approves via /api/admin/project/approve\n  Step 3 → Admin creates vault via /api/admin/vault/create\n  Step 4 → Investors can now stake on the project",
+      "item": [
+        {
+          "name": "Submit Project",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/project/submit",
+              "host": ["{{base_url}}"],
+              "path": ["api", "project", "submit"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"private_key\": \"{{installer_private_key}}\",\n  \"name\": \"Rooftop Solar Farm — Mumbai North\",\n  \"location_id\": {{location_id}},\n  \"capacity_kw\": 500,\n  \"cost_apt\": \"1000000000\",\n  \"description\": \"500 kW rooftop solar installation on commercial building in Mumbai North district. IRR 12%, 25-year lifespan.\",\n  \"documents_hash\": \"QmProjectDocs123abc\",\n  \"expected_yield_bps\": 1200\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "KYC-approved installer submits a solar project for review.\nThe installer must have KYC status = APPROVED (2) on-chain or this will fail.\n\nRequired fields:\n- private_key: Installer's private key\n- name: Project display name\n- location_id: Must match an on-chain oracle location\n- capacity_kw: Solar capacity in kilowatts\n- cost_apt: Funding goal in octas (1 APT = 100_000_000 octas)\n- description: Project description\n- documents_hash: IPFS hash for project docs / images\n- expected_yield_bps: Expected APY in basis points (1200 = 12%)"
+          },
+          "response": [
+            {
+              "name": "200 Success",
+              "status": "OK",
+              "code": 200,
+              "body": "{\n  \"success\": true,\n  \"transaction_hash\": \"0xghi789...\",\n  \"message\": \"Project submitted — awaiting admin review\"\n}"
+            },
+            {
+              "name": "400 Missing Fields",
+              "status": "Bad Request",
+              "code": 400,
+              "body": "{\n  \"success\": false,\n  \"error\": \"All fields are required: private_key, name, location_id, capacity_kw, cost_apt, description, documents_hash, expected_yield_bps\"\n}"
+            },
+            {
+              "name": "500 KYC Not Approved",
+              "status": "Internal Server Error",
+              "code": 500,
+              "body": "{\n  \"success\": false,\n  \"error\": \"Move abort in project_listing::submit_project: E_KYC_NOT_APPROVED\"\n}"
+            }
+          ]
         },
-        "description": "Get player staking information"
-      }
+        {
+          "name": "Get Project by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/project/{{project_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "project", "{{project_id}}"]
+            },
+            "description": "Fetch full details of a single project by its on-chain ID.\n\nProject status values:\n  0 = Pending (awaiting admin review)\n  1 = Approved (visible to investors)\n  2 = Rejected"
+          },
+          "response": [
+            {
+              "name": "200 Success",
+              "status": "OK",
+              "code": 200,
+              "body": "{\n  \"success\": true,\n  \"data\": {\n    \"project_id\": 1,\n    \"name\": \"Rooftop Solar Farm — Mumbai North\",\n    \"location_id\": 1,\n    \"capacity_kw\": 500,\n    \"cost_apt\": \"1000000000\",\n    \"cost_apt_human\": \"10.00000000 APT\",\n    \"description\": \"500 kW rooftop solar installation...\",\n    \"documents_hash\": \"QmProjectDocs123abc\",\n    \"expected_yield_bps\": 1200,\n    \"expected_yield_pct\": \"12.00%\",\n    \"installer\": \"0xINSTALLER_ADDRESS\",\n    \"status\": 1,\n    \"status_label\": \"Approved\"\n  }\n}"
+            },
+            {
+              "name": "404 Not Found",
+              "status": "Not Found",
+              "code": 404,
+              "body": "{\n  \"success\": false,\n  \"error\": \"Project not found\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Projects by Location",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/project/location/{{location_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "project", "location", "{{location_id}}"]
+            },
+            "description": "Returns all APPROVED projects for a given oracle location ID.\nUsed by the investor platform to show available projects in an area."
+          },
+          "response": [
+            {
+              "name": "200 Success",
+              "status": "OK",
+              "code": 200,
+              "body": "{\n  \"success\": true,\n  \"data\": {\n    \"location_id\": 1,\n    \"total\": 2,\n    \"projects\": [\n      {\n        \"project_id\": 1,\n        \"name\": \"Rooftop Solar Farm — Mumbai North\",\n        \"status\": 1,\n        \"status_label\": \"Approved\",\n        \"expected_yield_pct\": \"12.00%\",\n        \"cost_apt_human\": \"10.00000000 APT\"\n      }\n    ]\n  }\n}"
+            }
+          ]
+        }
+      ]
     },
     {
-      "name": "4. Get Staking Stats",
-      "request": {
-        "method": "GET",
-        "header": [],
-        "url": {
-          "raw": "{{base_url}}/api/stats",
-          "host": ["{{base_url}}"],
-          "path": ["api", "stats"]
+      "name": "💰 Staking",
+      "description": "Investor actions: stake APT on a project, unstake after lock expires, claim APY rewards, and simulate returns.\n\nIMPORTANT: The project must have an active vault (created by admin) before investors can stake.\n\nAll write endpoints require the investor's private key in the body.\nRead endpoints are keyless — just pass address and project_id.",
+      "item": [
+        {
+          "name": "Get Project Vault Info",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/staking/project/{{project_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "staking", "project", "{{project_id}}"]
+            },
+            "description": "Returns vault info for a specific project: total staked, APY rate, authority.\nUse this before staking to confirm the vault exists and get the current APY."
+          },
+          "response": [
+            {
+              "name": "200 Success",
+              "status": "OK",
+              "code": 200,
+              "body": "{\n  \"success\": true,\n  \"data\": {\n    \"project_id\": 1,\n    \"authority\": \"0xADMIN_ADDRESS\",\n    \"total_staked\": \"500000000\",\n    \"total_staked_apt\": \"5.00000000\",\n    \"apy_rate\": 1200\n  }\n}"
+            },
+            {
+              "name": "404 Vault Not Found",
+              "status": "Not Found",
+              "code": 404,
+              "body": "{\n  \"success\": false,\n  \"error\": \"Vault not found\"\n}"
+            }
+          ]
         },
-        "description": "Get overall staking statistics"
-      }
+        {
+          "name": "Get Player Stake in Project",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/staking/player/{{investor_address}}/project/{{project_id}}",
+              "host": ["{{base_url}}"],
+              "path": [
+                "api",
+                "staking",
+                "player",
+                "{{investor_address}}",
+                "project",
+                "{{project_id}}"
+              ]
+            },
+            "description": "Returns an investor's stake details in a specific project.\nIncludes: staked amount, lock duration, time remaining, pending rewards."
+          },
+          "response": [
+            {
+              "name": "200 Success",
+              "status": "OK",
+              "code": 200,
+              "body": "{\n  \"success\": true,\n  \"data\": {\n    \"player_address\": \"0xINVESTOR_ADDRESS\",\n    \"project_id\": 1,\n    \"staked_amount\": \"100000000\",\n    \"staked_amount_apt\": \"1.00000000\",\n    \"staked_time\": 1700000000,\n    \"lock_duration\": 2592000,\n    \"unlock_time\": 1702592000,\n    \"is_locked\": true,\n    \"time_remaining\": 1500000,\n    \"pending_rewards\": \"38051\",\n    \"pending_rewards_apt\": \"0.00038051\"\n  }\n}"
+            },
+            {
+              "name": "404 No Stake Found",
+              "status": "Not Found",
+              "code": 404,
+              "body": "{\n  \"success\": false,\n  \"error\": \"No stake found\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Simulate Stake Returns",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/staking/simulate",
+              "host": ["{{base_url}}"],
+              "path": ["api", "staking", "simulate"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"amount\": \"100000000\",\n  \"apy_rate\": 1200,\n  \"duration_days\": 30\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Estimate rewards for a hypothetical stake — NO on-chain transaction.\nUse this in the UI to show investors their expected returns before staking.\n\nRequired fields:\n- amount: Principal in octas (100000000 = 1 APT)\n- apy_rate: APY in basis points (1200 = 12%)\n- duration_days: Lock period in days"
+          },
+          "response": [
+            {
+              "name": "200 Success",
+              "status": "OK",
+              "code": 200,
+              "body": "{\n  \"success\": true,\n  \"data\": {\n    \"principal_apt\": \"1.00000000\",\n    \"estimated_reward_apt\": \"0.00986301\",\n    \"total_return_apt\": \"1.00986301\",\n    \"apy_rate\": 1200,\n    \"duration_days\": 30\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Stake APT on Project",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/staking/stake",
+              "host": ["{{base_url}}"],
+              "path": ["api", "staking", "stake"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"private_key\": \"{{investor_private_key}}\",\n  \"project_id\": {{project_id}},\n  \"amount\": \"100000000\",\n  \"duration\": 2592000\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Investor stakes APT into a specific project vault.\nThe vault must exist (admin must have called create_project_vault first).\n\nRequired fields:\n- private_key: Investor's Aptos wallet private key\n- project_id: Target project ID\n- amount: Amount to stake in octas (100000000 = 1 APT)\n- duration: Lock period in seconds (2592000 = 30 days, 7776000 = 90 days, 31536000 = 1 year)\n\nNote: Tokens are locked until staked_time + duration. Unstaking before that will abort."
+          },
+          "response": [
+            {
+              "name": "200 Success",
+              "status": "OK",
+              "code": 200,
+              "body": "{\n  \"success\": true,\n  \"transaction_hash\": \"0xjkl012...\",\n  \"message\": \"Staking successful\"\n}"
+            },
+            {
+              "name": "400 Missing Fields",
+              "status": "Bad Request",
+              "code": 400,
+              "body": "{\n  \"success\": false,\n  \"error\": \"private_key, project_id, amount, and duration are required\"\n}"
+            },
+            {
+              "name": "500 Vault Not Found",
+              "status": "Internal Server Error",
+              "code": 500,
+              "body": "{\n  \"success\": false,\n  \"error\": \"Move abort in state::sol_stake: E_VAULT_NOT_FOUND\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Claim Rewards",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/staking/claim",
+              "host": ["{{base_url}}"],
+              "path": ["api", "staking", "claim"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"private_key\": \"{{investor_private_key}}\",\n  \"project_id\": {{project_id}}\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Claim accumulated APY rewards from a project vault.\nRewards are calculated as: staked_amount * apy_rate * elapsed_seconds / (365*24*60*60 * 100)\n\nWill fail on-chain if reward amount is 0 (nothing to claim yet).\n\nRequired fields:\n- private_key: Investor's Aptos wallet private key\n- project_id: Project to claim rewards from"
+          },
+          "response": [
+            {
+              "name": "200 Success",
+              "status": "OK",
+              "code": 200,
+              "body": "{\n  \"success\": true,\n  \"transaction_hash\": \"0xmno345...\",\n  \"message\": \"Rewards claimed successfully\"\n}"
+            },
+            {
+              "name": "500 No Reward Available",
+              "status": "Internal Server Error",
+              "code": 500,
+              "body": "{\n  \"success\": false,\n  \"error\": \"Move abort in state::claim_rewards: E_NO_REWARD_AVAILABLE\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Unstake from Project",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/staking/unstake",
+              "host": ["{{base_url}}"],
+              "path": ["api", "staking", "unstake"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"private_key\": \"{{investor_private_key}}\",\n  \"project_id\": {{project_id}}\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Unstake principal from a project vault after the lock period expires.\nWill abort on-chain with E_UNSTAKE_TOO_EARLY if called before unlock_time.\n\nNote: Claim your rewards BEFORE unstaking — unstaking does not auto-claim.\n\nRequired fields:\n- private_key: Investor's Aptos wallet private key\n- project_id: Project to unstake from"
+          },
+          "response": [
+            {
+              "name": "200 Success",
+              "status": "OK",
+              "code": 200,
+              "body": "{\n  \"success\": true,\n  \"transaction_hash\": \"0xpqr678...\",\n  \"message\": \"Unstaking successful\"\n}"
+            },
+            {
+              "name": "500 Too Early",
+              "status": "Internal Server Error",
+              "code": 500,
+              "body": "{\n  \"success\": false,\n  \"error\": \"Move abort in state::sol_unstake: E_UNSTAKE_TOO_EARLY\"\n}"
+            }
+          ]
+        }
+      ]
     },
     {
-      "name": "5. Get Account Balance",
-      "request": {
-        "method": "GET",
-        "header": [],
-        "url": {
-          "raw": "{{base_url}}/api/balance/{{player_address}}",
-          "host": ["{{base_url}}"],
-          "path": ["api", "balance", "{{player_address}}"]
+      "name": "🔑 Admin",
+      "description": "Admin-only operations across all 3 contracts.\nAll endpoints use ADMIN_PRIVATE_KEY from server env — no private key in request body.\n\nAdmin flow:\n  1. Approve/reject installer KYC\n  2. Approve/reject submitted projects\n  3. Create staking vault for approved projects\n  4. Deposit reward APT into vault\n  5. Update APY rate if needed\n  6. Withdraw vault funds if needed",
+      "item": [
+        {
+          "name": "KYC — Approve Installer",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/admin/kyc/approve",
+              "host": ["{{base_url}}"],
+              "path": ["api", "admin", "kyc", "approve"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"installer_address\": \"{{installer_address}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Approve an installer's KYC submission.\nInstaller KYC status must be SUBMITTED (1) — not PENDING.\nAfter approval (status = 2), installer can submit projects.\n\nRequired fields:\n- installer_address: On-chain address of the installer to approve"
+          },
+          "response": [
+            {
+              "name": "200 Success",
+              "status": "OK",
+              "code": 200,
+              "body": "{\n  \"success\": true,\n  \"transaction_hash\": \"0xstu901...\",\n  \"message\": \"KYC approved\"\n}"
+            },
+            {
+              "name": "400 Missing Field",
+              "status": "Bad Request",
+              "code": 400,
+              "body": "{\n  \"success\": false,\n  \"error\": \"installer_address is required\"\n}"
+            },
+            {
+              "name": "500 Admin Not Configured",
+              "status": "Internal Server Error",
+              "code": 500,
+              "body": "{\n  \"success\": false,\n  \"error\": \"Admin credentials not configured\"\n}"
+            }
+          ]
         },
-        "description": "Get APT balance of an account"
-      }
+        {
+          "name": "KYC — Reject Installer",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/admin/kyc/reject",
+              "host": ["{{base_url}}"],
+              "path": ["api", "admin", "kyc", "reject"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"installer_address\": \"{{installer_address}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Reject an installer's KYC submission. Sets status to REJECTED (3).\n\nRequired fields:\n- installer_address: On-chain address of the installer to reject"
+          },
+          "response": [
+            {
+              "name": "200 Success",
+              "status": "OK",
+              "code": 200,
+              "body": "{\n  \"success\": true,\n  \"transaction_hash\": \"0xvwx234...\",\n  \"message\": \"KYC rejected\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Project — Approve Project",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/admin/project/approve",
+              "host": ["{{base_url}}"],
+              "path": ["api", "admin", "project", "approve"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"project_id\": {{project_id}}\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Approve a submitted project. Sets status to APPROVED (1).\nAfter approval, admin can create a staking vault for this project.\n\nRequired fields:\n- project_id: On-chain project ID to approve"
+          },
+          "response": [
+            {
+              "name": "200 Success",
+              "status": "OK",
+              "code": 200,
+              "body": "{\n  \"success\": true,\n  \"transaction_hash\": \"0xyza567...\",\n  \"message\": \"Project approved — now visible to investors\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Project — Reject Project",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/admin/project/reject",
+              "host": ["{{base_url}}"],
+              "path": ["api", "admin", "project", "reject"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"project_id\": {{project_id}}\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Reject a submitted project. Sets status to REJECTED (2).\n\nRequired fields:\n- project_id: On-chain project ID to reject"
+          },
+          "response": [
+            {
+              "name": "200 Success",
+              "status": "OK",
+              "code": 200,
+              "body": "{\n  \"success\": true,\n  \"transaction_hash\": \"0xbcd890...\",\n  \"message\": \"Project rejected\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Vault — Create Project Vault",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/admin/vault/create",
+              "host": ["{{base_url}}"],
+              "path": ["api", "admin", "vault", "create"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"project_id\": {{project_id}},\n  \"apy_rate\": 1200\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Create a staking vault for an approved project.\nMUST be called after approving the project — will fail on-chain if project is not APPROVED.\nA vault can only be created once per project (E_VAULT_ALREADY_EXISTS on retry).\n\nAfter creating the vault, deposit rewards before investors can claim APY.\n\nRequired fields:\n- project_id: ID of the APPROVED project to create a vault for\n- apy_rate: APY in basis points (1200 = 12%, 800 = 8%, 500 = 5%)"
+          },
+          "response": [
+            {
+              "name": "200 Success",
+              "status": "OK",
+              "code": 200,
+              "body": "{\n  \"success\": true,\n  \"transaction_hash\": \"0xefg123...\",\n  \"message\": \"Project vault created — investors can now stake\"\n}"
+            },
+            {
+              "name": "500 Project Not Approved",
+              "status": "Internal Server Error",
+              "code": 500,
+              "body": "{\n  \"success\": false,\n  \"error\": \"Move abort in state::create_project_vault: E_PROJECT_NOT_APPROVED\"\n}"
+            },
+            {
+              "name": "500 Vault Already Exists",
+              "status": "Internal Server Error",
+              "code": 500,
+              "body": "{\n  \"success\": false,\n  \"error\": \"Move abort in state::create_project_vault: E_VAULT_ALREADY_EXISTS\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Vault — Deposit Rewards",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/admin/vault/deposit",
+              "host": ["{{base_url}}"],
+              "path": ["api", "admin", "vault", "deposit"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"project_id\": {{project_id}},\n  \"amount\": \"500000000\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Deposit reward APT into a project vault.\nThis is the pool from which investor APY rewards are paid.\nMust be done BEFORE investors claim rewards, or claim will fail.\n\nRequired fields:\n- project_id: Target project vault\n- amount: Amount to deposit in octas (500000000 = 5 APT)"
+          },
+          "response": [
+            {
+              "name": "200 Success",
+              "status": "OK",
+              "code": 200,
+              "body": "{\n  \"success\": true,\n  \"transaction_hash\": \"0xhij456...\",\n  \"message\": \"Rewards deposited\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Vault — Update APY Rate",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/admin/vault/config",
+              "host": ["{{base_url}}"],
+              "path": ["api", "admin", "vault", "config"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"project_id\": {{project_id}},\n  \"new_apy_rate\": 1500\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Update the APY rate for a specific project vault.\n\nRequired fields:\n- project_id: Target project vault\n- new_apy_rate: New APY in basis points (1500 = 15%)"
+          },
+          "response": [
+            {
+              "name": "200 Success",
+              "status": "OK",
+              "code": 200,
+              "body": "{\n  \"success\": true,\n  \"transaction_hash\": \"0xklm789...\",\n  \"message\": \"APY rate updated\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Vault — Withdraw (Admin)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/admin/vault/withdraw",
+              "host": ["{{base_url}}"],
+              "path": ["api", "admin", "vault", "withdraw"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"project_id\": {{project_id}}\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Emergency admin withdrawal of all APT from a project vault.\nUse with caution — this removes all funds including investor stakes.\n\nRequired fields:\n- project_id: Target project vault to withdraw from"
+          },
+          "response": [
+            {
+              "name": "200 Success",
+              "status": "OK",
+              "code": 200,
+              "body": "{\n  \"success\": true,\n  \"transaction_hash\": \"0xnop012...\",\n  \"message\": \"Withdrawal successful\"\n}"
+            }
+          ]
+        }
+      ]
     },
     {
-      "name": "6. Simulate Staking",
-      "request": {
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"amount\": \"100000000\",\n  \"duration_seconds\": 2592000\n}"
+      "name": "📊 Legacy (Read-Only)",
+      "description": "Original read endpoints — kept for backward compatibility with the old frontend.\nThese read from the StakingHub (first vault) and return aggregated data.",
+      "item": [
+        {
+          "name": "Get Vault Info (Legacy)",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/vault/info",
+              "host": ["{{base_url}}"],
+              "path": ["api", "vault", "info"]
+            },
+            "description": "Returns info for the first vault in StakingHub.\nUse /api/staking/project/:project_id for per-project data."
+          },
+          "response": [
+            {
+              "name": "200 Success",
+              "status": "OK",
+              "code": 200,
+              "body": "{\n  \"success\": true,\n  \"data\": {\n    \"authority\": \"0xADMIN_ADDRESS\",\n    \"total_staked\": \"100000000\",\n    \"total_staked_apt\": \"1.00000000\",\n    \"apy_rate\": 1200,\n    \"vault_balance\": \"500000000\",\n    \"vault_balance_apt\": \"5.00000000\"\n  }\n}"
+            }
+          ]
         },
-        "url": {
-          "raw": "{{base_url}}/api/stake/simulate",
-          "host": ["{{base_url}}"],
-          "path": ["api", "stake", "simulate"]
+        {
+          "name": "Get Staking Stats (Legacy)",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/stats",
+              "host": ["{{base_url}}"],
+              "path": ["api", "stats"]
+            },
+            "description": "Returns platform-wide staking statistics aggregated from StakingHub."
+          },
+          "response": [
+            {
+              "name": "200 Success",
+              "status": "OK",
+              "code": 200,
+              "body": "{\n  \"success\": true,\n  \"data\": {\n    \"total_staked\": \"100000000\",\n    \"total_stakers\": 0,\n    \"apy_rate\": \"1200\",\n    \"vault_balance\": \"500000000\"\n  }\n}"
+            }
+          ]
         },
-        "description": "Simulate staking to estimate rewards"
-      }
-    },
-    {
-      "name": "7. Admin - Update APY",
-      "request": {
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"apy_rate\": 750\n}"
+        {
+          "name": "Get Account Balance",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/balance/{{investor_address}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "balance", "{{investor_address}}"]
+            },
+            "description": "Returns the APT balance of any Aptos address.\nUseful for checking investor wallet balance before staking."
+          },
+          "response": [
+            {
+              "name": "200 Success",
+              "status": "OK",
+              "code": 200,
+              "body": "{\n  \"success\": true,\n  \"data\": {\n    \"address\": \"0xINVESTOR_ADDRESS\",\n    \"balance\": \"500000000\",\n    \"balance_apt\": \"5.00000000\"\n  }\n}"
+            }
+          ]
         },
-        "url": {
-          "raw": "{{base_url}}/api/admin/config",
-          "host": ["{{base_url}}"],
-          "path": ["api", "admin", "config"]
-        },
-        "description": "Update APY rate (admin only)"
-      }
-    },
-    {
-      "name": "8. Admin - Deposit to Vault",
-      "request": {
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"amount\": \"1000000000\"\n}"
-        },
-        "url": {
-          "raw": "{{base_url}}/api/admin/deposit",
-          "host": ["{{base_url}}"],
-          "path": ["api", "admin", "deposit"]
-        },
-        "description": "Deposit APT to vault for rewards (admin only)"
-      }
-    },
-    {
-      "name": "9. Admin - Withdraw from Vault",
-      "request": {
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": ""
-        },
-        "url": {
-          "raw": "{{base_url}}/api/admin/withdraw",
-          "host": ["{{base_url}}"],
-          "path": ["api", "admin", "withdraw"]
-        },
-        "description": "Withdraw all funds from vault (admin only)"
-      }
+        {
+          "name": "Get Player Info (Legacy — Deprecated)",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/player/{{investor_address}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "player", "{{investor_address}}"]
+            },
+            "description": "DEPRECATED — returns 410 Gone.\nUse /api/staking/player/:address/project/:project_id instead."
+          },
+          "response": [
+            {
+              "name": "410 Gone",
+              "status": "Gone",
+              "code": 410,
+              "body": "{\n  \"success\": false,\n  \"error\": \"Use /api/staking/player/:address/project/:project_id instead\"\n}"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

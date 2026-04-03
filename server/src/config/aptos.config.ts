@@ -1,9 +1,7 @@
 import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
 import * as dotenv from "dotenv";
-
 dotenv.config();
 
-// Network configuration
 const getNetwork = (): Network => {
   const network = process.env.APTOS_NETWORK?.toLowerCase();
   switch (network) {
@@ -18,80 +16,125 @@ const getNetwork = (): Network => {
   }
 };
 
-// Devnet requires api.devnet.aptoslabs.com — fullnode.devnet.aptoslabs.com
-// returns "Indexer reader doesn't exist" for resource queries.
 const getFullnodeUrl = (): string | undefined => {
   if (process.env.APTOS_NODE_URL) return process.env.APTOS_NODE_URL;
   const network = process.env.APTOS_NETWORK?.toLowerCase();
   if (network === "devnet") return "https://api.devnet.aptoslabs.com/v1";
-  return undefined; // let SDK use its default for testnet/mainnet
+  if (network === "testnet") return "https://api.testnet.aptoslabs.com/v1";
+  if (network === "mainnet") return "https://api.mainnet.aptoslabs.com/v1";
+  return undefined;
 };
 
-// Initialize Aptos configuration
 const config = new AptosConfig({
   network: getNetwork(),
   fullnode: getFullnodeUrl(),
   faucet: process.env.APTOS_FAUCET_URL,
 });
 
-// Create Aptos client
 export const aptos = new Aptos(config);
 
-// Contract addresses
+// ── Contract Config ───────────────────────────────────────────────────────────
+// All 3 contracts are deployed from the same admin wallet so the authority
+// address is the same for all. Use separate env vars for clarity / flexibility.
 export const CONTRACT_CONFIG = {
   CONTRACT_ADDRESS: process.env.CONTRACT_ADDRESS!,
-  VAULT_AUTHORITY: process.env.VAULT_AUTHORITY_ADDRESS!,
   MODULE_NAME: "aethera_staking",
+
+  // state.move — StakingHub stored here (admin address)
+  HUB_AUTHORITY: process.env.HUB_AUTHORITY_ADDRESS!,
+
+  // installer_registry.move — InstallerRegistry stored here (admin address)
+  REGISTRY_AUTHORITY: process.env.REGISTRY_AUTHORITY_ADDRESS!,
+
+  // project_listing.move — ProjectRegistry stored here (admin address)
+  PROJECT_AUTHORITY: process.env.PROJECT_AUTHORITY_ADDRESS!,
+
+  // kept for legacy routes
+  VAULT_AUTHORITY:
+    process.env.VAULT_AUTHORITY_ADDRESS || process.env.HUB_AUTHORITY_ADDRESS!,
 };
 
-// Module functions
+// ── Module Functions — state.move (updated) ───────────────────────────────────
 export const MODULE_FUNCTIONS = {
+  // Admin
   INITIALIZE: `${CONTRACT_CONFIG.CONTRACT_ADDRESS}::state::initialize`,
+  CREATE_PROJECT_VAULT: `${CONTRACT_CONFIG.CONTRACT_ADDRESS}::state::create_project_vault`,
+  DEPOSIT_REWARDS: `${CONTRACT_CONFIG.CONTRACT_ADDRESS}::state::deposit`,
+  WITHDRAW: `${CONTRACT_CONFIG.CONTRACT_ADDRESS}::state::withdraw`,
+  CONFIG: `${CONTRACT_CONFIG.CONTRACT_ADDRESS}::state::config`,
+  // Investor
   SOL_STAKE: `${CONTRACT_CONFIG.CONTRACT_ADDRESS}::state::sol_stake`,
   SOL_UNSTAKE: `${CONTRACT_CONFIG.CONTRACT_ADDRESS}::state::sol_unstake`,
   CLAIM_REWARDS: `${CONTRACT_CONFIG.CONTRACT_ADDRESS}::state::claim_rewards`,
-  CONFIG: `${CONTRACT_CONFIG.CONTRACT_ADDRESS}::state::config`,
+  // Legacy (kept for backward compat)
   DEPOSIT: `${CONTRACT_CONFIG.CONTRACT_ADDRESS}::state::deposit`,
-  WITHDRAW: `${CONTRACT_CONFIG.CONTRACT_ADDRESS}::state::withdraw`,
 };
 
-// View functions (to add them to  Move contract)
+// ── Module Functions — installer_registry.move ────────────────────────────────
+export const INSTALLER_FUNCTIONS = {
+  INITIALIZE: `${CONTRACT_CONFIG.CONTRACT_ADDRESS}::installer_registry::initialize`,
+  REGISTER: `${CONTRACT_CONFIG.CONTRACT_ADDRESS}::installer_registry::register_installer`,
+  SUBMIT_KYC: `${CONTRACT_CONFIG.CONTRACT_ADDRESS}::installer_registry::submit_kyc`,
+  APPROVE_KYC: `${CONTRACT_CONFIG.CONTRACT_ADDRESS}::installer_registry::approve_kyc`,
+  REJECT_KYC: `${CONTRACT_CONFIG.CONTRACT_ADDRESS}::installer_registry::reject_kyc`,
+};
+
+// ── Module Functions — project_listing.move ───────────────────────────────────
+export const PROJECT_FUNCTIONS = {
+  INITIALIZE: `${CONTRACT_CONFIG.CONTRACT_ADDRESS}::project_listing::initialize`,
+  SUBMIT_PROJECT: `${CONTRACT_CONFIG.CONTRACT_ADDRESS}::project_listing::submit_project`,
+  APPROVE_PROJECT: `${CONTRACT_CONFIG.CONTRACT_ADDRESS}::project_listing::approve_project`,
+  REJECT_PROJECT: `${CONTRACT_CONFIG.CONTRACT_ADDRESS}::project_listing::reject_project`,
+};
+
+// ── View Functions ────────────────────────────────────────────────────────────
 export const VIEW_FUNCTIONS = {
-  GET_VAULT_INFO: `${CONTRACT_CONFIG.CONTRACT_ADDRESS}::state::get_vault_info`,
-  GET_PLAYER_INFO: `${CONTRACT_CONFIG.CONTRACT_ADDRESS}::state::get_player_info`,
+  // state.move
+  GET_PROJECT_TOTAL_STAKED: `${CONTRACT_CONFIG.CONTRACT_ADDRESS}::state::get_project_total_staked`,
+  GET_PROJECT_APY: `${CONTRACT_CONFIG.CONTRACT_ADDRESS}::state::get_project_apy`,
+  GET_PLAYER_STAKE: `${CONTRACT_CONFIG.CONTRACT_ADDRESS}::state::get_player_stake`,
+  // installer_registry.move
+  GET_KYC_STATUS: `${CONTRACT_CONFIG.CONTRACT_ADDRESS}::installer_registry::get_kyc_status`,
+  IS_KYC_APPROVED: `${CONTRACT_CONFIG.CONTRACT_ADDRESS}::installer_registry::is_kyc_approved`,
+  GET_INSTALLER_LOCATION: `${CONTRACT_CONFIG.CONTRACT_ADDRESS}::installer_registry::get_installer_location`,
+  // project_listing.move
+  IS_PROJECT_APPROVED: `${CONTRACT_CONFIG.CONTRACT_ADDRESS}::project_listing::is_project_approved`,
+  GET_PROJECT_STATUS: `${CONTRACT_CONFIG.CONTRACT_ADDRESS}::project_listing::get_project_status`,
+  GET_PROJECT_COST: `${CONTRACT_CONFIG.CONTRACT_ADDRESS}::project_listing::get_project_cost`,
+  GET_PROJECT_LOCATION: `${CONTRACT_CONFIG.CONTRACT_ADDRESS}::project_listing::get_project_location`,
+  GET_EXPECTED_YIELD: `${CONTRACT_CONFIG.CONTRACT_ADDRESS}::project_listing::get_expected_yield`,
 };
 
-// Constants
+// ── Constants ─────────────────────────────────────────────────────────────────
 export const CONSTANTS = {
   OCTAS_PER_APT: 100_000_000,
   SECONDS_PER_YEAR: 31_536_000,
   BASIS_POINTS_DIVISOR: 10_000,
 };
 
-// Helper functions
-export const aptToOctas = (apt: number): bigint => {
-  return BigInt(Math.floor(apt * CONSTANTS.OCTAS_PER_APT));
-};
+// ── Helpers ───────────────────────────────────────────────────────────────────
+export const aptToOctas = (apt: number): bigint =>
+  BigInt(Math.floor(apt * CONSTANTS.OCTAS_PER_APT));
 
-export const octasToApt = (octas: bigint | string): number => {
-  return Number(octas) / CONSTANTS.OCTAS_PER_APT;
-};
+export const octasToApt = (octas: bigint | string): number =>
+  Number(octas) / CONSTANTS.OCTAS_PER_APT;
 
-export const apyBasisPointsToPercent = (basisPoints: number): number => {
-  return basisPoints / 100;
-};
+export const bpsToPercent = (bps: number): string =>
+  (bps / 100).toFixed(2) + "%";
 
-// Validation
-if (!process.env.CONTRACT_ADDRESS) {
-  throw new Error("CONTRACT_ADDRESS is not defined in environment variables");
-}
+export const formatApt = (octas: string | number): string =>
+  (Number(octas) / CONSTANTS.OCTAS_PER_APT).toFixed(8);
 
-if (!process.env.VAULT_AUTHORITY_ADDRESS) {
-  throw new Error(
-    "VAULT_AUTHORITY_ADDRESS is not defined in environment variables",
-  );
-}
+// ── Validation ────────────────────────────────────────────────────────────────
+if (!process.env.CONTRACT_ADDRESS)
+  throw new Error("CONTRACT_ADDRESS is not set");
+if (!process.env.HUB_AUTHORITY_ADDRESS)
+  throw new Error("HUB_AUTHORITY_ADDRESS is not set");
+if (!process.env.REGISTRY_AUTHORITY_ADDRESS)
+  throw new Error("REGISTRY_AUTHORITY_ADDRESS is not set");
+if (!process.env.PROJECT_AUTHORITY_ADDRESS)
+  throw new Error("PROJECT_AUTHORITY_ADDRESS is not set");
 
-console.log(`🚀 Aptos SDK initialized on ${getNetwork()}`);
-console.log(`📝 Contract Address: ${CONTRACT_CONFIG.CONTRACT_ADDRESS}`);
-console.log(`🏦 Vault Authority: ${CONTRACT_CONFIG.VAULT_AUTHORITY}`);
+console.log(` Aptos SDK initialized on ${getNetwork()}`);
+console.log(` Contract: ${CONTRACT_CONFIG.CONTRACT_ADDRESS}`);
+console.log(` Hub Authority: ${CONTRACT_CONFIG.HUB_AUTHORITY}`);
