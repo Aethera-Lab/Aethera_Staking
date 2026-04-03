@@ -1,7 +1,6 @@
 /* Landing page — matches Image 1 design */
 .landing {
   position: relative;
-  z-index: 1;
   min-height: 100vh;
   background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 50%, #f0fdf4 100%);
   display: flex;
@@ -42,7 +41,7 @@
 
 .landing-content {
   position: relative;
-  z-index: 1;
+  z-index: 3;
   text-align: center;
   padding: 48px 24px;
   max-width: 1200px;
@@ -165,26 +164,3 @@
 
 .card-btn.green { background: #16a34a; color: white; }
 .card-btn.dark  { background: #0f172a; color: white; }
-
-.dot-grid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  width: 100%;
-  position: relative;
-}
-
-.dot-grid__wrap {
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-
-.dot-grid__canvas {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
