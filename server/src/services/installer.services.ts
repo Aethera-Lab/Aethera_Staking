@@ -198,6 +198,67 @@ export class InstallerService {
       return { success: false, error: error.message || 'KYC rejection failed' };
     }
   }
+
+  /**
+   * Initialize the InstallerRegistry on-chain (if not already initialized)
+   * This must be called once before any installers can register
+   */
+  async initializeRegistry(): Promise<boolean> {
+    try {
+      console.log('[initializeRegistry] Checking if registry is already initialized...');
+      
+      const resourceType = `${CONTRACT_CONFIG.CONTRACT_ADDRESS}::installer_registry::InstallerRegistry` as `${string}::${string}::${string}`;
+
+      try {
+        const resource = await aptos.getAccountResource({
+          accountAddress: CONTRACT_CONFIG.REGISTRY_AUTHORITY,
+          resourceType,
+        });
+        
+        if (resource) {
+          console.log('[initializeRegistry] Registry already initialized');
+          return true;
+        }
+      } catch (e: any) {
+        if (e.status !== 404) throw e;
+        // 404 means registry doesn't exist, so we need to initialize
+      }
+
+      console.log('[initializeRegistry] Registry not found, initializing...');
+      
+      // Get the admin account from ADMIN_PRIVATE_KEY
+      const adminPrivateKey = process.env.ADMIN_PRIVATE_KEY;
+      if (!adminPrivateKey) {
+        console.error('[initializeRegistry] ADMIN_PRIVATE_KEY not set');
+        return false;
+      }
+
+      const adminAccount = Account.fromPrivateKey({
+        privateKey: new Ed25519PrivateKey(adminPrivateKey),
+      });
+
+      // Call initialize function
+      const transaction = await aptos.transaction.build.simple({
+        sender: adminAccount.accountAddress,
+        data: {
+          function: INSTALLER_FUNCTIONS.INITIALIZE as `${string}::${string}::${string}`,
+          functionArguments: [],
+        },
+      });
+
+      const committed = await aptos.signAndSubmitTransaction({ signer: adminAccount, transaction });
+      
+      // Wait for transaction to complete
+      const executed = await aptos.waitForTransaction({ transactionHash: committed.hash });
+      console.log('[initializeRegistry] Transaction executed:', executed.success);
+
+      console.log('[initializeRegistry] ✅ Registry initialized! TX:', committed.hash);
+      return true;
+    } catch (error: any) {
+      console.error('[initializeRegistry] Error:', error);
+      return false;
+    }
+  }
 }
 
 export const installerService = new InstallerService();

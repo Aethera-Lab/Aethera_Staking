@@ -12,7 +12,41 @@ const getAdminAccount = (): Account => {
 
 export class AdminController {
 
-  // ── KYC ────────────────────────────────────────────────────────────────────
+  // ── KYC Submissions ───────────────────────────────────────────────────────
+
+  /**
+   * GET /api/admin/kyc/submissions
+   * Returns all KYC submissions (PENDING or SUBMITTED status)
+   */
+  async getKycSubmissions(req: Request, res: Response) {
+    try {
+      console.log('[getKycSubmissions] Fetching KYC submissions...');
+      const submissions = await adminService.getKycSubmissions();
+      console.log(`[getKycSubmissions] Found ${submissions.length} submissions`);
+      res.json({ success: true, data: submissions });
+    } catch (error: any) {
+      console.error('[getKycSubmissions] Error:', error);
+      res.status(500).json({ success: false, error: error.message || 'Failed to fetch KYC submissions' });
+    }
+  }
+
+  /**
+   * GET /api/admin/projects/pending
+   * Returns all projects awaiting approval (PENDING status)
+   */
+  async getPendingProjects(req: Request, res: Response) {
+    try {
+      console.log('[getPendingProjects] Fetching pending projects...');
+      const projects = await adminService.getPendingProjects();
+      console.log(`[getPendingProjects] Found ${projects.length} pending projects`);
+      res.json({ success: true, data: projects });
+    } catch (error: any) {
+      console.error('[getPendingProjects] Error:', error);
+      res.status(500).json({ success: false, error: error.message || 'Failed to fetch pending projects' });
+    }
+  }
+
+  // ── KYC Actions ───────────────────────────────────────────────────────────
 
   /**
    * POST /api/admin/kyc/approve
@@ -24,9 +58,12 @@ export class AdminController {
       if (!installer_address)
         return res.status(400).json({ success: false, error: 'installer_address is required' });
 
+      console.log(`[approveKyc] Approving KYC for installer: ${installer_address}`);
       const result = await adminService.approveKyc(getAdminAccount(), installer_address);
+      console.log(`[approveKyc] Result:`, result);
       res.json(result);
     } catch (error: any) {
+      console.error('[approveKyc] Error:', error);
       res.status(500).json({ success: false, error: error.message || 'KYC approval failed' });
     }
   }

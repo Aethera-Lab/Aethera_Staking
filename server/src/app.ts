@@ -212,10 +212,12 @@ app.post(
 );
 
 // ── Admin (all 3 contracts) ───────────────────────────────────────────────────
-// KYC
+// KYC Submissions
+// GET   /api/admin/kyc/submissions      → get all pending/submitted KYC applications
 // POST  /api/admin/kyc/approve          → approve installer KYC
 // POST  /api/admin/kyc/reject           → reject installer KYC
 // Projects
+// GET   /api/admin/projects/pending     → get all projects awaiting approval
 // POST  /api/admin/project/approve      → approve project (makes it visible to investors)
 // POST  /api/admin/project/reject       → reject project
 // Vaults
@@ -223,6 +225,10 @@ app.post(
 // POST  /api/admin/vault/deposit        → deposit APT into reward pool
 // POST  /api/admin/vault/withdraw       → withdraw from vault
 // POST  /api/admin/vault/config         → update APY rate for a project
+app.get(
+  "/api/admin/kyc/submissions",
+  adminController.getKycSubmissions.bind(adminController),
+);
 app.post(
   "/api/admin/kyc/approve",
   adminController.approveKyc.bind(adminController),
@@ -230,6 +236,10 @@ app.post(
 app.post(
   "/api/admin/kyc/reject",
   adminController.rejectKyc.bind(adminController),
+);
+app.get(
+  "/api/admin/projects/pending",
+  adminController.getPendingProjects.bind(adminController),
 );
 app.post(
   "/api/admin/project/approve",
@@ -286,7 +296,7 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
 
 // ============ Start ============
 
-app.listen(PORT, () => {
+app.listen(PORT, async () => {
   console.log(`
   ╔═══════════════════════════════════════╗
   ║        Aethera API Server             ║
@@ -296,4 +306,18 @@ app.listen(PORT, () => {
   ║  NETWORK:  ${process.env.APTOS_NETWORK || "devnet"}
   ╚═══════════════════════════════════════╝
   `);
+  
+  // Initialize registries on startup
+  console.log('\\n[Startup] Initializing smart contract registries...');
+  const { installerService } = await import('./services/installer.services');
+  const { projectService } = await import('./services/project.services');
+  
+  const installerOk = await installerService.initializeRegistry();
+  const projectOk = await projectService.initializeRegistry();
+  
+  if (installerOk && projectOk) {
+    console.log('[Startup] ✅ All registries initialized');
+  } else {
+    console.warn('[Startup] ⚠️ Some registries could not be initialized (may already exist)');
+  }
 });

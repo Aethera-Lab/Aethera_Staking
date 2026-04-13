@@ -2,6 +2,7 @@ import { aptos, INSTALLER_FUNCTIONS, VIEW_FUNCTIONS, CONTRACT_CONFIG, formatApt 
 import { Account, Ed25519PrivateKey} from '@aptos-labs/ts-sdk';
 import { InstallerInfo, KycStatus, TransactionResponse } from '../models/types';
 import { Request, Response, NextFunction } from "express";
+import { registrationTracker } from '../services/registration-tracker';
 // Helper to get human-readable KYC label
 const kycLabel = (status: number): string => {
   switch (status) {
@@ -253,27 +254,46 @@ export const installerService = new InstallerService();
 
 export const register = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const { privateKey, name, businessReg } = req.body;
+    const { walletAddress, privateKey, name, businessReg } = req.body;
     
-    if (!privateKey) {
-      return res.status(400).json({ success: false, error: "Private key is required" });
+    // Accept either walletAddress (for checking status) or privateKey (for on-chain tx)
+    if (!walletAddress && !privateKey) {
+      return res.status(400).json({ 
+        success: false, 
+        error: "Either walletAddress or privateKey is required" 
+      });
     }
 
-    const installerAccount = Account.fromPrivateKey({
-      privateKey: new Ed25519PrivateKey(privateKey),
-    });
-    const address = installerAccount.accountAddress.toString();
-    console.log(`[Register] Checking if installer already exists at address: ${address}`);
+    let address: string;
+    
+    if (walletAddress) {
+      // User already submitted on-chain, just check status
+      address = walletAddress;
+      console.log(`\n[Register] ========================================`);
+      console.log(`[Register] Checking status for wallet: ${address}`);
+    } else {
+      // User wants backend to submit (legacy flow)
+      const installerAccount = Account.fromPrivateKey({
+        privateKey: new Ed25519PrivateKey(privateKey),
+      });
+      address = installerAccount.accountAddress.toString();
+      console.log(`\n[Register] ========================================`);
+      console.log(`[Register] Submitting registration for: ${address}`);
+    }
 
-    // Check if already registered
+    console.log(`[Register] Address: ${address}`);
+    console.log(`[Register] Checking for existing installer...`);
+
+    // Check if already registered on-chain
     const existingInfo = await installerService.getInstallerInfo(address);
-    console.log(`[Register] Existing info query result:`, existingInfo);
+    console.log(`[Register] Query Result:`, existingInfo ? `Found (status: ${existingInfo.kyc_status})` : 'Not found');
     
     if (existingInfo) {
-      console.log(`[Register] Installer already registered with KYC status: ${existingInfo.kyc_status}`);
+      console.log(`[Register] ✅ Installer FOUND - KYC Status: ${existingInfo.kyc_status_label} (${existingInfo.kyc_status})`);
       // Already registered — guide based on KYC status
       switch (existingInfo.kyc_status) {
         case KycStatus.PENDING:
+          console.log(`[Register] → Next Step: submit_kyc`);
           return res.status(200).json({
             success: true,
             message: "You are registered but have not submitted KYC yet. Please proceed to KYC verification.",
@@ -281,6 +301,7 @@ export const register = async (req: Request, res: Response, next: NextFunction) 
             installer: existingInfo,
           });
         case KycStatus.SUBMITTED:
+          console.log(`[Register] → Next Step: await_approval`);
           return res.status(200).json({
             success: true,
             message: "KYC submitted and awaiting admin approval. Check back later.",
@@ -288,13 +309,15 @@ export const register = async (req: Request, res: Response, next: NextFunction) 
             installer: existingInfo,
           });
         case KycStatus.APPROVED:
+          console.log(`[Register] → Next Step: submit_project (KYC already approved!)`);
           return res.status(200).json({
             success: true,
-            message: "KYC approved. You can now submit projects.",
+            message: "✅ KYC approved! You can now submit projects.",
             next_step: "submit_project",
             installer: existingInfo,
           });
         case KycStatus.REJECTED:
+          console.log(`[Register] → Next Step: contact_admin`);
           return res.status(200).json({
             success: false,
             message: "KYC was rejected. Contact admin for details.",
@@ -302,6 +325,7 @@ export const register = async (req: Request, res: Response, next: NextFunction) 
             installer: existingInfo,
           });
         default:
+          console.log(`[Register] → Next Step: submit_kyc (unknown status)`);
           return res.status(200).json({
             success: true,
             message: "Registration complete. Please submit KYC to proceed.",
@@ -311,12 +335,46 @@ export const register = async (req: Request, res: Response, next: NextFunction) 
       }
     }
 
-    // Not registered — proceed with registration
-    console.log(`[Register] No existing registration found. Proceeding with new registration...`);
+    // If only checking status (walletAddress provided, no privateKey), don't submit
+    if (walletAddress && !privateKey) {
+      console.log(`[Register] Not found on-chain. Checking if name & businessReg provided...`);
+      
+      // If name and businessReg are provided, frontend is reporting a successful on-chain registration
+      if (name && businessReg) {
+        console.log(`[Register] Frontend reports successful on-chain registration. Recording in tracker...`);
+        registrationTracker.registerInstaller(address, name, businessReg);
+        console.log(`[Register] ✅ Recorded in tracker for fallback`);
+        
+        return res.status(200).json({
+          success: true,
+          message: "Registration recorded successfully. Please proceed to KYC verification.",
+          next_step: "submit_kyc",
+          registered: true,
+        });
+      }
+      
+      console.log(`[Register] Not found on-chain and no name provided. User needs to register first.`);
+      return res.status(200).json({
+        success: false,
+        message: "Wallet not registered. Please complete registration transaction.",
+        next_step: "register",
+        registered: false,
+      });
+    }
+
+    // Not registered and user provided privateKey — proceed with on-chain registration
+    console.log(`[Register] ⚠️  No existing registration found. Submitting on-chain...`);
+    const installerAccount = Account.fromPrivateKey({
+      privateKey: new Ed25519PrivateKey(privateKey),
+    });
     const result = await installerService.register(installerAccount, name, businessReg);
-    console.log(`[Register] Registration result:`, result);
+    console.log(`[Register] Registration tx result:`, result.success ? 'SUCCESS' : 'FAILED');
     
     if (result.success) {
+      // Also record in tracker as fallback
+      registrationTracker.registerInstaller(address, name, businessReg);
+      console.log(`[Register] ✅ Recorded in tracker for fallback`);
+      
       return res.status(200).json({
         success: true,
         transaction_hash: result.transaction_hash,
@@ -326,15 +384,17 @@ export const register = async (req: Request, res: Response, next: NextFunction) 
     } else {
       // Check for E_ALREADY_REGISTERED in error message
       if (result.error?.includes("E_ALREADY_REGISTERED") || result.error?.includes("abort 0x2")) {
-        console.log(`[Register] Contract returned E_ALREADY_REGISTERED. Fetching installer info again...`);
+        console.log(`[Register] Contract says already registered. Retrying query...`);
         // Try fetching info again after small delay
-        await new Promise(resolve => setTimeout(resolve, 1000));
+        await new Promise(resolve => setTimeout(resolve, 1500));
         const retryInfo = await installerService.getInstallerInfo(address);
+        console.log(`[Register] Retry result:`, retryInfo ? `Found (status: ${retryInfo.kyc_status_label})` : 'Still not found');
+        
         if (retryInfo) {
           return res.status(200).json({
             success: true,
-            message: "You are already registered. Please proceed to KYC verification.",
-            next_step: "submit_kyc",
+            message: "You are already registered. Proceeding based on KYC status.",
+            next_step: retryInfo.kyc_status === KycStatus.APPROVED ? "submit_project" : "submit_kyc",
             installer: retryInfo,
           });
         }
@@ -351,18 +411,124 @@ export const register = async (req: Request, res: Response, next: NextFunction) 
       }
     }
   } catch (error: any) {
-    console.error('[Register] Error:', error);
+    console.error('[Register] ❌ Error:', error);
     next(error);
   }
 };
 
 export const submitKyc = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const { privateKey, documentsHash, locationId } = req.body;
-    const installerAccount = Account.fromPrivateKey({privateKey: new Ed25519PrivateKey(privateKey),});
+    const { privateKey, walletAddress, documentsHash, docsHash, locationId } = req.body;
+    
+    // Support both documentsHash and docsHash parameter names
+    const hash = documentsHash || docsHash;
+    if (!hash) {
+      return res.status(400).json({ success: false, error: "documentsHash or docsHash is required" });
+    }
+
+    // Support both walletAddress (frontend notification) and privateKey (legacy backend submission)
+    let address: string;
+    if (walletAddress) {
+      address = walletAddress;
+      console.log(`[submitKyc] Frontend notification - wallet: ${address}`);
+      
+      // Frontend reports successful on-chain KYC submission - just record in tracker
+      console.log(`[submitKyc] Recording KYC submission in tracker...`);
+      registrationTracker.submitKyc(address, hash, Number(locationId) || 1);
+      console.log(`[submitKyc] ✅ Recorded in tracker`);
+      
+      return res.status(200).json({
+        success: true,
+        message: "KYC submission recorded successfully. Awaiting admin approval.",
+        next_step: "await_approval",
+      });
+    } else if (!privateKey) {
+      return res.status(400).json({ success: false, error: "walletAddress or privateKey is required" });
+    }
+
+    // Legacy flow: backend submission with privateKey
+    const installerAccount = Account.fromPrivateKey({
+      privateKey: new Ed25519PrivateKey(privateKey),
+    });
+    address = installerAccount.accountAddress.toString();
+    
+    console.log(`[submitKyc] Checking KYC status for address: ${address}`);
+    
+    // Check current KYC status
+    const installerInfo = await installerService.getInstallerInfo(address);
+    
+    if (!installerInfo) {
+      return res.status(400).json({
+        success: false,
+        error: "Installer not registered. Please register first.",
+        next_step: "register",
+      });
+    }
+
+    // If KYC is already APPROVED, user can submit multiple projects
+    if (installerInfo.kyc_status === KycStatus.APPROVED) {
+      console.log(`[submitKyc] KYC already approved. User can submit projects directly.`);
+      return res.status(200).json({
+        success: true,
+        message: "Your KYC is already approved. You can proceed to submit projects.",
+        next_step: "submit_project",
+        installer: installerInfo,
+      });
+    }
+
+    // If KYC is already SUBMITTED, prevent resubmission
+    if (installerInfo.kyc_status === KycStatus.SUBMITTED) {
+      console.log(`[submitKyc] KYC already submitted and awaiting admin approval.`);
+      return res.status(200).json({
+        success: false,
+        message: "KYC already submitted and awaiting admin approval. Please check back later.",
+        next_step: "await_approval",
+        installer: installerInfo,
+      });
+    }
+
+    // If KYC is REJECTED, prevent submission
+    if (installerInfo.kyc_status === KycStatus.REJECTED) {
+      console.log(`[submitKyc] KYC was rejected. Cannot resubmit.`);
+      return res.status(400).json({
+        success: false,
+        message: "Your KYC was rejected. Please contact admin for guidance.",
+        next_step: "contact_admin",
+        installer: installerInfo,
+      });
+    }
+
+    // Only submit if status is PENDING
+    if (installerInfo.kyc_status !== KycStatus.PENDING) {
+      return res.status(400).json({
+        success: false,
+        error: "Invalid KYC status for submission",
+        next_step: "contact_admin",
+      });
+    }
+
+    console.log(`[submitKyc] Submitting KYC for address: ${address}`);
     const result = await installerService.submitKyc(installerAccount, documentsHash, locationId);
-    res.json(result);
-  } catch (error) {
+    
+    if (result.success) {
+      // Also record in tracker as fallback
+      registrationTracker.submitKyc(address, documentsHash, locationId);
+      console.log(`[submitKyc] ✅ Recorded in tracker for fallback`);
+      
+      return res.status(200).json({
+        success: true,
+        transaction_hash: result.transaction_hash,
+        message: result.message || 'KYC submitted successfully',
+        next_step: "await_approval",
+      });
+    } else {
+      return res.status(400).json({
+        success: false,
+        error: result.error || 'KYC submission failed',
+      });
+    }
+  } catch (error: any) {
+    console.error('[submitKyc] Error:', error);
     next(error);
   }
 };
@@ -370,9 +536,35 @@ export const submitKyc = async (req: Request, res: Response, next: NextFunction)
 export const getInstaller = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const { address } = req.params;
+    console.log(`[getInstaller] Fetching info for address: ${address}`);
     const info = await installerService.getInstallerInfo(address);
-    if (!info) return res.status(404).json({ success: false, error: "Installer not found" });
-    res.json({ success: true, installer: info });
+    
+    if (!info) {
+      return res.status(404).json({ 
+        success: false, 
+        error: "Installer not found",
+        next_step: "register",
+      });
+    }
+
+    // Return helpful next steps based on KYC status
+    let next_step = "submit_kyc";
+    if (info.kyc_status === KycStatus.PENDING) {
+      next_step = "submit_kyc";
+    } else if (info.kyc_status === KycStatus.SUBMITTED) {
+      next_step = "await_approval";
+    } else if (info.kyc_status === KycStatus.APPROVED) {
+      next_step = "submit_project";  // Can submit multiple projects
+    } else if (info.kyc_status === KycStatus.REJECTED) {
+      next_step = "contact_admin";
+    }
+
+    res.json({ 
+      success: true, 
+      installer: info,
+      next_step,
+      message: `KYC Status: ${info.kyc_status_label}`,
+    });
   } catch (error) {
     next(error);
   }
