@@ -9,7 +9,7 @@ module aethera_staking::state {
     // use aptos_framework::error;
 
     use aethera_staking::helpers;
-    use aethera_staking::project_listing;
+    // Removed: use aethera_staking::project_listing; (no longer needed)
     // Error codes
     const E_AMOUNT_ZERO: u64 = 1;
     const E_UNSTAKE_TOO_EARLY: u64 = 2;
@@ -55,7 +55,8 @@ module aethera_staking::state {
         });
     }
 
-    // Adding : admin creates a vault for approved projects
+    // Adding : admin creates a vault for a project
+    // Note: Project approval check removed to allow off-chain project management
     public entry fun create_project_vault(
             authority: &signer,
             hub_authority: address,
@@ -64,10 +65,7 @@ module aethera_staking::state {
         ) acquires StakingHub {
             let hub = borrow_global_mut<StakingHub>(hub_authority);
             assert!(signer::address_of(authority) == hub.authority, E_NOT_ADMIN);
-            assert!(
-                project_listing::is_project_approved(hub.project_authority, project_id),
-                E_PROJECT_NOT_APPROVED
-            );
+            // Removed: project approval check - allows creating vaults for off-chain managed projects
             assert!(!simple_map::contains_key(&hub.vaults, &project_id), E_VAULT_ALREADY_EXISTS);
 
             simple_map::add(&mut hub.vaults, project_id, VaultAccount {
