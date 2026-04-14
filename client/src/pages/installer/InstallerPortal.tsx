@@ -21,7 +21,7 @@ const ORACLE_LOCATIONS = [
 const STEPS = ["Connect Wallet", "Register", "KYC", "Submit Project", "Status"];
 
 export default function InstallerPortal() {
-  const { connect, disconnect, account, connected, wallets, signAndSubmitTransaction, network } = useWallet();
+  const { connect, disconnect, account, connected, wallets, signAndSubmitTransaction } = useWallet();
   const navigate = useNavigate();
 
   const [step, setStep] = useState(0);
@@ -50,39 +50,13 @@ export default function InstallerPortal() {
   const walletAddress = account?.address?.toString() || null;
   const petra = wallets?.find((w) => w.name.toLowerCase().includes("petra"));
 
-  // On mount, check if there's a stored wallet address and data
-  useEffect(() => {
-    const storedData = localStorage.getItem('installerPortalData');
-    if (storedData) {
-      try {
-        const parsed = JSON.parse(storedData);
-        console.log('[useEffect] Restored from localStorage:', parsed);
-        setInstallerInfo(parsed.installerInfo);
-        setBalance(parsed.balance || "0");
-        // Set the appropriate step based on stored data
-        if (parsed.installerInfo) {
-          const info = parsed.installerInfo;
-          const kyc = info.kyc_status;
-          if (kyc === 2) {
-            setStep(3); // KYC approved → Submit Project
-          } else if (kyc >= 1) {
-            setStep(4); // KYC submitted → Awaiting Approval
-          } else if (kyc === 0) {
-            setStep(2); // Registered but no KYC → Submit KYC
-          }
-        }
-      } catch (e) {
-        console.error('[useEffect] Error restoring from localStorage:', e);
-      }
-    }
-  }, []);
-
-  // Auto-advance step when wallet connects
+  // Auto-advance step when wallet connects - ALWAYS fetch fresh data
   useEffect(() => {
     if (connected && walletAddress) {
       console.log(`[useEffect] Wallet connected: ${walletAddress}`);
+      // Clear any stale cached data and fetch fresh
+      localStorage.removeItem('installerPortalData');
       fetchInstallerData();
-      // Don't force step to 1 - let fetchInstallerData determine the correct step
     }
   }, [connected, walletAddress]);
 
@@ -112,49 +86,29 @@ export default function InstallerPortal() {
         localStorage.setItem('installerPortalData', JSON.stringify(dataToStore));
         console.log('[fetchInstallerData] Saved to localStorage');
         
-        // Check if backend provided next_step guidance
-        const nextStep = (infoRes.data as any).next_step;
-        console.log(`[fetchInstallerData] next_step from backend: ${nextStep}`);
+        // Simplified logic: If KYC is approved, ALWAYS go to Submit Project (allow multiple projects)
+        const info = infoRes.data;
         
-        if (nextStep) {
-          // Use backend guidance
-          switch (nextStep) {
-            case 'submit_project':
-              console.log(`[fetchInstallerData] → Step 3 (Submit Project)`);
-              setStep(3);
-              break;
-            case 'await_approval':
-              console.log(`[fetchInstallerData] → Step 4 (Awaiting Approval)`);
-              setStep(4);
-              break;
-            case 'submit_kyc':
-              console.log(`[fetchInstallerData] → Step 2 (Submit KYC)`);
-              setStep(2);
-              break;
-            case 'contact_admin':
-              console.log(`[fetchInstallerData] → Step 4 (Contact Admin)`);
-              setStep(4);
-              break;
-            default:
-              console.log(`[fetchInstallerData] → Step 2 (Default - Submit KYC)`);
-              setStep(2);
-          }
+        if (info.kyc_status === 2) {
+          // KYC approved - go to Submit Project step (allows multiple projects)
+          console.log(`[fetchInstallerData] → Step 3 (KYC approved - can submit project)`);
+          setStep(3);
+        } else if (info.kyc_status === 1) {
+          // KYC submitted but not yet approved - wait
+          console.log(`[fetchInstallerData] → Step 4 (KYC submitted - awaiting approval)`);
+          setStep(4);
+        } else if (info.kyc_status === 3) {
+          // KYC rejected
+          console.log(`[fetchInstallerData] → Step 4 (KYC rejected)`);
+          setStep(4);
+        } else if (info.kyc_status === 0 && info.name) {
+          // Registered but no KYC submitted yet
+          console.log(`[fetchInstallerData] → Step 2 (Submit KYC)`);
+          setStep(2);
         } else {
-          // Fallback to local logic if no next_step
-          const info = infoRes.data;
-          if (info.project_id > 0) {
-            console.log(`[fetchInstallerData] → Step 4 (Project exists)`);
-            setStep(4);
-          } else if (info.kyc_status === 2) {
-            console.log(`[fetchInstallerData] → Step 3 (KYC approved)`);
-            setStep(3); // approved → can submit project
-          } else if (info.kyc_status >= 1) {
-            console.log(`[fetchInstallerData] → Step 4 (KYC submitted)`);
-            setStep(4);  // submitted → wait
-          } else {
-            console.log(`[fetchInstallerData] → Step 2 (Do KYC)`);
-            setStep(2);  // registered → do KYC
-          }
+          // Not registered
+          console.log(`[fetchInstallerData] → Step 1 (Register)`);
+          setStep(1);
         }
       } else {
         console.log(`[fetchInstallerData] Not registered - Step 1 (Register)`);
@@ -283,6 +237,44 @@ export default function InstallerPortal() {
       
     } catch (e: any) {
       console.error('[Register] Error:', e);
+      const errorMsg = e.message || JSON.stringify(e) || '';
+      
+      // Check if the error is E_ALREADY_REGISTERED - means user is already registered on-chain
+      if (errorMsg.includes('E_ALREADY_REGISTERED') || errorMsg.includes('abort 0x2')) {
+        console.log('[Register] 🔄 User is already registered on-chain! Skipping to KYC...');
+        
+        // Notify backend that this wallet is registered (for tracker persistence)
+        try {
+          await fetch('http://localhost:3000/api/installer/mark-registered', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ walletAddress }),
+          });
+        } catch (notifyError) {
+          console.warn('[Register] Failed to notify backend (non-critical):', notifyError);
+        }
+        
+        // Create a minimal installer info for the UI
+        setInstallerInfo({ 
+          wallet_address: walletAddress!, 
+          name: name || 'Registered User',
+          kyc_status: 0, // Will be updated when they submit KYC
+          kyc_status_label: 'Pending',
+        } as any);
+        
+        // Store in localStorage
+        localStorage.setItem('installerPortalData', JSON.stringify({
+          installerInfo: { wallet_address: walletAddress, name: name || 'Registered User', kyc_status: 0, kyc_status_label: 'Pending' },
+          balance,
+          timestamp: Date.now(),
+        }));
+        
+        // Skip directly to KYC step
+        setError(null);
+        setStep(2);
+        return;
+      }
+      
       setError(e.message || 'Failed to register');
     } finally {
       setLoading(false);
@@ -401,7 +393,13 @@ export default function InstallerPortal() {
   };
 
   // Step 3 — Submit Project
-  const handleSubmitProject = async () => {
+  const handleSubmitProject = async (e?: React.FormEvent) => {
+    // Prevent any form auto-submission
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    
     if (!projectName || !capacityKw || !costApt || !description) {
       setError("All project fields are required");
       return;
@@ -411,68 +409,104 @@ export default function InstallerPortal() {
     setError(null);
     setTxHash(null);
     
-    try {
-      // Check if project was already submitted with this wallet (same project or other projects)
-      console.log('[Project] Checking if wallet already has submitted projects...');
-      const checkResponse = await fetch(`http://localhost:3000/api/installer/${walletAddress}?_t=${Date.now()}`);
-      const checkResult = await checkResponse.json();
+    // Helper function to submit project to backend only
+    const submitToBackendOnly = async () => {
+      console.log('[Project] Submitting project to backend (off-chain mode)...');
+      const costOctasNum = Math.floor(Number(costApt) * 100_000_000);
+      const submitRes = await fetch('http://localhost:3000/api/project/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          walletAddress,
+          name: projectName,
+          location_id: locationId,
+          capacity_kw: Number(capacityKw),
+          cost_apt: costOctasNum.toString(),
+          description,
+          documents_hash: projectDocsHash || "ipfs://",
+          expected_yield_bps: Number(yieldBps),
+        }),
+      });
+      const submitResult = await submitRes.json();
+      console.log('[Project] Backend submission result:', submitResult);
       
-      console.log('[Project] Backend check result:', checkResult);
-      
-      // If installer has a project (project_id > 0), they've submitted before
-      if (checkResult.success && checkResult.installer && checkResult.installer.project_id > 0) {
-        console.log('[Project] ✅ Project already submitted with this wallet! No need to submit again.');
-        console.log('[Project] Same wallet can submit multiple projects - this would be a new project entry');
-        // Continue with submission for new project
+      if (!submitResult.success) {
+        throw new Error(submitResult.error || 'Failed to submit project to backend');
       }
       
-      // Submit project on-chain
-      console.log('[Project] Submitting project on-chain...');
-      const costOctas = Math.floor(Number(costApt) * 100_000_000).toString();
-      const tx: InputTransactionData = {
-        data: {
-          function: `${CONTRACT_ADDRESS}::project_listing::submit_project` as any,
-          functionArguments: [
-            PROJECT_AUTHORITY,
-            projectName,
-            locationId,
-            Number(capacityKw),
-            costOctas,
-            description,
-            projectDocsHash || "ipfs://",
-            Number(yieldBps),
-          ],
-        },
-      };
-      const res = await signAndSubmitTransaction(tx);
-      setTxHash(res.hash);
-      console.log('[Project] ✅ On-chain project submission succeeded! TX:', res.hash);
-      
-      // Notify backend about the successful project submission (for tracker)
+      return submitResult;
+    };
+    
+    // Helper to check if on-chain contracts are available
+    const checkOnChainAvailable = async (): Promise<boolean> => {
       try {
-        const costOctasNum = Math.floor(Number(costApt) * 100_000_000);
-        const notifyRes = await fetch('http://localhost:3000/api/project/submit', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            walletAddress,
-            name: projectName,
-            location_id: locationId,
-            capacity_kw: Number(capacityKw),
-            cost_apt: costOctasNum.toString(),
-            description,
-            documents_hash: projectDocsHash || "ipfs://",
-            expected_yield_bps: Number(yieldBps),
-          }),
-        });
-        const notifyResult = await notifyRes.json();
-        console.log('[Project] Backend notification result:', notifyResult);
-      } catch (notifyError) {
-        console.warn('[Project] Failed to notify backend (non-critical):', notifyError);
+        // Try to fetch installer registry to see if contracts are deployed
+        const response = await fetch(`http://localhost:3000/api/installer/${walletAddress}/on-chain-status`);
+        const result = await response.json();
+        return result.on_chain_available === true;
+      } catch {
+        return false;
+      }
+    };
+    
+    try {
+      // Log: This wallet is submitting a new project (multiple projects allowed)
+      console.log('[Project] Submitting NEW project for wallet:', walletAddress);
+      console.log('[Project] Project details:', { projectName, capacityKw, costApt, locationId });
+      
+      // Check if on-chain contracts are available before attempting on-chain submission
+      // This prevents the wallet popup from showing an error
+      console.log('[Project] Checking if on-chain contracts are available...');
+      const onChainAvailable = await checkOnChainAvailable();
+      
+      if (!onChainAvailable) {
+        // On-chain contracts not deployed - use backend-only mode directly
+        console.log('[Project] ⚠️ On-chain contracts not available, using backend-only mode...');
+        await submitToBackendOnly();
+        console.log('[Project] ✅ Backend-only submission succeeded!');
+      } else {
+        // On-chain contracts available - try on-chain submission
+        try {
+          console.log('[Project] Attempting on-chain submission...');
+          const costOctas = Math.floor(Number(costApt) * 100_000_000).toString();
+          const tx: InputTransactionData = {
+            data: {
+              function: `${CONTRACT_ADDRESS}::project_listing::submit_project` as any,
+              functionArguments: [
+                PROJECT_AUTHORITY,
+                projectName,
+                locationId,
+                Number(capacityKw),
+                costOctas,
+                description,
+                projectDocsHash || "ipfs://",
+                Number(yieldBps),
+              ],
+            },
+          };
+          const res = await signAndSubmitTransaction(tx);
+          setTxHash(res.hash);
+          console.log('[Project] ✅ On-chain project submission succeeded! TX:', res.hash);
+          
+          // Also notify backend about the successful project submission
+          try {
+            await submitToBackendOnly();
+          } catch (notifyError) {
+            console.warn('[Project] Failed to notify backend (non-critical):', notifyError);
+          }
+        } catch (onChainError: any) {
+          const errorMsg = onChainError.message || JSON.stringify(onChainError) || '';
+          console.warn('[Project] On-chain submission failed:', errorMsg);
+          
+          // Fall back to backend-only mode
+          console.log('[Project] 🔄 Falling back to backend-only mode...');
+          await submitToBackendOnly();
+          console.log('[Project] ✅ Backend-only submission succeeded!');
+        }
       }
       
-      // Wait for chain to settle
-      await new Promise((r) => setTimeout(r, 3000));
+      // Wait a moment for data to settle
+      await new Promise((r) => setTimeout(r, 1000));
       
       // Fetch status after submission
       console.log('[Project] Fetching project status after submission...');
@@ -481,24 +515,21 @@ export default function InstallerPortal() {
       
       console.log('[Project] Status check result:', statusResult);
       
-      if (statusResult.success && statusResult.installer) {
-        setInstallerInfo(statusResult.installer);
-        
-        // Save to localStorage
-        const dataToStore = {
-          installerInfo: statusResult.installer,
-          balance: balance,
-          timestamp: Date.now(),
-        };
-        localStorage.setItem('installerPortalData', JSON.stringify(dataToStore));
-        console.log('[Project] Saved to localStorage:', dataToStore);
-        
-        console.log('[Project] ✅ Project submission complete! Moving to status page...');
-        setStep(4); // ← NAVIGATE TO STATUS PAGE
-      } else {
-        console.log('[Project] Could not fetch status immediately, defaulting to step 4');
-        setStep(4);
+      if (statusResult.success && (statusResult.data || statusResult.installer)) {
+        const info = statusResult.data || statusResult.installer;
+        setInstallerInfo(info);
       }
+      
+      // Clear form fields for next project
+      setProjectName("");
+      setCapacityKw("");
+      setCostApt("");
+      setDescription("");
+      setProjectDocsHash("");
+      setYieldBps("800");
+      
+      console.log('[Project] ✅ Project submission complete! Moving to status page...');
+      setStep(4);
     } catch (e: any) {
       console.error('[Project] Error:', e);
       setError(e.message || 'Failed to submit project');
@@ -650,45 +681,88 @@ export default function InstallerPortal() {
             <div className="kyc-approved-badge">✅ KYC Approved</div>
             <h2>List Your Solar Project</h2>
             <p className="card-sub">Submit your project details for admin review. Once approved, investors can fund it.</p>
-            <div className="form-row">
-              <div className="form-group">
-                <label>Project Name</label>
-                <input value={projectName} onChange={(e) => setProjectName(e.target.value)} placeholder="e.g. Phoenix Solar Farm #1" />
+            {installerInfo && installerInfo.project_id > 0 && (
+              <div className="info-banner">
+                ℹ️ You have previously submitted projects. You can submit additional projects below.
+              </div>
+            )}
+            <form onSubmit={(e) => { e.preventDefault(); handleSubmitProject(e); }}>
+              <div className="form-row">
+                <div className="form-group">
+                  <label>Project Name</label>
+                  <input 
+                    value={projectName} 
+                    onChange={(e) => setProjectName(e.target.value)} 
+                    placeholder="e.g. Phoenix Solar Farm #1"
+                    required
+                  />
+                </div>
+                <div className="form-group">
+                  <label>Capacity (kW)</label>
+                  <input 
+                    type="number" 
+                    value={capacityKw} 
+                    onChange={(e) => setCapacityKw(e.target.value)} 
+                    placeholder="e.g. 500"
+                    required
+                  />
+                </div>
+              </div>
+              <div className="form-row">
+                <div className="form-group">
+                  <label>Funding Goal (APT)</label>
+                  <input 
+                    type="number" 
+                    value={costApt} 
+                    onChange={(e) => setCostApt(e.target.value)} 
+                    placeholder="e.g. 1000"
+                    required
+                  />
+                </div>
+                <div className="form-group">
+                  <label>Expected Yield (basis points, 800 = 8%)</label>
+                  <input 
+                    type="number" 
+                    value={yieldBps} 
+                    onChange={(e) => setYieldBps(e.target.value)} 
+                    placeholder="800"
+                  />
+                </div>
               </div>
               <div className="form-group">
-                <label>Capacity (kW)</label>
-                <input type="number" value={capacityKw} onChange={(e) => setCapacityKw(e.target.value)} placeholder="e.g. 500" />
+                <label>Description</label>
+                <textarea 
+                  value={description} 
+                  onChange={(e) => setDescription(e.target.value)} 
+                  placeholder="Describe your project, location, timeline..." 
+                  rows={4}
+                  required
+                />
               </div>
-            </div>
-            <div className="form-row">
               <div className="form-group">
-                <label>Funding Goal (APT)</label>
-                <input type="number" value={costApt} onChange={(e) => setCostApt(e.target.value)} placeholder="e.g. 1000" />
+                <label>Project Documents IPFS Hash (optional)</label>
+                <input 
+                  value={projectDocsHash} 
+                  onChange={(e) => setProjectDocsHash(e.target.value)} 
+                  placeholder="ipfs://..."
+                />
               </div>
               <div className="form-group">
-                <label>Expected Yield (basis points, 800 = 8%)</label>
-                <input type="number" value={yieldBps} onChange={(e) => setYieldBps(e.target.value)} placeholder="800" />
+                <label>Operating Region</label>
+                <select value={locationId} onChange={(e) => setLocationId(Number(e.target.value))}>
+                  {ORACLE_LOCATIONS.map((l) => (
+                    <option key={l.id} value={l.id}>{l.name}</option>
+                  ))}
+                </select>
               </div>
-            </div>
-            <div className="form-group">
-              <label>Description</label>
-              <textarea value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Describe your project, location, timeline..." rows={4} />
-            </div>
-            <div className="form-group">
-              <label>Project Documents IPFS Hash (optional)</label>
-              <input value={projectDocsHash} onChange={(e) => setProjectDocsHash(e.target.value)} placeholder="ipfs://..." />
-            </div>
-            <div className="form-group">
-              <label>Operating Region</label>
-              <select value={locationId} onChange={(e) => setLocationId(Number(e.target.value))}>
-                {ORACLE_LOCATIONS.map((l) => (
-                  <option key={l.id} value={l.id}>{l.name}</option>
-                ))}
-              </select>
-            </div>
-            <button className="primary-btn" onClick={handleSubmitProject} disabled={loading}>
-              {loading ? "Submitting..." : "Submit Project →"}
-            </button>
+              <button 
+                type="submit" 
+                className="primary-btn" 
+                disabled={loading || !projectName || !capacityKw || !costApt || !description}
+              >
+                {loading ? "Submitting..." : "Submit Project →"}
+              </button>
+            </form>
           </div>
         )}
 
@@ -716,28 +790,30 @@ export default function InstallerPortal() {
                 <span className="status-value">{ORACLE_LOCATIONS.find(l => l.id === installerInfo.location_id)?.name || `Location #${installerInfo.location_id}`}</span>
               </div>
               <div className="status-item">
-                <span className="status-label">Project ID</span>
+                <span className="status-label">Latest Project</span>
                 <span className="status-value">{installerInfo.project_id > 0 ? `#${installerInfo.project_id}` : "Not submitted yet"}</span>
               </div>
             </div>
 
             {/* Actions based on KYC status */}
             {installerInfo.kyc_status === 0 && (
-              <div className="status-action pending">⏳ Registration submitted. Admin will review your KYC soon.</div>
+              <div className="status-action pending">⏳ Registration submitted. Please submit KYC documents.</div>
             )}
             {installerInfo.kyc_status === 1 && (
               <div className="status-action pending">⏳ KYC documents submitted. Awaiting admin approval.</div>
             )}
-            {installerInfo.kyc_status === 2 && installerInfo.project_id === 0 && (
-              <button className="primary-btn" onClick={() => setStep(3)}>
-                🌞 Submit Your Project →
-              </button>
-            )}
-            {installerInfo.kyc_status === 2 && installerInfo.project_id > 0 && (
-              <div className="status-action success">
-                ✅ Project #{installerInfo.project_id} submitted and under admin review.
-                <br />Once approved, investors can stake APT on your project.
-              </div>
+            {installerInfo.kyc_status === 2 && (
+              <>
+                {installerInfo.project_id > 0 && (
+                  <div className="status-action success">
+                    ✅ Project #{installerInfo.project_id} submitted and under admin review.
+                    <br />Once approved, investors can stake APT on your project.
+                  </div>
+                )}
+                <button className="primary-btn" onClick={() => setStep(3)}>
+                  🌞 {installerInfo.project_id > 0 ? "Submit Another Project" : "Submit Your Project"} →
+                </button>
+              </>
             )}
             {installerInfo.kyc_status === 3 && (
               <div className="status-action error">
@@ -745,7 +821,12 @@ export default function InstallerPortal() {
               </div>
             )}
 
-            <button className="secondary-btn" onClick={fetchInstallerData}>🔄 Refresh Status</button>
+            <div className="status-actions-row">
+              <button className="secondary-btn" onClick={fetchInstallerData}>🔄 Refresh Status</button>
+              {installerInfo.kyc_status === 0 && (
+                <button className="primary-btn" onClick={() => setStep(2)}>📄 Submit KYC →</button>
+              )}
+            </div>
           </div>
         )}
       </div>

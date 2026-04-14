@@ -79,6 +79,17 @@
 .reject-btn  { background: rgba(220,38,38,0.12); border: 1px solid rgba(220,38,38,0.25); color: #f87171; padding: 5px 10px; border-radius: 6px; font-size: 12px; cursor: pointer; white-space: nowrap; }
 .approve-btn:disabled, .reject-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
+/* Approved/Rejected row styles */
+.table-row.approved { background: rgba(22,163,74,0.05); }
+.table-row.rejected { background: rgba(220,38,38,0.05); opacity: 0.7; }
+
+/* Invest link */
+.invest-link { color: #a5b4fc; text-decoration: none; font-size: 12px; font-weight: 500; transition: color 0.2s; }
+.invest-link:hover { color: #818cf8; text-decoration: underline; }
+
+/* Empty/loading text */
+.empty-text, .loading-text { color: #64748b; font-size: 14px; padding: 20px; text-align: center; background: rgba(255,255,255,0.02); border-radius: 10px; }
+
 /* Manual action */
 .manual-action { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 20px 24px; }
 .manual-action h3 { font-size: 15px; font-weight: 600; margin: 0 0 12px; }

@@ -159,7 +159,7 @@ export default function ProjectStake() {
         <nav className="stake-nav">
           <button onClick={() => navigate("/invest")} className="nav-link">← Projects</button>
           <button onClick={() => navigate("/")} className="nav-link">Home</button>
-          <a href={`https://explorer.aptoslabs.com/account/${CONTRACT_ADDRESS}?network=devnet`} target="_blank" rel="noreferrer" className="nav-link">Explorer ↗</a>
+          <a href={`https://explorer.aptoslabs.com/account/${CONTRACT_ADDRESS}?network=testnet`} target="_blank" rel="noreferrer" className="nav-link">Explorer ↗</a>
         </nav>
         <div className="stake-wallet">
           {connected && walletAddress ? (
@@ -189,7 +189,7 @@ export default function ProjectStake() {
       {txHash && (
         <div className="feedback success" style={{maxWidth:900,margin:"0 auto 12px",padding:"0 24px"}}>
           ✅ Tx submitted!{" "}
-          <a href={`https://explorer.aptoslabs.com/txn/${txHash}?network=devnet`} target="_blank" rel="noreferrer">View ↗</a>
+          <a href={`https://explorer.aptoslabs.com/txn/${txHash}?network=testnet`} target="_blank" rel="noreferrer">View ↗</a>
         </div>
       )}
 

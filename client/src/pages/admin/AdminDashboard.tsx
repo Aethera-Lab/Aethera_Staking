@@ -43,6 +43,7 @@ export default function AdminDashboard() {
   // Data states
   const [kycSubmissions, setKycSubmissions] = useState<KycSubmission[]>([]);
   const [projects, setProjects] = useState<ProjectSubmission[]>([]);
+  const [allProjects, setAllProjects] = useState<ProjectSubmission[]>([]);
   const [dataLoading, setDataLoading] = useState(false);
 
   // Vault form
@@ -90,10 +91,25 @@ export default function AdminDashboard() {
     }
   };
 
+  // Fetch all projects (including approved)
+  const fetchAllProjects = async () => {
+    try {
+      const response = await fetch("http://localhost:3000/api/admin/projects/all");
+      if (!response.ok) throw new Error("Failed to fetch all projects");
+      const data = await response.json();
+      setAllProjects(data.data || []);
+    } catch (error: any) {
+      console.error("[fetchAllProjects]", error);
+    }
+  };
+
   // Load data on tab change
   useEffect(() => {
     if (tab === "kyc") fetchKycSubmissions();
-    else if (tab === "projects") fetchPendingProjects();
+    else if (tab === "projects") {
+      fetchPendingProjects();
+      fetchAllProjects();
+    }
   }, [tab]);
 
   const handleLogout = () => {
@@ -109,7 +125,10 @@ export default function AdminDashboard() {
       setFeedback({ type: "ok", msg: res.message || `${label} successful` });
       // Refresh data after action
       if (tab === "kyc") fetchKycSubmissions();
-      else if (tab === "projects") fetchPendingProjects();
+      else if (tab === "projects") {
+        fetchPendingProjects();
+        fetchAllProjects();
+      }
     } catch (e: any) {
       setFeedback({ type: "err", msg: e.message || `${label} failed` });
     } finally {
@@ -195,12 +214,13 @@ export default function AdminDashboard() {
         {/* ── Projects Tab ── */}
         {tab === "projects" && (
           <div className="dash-section">
-            <h2>Project Review</h2>
+            {/* Pending Projects Section */}
+            <h2>🔄 Pending Projects</h2>
             <p className="dash-sub">Approve projects to make them visible to investors. Approved projects can have vaults created.</p>
             {dataLoading ? (
               <p className="loading-text">Loading pending projects...</p>
             ) : projects.length === 0 ? (
-              <p className="empty-text">No pending projects</p>
+              <p className="empty-text">No pending projects awaiting approval</p>
             ) : (
               <div className="admin-table">
                 <div className="table-head">
@@ -226,6 +246,59 @@ export default function AdminDashboard() {
                 ))}
               </div>
             )}
+
+            {/* Approved Projects Section */}
+            <h2 style={{ marginTop: 40 }}>✅ Approved Projects (Live for Investors)</h2>
+            <p className="dash-sub">These projects are visible at /invest and available for staking.</p>
+            {allProjects.filter(p => p.status === 1).length === 0 ? (
+              <p className="empty-text">No approved projects yet</p>
+            ) : (
+              <div className="admin-table">
+                <div className="table-head">
+                  <span>ID</span><span>Name</span><span>Location</span><span>Capacity</span><span>Expected Yield</span><span>Status</span><span>Invest Link</span>
+                </div>
+                {allProjects.filter(p => p.status === 1).map((p) => (
+                  <div className="table-row approved" key={p.project_id}>
+                    <span className="mono">#{p.project_id}</span>
+                    <span>{p.name}</span>
+                    <span>Location #{p.location_id}</span>
+                    <span>{p.capacity_kw} kW</span>
+                    <span>{(Number(p.expected_yield_bps) / 100).toFixed(2)}%</span>
+                    <span className="status-chip approved">✅ {p.status_label}</span>
+                    <a 
+                      href={`/invest/location/${p.location_id}`} 
+                      target="_blank" 
+                      rel="noreferrer"
+                      className="invest-link"
+                    >
+                      View in Invest →
+                    </a>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {/* Rejected Projects Section (collapsed) */}
+            {allProjects.filter(p => p.status === 2).length > 0 && (
+              <>
+                <h2 style={{ marginTop: 40 }}>❌ Rejected Projects</h2>
+                <div className="admin-table">
+                  <div className="table-head">
+                    <span>ID</span><span>Name</span><span>Installer</span><span>Capacity</span><span>Status</span>
+                  </div>
+                  {allProjects.filter(p => p.status === 2).map((p) => (
+                    <div className="table-row rejected" key={p.project_id}>
+                      <span className="mono">#{p.project_id}</span>
+                      <span>{p.name}</span>
+                      <span className="mono">{p.installer.slice(0, 10)}...</span>
+                      <span>{p.capacity_kw} kW</span>
+                      <span className="status-chip rejected">❌ Rejected</span>
+                    </div>
+                  ))}
+                </div>
+              </>
+            )}
+
             <div className="manual-action">
               <h3>Manual Action by Project ID</h3>
               <div className="manual-row">
