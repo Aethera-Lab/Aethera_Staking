@@ -13,18 +13,29 @@ export class StakingService {
     try {
       const resourceType = `${CONTRACT_CONFIG.CONTRACT_ADDRESS}::state::StakingHub` as `${string}::${string}::${string}`;
 
+      console.log('[getProjectVaultInfo] Fetching StakingHub from:', CONTRACT_CONFIG.HUB_AUTHORITY);
+      console.log('[getProjectVaultInfo] Resource type:', resourceType);
+
       const resource = await aptos.getAccountResource({
         accountAddress: CONTRACT_CONFIG.HUB_AUTHORITY,
         resourceType,
       });
 
+      console.log('[getProjectVaultInfo] Resource fetched:', JSON.stringify(resource, null, 2).slice(0, 500));
+
       const data    = (resource as any).data || resource;
       const entries: any[] = data?.vaults?.data || [];
+      console.log('[getProjectVaultInfo] Vault entries:', entries.length);
+      
       const entry   = entries.find((e: any) => Number(e.key) === projectId);
 
-      if (!entry) return null;
+      if (!entry) {
+        console.log('[getProjectVaultInfo] No vault found for project:', projectId);
+        return null;
+      }
 
       const v = entry.value;
+      console.log('[getProjectVaultInfo] Found vault:', v);
       return {
         project_id:       projectId,
         authority:        v.authority,
@@ -33,12 +44,12 @@ export class StakingService {
         apy_rate:         Number(v.apy_rate),
       };
     } catch (error: any) {
+      console.error('[getProjectVaultInfo] Error:', error.message || error);
       if (error.status === 404) return null;
-      console.error('Error fetching project vault:', error.message || error);
       return null;
     }
   }
-
+ 
   /**
    * Get a player's stake in a specific project from PlayerHub SimpleMap
    */

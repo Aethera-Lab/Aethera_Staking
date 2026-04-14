@@ -1,0 +1,44 @@
+{
+  "installers": {
+    "0xb430aabe6def546c95702eefe4edf148e4baee7c79288cdd02ee074bbc78ea1a": {
+      "wallet_address": "0xb430aabe6def546c95702eefe4edf148e4baee7c79288cdd02ee074bbc78ea1a",
+      "name": "ma",
+      "business_reg": "1",
+      "documents_hash": "ipfs://ma",
+      "kyc_status": 2,
+      "location_id": 1,
+      "project_id": 2,
+      "registered_at": 1776137626864,
+      "kyc_submitted_at": 1776137653171
+    }
+  },
+  "projects": {
+    "1": {
+      "project_id": 1,
+      "name": "ma",
+      "installer": "0xb430aabe6def546c95702eefe4edf148e4baee7c79288cdd02ee074bbc78ea1a",
+      "location_id": 1,
+      "capacity_kw": 100000,
+      "cost_apt": "1000000000",
+      "description": "bcfvfvh",
+      "documents_hash": "ipfs://ma",
+      "expected_yield_bps": 800,
+      "status": 1,
+      "submitted_at": 1776140752581
+    },
+    "2": {
+      "project_id": 2,
+      "name": "ma",
+      "installer": "0xb430aabe6def546c95702eefe4edf148e4baee7c79288cdd02ee074bbc78ea1a",
+      "location_id": 1,
+      "capacity_kw": 10000,
+      "cost_apt": "10000000000",
+      "description": "best in the world ",
+      "documents_hash": "ipfs:://yoyo",
+      "expected_yield_bps": 800,
+      "status": 0,
+      "submitted_at": 1776145114604
+    }
+  },
+  "nextProjectId": 3
+}

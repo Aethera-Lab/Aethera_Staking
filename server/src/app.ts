@@ -9,6 +9,7 @@ import {
   register,
   submitKyc,
   getInstaller,
+  markRegistered,
 } from "./controllers/installer.controllers";
 import { projectController } from "./controllers/project.contollers";
 import { adminController } from "./controllers/admin.controllers";
@@ -155,9 +156,46 @@ app.get("/debug", (req: Request, res: Response) => {
 // ── Installer Registry (installer_registry.move) ─────────────────────────────
 // POST  /api/installer/register        → register wallet + basic info
 // POST  /api/installer/submit-kyc      → upload IPFS doc hash + pick location
+// POST  /api/installer/mark-registered → mark wallet as registered (from on-chain error)
 // GET   /api/installer/:address        → get installer info + KYC status
+// GET   /api/installer/:address/on-chain-status → check if on-chain contracts available
 app.post("/api/installer/register", register);
 app.post("/api/installer/submit-kyc", submitKyc);
+app.post("/api/installer/mark-registered", markRegistered);
+app.get("/api/installer/:address/on-chain-status", async (req, res) => {
+  // Check if on-chain contracts are deployed and accessible
+  try {
+    const { address } = req.params;
+    console.log(`[on-chain-status] Checking for address: ${address}`);
+    
+    // Try to fetch installer info from on-chain
+    const installerService = new (await import('./controllers/installer.controllers')).InstallerService();
+    const onChainInfo = await installerService.getInstallerInfo(address);
+    
+    if (onChainInfo) {
+      console.log(`[on-chain-status] ✅ On-chain data found`);
+      res.json({ 
+        success: true, 
+        on_chain_available: true,
+        kyc_status: onChainInfo.kyc_status,
+      });
+    } else {
+      console.log(`[on-chain-status] ❌ No on-chain data (contracts may not be deployed)`);
+      res.json({ 
+        success: true, 
+        on_chain_available: false,
+        reason: 'No on-chain data found - contracts may not be deployed',
+      });
+    }
+  } catch (error: any) {
+    console.log(`[on-chain-status] ❌ Error checking on-chain:`, error.message);
+    res.json({ 
+      success: true, 
+      on_chain_available: false,
+      reason: error.message || 'Failed to check on-chain status',
+    });
+  }
+});
 app.get("/api/installer/:address", getInstaller);
 
 // ── Project Listing (project_listing.move) ───────────────────────────────────
@@ -240,6 +278,10 @@ app.post(
 app.get(
   "/api/admin/projects/pending",
   adminController.getPendingProjects.bind(adminController),
+);
+app.get(
+  "/api/admin/projects/all",
+  adminController.getAllProjects.bind(adminController),
 );
 app.post(
   "/api/admin/project/approve",

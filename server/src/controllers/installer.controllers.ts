@@ -537,7 +537,29 @@ export const getInstaller = async (req: Request, res: Response, next: NextFuncti
   try {
     const { address } = req.params;
     console.log(`[getInstaller] Fetching info for address: ${address}`);
-    const info = await installerService.getInstallerInfo(address);
+    
+    // First try on-chain
+    let info = await installerService.getInstallerInfo(address);
+    
+    // If not found on-chain, fall back to registration tracker
+    if (!info) {
+      console.log(`[getInstaller] Not found on-chain, checking tracker...`);
+      const trackedInstaller = registrationTracker.getInstaller(address);
+      
+      if (trackedInstaller) {
+        console.log(`[getInstaller] Found in tracker: kyc_status=${trackedInstaller.kyc_status}`);
+        info = {
+          wallet: trackedInstaller.wallet_address,
+          name: trackedInstaller.name,
+          business_reg: trackedInstaller.business_reg,
+          documents_hash: trackedInstaller.documents_hash,
+          kyc_status: trackedInstaller.kyc_status as KycStatus,
+          kyc_status_label: kycLabel(trackedInstaller.kyc_status),
+          location_id: trackedInstaller.location_id,
+          project_id: trackedInstaller.project_id,
+        };
+      }
+    }
     
     if (!info) {
       return res.status(404).json({ 
@@ -561,9 +583,56 @@ export const getInstaller = async (req: Request, res: Response, next: NextFuncti
 
     res.json({ 
       success: true, 
-      installer: info,
+      data: info,
+      installer: info, // Keep for backward compatibility
       next_step,
       message: `KYC Status: ${info.kyc_status_label}`,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+/**
+ * POST /api/installer/mark-registered
+ * Called by frontend when on-chain E_ALREADY_REGISTERED error is detected
+ * Marks the wallet as registered in tracker so they can proceed to KYC
+ */
+export const markRegistered = async (req: Request, res: Response, next: NextFunction) => {
+  try {
+    const { walletAddress } = req.body;
+    
+    if (!walletAddress) {
+      return res.status(400).json({ 
+        success: false, 
+        error: "walletAddress is required" 
+      });
+    }
+
+    console.log(`[markRegistered] Marking wallet as registered: ${walletAddress}`);
+    
+    // Check if already in tracker
+    const existing = registrationTracker.getInstaller(walletAddress);
+    if (existing) {
+      console.log(`[markRegistered] Already in tracker with KYC status: ${existing.kyc_status}`);
+      return res.json({
+        success: true,
+        message: "Installer already tracked",
+        installer: existing,
+        next_step: existing.kyc_status === 2 ? "submit_project" : 
+                   existing.kyc_status === 1 ? "await_approval" : "submit_kyc",
+      });
+    }
+    
+    // Mark as registered in tracker
+    registrationTracker.markAsRegistered(walletAddress);
+    
+    console.log(`[markRegistered] ✅ Wallet marked as registered`);
+    
+    return res.json({
+      success: true,
+      message: "Wallet marked as registered. Please proceed to KYC.",
+      next_step: "submit_kyc",
     });
   } catch (error) {
     next(error);

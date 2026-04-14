@@ -1,6 +1,7 @@
 import { aptos, PROJECT_FUNCTIONS, CONTRACT_CONFIG, formatApt, bpsToPercent } from '../config/aptos.config';
 import { Account } from '@aptos-labs/ts-sdk';
 import { ProjectInfo, ProjectStatus, TransactionResponse } from '../models/types';
+import { registrationTracker } from './registration-tracker';
 
 const statusLabel = (status: number): string => {
   switch (status) {
@@ -47,6 +48,7 @@ export class ProjectService {
 
   /**
    * Get all projects for a specific oracle location (only APPROVED ones for investors)
+   * Falls back to tracker if on-chain registry not accessible
    */
   async getProjectsByLocation(locationId: number, onlyApproved = true): Promise<ProjectInfo[]> {
     try {
@@ -55,21 +57,66 @@ export class ProjectService {
         (p) => p.location_id === locationId && (!onlyApproved || p.status === ProjectStatus.APPROVED)
       );
     } catch (error: any) {
-      console.error('Error fetching projects by location:', error.message || error);
-      return [];
+      console.error('[getProjectsByLocation] On-chain fetch failed, using tracker:', error.message);
+      
+      // Fallback to tracker
+      const allProjects = registrationTracker.getAllProjects();
+      const filtered = allProjects.filter(p => {
+        const matchLocation = p.location_id === locationId;
+        const matchStatus = !onlyApproved || p.status === 1; // 1 = APPROVED in tracker
+        return matchLocation && matchStatus;
+      });
+      
+      console.log(`[getProjectsByLocation] Tracker has ${filtered.length} projects for location ${locationId}`);
+      
+      return filtered.map(p => ({
+        project_id:          p.project_id,
+        name:                p.name,
+        location_id:         p.location_id,
+        capacity_kw:         p.capacity_kw,
+        cost_apt:            p.cost_apt,
+        cost_apt_human:      `${formatApt(p.cost_apt)} APT`,
+        description:         p.description,
+        documents_hash:      p.documents_hash,
+        expected_yield_bps:  p.expected_yield_bps,
+        expected_yield_pct:  bpsToPercent(p.expected_yield_bps),
+        installer:           p.installer,
+        status:              p.status as ProjectStatus,
+        status_label:        statusLabel(p.status),
+      }));
     }
   }
 
   /**
    * Get a single project by ID
+   * Falls back to tracker if on-chain registry not accessible
    */
   async getProject(projectId: number): Promise<ProjectInfo | null> {
     try {
       const all = await fetchAllProjects();
       return all.find((p) => p.project_id === projectId) || null;
     } catch (error: any) {
-      console.error('Error fetching project:', error.message || error);
-      return null;
+      console.error('[getProject] On-chain fetch failed, using tracker:', error.message);
+      
+      // Fallback to tracker
+      const project = registrationTracker.getProject(projectId);
+      if (!project) return null;
+      
+      return {
+        project_id:          project.project_id,
+        name:                project.name,
+        location_id:         project.location_id,
+        capacity_kw:         project.capacity_kw,
+        cost_apt:            project.cost_apt,
+        cost_apt_human:      `${formatApt(project.cost_apt)} APT`,
+        description:         project.description,
+        documents_hash:      project.documents_hash,
+        expected_yield_bps:  project.expected_yield_bps,
+        expected_yield_pct:  bpsToPercent(project.expected_yield_bps),
+        installer:           project.installer,
+        status:              project.status as ProjectStatus,
+        status_label:        statusLabel(project.status),
+      };
     }
   }
 

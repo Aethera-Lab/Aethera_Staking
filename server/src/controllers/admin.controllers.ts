@@ -1,13 +1,28 @@
 import { Request, Response } from 'express';
 import { adminService } from '../services/admin.services';
+import { registrationTracker } from '../services/registration-tracker';
 import { Account, Ed25519PrivateKey } from '@aptos-labs/ts-sdk';
 
 // Loads admin account from ADMIN_PRIVATE_KEY env var
 // Same pattern as your existing staking.controllers.ts
-const getAdminAccount = (): Account => {
-  const pk = process.env.ADMIN_PRIVATE_KEY;
-  if (!pk) throw new Error('Admin credentials not configured');
-  return Account.fromPrivateKey({ privateKey: new Ed25519PrivateKey(pk) });
+const getAdminAccount = (): Account | null => {
+  let pk = process.env.ADMIN_PRIVATE_KEY;
+  if (!pk) {
+    console.warn('[getAdminAccount] ADMIN_PRIVATE_KEY not set');
+    return null;
+  }
+  
+  // Remove common prefixes that might be in the env var
+  if (pk.startsWith('ed25519-priv-')) {
+    pk = pk.replace('ed25519-priv-', '');
+  }
+  
+  try {
+    return Account.fromPrivateKey({ privateKey: new Ed25519PrivateKey(pk) });
+  } catch (error) {
+    console.error('[getAdminAccount] Invalid private key format:', error);
+    return null;
+  }
 };
 
 export class AdminController {
@@ -46,6 +61,22 @@ export class AdminController {
     }
   }
 
+  /**
+   * GET /api/admin/projects/all
+   * Returns ALL projects (pending, approved, rejected)
+   */
+  async getAllProjects(req: Request, res: Response) {
+    try {
+      console.log('[getAllProjects] Fetching all projects...');
+      const projects = await adminService.getAllProjects();
+      console.log(`[getAllProjects] Found ${projects.length} total projects`);
+      res.json({ success: true, data: projects });
+    } catch (error: any) {
+      console.error('[getAllProjects] Error:', error);
+      res.status(500).json({ success: false, error: error.message || 'Failed to fetch projects' });
+    }
+  }
+
   // ── KYC Actions ───────────────────────────────────────────────────────────
 
   /**
@@ -59,7 +90,28 @@ export class AdminController {
         return res.status(400).json({ success: false, error: 'installer_address is required' });
 
       console.log(`[approveKyc] Approving KYC for installer: ${installer_address}`);
-      const result = await adminService.approveKyc(getAdminAccount(), installer_address);
+      
+      const adminAccount = getAdminAccount();
+      
+      // If no admin account configured, use tracker directly
+      if (!adminAccount) {
+        console.log(`[approveKyc] No admin account, using tracker directly...`);
+        const success = registrationTracker.approveKyc(installer_address);
+        if (success) {
+          return res.json({
+            success: true,
+            message: `KYC approved for ${installer_address} (via tracker)`,
+            transaction_hash: 'tracker_' + Date.now().toString(),
+          });
+        } else {
+          return res.status(404).json({ 
+            success: false, 
+            error: `Installer ${installer_address} not found in tracker` 
+          });
+        }
+      }
+      
+      const result = await adminService.approveKyc(adminAccount, installer_address);
       console.log(`[approveKyc] Result:`, result);
       res.json(result);
     } catch (error: any) {
@@ -78,7 +130,29 @@ export class AdminController {
       if (!installer_address)
         return res.status(400).json({ success: false, error: 'installer_address is required' });
 
-      const result = await adminService.rejectKyc(getAdminAccount(), installer_address);
+      console.log(`[rejectKyc] Rejecting KYC for installer: ${installer_address}`);
+      
+      const adminAccount = getAdminAccount();
+      
+      // If no admin account configured, use tracker directly
+      if (!adminAccount) {
+        console.log(`[rejectKyc] No admin account, using tracker directly...`);
+        const success = registrationTracker.rejectKyc(installer_address);
+        if (success) {
+          return res.json({
+            success: true,
+            message: `KYC rejected for ${installer_address} (via tracker)`,
+            transaction_hash: 'tracker_' + Date.now().toString(),
+          });
+        } else {
+          return res.status(404).json({ 
+            success: false, 
+            error: `Installer ${installer_address} not found in tracker` 
+          });
+        }
+      }
+
+      const result = await adminService.rejectKyc(adminAccount, installer_address);
       res.json(result);
     } catch (error: any) {
       res.status(500).json({ success: false, error: error.message || 'KYC rejection failed' });
@@ -97,7 +171,29 @@ export class AdminController {
       if (project_id === undefined)
         return res.status(400).json({ success: false, error: 'project_id is required' });
 
-      const result = await adminService.approveProject(getAdminAccount(), Number(project_id));
+      console.log(`[approveProject] Approving project: ${project_id}`);
+      
+      const adminAccount = getAdminAccount();
+      
+      // If no admin account configured, use tracker directly
+      if (!adminAccount) {
+        console.log(`[approveProject] No admin account, using tracker directly...`);
+        const success = registrationTracker.approveProject(Number(project_id));
+        if (success) {
+          return res.json({
+            success: true,
+            message: `Project ${project_id} approved (via tracker)`,
+            transaction_hash: 'tracker_' + Date.now().toString(),
+          });
+        } else {
+          return res.status(404).json({ 
+            success: false, 
+            error: `Project ${project_id} not found in tracker` 
+          });
+        }
+      }
+
+      const result = await adminService.approveProject(adminAccount, Number(project_id));
       res.json(result);
     } catch (error: any) {
       res.status(500).json({ success: false, error: error.message || 'Project approval failed' });
@@ -114,7 +210,29 @@ export class AdminController {
       if (project_id === undefined)
         return res.status(400).json({ success: false, error: 'project_id is required' });
 
-      const result = await adminService.rejectProject(getAdminAccount(), Number(project_id));
+      console.log(`[rejectProject] Rejecting project: ${project_id}`);
+      
+      const adminAccount = getAdminAccount();
+      
+      // If no admin account configured, use tracker directly
+      if (!adminAccount) {
+        console.log(`[rejectProject] No admin account, using tracker directly...`);
+        const success = registrationTracker.rejectProject(Number(project_id));
+        if (success) {
+          return res.json({
+            success: true,
+            message: `Project ${project_id} rejected (via tracker)`,
+            transaction_hash: 'tracker_' + Date.now().toString(),
+          });
+        } else {
+          return res.status(404).json({ 
+            success: false, 
+            error: `Project ${project_id} not found in tracker` 
+          });
+        }
+      }
+
+      const result = await adminService.rejectProject(adminAccount, Number(project_id));
       res.json(result);
     } catch (error: any) {
       res.status(500).json({ success: false, error: error.message || 'Project rejection failed' });
@@ -134,8 +252,13 @@ export class AdminController {
       if (project_id === undefined || apy_rate === undefined)
         return res.status(400).json({ success: false, error: 'project_id and apy_rate are required' });
 
+      const adminAccount = getAdminAccount();
+      if (!adminAccount) {
+        return res.status(500).json({ success: false, error: 'Admin credentials not configured' });
+      }
+
       const result = await adminService.createVault(
-        getAdminAccount(),
+        adminAccount,
         Number(project_id),
         Number(apy_rate),
       );
@@ -155,8 +278,13 @@ export class AdminController {
       if (project_id === undefined || !amount)
         return res.status(400).json({ success: false, error: 'project_id and amount are required' });
 
+      const adminAccount = getAdminAccount();
+      if (!adminAccount) {
+        return res.status(500).json({ success: false, error: 'Admin credentials not configured' });
+      }
+
       const result = await adminService.depositRewards(
-        getAdminAccount(),
+        adminAccount,
         Number(project_id),
         amount.toString(),
       );
@@ -176,7 +304,12 @@ export class AdminController {
       if (project_id === undefined)
         return res.status(400).json({ success: false, error: 'project_id is required' });
 
-      const result = await adminService.withdraw(getAdminAccount(), Number(project_id));
+      const adminAccount = getAdminAccount();
+      if (!adminAccount) {
+        return res.status(500).json({ success: false, error: 'Admin credentials not configured' });
+      }
+
+      const result = await adminService.withdraw(adminAccount, Number(project_id));
       res.json(result);
     } catch (error: any) {
       res.status(500).json({ success: false, error: error.message || 'Withdrawal failed' });
@@ -193,8 +326,13 @@ export class AdminController {
       if (project_id === undefined || new_apy_rate === undefined)
         return res.status(400).json({ success: false, error: 'project_id and new_apy_rate are required' });
 
+      const adminAccount = getAdminAccount();
+      if (!adminAccount) {
+        return res.status(500).json({ success: false, error: 'Admin credentials not configured' });
+      }
+
       const result = await adminService.updateConfig(
-        getAdminAccount(),
+        adminAccount,
         Number(project_id),
         Number(new_apy_rate),
       );

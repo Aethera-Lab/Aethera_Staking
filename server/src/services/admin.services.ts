@@ -149,12 +149,93 @@ export class AdminService {
     return pending;
   }
 
+  /**
+   * Get ALL projects (pending, approved, rejected)
+   * Falls back to in-memory tracker if on-chain registry not initialized
+   */
+  async getAllProjects(): Promise<any[]> {
+    const allProjects: any[] = [];
+    const resourceType = `${CONTRACT_CONFIG.CONTRACT_ADDRESS}::project_listing::ProjectRegistry` as `${string}::${string}::${string}`;
+    const statusLabels = ['Pending', 'Approved', 'Rejected'];
+    
+    try {
+      console.log(`[getAllProjects] Querying resource: ${resourceType}`);
+      
+      const resource = await aptos.getAccountResource({
+        accountAddress: CONTRACT_CONFIG.PROJECT_AUTHORITY,
+        resourceType,
+      });
+
+      const data = (resource as any).data || resource;
+      const entries: any[] = data?.projects?.data || [];
+
+      for (const entry of entries) {
+        const v = entry.value;
+        const status = Number(v.status);
+        
+        allProjects.push({
+          project_id: Number(entry.key),
+          name: v.name,
+          location_id: Number(v.location_id),
+          capacity_kw: Number(v.capacity_kw),
+          cost_apt: v.cost_apt.toString(),
+          description: v.description,
+          documents_hash: v.documents_hash,
+          expected_yield_bps: Number(v.expected_yield_bps),
+          installer: v.installer,
+          status,
+          status_label: statusLabels[status] || 'Unknown',
+        });
+      }
+    } catch (error: any) {
+      console.error('[getAllProjects] Error:', error.message || error);
+      console.log('[getAllProjects] Falling back to in-memory tracker...');
+      
+      // Use in-memory tracker as fallback
+      const trackedProjects = registrationTracker.getAllProjects();
+      for (const project of trackedProjects) {
+        allProjects.push({
+          project_id: project.project_id,
+          name: project.name,
+          location_id: project.location_id,
+          capacity_kw: project.capacity_kw,
+          cost_apt: project.cost_apt,
+          description: project.description,
+          documents_hash: project.documents_hash,
+          expected_yield_bps: project.expected_yield_bps,
+          installer: project.installer,
+          status: project.status,
+          status_label: statusLabels[project.status] || 'Unknown',
+        });
+      }
+    }
+
+    return allProjects;
+  }
+
   // ── KYC Actions ────────────────────────────────────────────────────────────
 
   async approveKyc(adminAccount: Account, installerAddress: string): Promise<TransactionResponse> {
     try {
       // Try on-chain first
-      return await installerService.approveKyc(adminAccount, installerAddress);
+      const result = await installerService.approveKyc(adminAccount, installerAddress);
+      
+      // If on-chain failed, fallback to tracker
+      if (!result.success) {
+        console.log('[approveKyc] On-chain failed, falling back to tracker...');
+        const success = registrationTracker.approveKyc(installerAddress);
+        if (success) {
+          return {
+            success: true,
+            message: `KYC approved for ${installerAddress} (via tracker)`,
+            transaction_hash: 'tracker_' + Date.now().toString(),
+          };
+        } else {
+          return { success: false, error: `Installer ${installerAddress} not found in tracker` };
+        }
+      }
+      
+      return result;
     } catch (error: any) {
       console.error('[approveKyc] On-chain failed:', error.message);
       console.log('[approveKyc] Falling back to in-memory tracker...');
@@ -176,7 +257,24 @@ export class AdminService {
   async rejectKyc(adminAccount: Account, installerAddress: string): Promise<TransactionResponse> {
     try {
       // Try on-chain first
-      return await installerService.rejectKyc(adminAccount, installerAddress);
+      const result = await installerService.rejectKyc(adminAccount, installerAddress);
+      
+      // If on-chain failed, fallback to tracker
+      if (!result.success) {
+        console.log('[rejectKyc] On-chain failed, falling back to tracker...');
+        const success = registrationTracker.rejectKyc(installerAddress);
+        if (success) {
+          return {
+            success: true,
+            message: `KYC rejected for ${installerAddress} (via tracker)`,
+            transaction_hash: 'tracker_' + Date.now().toString(),
+          };
+        } else {
+          return { success: false, error: `Installer ${installerAddress} not found in tracker` };
+        }
+      }
+      
+      return result;
     } catch (error: any) {
       console.error('[rejectKyc] On-chain failed:', error.message);
       console.log('[rejectKyc] Falling back to in-memory tracker...');
@@ -200,7 +298,24 @@ export class AdminService {
   async approveProject(adminAccount: Account, projectId: number): Promise<TransactionResponse> {
     try {
       // Try on-chain first
-      return await projectService.approveProject(adminAccount, projectId);
+      const result = await projectService.approveProject(adminAccount, projectId);
+      
+      // If on-chain failed, fallback to tracker
+      if (!result.success) {
+        console.log('[approveProject] On-chain failed, falling back to tracker...');
+        const success = registrationTracker.approveProject(projectId);
+        if (success) {
+          return {
+            success: true,
+            message: `Project ${projectId} approved (via tracker)`,
+            transaction_hash: 'tracker_' + Date.now().toString(),
+          };
+        } else {
+          return { success: false, error: `Project ${projectId} not found in tracker` };
+        }
+      }
+      
+      return result;
     } catch (error: any) {
       console.error('[approveProject] On-chain failed:', error.message);
       console.log('[approveProject] Falling back to in-memory tracker...');
@@ -222,7 +337,24 @@ export class AdminService {
   async rejectProject(adminAccount: Account, projectId: number): Promise<TransactionResponse> {
     try {
       // Try on-chain first
-      return await projectService.rejectProject(adminAccount, projectId);
+      const result = await projectService.rejectProject(adminAccount, projectId);
+      
+      // If on-chain failed, fallback to tracker
+      if (!result.success) {
+        console.log('[rejectProject] On-chain failed, falling back to tracker...');
+        const success = registrationTracker.rejectProject(projectId);
+        if (success) {
+          return {
+            success: true,
+            message: `Project ${projectId} rejected (via tracker)`,
+            transaction_hash: 'tracker_' + Date.now().toString(),
+          };
+        } else {
+          return { success: false, error: `Project ${projectId} not found in tracker` };
+        }
+      }
+      
+      return result;
     } catch (error: any) {
       console.error('[rejectProject] On-chain failed:', error.message);
       console.log('[rejectProject] Falling back to in-memory tracker...');

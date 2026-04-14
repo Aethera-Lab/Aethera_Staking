@@ -1,8 +1,11 @@
 /**
- * Temporary in-memory registration tracker
- * Stores installer registrations and KYC submissions until on-chain registry is initialized
- * Once ADMIN_PRIVATE_KEY is provided, this data can be migrated to blockchain
+ * Persistent registration tracker
+ * Stores installer registrations and KYC submissions in a JSON file
+ * Data persists across server restarts
  */
+
+import * as fs from 'fs';
+import * as path from 'path';
 
 interface TrackedInstaller {
   wallet_address: string;
@@ -30,10 +33,75 @@ interface TrackedProject {
   submitted_at: number;
 }
 
+interface TrackerData {
+  installers: Record<string, TrackedInstaller>;
+  projects: Record<number, TrackedProject>;
+  nextProjectId: number;
+}
+
+const DATA_FILE = path.join(__dirname, '../../data/tracker.json');
+
 class RegistrationTracker {
   private installers: Map<string, TrackedInstaller> = new Map();
   private projects: Map<number, TrackedProject> = new Map();
   private nextProjectId: number = 1;
+
+  constructor() {
+    this.loadFromFile();
+  }
+
+  private loadFromFile(): void {
+    try {
+      // Ensure data directory exists
+      const dataDir = path.dirname(DATA_FILE);
+      if (!fs.existsSync(dataDir)) {
+        fs.mkdirSync(dataDir, { recursive: true });
+      }
+
+      if (fs.existsSync(DATA_FILE)) {
+        const raw = fs.readFileSync(DATA_FILE, 'utf-8');
+        const data: TrackerData = JSON.parse(raw);
+        
+        // Load installers
+        for (const [key, value] of Object.entries(data.installers || {})) {
+          this.installers.set(key, value);
+        }
+        
+        // Load projects
+        for (const [key, value] of Object.entries(data.projects || {})) {
+          this.projects.set(Number(key), value);
+        }
+        
+        this.nextProjectId = data.nextProjectId || 1;
+        
+        console.log(`[RegistrationTracker] Loaded ${this.installers.size} installers, ${this.projects.size} projects from disk`);
+      } else {
+        console.log(`[RegistrationTracker] No existing data file, starting fresh`);
+      }
+    } catch (error) {
+      console.error('[RegistrationTracker] Error loading data:', error);
+    }
+  }
+
+  private saveToFile(): void {
+    try {
+      const dataDir = path.dirname(DATA_FILE);
+      if (!fs.existsSync(dataDir)) {
+        fs.mkdirSync(dataDir, { recursive: true });
+      }
+
+      const data: TrackerData = {
+        installers: Object.fromEntries(this.installers),
+        projects: Object.fromEntries(this.projects),
+        nextProjectId: this.nextProjectId,
+      };
+      
+      fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2));
+      console.log(`[RegistrationTracker] Saved to disk`);
+    } catch (error) {
+      console.error('[RegistrationTracker] Error saving data:', error);
+    }
+  }
 
   /**
    * Register a new installer
@@ -62,8 +130,37 @@ class RegistrationTracker {
     };
 
     this.installers.set(normalized, installer);
+    this.saveToFile();
     console.log(`[RegistrationTracker] ✅ Registered: ${normalized}`);
     return true;
+  }
+
+  /**
+   * Mark a wallet as registered (from on-chain E_ALREADY_REGISTERED error)
+   * Creates a minimal record so we know they're registered
+   */
+  markAsRegistered(walletAddress: string): void {
+    const normalized = walletAddress.toLowerCase();
+    
+    if (this.installers.has(normalized)) {
+      console.log(`[RegistrationTracker] Already tracking: ${normalized}`);
+      return;
+    }
+
+    const installer: TrackedInstaller = {
+      wallet_address: normalized,
+      name: "Unknown (on-chain)",
+      business_reg: "Unknown",
+      documents_hash: "",
+      kyc_status: 0, // PENDING - we don't know real status yet
+      location_id: 0,
+      project_id: 0,
+      registered_at: Date.now(),
+    };
+
+    this.installers.set(normalized, installer);
+    this.saveToFile();
+    console.log(`[RegistrationTracker] ✅ Marked as registered (from on-chain): ${normalized}`);
   }
 
   /**
@@ -82,16 +179,22 @@ class RegistrationTracker {
     locationId: number,
   ): boolean {
     const normalized = walletAddress.toLowerCase();
-    const installer = this.installers.get(normalized);
+    let installer = this.installers.get(normalized);
 
+    // If installer not found, create a record (they may have registered on-chain)
     if (!installer) {
-      console.log(`[RegistrationTracker] Installer not found: ${normalized}`);
-      return false;
-    }
-
-    if (installer.kyc_status !== 0) {
-      console.log(`[RegistrationTracker] KYC already submitted for: ${normalized}`);
-      return false;
+      console.log(`[RegistrationTracker] Installer not found, creating record: ${normalized}`);
+      installer = {
+        wallet_address: normalized,
+        name: "Unknown (on-chain)",
+        business_reg: "Unknown",
+        documents_hash: "",
+        kyc_status: 0,
+        location_id: 0,
+        project_id: 0,
+        registered_at: Date.now(),
+      };
+      this.installers.set(normalized, installer);
     }
 
     installer.documents_hash = docsHash;
@@ -99,6 +202,7 @@ class RegistrationTracker {
     installer.kyc_status = 1; // SUBMITTED
     installer.kyc_submitted_at = Date.now();
     
+    this.saveToFile();
     console.log(`[RegistrationTracker] ✅ KYC submitted: ${normalized}`);
     return true;
   }
@@ -113,6 +217,7 @@ class RegistrationTracker {
     if (!installer) return false;
 
     installer.kyc_status = 2; // APPROVED
+    this.saveToFile();
     console.log(`[RegistrationTracker] ✅ KYC approved: ${normalized}`);
     return true;
   }
@@ -127,6 +232,7 @@ class RegistrationTracker {
     if (!installer) return false;
 
     installer.kyc_status = 3; // REJECTED
+    this.saveToFile();
     console.log(`[RegistrationTracker] ✅ KYC rejected: ${normalized}`);
     return true;
   }
@@ -145,11 +251,22 @@ class RegistrationTracker {
     yieldBps: number,
   ): number {
     const normalized = installerAddress.toLowerCase();
-    const installer = this.installers.get(normalized);
+    let installer = this.installers.get(normalized);
 
+    // If installer not found, create a record (they may have registered on-chain)
     if (!installer) {
-      console.log(`[RegistrationTracker] Installer not found: ${normalized}`);
-      return 0;
+      console.log(`[RegistrationTracker] Installer not found, creating record for project: ${normalized}`);
+      installer = {
+        wallet_address: normalized,
+        name: "Unknown (on-chain)",
+        business_reg: "Unknown",
+        documents_hash: "",
+        kyc_status: 2, // Must be approved if submitting project
+        location_id: locationId,
+        project_id: 0,
+        registered_at: Date.now(),
+      };
+      this.installers.set(normalized, installer);
     }
 
     const projectId = this.nextProjectId++;
@@ -169,7 +286,8 @@ class RegistrationTracker {
 
     this.projects.set(projectId, project);
     installer.project_id = projectId;
-
+    
+    this.saveToFile();
     console.log(`[RegistrationTracker] ✅ Project submitted: ID ${projectId} by ${normalized}`);
     return projectId;
   }
@@ -212,6 +330,7 @@ class RegistrationTracker {
     if (!project) return false;
 
     project.status = 1; // APPROVED
+    this.saveToFile();
     console.log(`[RegistrationTracker] ✅ Project approved: ID ${projectId}`);
     return true;
   }
@@ -224,6 +343,7 @@ class RegistrationTracker {
     if (!project) return false;
 
     project.status = 2; // REJECTED
+    this.saveToFile();
     console.log(`[RegistrationTracker] ✅ Project rejected: ID ${projectId}`);
     return true;
   }
@@ -247,6 +367,36 @@ class RegistrationTracker {
    */
   getAllProjects(): TrackedProject[] {
     return Array.from(this.projects.values());
+  }
+
+  /**
+   * Get approved projects by location
+   */
+  getApprovedProjectsByLocation(locationId: number): TrackedProject[] {
+    const approved: TrackedProject[] = [];
+    
+    for (const project of this.projects.values()) {
+      if (project.status === 1 && project.location_id === locationId) {
+        approved.push(project);
+      }
+    }
+
+    return approved;
+  }
+
+  /**
+   * Get all approved projects
+   */
+  getAllApprovedProjects(): TrackedProject[] {
+    const approved: TrackedProject[] = [];
+    
+    for (const project of this.projects.values()) {
+      if (project.status === 1) {
+        approved.push(project);
+      }
+    }
+
+    return approved;
   }
 }
 
