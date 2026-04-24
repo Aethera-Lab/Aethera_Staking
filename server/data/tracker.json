@@ -10,6 +10,27 @@
       "project_id": 2,
       "registered_at": 1776137626864,
       "kyc_submitted_at": 1776137653171
+    },
+    "0x47787106dd7a2f3299db6d3aff0f69ac260e0a38df3c4ae6ed23c1392776e079": {
+      "wallet_address": "0x47787106dd7a2f3299db6d3aff0f69ac260e0a38df3c4ae6ed23c1392776e079",
+      "name": "ma",
+      "business_reg": "1",
+      "documents_hash": "ipfs://ma",
+      "kyc_status": 2,
+      "location_id": 1,
+      "project_id": 3,
+      "registered_at": 1776149401126,
+      "kyc_submitted_at": 1776149421105
+    },
+    "0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef": {
+      "wallet_address": "0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",
+      "name": "Test Installer",
+      "business_reg": "REG123",
+      "documents_hash": "",
+      "kyc_status": 0,
+      "location_id": 0,
+      "project_id": 0,
+      "registered_at": 1776150208966
     }
   },
   "projects": {
@@ -36,9 +57,22 @@
       "description": "best in the world ",
       "documents_hash": "ipfs:://yoyo",
       "expected_yield_bps": 800,
-      "status": 0,
+      "status": 1,
       "submitted_at": 1776145114604
+    },
+    "3": {
+      "project_id": 3,
+      "name": "sun power",
+      "installer": "0x47787106dd7a2f3299db6d3aff0f69ac260e0a38df3c4ae6ed23c1392776e079",
+      "location_id": 2,
+      "capacity_kw": 500,
+      "cost_apt": "10000000000",
+      "description": "sunpower : always ",
+      "documents_hash": "ipfs://sunpower",
+      "expected_yield_bps": 800,
+      "status": 1,
+      "submitted_at": 1776149545634
     }
   },
-  "nextProjectId": 3
+  "nextProjectId": 4
 }
