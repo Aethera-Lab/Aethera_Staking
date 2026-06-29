@@ -9,6 +9,7 @@ module aethera_staking::state {
     // use aptos_framework::error;
 
     use aethera_staking::helpers;
+    use aethera_staking::project_token; //mint/burn project tokens on stake/unstake
     // Removed: use aethera_staking::project_listing; (no longer needed)
     // Error codes
     const E_AMOUNT_ZERO: u64 = 1;
@@ -32,6 +33,7 @@ module aethera_staking::state {
         reward_time: u64,
         duration_time: u64,
         reward_amount: u64,
+        tokens_minted: u64,
     }
 
     // adding new wrappers structs
@@ -39,6 +41,7 @@ module aethera_staking::state {
     struct StakingHub has key {
         authority : address,
         project_authority: address,
+        token_hub_authority: address,
         vaults: SimpleMap<u64, VaultAccount>,
     }
 
@@ -47,10 +50,15 @@ module aethera_staking::state {
     }
 
     // modified: takes project_authority instead of apy_rate
-    public entry fun initialize(authority: &signer, project_authority: address){
+    public entry fun initialize(
+        authority: &signer, 
+        project_authority: address,
+        token_hub_authority: address,
+        ){
         move_to(authority,StakingHub {
             authority: signer::address_of(authority),
             project_authority,
+            token_hub_authority,
             vaults: simple_map::create<u64, VaultAccount>(),
         });
     }
@@ -101,7 +109,6 @@ module aethera_staking::state {
         player: &signer,
         hub_authority: address,
         project_id: u64,
-        // vault_authority: address,
         amount: u64,
         duration: u64) // sol stake now take project id
 
@@ -110,17 +117,29 @@ module aethera_staking::state {
 
 
         let player_addr = signer::address_of(player);
-        let hub = borrow_global_mut<StakingHub>(hub_authority);
-        assert!(simple_map::contains_key(&hub.vaults, &project_id), E_VAULT_NOT_FOUND);
+         let current_time = timestamp::now_seconds();
 
-        let vault_data = simple_map::borrow_mut(&mut hub.vaults, &project_id);        let current_time = timestamp::now_seconds();
+        
+         let token_hub: address;  //scoped so the StakingHub borrow ends before we call into project_token
+        {
+            let hub = borrow_global_mut<StakingHub>(hub_authority);
+            assert!(simple_map::contains_key(&hub.vaults, &project_id), E_VAULT_NOT_FOUND);
+            token_hub = hub.token_hub_authority; // NEW: capture token hub address
+
+            let vault_data = simple_map::borrow_mut(&mut hub.vaults, &project_id);
+            vault_data.staked_amount = vault_data.staked_amount + amount;
+            let coins = helpers::transfer_lamports(player, amount);
+            coin::merge(&mut vault_data.vault_coins, coins);
+        };
+
         // Create PlayerHub first time this investor stakes anything
         if (!exists<PlayerHub>(player_addr)) {
             move_to(player, PlayerHub {
                 stakes: simple_map::create<u64, PlayerAccount>(),
             });
         };
-        let player_hub = borrow_global_mut<PlayerHub>(player_addr);
+        {
+            let player_hub = borrow_global_mut<PlayerHub>(player_addr);
 
                 if (simple_map::contains_key(&player_hub.stakes, &project_id)) {
                     let player_data = simple_map::borrow_mut(&mut player_hub.stakes, &project_id);
@@ -135,12 +154,22 @@ module aethera_staking::state {
                         reward_time: current_time,
                         duration_time: duration,
                         reward_amount: 0,
+                        tokens_minted:  0,
                     });
                 };
-
-         let vault_data = simple_map::borrow_mut(&mut hub.vaults, &project_id);        vault_data.staked_amount = vault_data.staked_amount + amount;
-        let coins = helpers::transfer_lamports(player, amount);
-        coin::merge(&mut vault_data.vault_coins, coins);
+                };
+            //calculate and mint project tokens
+            let tokens_minted = project_token::mint_to_investor(
+                player,
+                token_hub,
+                project_id,
+                amount,
+            );
+            if(tokens_minted > 0){
+                let player_hub = borrow_global_mut<PlayerHub>(player_addr);
+                let player_data = simple_map::borrow_mut(&mut player_hub.stakes, &project_id);
+                player_data.tokens_minted = player_data.tokens_minted + tokens_minted;
+            }
     }
 
 
@@ -153,27 +182,48 @@ module aethera_staking::state {
         project_id: u64)
         acquires StakingHub, PlayerHub {
         let player_addr = signer::address_of(player);
-        let hub = borrow_global_mut<StakingHub>(hub_authority);
-        assert!(simple_map::contains_key(&hub.vaults, &project_id), E_VAULT_NOT_FOUND);
-
-        let vault_data = simple_map::borrow_mut(&mut hub.vaults, &project_id);
-        let player_hub = borrow_global_mut<PlayerHub>(player_addr);
-        assert!(simple_map::contains_key(&player_hub.stakes, &project_id), E_NOT_STAKED);
-
-
-        let player_data = simple_map::borrow_mut(&mut player_hub.stakes, &project_id);
         let current_time = timestamp::now_seconds();
-        let staked_duration = current_time - player_data.staked_time;
-        assert!(staked_duration >= player_data.duration_time, E_UNSTAKE_TOO_EARLY);
 
+        // CHANGED: scoped so StakingHub/PlayerHub borrows end before calling project_token
+        let token_hub: address;
+        let tokens_to_burn: u64;
+        {
+            let hub = borrow_global_mut<StakingHub>(hub_authority);
+            assert!(simple_map::contains_key(&hub.vaults, &project_id), E_VAULT_NOT_FOUND);
+            token_hub = hub.token_hub_authority; // NEW
 
-        let amount = player_data.staked_amount;
-        player_data.staked_amount = 0;
-        vault_data.staked_amount = vault_data.staked_amount - amount;
+            let player_hub = borrow_global_mut<PlayerHub>(player_addr);
+            assert!(simple_map::contains_key(&player_hub.stakes, &project_id), E_NOT_STAKED);
+            let player_data = simple_map::borrow_mut(&mut player_hub.stakes, &project_id);
 
-        let coins = coin::extract(&mut vault_data.vault_coins, amount);
-        helpers::transfer_coins_to_player(player, coins);
+            let staked_duration = current_time - player_data.staked_time;
+            assert!(staked_duration >= player_data.duration_time, E_UNSTAKE_TOO_EARLY);
+
+            let amount = player_data.staked_amount;
+            player_data.staked_amount = 0;
+
+            // NEW: capture & clear the tokens tied to this stake position
+            // (historical mint amount, NOT the user's current FA balance)
+            tokens_to_burn = player_data.tokens_minted;
+            player_data.tokens_minted = 0;
+
+            let vault_data = simple_map::borrow_mut(&mut hub.vaults, &project_id);
+            vault_data.staked_amount = vault_data.staked_amount - amount;
+            let coins = coin::extract(&mut vault_data.vault_coins, amount);
+            helpers::transfer_coins_to_player(player, coins);
+        };
+
+        // NEW: burn the project tokens that belonged to this stake position
+        if (tokens_to_burn > 0) {
+            project_token::burn_from_investor(
+                player,      // &signer — needed to withdraw from the FA store
+                token_hub,
+                project_id,
+                tokens_to_burn,
+            );
+        };
     }
+
 
 
 // claim rewards with project id
@@ -256,6 +306,16 @@ module aethera_staking::state {
         let player_hub = borrow_global<PlayerHub>(player_addr);
         if (!simple_map::contains_key(&player_hub.stakes, &project_id)) return 0;
         simple_map::borrow(&player_hub.stakes, &project_id).staked_amount
+    }
+
+
+
+#[view]
+public fun get_player_tokens_minted(player_addr: address, project_id: u64): u64 acquires PlayerHub {
+    if (!exists<PlayerHub>(player_addr)) return 0;
+    let player_hub = borrow_global<PlayerHub>(player_addr);
+    if (!simple_map::contains_key(&player_hub.stakes, &project_id)) return 0;
+        simple_map::borrow(&player_hub.stakes, &project_id).tokens_minted
     }
 
 }

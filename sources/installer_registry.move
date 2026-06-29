@@ -1,27 +1,19 @@
-/// Task 1 — Installer Registry
-/// Handles installer registration, KYC submission, and admin approval.
-/// All installer data is stored in a single SimpleMap at the admin's address.
-
 module aethera_staking::installer_registry {
     use std::signer;
     use std::string::String;
     use aptos_std::simple_map::{Self, SimpleMap};
 
-    // ── Error Codes ──────────────────────────────────────────────────────────
     const E_NOT_ADMIN: u64          = 1;
     const E_ALREADY_REGISTERED: u64 = 2;
     const E_NOT_REGISTERED: u64     = 3;
     const E_KYC_NOT_SUBMITTED: u64  = 4;
 
-    // ── KYC Status Constants ─────────────────────────────────────────────────
     const KYC_PENDING: u8   = 0;   // registered but docs not uploaded yet
     const KYC_SUBMITTED: u8 = 1;   // docs uploaded, waiting for admin
     const KYC_APPROVED: u8  = 2;   // admin approved
     const KYC_REJECTED: u8  = 3;   // admin rejected
 
-    // ── Structs ──────────────────────────────────────────────────────────────
 
-    /// One record per installer, stored inside InstallerRegistry map
     struct InstallerInfo has store, copy, drop {
         wallet:          address,
         name:            String,
@@ -38,7 +30,6 @@ module aethera_staking::installer_registry {
         installers: SimpleMap<address, InstallerInfo>,
     }
 
-    // ── Admin Functions ──────────────────────────────────────────────────────
 
     /// Called ONCE by the platform admin to initialise the registry on-chain
     public entry fun initialize(admin: &signer) {
@@ -48,7 +39,6 @@ module aethera_staking::installer_registry {
         });
     }
 
-    /// Admin approves an installer's KYC (status must be SUBMITTED)
     public entry fun approve_kyc(
         admin:             &signer,
         registry_authority: address,
@@ -63,7 +53,6 @@ module aethera_staking::installer_registry {
         info.kyc_status = KYC_APPROVED;
     }
 
-    /// Admin rejects an installer's KYC
     public entry fun reject_kyc(
         admin:             &signer,
         registry_authority: address,
@@ -77,9 +66,7 @@ module aethera_staking::installer_registry {
         info.kyc_status = KYC_REJECTED;
     }
 
-    // ── Installer Functions ──────────────────────────────────────────────────
 
-    /// Step 1 — Installer connects wallet and registers basic info
     public entry fun register_installer(
         installer:          &signer,
         registry_authority: address,
@@ -132,12 +119,11 @@ public entry fun submit_kyc(
 
 
 
-    /// Step 2 — Installer uploads IPFS doc hash + picks their oracle location
-    ///          This moves status from PENDING → SUBMITTED
+    // Step 2 — Installer uploads IPFS doc hash + picks their oracle location. This moves status from PENDING → SUBMITTED
    
    
 
-    /// Called internally by project_listing when a project is submitted
+    // Called internally by project_listing when a project is submitted
     public fun set_project_id(
         registry_authority: address,
         installer_addr:     address,
@@ -149,7 +135,6 @@ public entry fun submit_kyc(
         info.project_id = project_id;
     }
 
-    // ── View Functions ───────────────────────────────────────────────────────
 
     #[view]
     public fun get_kyc_status(
