@@ -1,0 +1,2886 @@
+{
+  "query": "RWA tokenization",
+  "startedAt": "2026-07-02T11:54:02.944Z",
+  "completedAt": "2026-07-02T11:55:01.990Z",
+  "totalFound": 186,
+  "totalNew": 186,
+  "articles": [
+    {
+      "title": "Morpho poised to scale as DeFi infrastructure play, Standard Chartered says",
+      "url": "https://www.coindesk.com/markets/2026/07/01/morpho-poised-to-scale-as-defi-infrastructure-play-standard-chartered-says",
+      "source": "CoinDesk",
+      "summary": "The bank initiated coverage of Morpho with a $60 end-2030 price target, saying its DeFi lending and onchain infrastructure businesses are positioned to benefit from tokenization growth.",
+      "content": "The bank initiated coverage of Morpho with a $60 end-2030 price target, saying its DeFi lending and onchain infrastructure businesses are positioned to benefit from tokenization growth.",
+      "category": "general",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-07-01T13:46:40.000Z",
+      "scrapedAt": "2026-07-02T11:54:03.324Z",
+      "relevanceScore": 13
+    },
+    {
+      "title": "Robinhood links with dYdX Labs to launch new DEX Arcus",
+      "url": "https://cointelegraph.com/news/robinhood-links-with-dydx-labs-to-launch-new-dex-arcus?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "CoinTelegraph",
+      "summary": "The crypto protocol dYdX has rebranded as Arcus and is joining Robinhood’s new blockchain to bring perpetual and tokenized stock trading.",
+      "content": "<p style=\"float:right; margin:0 0 10px 15px; width:240px;\"><img src=\"https://s3-images.ctmedia.io/media/article-covers/hi-robinhood-how-the-fast-growing-stock-trading-app-got-into-crypto.jpg\" alt=\"Robinhood links with dYdX Labs to launch new DEX Arcus\" class=\"type:primaryImage\"></p><p>The crypto protocol dYdX has rebranded as Arcus and is joining Robinhood’s new blockchain to bring perpetual and tokenized stock trading. </p>",
+      "category": "blockchain",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-07-02T06:05:02.000Z",
+      "scrapedAt": "2026-07-02T11:54:07.019Z",
+      "relevanceScore": 43
+    },
+    {
+      "title": "Tradeweb executes real-time tokenized US Treasury transaction on Canton Network",
+      "url": "https://cointelegraph.com/news/tradeweb-executes-real-time-tokenized-us-treasury-transaction-on-canton-network?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "CoinTelegraph",
+      "summary": "Franklin Templeton transferred a tokenized US Treasury to Virtu Financial in what Tradeweb said was the first real-time transaction settled against USDCx.",
+      "content": "<p style=\"float:right; margin:0 0 10px 15px; width:240px;\"><img src=\"https://s3-images.ctmedia.io/media/article-covers/hi-bond-follow-up-bybit.png\" alt=\"Tradeweb executes real-time tokenized US Treasury transaction on Canton Network\" class=\"type:primaryImage\"></p><p>Franklin Templeton transferred a tokenized US Treasury to Virtu Financial in what Tradeweb said was the first real-time transaction settled against USDCx.</p>",
+      "category": "general",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-07-01T20:38:39.000Z",
+      "scrapedAt": "2026-07-02T11:54:07.019Z",
+      "relevanceScore": 52
+    },
+    {
+      "title": "French banking giant Crédit Agricole launches EURXT euro stablecoin",
+      "url": "https://cointelegraph.com/news/credit-agricole-eurxt-euro-stablecoin-caceis?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "CoinTelegraph",
+      "summary": "Crédit Agricole’s CACEIS launches a euro-pegged stablecoin on Ethereum with 20.02 million tokens issued, targeting institutional flows and tokenized fund access.",
+      "content": "<p style=\"float:right; margin:0 0 10px 15px; width:240px;\"><img src=\"https://s3-images.ctmedia.io/media/article-covers/hi-euro-pegged-stablecoin-the-ultimate-growth-driver-for-crypto-lending11.jpg\" alt=\"French banking giant Crédit Agricole launches EURXT euro stablecoin\" class=\"type:primaryImage\"></p><p>Crédit Agricole’s CACEIS launches a euro-pegged stablecoin on Ethereum with 20.02 million tokens issued, targeting institutional flows and tokenized fund access.</p>",
+      "category": "investment",
+      "tags": [
+        "tokenization",
+        "ethereum"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-07-01T14:24:19.000Z",
+      "scrapedAt": "2026-07-02T11:54:07.020Z",
+      "relevanceScore": 26
+    },
+    {
+      "title": "Bank of Korea governor outlines tokenized bond vision, unified ledger plan",
+      "url": "https://cointelegraph.com/news/bank-korea-governor-tokenized-government-bonds?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "CoinTelegraph",
+      "summary": "The Bank of Korea’s governor praised tokenized government bonds for easing the issuance and management of government debt during a panel discussion at the ECB Forum.",
+      "content": "<p style=\"float:right; margin:0 0 10px 15px; width:240px;\"><img src=\"https://s3-images.ctmedia.io/media/article-covers/digital-bank-south-korea.jpg\" alt=\"Bank of Korea governor outlines tokenized bond vision, unified ledger plan\" class=\"type:primaryImage\"></p><p>The Bank of Korea’s governor praised tokenized government bonds for easing the issuance and management of government debt during a panel discussion at the ECB Forum.</p>",
+      "category": "general",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "South Korea",
+      "publishedAt": "2026-07-01T13:36:13.000Z",
+      "scrapedAt": "2026-07-02T11:54:07.020Z",
+      "relevanceScore": 52
+    },
+    {
+      "title": "Robinhood Launches 'AI-Native' Ethereum Layer-2 Network, Tokenized Stock Trading",
+      "url": "https://decrypt.co/372614/robinhood-ai-native-ethereum-layer-2-network-tokenized-stock-trading",
+      "source": "Decrypt",
+      "summary": "Brokerage and crypto exchange Robinhood opened the public mainnet for its Arbitrum-powered Ethereum layer-2 network on Wednesday.",
+      "content": "Brokerage and crypto exchange Robinhood opened the public mainnet for its Arbitrum-powered Ethereum layer-2 network on Wednesday.",
+      "category": "blockchain",
+      "tags": [
+        "tokenization",
+        "ethereum"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-07-01T20:56:38.000Z",
+      "scrapedAt": "2026-07-02T11:54:09.569Z",
+      "relevanceScore": 35
+    },
+    {
+      "title": "Ahead of NYSE Listing, Securitize Exec Says DeFi Can Break Wall Street's Grip on Stock Lending",
+      "url": "https://decrypt.co/372493/ahead-nyse-listing-securitize-defi-break-wall-street-stock-lending",
+      "source": "Decrypt",
+      "summary": "Securitize President Brett Redfearn argues that tokenization will bring crypto's core benefit of disintermediation to retail investors.",
+      "content": "Securitize President Brett Redfearn argues that tokenization will bring crypto's core benefit of disintermediation to retail investors.",
+      "category": "investment",
+      "tags": [
+        "tokenization",
+        "investment"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-07-01T16:36:39.000Z",
+      "scrapedAt": "2026-07-02T11:54:09.569Z",
+      "relevanceScore": 42
+    },
+    {
+      "title": "Forward Industries Shares Spike as Leading Solana Treasury Adds $38 Million in SOL",
+      "url": "https://decrypt.co/372519/forward-industries-shares-spike-solana-treasury-adds-38-million",
+      "source": "Decrypt",
+      "summary": "Shares in top Solana treasury firm Forward Industries are jumping Wedesday after announcing that it added over 500,000 SOL to its stash.",
+      "content": "Shares in top Solana treasury firm Forward Industries are jumping Wedesday after announcing that it added over 500,000 SOL to its stash.",
+      "category": "rwa",
+      "tags": [
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-07-01T15:09:05.000Z",
+      "scrapedAt": "2026-07-02T11:54:09.569Z",
+      "relevanceScore": 26
+    },
+    {
+      "title": "New York Life Investment Management Debuts First Tokenized Bond Fund",
+      "url": "https://decrypt.co/372457/new-york-life-investment-management-first-tokenized-bond-fund",
+      "source": "Decrypt",
+      "summary": "The tokenized NYLIM Anemoy U.S. High Yield Corporate Bond Segregated Portfolio is launching in collaboration with Centrifuge.",
+      "content": "The tokenized NYLIM Anemoy U.S. High Yield Corporate Bond Segregated Portfolio is launching in collaboration with Centrifuge.",
+      "category": "investment",
+      "tags": [
+        "tokenization",
+        "investment"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-30T20:46:02.000Z",
+      "scrapedAt": "2026-07-02T11:54:09.569Z",
+      "relevanceScore": 52
+    },
+    {
+      "title": "Morning Minute: A Change of Strategy",
+      "url": "https://decrypt.co/372411/morning-minute-a-change-of-strategy",
+      "source": "Decrypt",
+      "summary": "Michael Saylor's Strategy is rolling out some major changes to how it handles Bitcoin going forward. And so far, the market likes it.",
+      "content": "Michael Saylor's Strategy is rolling out some major changes to how it handles Bitcoin going forward. And so far, the market likes it.",
+      "category": "rwa",
+      "tags": [
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-30T12:13:27.000Z",
+      "scrapedAt": "2026-07-02T11:54:09.569Z",
+      "relevanceScore": 13
+    },
+    {
+      "title": "dYdX Launches Arcus, a DEX Pairing Stock Tokens With Perpetuals on Robinhood Chain",
+      "url": "https://thedefiant.io/news/defi/dydx-launches-arcus-dex-stock-tokens-perpetuals-robinhood-chain",
+      "source": "The Defiant",
+      "summary": "dYdX Labs founder Antonio Juliano launched Arcus, a new DEX combining tokenized stock trading with perpetual futures, built jointly with Robinhood Crypto on Robinhood Chain.",
+      "content": "dYdX Labs founder Antonio Juliano launched Arcus, a new DEX combining tokenized stock trading with perpetual futures, built jointly with Robinhood Crypto on Robinhood Chain.",
+      "category": "blockchain",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-07-01T19:35:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:12.464Z",
+      "relevanceScore": 34
+    },
+    {
+      "title": "ENS Community Member Proposes Dissolving DAO After Founder Blocks Security Council Renewal",
+      "url": "https://thedefiant.io/news/nfts-and-web3/ens-community-member-proposes-dissolving-dao-after-founder-blocks-security-council-renewal",
+      "source": "The Defiant",
+      "summary": "Christoph Jentzsch, who wrote code for the original 2016 \"The DAO\" and now runs Tokenize.it, called for ENS DAO to wind down and revoke its own upgrade authority, a day after ENS co-founder Nick Johnson used roughly half of the protocol's active voting power to block a Security Council renewal.",
+      "content": "Christoph Jentzsch, who wrote code for the original 2016 \"The DAO\" and now runs Tokenize.it, called for ENS DAO to wind down and revoke its own upgrade authority, a day after ENS co-founder Nick Johnson used roughly half of the protocol's active voting power to block a Security Council renewal.",
+      "category": "general",
+      "tags": [
+        "tokenization",
+        "dao"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-07-01T16:38:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:12.464Z",
+      "relevanceScore": 25
+    },
+    {
+      "title": "New York Life Partners with Centrifuge on Tokenized Corporate Bonds",
+      "url": "https://thedefiant.io/news/tradfi-and-fintech/new-york-life-partners-centrifuge-tokenized-corporate-bonds",
+      "source": "The Defiant",
+      "summary": "New York Life Investment Management is tokenizing a high-yield corporate bond strategy for the first time, partnering with Centrifuge on the NYLIM Anemoy fund settled in USDC.",
+      "content": "New York Life Investment Management is tokenizing a high-yield corporate bond strategy for the first time, partnering with Centrifuge on the NYLIM Anemoy fund settled in USDC.",
+      "category": "investment",
+      "tags": [
+        "tokenization",
+        "investment"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-07-01T14:38:10.000Z",
+      "scrapedAt": "2026-07-02T11:54:12.464Z",
+      "relevanceScore": 20
+    },
+    {
+      "title": "Securitize Shareholders Approve Merger, Paving Way for First Publicly Traded Tokenization Company",
+      "url": "https://thedefiant.io/converge/tradfi-and-fintech/securitize-shareholders-approve-merger-first-publicly-traded-tokenization-company",
+      "source": "The Defiant",
+      "summary": "Cantor Equity Partners II shareholders voted Monday to approve a business combination with Securitize, expected to close July 1 and list on the NYSE July 2 under ticker SECZ as the first publicly traded tokenization company in the US.",
+      "content": "Cantor Equity Partners II shareholders voted Monday to approve a business combination with Securitize, expected to close July 1 and list on the NYSE July 2 under ticker SECZ as the first publicly traded tokenization company in the US.",
+      "category": "general",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-30T18:56:55.000Z",
+      "scrapedAt": "2026-07-02T11:54:12.465Z",
+      "relevanceScore": 32
+    },
+    {
+      "title": "Kraken's xStocks Opens Bending Spoons IPO Registration to EEA Retail",
+      "url": "https://thedefiant.io/news/cefi/kraken-xstocks-bending-spoons-ipo-eea-registration",
+      "source": "The Defiant",
+      "summary": "Kraken's xStocks platform is opening non-binding interest registration for the Bending Spoons IPO to eligible customers in the EEA and select global markets, the tokenized equities infrastructure's second pre-IPO offering after a troubled SpaceX debut.",
+      "content": "Kraken's xStocks platform is opening non-binding interest registration for the Bending Spoons IPO to eligible customers in the EEA and select global markets, the tokenized equities infrastructure's second pre-IPO offering after a troubled SpaceX debut.",
+      "category": "general",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-27T02:05:50.000Z",
+      "scrapedAt": "2026-07-02T11:54:12.465Z",
+      "relevanceScore": 45
+    },
+    {
+      "title": "Tokenized Asset Value Stalls Even as Stock Token Holders Surge",
+      "url": "https://thedefiant.io/converge/tradfi-and-fintech/tokenized-asset-value-stalls-even-as-stock-token-holders-surge",
+      "source": "The Defiant",
+      "summary": "Distributed tokenized real-world asset value slipped about 1.4% over the past month to roughly $31.5 billion, the first monthly decline of its institutional-led run, even as the number of holders climbed 14%, led by tokenized stocks, according to data from rwa.xyz.",
+      "content": "Distributed tokenized real-world asset value slipped about 1.4% over the past month to roughly $31.5 billion, the first monthly decline of its institutional-led run, even as the number of holders climbed 14%, led by tokenized stocks, according to data from rwa.xyz.",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-26T20:16:02.000Z",
+      "scrapedAt": "2026-07-02T11:54:12.465Z",
+      "relevanceScore": 84
+    },
+    {
+      "title": "Securitize Goes Public on NYSE July 2 With $400M From SPAC Merger",
+      "url": "https://thedefiant.io/converge/tradfi-and-fintech/securitize-nyse-spac-400m-secz-july-2-cantor-equity",
+      "source": "The Defiant",
+      "summary": "Securitize, the tokenization platform behind BlackRock's BUIDL fund, is set to begin trading on the NYSE on July 2 under the ticker SECZ after a SPAC merger with Cantor Equity Partners II that raised over $400 million, including an oversubscribed $225M PIPE.",
+      "content": "Securitize, the tokenization platform behind BlackRock's BUIDL fund, is set to begin trading on the NYSE on July 2 under the ticker SECZ after a SPAC merger with Cantor Equity Partners II that raised over $400 million, including an oversubscribed $225M PIPE.",
+      "category": "investment",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-26T19:04:43.000Z",
+      "scrapedAt": "2026-07-02T11:54:12.465Z",
+      "relevanceScore": 22
+    },
+    {
+      "title": "Ondo Finance Launches 24/7 Minting and Redemption for Tokenized US Stocks and ETFs",
+      "url": "https://thedefiant.io/converge/tradfi-and-fintech/ondo-finance-24-7-minting-redemption-tokenized-stocks-etfs-ethereum",
+      "source": "The Defiant",
+      "summary": "Ondo Finance has enabled around-the-clock minting and redemption for tokenized US stocks and ETFs on Ethereum and BNB Chain, removing the weekday-only constraint that had tied position creation and cancellation to US market hours.",
+      "content": "Ondo Finance has enabled around-the-clock minting and redemption for tokenized US stocks and ETFs on Ethereum and BNB Chain, removing the weekday-only constraint that had tied position creation and cancellation to US market hours.",
+      "category": "general",
+      "tags": [
+        "tokenization",
+        "ethereum"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-26T16:34:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:12.465Z",
+      "relevanceScore": 54
+    },
+    {
+      "title": "Invesco Files for Tokenized Stablecoin-Reserve Money Market Fund Built on Superstate Rails",
+      "url": "https://thedefiant.io/converge/tradfi-and-fintech/invesco-files-for-tokenized-stablecoin-reserve-money-market-fund-built-on-superstate-rails",
+      "source": "The Defiant",
+      "summary": "US asset manager files for a GENIUS Act reserve money market fund whose shares are recorded directly on public blockchains, with Superstate as sub-transfer agent",
+      "content": "US asset manager files for a GENIUS Act reserve money market fund whose shares are recorded directly on public blockchains, with Superstate as sub-transfer agent",
+      "category": "investment",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-25T19:50:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:12.465Z",
+      "relevanceScore": 26
+    },
+    {
+      "title": "Securitize Wraps Roubini's SEC-Registered ETF as Dubai VARA Digital Security",
+      "url": "https://thedefiant.io/converge/defi/securitize-wraps-roubini-sec-registered-etf-usafi-dubai-vara-digital-security",
+      "source": "The Defiant",
+      "summary": "Securitize has been selected to tokenize economist Nouriel Roubini's Atlas America Fund into USAFi, a digital security issued under Dubai's VARA regulatory framework with BNY custody, designed for 24/7 institutional-grade collateral portability.",
+      "content": "Securitize has been selected to tokenize economist Nouriel Roubini's Atlas America Fund into USAFi, a digital security issued under Dubai's VARA regulatory framework with BNY custody, designed for 24/7 institutional-grade collateral portability.",
+      "category": "regulation",
+      "tags": [
+        "tokenization",
+        "regulation"
+      ],
+      "region": "North America",
+      "publishedAt": "2026-06-23T20:02:16.000Z",
+      "scrapedAt": "2026-07-02T11:54:12.465Z",
+      "relevanceScore": 37
+    },
+    {
+      "title": "Robinhood Chain goes live on mainnet alongside 24/7 tokenized stocks, Lighter perps and planned crypto agentic trading",
+      "url": "https://www.theblock.co/post/406918/robinhood-chain-goes-live-mainnet-alongside-24-7-tokenized-stocks-lighter-perps-planned-crypto-agentic-trading?utm_source=rss&utm_medium=rss",
+      "source": "The Block",
+      "summary": "Robinhood Chain, a Layer 2 built using Arbitrum's tech stack, went live on public mainnet, with partners including Uniswap from day one.",
+      "content": "\n            <p>Robinhood Chain, a Layer 2 built using Arbitrum's tech stack, went live on public mainnet, with partners including Uniswap from day one.</p>\n        ",
+      "category": "blockchain",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-07-01T18:45:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:14.608Z",
+      "relevanceScore": 27
+    },
+    {
+      "title": "Forward Industries jumps 17% after expanding Solana treasury to 7.55 million SOL",
+      "url": "https://www.theblock.co/post/406903/forward-industries-stock-jumps-expanding-solana-treasury-7-55-million-sol?utm_source=rss&utm_medium=rss",
+      "source": "The Block",
+      "summary": "Forward Industries holds more SOL than the next three largest publicly traded Solana treasury companies combined.",
+      "content": "\n            <p>Forward Industries holds more SOL than the next three largest publicly traded Solana treasury companies combined.</p>\n        ",
+      "category": "rwa",
+      "tags": [
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-07-01T15:53:25.000Z",
+      "scrapedAt": "2026-07-02T11:54:14.608Z",
+      "relevanceScore": 20
+    },
+    {
+      "title": "Panther Hollow launches multi-strategy merchant bank focused on compliant RWA and yield strategies",
+      "url": "https://www.theblock.co/post/406875/panther-hollow-launches-multi-strategy-merchant-bank-focused-on-compliant-rwa-and-yield-strategies?utm_source=rss&utm_medium=rss",
+      "source": "The Block",
+      "summary": "Panther is a hybrid merchant bank, fund complex, and incubator focused on Ethereum, Canton, Solana, and StarkNet.",
+      "content": "\n            <p>Panther is a hybrid merchant bank, fund complex, and incubator focused on Ethereum, Canton, Solana, and StarkNet.</p>\n        ",
+      "category": "rwa",
+      "tags": [
+        "rwa",
+        "ethereum"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-07-01T13:18:25.000Z",
+      "scrapedAt": "2026-07-02T11:54:14.608Z",
+      "relevanceScore": 10
+    },
+    {
+      "title": "The Cross-Asset Frontier: Tokenized Equities and Stock Trading on Crypto Platforms",
+      "url": "https://www.theblock.co/post/406198/the-cross-asset-frontier-tokenized-equities-and-stock-trading-on-crypto-platforms?utm_source=rss&utm_medium=rss",
+      "source": "The Block",
+      "summary": "Multi-Asset Trading Terminals The integration of traditional equities into crypto venues represents a fundamental paradigm shift in global trading infrastructure. Rather than managing fragmented positions across siloed traditional brokerages and crypto exchanges, modern cross-asset market participants increasingly demand a singular, frictionless point of access.  This structural convergence between crypto and traditional capital markets is punctuated […]",
+      "content": "\n            <p>Multi-Asset Trading Terminals The integration of traditional equities into crypto venues represents a fundamental paradigm shift in global trading infrastructure. Rather than managing fragmented positions across siloed traditional brokerages and crypto exchanges, modern cross-asset market participants increasingly demand a singular, frictionless point of access.  This structural convergence between crypto and traditional capital markets is punctuated [&hellip;]</p>\n        ",
+      "category": "investment",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-07-01T13:02:03.000Z",
+      "scrapedAt": "2026-07-02T11:54:14.608Z",
+      "relevanceScore": 27
+    },
+    {
+      "title": "Symbiotic officially pivots to collateral markets with Core V2 launch",
+      "url": "https://www.theblock.co/post/406862/symbiotic-officially-pivots-to-collateral-markets-with-core-v2-launch?utm_source=rss&utm_medium=rss",
+      "source": "The Block",
+      "summary": "Symbiotic now powers shared collateral infrastructure that can support multiple DeFi use cases like insurance, credit, and RWAs.",
+      "content": "\n            <p>Symbiotic now powers shared collateral infrastructure that can support multiple DeFi use cases like insurance, credit, and RWAs.</p>\n        ",
+      "category": "rwa",
+      "tags": [
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-07-01T12:00:03.000Z",
+      "scrapedAt": "2026-07-02T11:54:14.609Z",
+      "relevanceScore": 10
+    },
+    {
+      "title": "French company unveils on-site manufacturing concept for modular floating PV systems",
+      "url": "https://www.pv-magazine.com/2026/07/02/french-company-unveils-on-site-manufacturing-concept-for-modular-floating-pv-systems/",
+      "source": "PV Magazine",
+      "summary": "Araymond has developed Neluma, a modular floating PV system using containerized microfactories to manufacture float components directly on-site, reducing transport needs and installation complexity. The company is targeting multi-megawatt projects globally, with pilots and early deployments already underway in Europe, India and Brazil.\nThe post French company unveils on-site manufacturing concept for modular floating PV systems appeared first on pv magazine Global.",
+      "content": "<p>Araymond has developed Neluma, a modular floating PV system using containerized microfactories to manufacture float components directly on-site, reducing transport needs and installation complexity. The company is targeting multi-megawatt projects globally, with pilots and early deployments already underway in Europe, India and Brazil.</p>\n<p>The post <a href=\"https://www.pv-magazine.com/2026/07/02/french-company-unveils-on-site-manufacturing-concept-for-modular-floating-pv-systems/\">French company unveils on-site manufacturing concept for modular floating PV systems</a> appeared first on <a href=\"https://www.pv-magazine.com\">pv magazine Global</a>.</p>\n",
+      "category": "solar",
+      "tags": [
+        "rwa"
+      ],
+      "region": "Europe",
+      "publishedAt": "2026-07-02T04:57:38.000Z",
+      "scrapedAt": "2026-07-02T11:54:17.925Z",
+      "relevanceScore": 10
+    },
+    {
+      "title": "Energyminer’s River Turbines Are Real. The Cheap Baseload Claim Needs Operating Data.",
+      "url": "https://cleantechnica.com/2026/06/29/energyminer-river-turbines-cheap-baseload-operating-data/",
+      "source": "CleanTechnica",
+      "summary": "Energyminer has something much better than a rendering. Its Energyfish is a small floating hydrokinetic turbine, mostly underwater, anchored in a river current, sending power to shore through a cable and feeding a land-side power box for grid-compliant electricity. It is not a dam, not a conventional run-of-river hydro plant   ... [continued]\nThe post Energyminer’s River Turbines Are Real. The Cheap Baseload Claim Needs Operating Data. appeared first on CleanTechnica.",
+      "content": "<p>Energyminer has something much better than a rendering. Its Energyfish is a small floating hydrokinetic turbine, mostly underwater, anchored in a river current, sending power to shore through a cable and feeding a land-side power box for grid-compliant electricity. It is not a dam, not a conventional run-of-river hydro plant   ... [continued]</p>\n<p>The post <a href=\"https://cleantechnica.com/2026/06/29/energyminer-river-turbines-cheap-baseload-operating-data/\">Energyminer’s River Turbines Are Real. The Cheap Baseload Claim Needs Operating Data.</a> appeared first on <a href=\"https://cleantechnica.com\">CleanTechnica</a>.</p>\n",
+      "category": "rwa",
+      "tags": [
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-29T14:17:24.000Z",
+      "scrapedAt": "2026-07-02T11:54:24.700Z",
+      "relevanceScore": 10
+    },
+    {
+      "title": "Korea’s unified ledger paper is silent on privacy. Central banks should take note",
+      "url": "https://www.ledgerinsights.com/koreas-unified-ledger-paper-is-silent-on-privacy-central-banks-should-take-note/",
+      "source": "Ledger Insights",
+      "summary": "In preparation for a talk at the ECB Forum today, the Bank of Korea published a paper on its unified ledger Project Hangang (Han River). It involves tokenized deposits from commercial banks, with interbank settlement using a wholesale CBDC. Seven banks participated in Phase I earlier this year, expanding to nine for Phase II which […]\nThe post Korea’s unified ledger paper is silent on privacy. Central banks should take note appeared first on Ledger Insights - blockchain for enterprise.",
+      "content": "<p>In preparation for a talk at the ECB Forum today, the Bank of Korea published a paper on its unified ledger Project Hangang (Han River). It involves tokenized deposits from commercial banks, with interbank settlement using a wholesale CBDC. Seven banks participated in Phase I earlier this year, expanding to nine for Phase II which [&#8230;]</p>\n<p>The post <a href=\"https://www.ledgerinsights.com/koreas-unified-ledger-paper-is-silent-on-privacy-central-banks-should-take-note/\">Korea&#8217;s unified ledger paper is silent on privacy. Central banks should take note</a> appeared first on <a href=\"https://www.ledgerinsights.com\">Ledger Insights - blockchain for enterprise</a>.</p>\n",
+      "category": "blockchain",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "South Korea",
+      "publishedAt": "2026-07-01T19:26:20.000Z",
+      "scrapedAt": "2026-07-02T11:54:29.600Z",
+      "relevanceScore": 26
+    },
+    {
+      "title": "JP Morgan calls for guardrails in digital asset, tokenization regulation",
+      "url": "https://www.ledgerinsights.com/jp-morgan-calls-for-guardrails-in-digital-asset-tokenization-regulation/",
+      "source": "Ledger Insights",
+      "summary": "",
+      "content": "",
+      "category": "regulation",
+      "tags": [
+        "tokenization",
+        "regulation"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-07-02T11:54:39.148Z",
+      "scrapedAt": "2026-07-02T11:54:39.148Z",
+      "relevanceScore": 21
+    },
+    {
+      "title": "EIB issues first tokenized commercial paper via Clearstream’s D7",
+      "url": "https://www.ledgerinsights.com/eib-issues-first-tokenized-commercial-paper-via-clearstreams-d7/",
+      "source": "Ledger Insights",
+      "summary": "",
+      "content": "",
+      "category": "general",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-07-02T11:54:39.149Z",
+      "scrapedAt": "2026-07-02T11:54:39.149Z",
+      "relevanceScore": 20
+    },
+    {
+      "title": "Invesco to launch tokenized stablecoin reserve fund",
+      "url": "https://www.ledgerinsights.com/invesco-to-launch-tokenized-stablecoin-reserve-fund/",
+      "source": "Ledger Insights",
+      "summary": "",
+      "content": "",
+      "category": "investment",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-07-02T11:54:39.149Z",
+      "scrapedAt": "2026-07-02T11:54:39.149Z",
+      "relevanceScore": 20
+    },
+    {
+      "title": "Tokenized deposits: the threat and the fix you probably missed",
+      "url": "https://www.ledgerinsights.com/tokenized-deposits-the-threat-and-the-fix-you-probably-missed/",
+      "source": "Ledger Insights",
+      "summary": "",
+      "content": "",
+      "category": "general",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-07-02T11:54:39.149Z",
+      "scrapedAt": "2026-07-02T11:54:39.149Z",
+      "relevanceScore": 20
+    },
+    {
+      "title": "Euroclear to adopt SocGen USDCV stablecoin for commercial paper settlement",
+      "url": "https://www.ledgerinsights.com/euroclear-to-adopt-socgen-usdcv-stablecoin-for-commercial-paper-settlement/",
+      "source": "Ledger Insights",
+      "summary": "",
+      "content": "",
+      "category": "general",
+      "tags": [],
+      "region": "Global",
+      "publishedAt": "2026-07-02T11:54:39.149Z",
+      "scrapedAt": "2026-07-02T11:54:39.149Z",
+      "relevanceScore": 0
+    },
+    {
+      "title": "Transcend launches solution to manage tokenized collateral",
+      "url": "https://www.ledgerinsights.com/transcend-launches-solution-to-manage-tokenized-collateral/",
+      "source": "Ledger Insights",
+      "summary": "",
+      "content": "",
+      "category": "general",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-07-02T11:54:39.149Z",
+      "scrapedAt": "2026-07-02T11:54:39.149Z",
+      "relevanceScore": 20
+    },
+    {
+      "title": "UBS demos permissionless blockchain compliance at infrastructure level",
+      "url": "https://www.ledgerinsights.com/ubs-demos-permissionless-blockchain-compliance-at-infrastructure-level/",
+      "source": "Ledger Insights",
+      "summary": "",
+      "content": "",
+      "category": "regulation",
+      "tags": [],
+      "region": "Global",
+      "publishedAt": "2026-07-02T11:54:39.150Z",
+      "scrapedAt": "2026-07-02T11:54:39.150Z",
+      "relevanceScore": 11
+    },
+    {
+      "title": "BIS identifies stablecoin gaps. Regulation and innovations are already closing them",
+      "url": "https://www.ledgerinsights.com/bis-identifies-stablecoin-gaps-regulation-and-innovations-are-already-closing-them/",
+      "source": "Ledger Insights",
+      "summary": "",
+      "content": "",
+      "category": "regulation",
+      "tags": [
+        "regulation"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-07-02T11:54:39.150Z",
+      "scrapedAt": "2026-07-02T11:54:39.150Z",
+      "relevanceScore": 6
+    },
+    {
+      "title": "Machine-Readable Concrete: The New Data Format for RWA Tokenization - HackerNoon",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQNU5TTzNPbnNiVWtpT1BISXpLS2tuSmItMnBBQk41LW0zNEczSVh4QlozdFNELTRsV2JNSGhVMGVJdk5zell1MzNial9OcHpRRmtBZG1kbENWTE5NUDlKWFVGcE9PX3dwRmY1LVdiLWItZ2cxejYySFBndkNvOVhaYVhodlhUVmdJREFUR2k4VEp0QnJkcEF3OExEbklJeXducWc?oc=5",
+      "source": "Google News / HackerNoon",
+      "summary": "Machine-Readable Concrete: The New Data Format for RWA Tokenization - HackerNoon",
+      "content": "Machine-Readable Concrete: The New Data Format for RWA Tokenization - HackerNoon",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-07-02T10:05:37.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.237Z",
+      "relevanceScore": 20
+    },
+    {
+      "title": "A significant number of Asian investors are already familiar with real assets (RWA) tokenization an.. - 매일경제",
+      "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9MaGNxMlllRVQzZmVhNUYxVEZSN0M2bnRBNFZZVlVLbjFVRUtyQjR1V2tnMEpoUll2VDR3SFFCSjdfMmxpd243cUtkam4yMFk?oc=5",
+      "source": "Google News / 매일경제",
+      "summary": "A significant number of Asian investors are already familiar with real assets (RWA) tokenization an.. - 매일경제",
+      "content": "A significant number of Asian investors are already familiar with real assets (RWA) tokenization an.. - 매일경제",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa",
+        "investment"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-07-02T07:20:10.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.241Z",
+      "relevanceScore": 27
+    },
+    {
+      "title": "RWA Global Inc Enters Agreement to Advise Golden Dolphin - GlobeNewswire",
+      "url": "https://news.google.com/rss/articles/CBMivwJBVV95cUxOTWhFSUM5b3FhWWpsODNzdHFPTVdjRHdYTTM5czJ0eGNpaTZLY01Ba0RnMUt6UWNMN21maEFHdWRnelotdUFySlJoTGlxb2FEeDZNWjBHeXBwSXBrcWozcWF0a3dXZUpjNFdHdTZMU2ZCSEdxOFR4V0JMelpKVVFZSVVwWW5LOGphR1VPTW9GVkw5TWcyRFNfVUhPSUR0Uy0xQWFHWkVqY01KQnZ3MVRWdUR1S0tKQ2FGN1NBakgyRmNtUkxidnQxWHE1eGlCdWdlSUpUS1lYR1F3VW9SZi1TVjF4YVNqaWluSUhTeW9xaHN4WWJiYzF0VDNJbHhFTTVqNm5nTTQzZGZtaWlwX1NiOGhBRkN4VHFpZDdpV1V6WHVPN3RDU2ZFdmV0MlJIc05CaXBJRWc0WE5jeUhNUkdR?oc=5",
+      "source": "Google News / GlobeNewswire",
+      "summary": "RWA Global Inc Enters Agreement to Advise Golden Dolphin - GlobeNewswire",
+      "content": "RWA Global Inc Enters Agreement to Advise Golden Dolphin - GlobeNewswire",
+      "category": "rwa",
+      "tags": [
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-29T12:55:58.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.241Z",
+      "relevanceScore": 10
+    },
+    {
+      "title": "What Is Chainlink: Price Analysis and Tokenization Use Cases - StealthEX",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNUGZmRXJtMTJ5ZjJaS0U1aGR0VENsZ09UQk5pVk1LbEZjbkk1TWE4LU1Kbm5SQ0F2eno0NTdmcU16anVQSUpyekxTcFdTRmNxV2h2RDJ1ZjN1Z3ZEcW9zcE5KbFhSVWR6THNqU1VTT0tGZWVYWEN4Z21xRFFBUGpELXln?oc=5",
+      "source": "Google News / StealthEX",
+      "summary": "What Is Chainlink: Price Analysis and Tokenization Use Cases - StealthEX",
+      "content": "What Is Chainlink: Price Analysis and Tokenization Use Cases - StealthEX",
+      "category": "general",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-07-01T13:54:21.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.241Z",
+      "relevanceScore": 10
+    },
+    {
+      "title": "RWA Tokenization 2026: How Ondo Finance and BlackRock Are Disrupting Finance - Intellectia AI",
+      "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBXOHVnNUxISm1GOWkyMkhuYUpseksydlV3OXp0UG4zekdmZGR3eElETnZ1YzhoYmU4Zy1sakNPSnFUc1M0V3NSd1NHS0dodUdNSWRyU0R2aVZkS0F4U3c?oc=5",
+      "source": "Google News / Intellectia AI",
+      "summary": "RWA Tokenization 2026: How Ondo Finance and BlackRock Are Disrupting Finance - Intellectia AI",
+      "content": "RWA Tokenization 2026: How Ondo Finance and BlackRock Are Disrupting Finance - Intellectia AI",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-29T03:11:32.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.242Z",
+      "relevanceScore": 20
+    },
+    {
+      "title": "What is real-world asset tokenization? RWAs on the blockchain explained - Crypto News",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPYXZzSE91eUJUZi1rT09vSUJrT2t3TXNWX2NiV3R4d0dkTmFvYllhWjI4clVpdmhQU1NaQ0U5ZXR1c3g4T3FtWmFVZlg2UzBJXzEyQ3c0amlNSy0weWJWdkV2UHRZUlVLRmZMOTVLcEp6UEdla2VNZG9yN2VOUjVaY0RsSTAzaTg0elZR?oc=5",
+      "source": "Google News / Crypto News",
+      "summary": "What is real-world asset tokenization? RWAs on the blockchain explained - Crypto News",
+      "content": "What is real-world asset tokenization? RWAs on the blockchain explained - Crypto News",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-27T16:04:43.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.242Z",
+      "relevanceScore": 26
+    },
+    {
+      "title": "7 Charts: Tokenized assets have proved the concept. Now comes the hard part. - a16z crypto",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPYldqNlR5akVDTHlvNW1ld2F6bXFPUUF0VzZocWNkSUt0R2EtdkJsMUNjRVptZy1IaW1mV0V6Y2xZQkloTzNlUnh0T2JHSnVnSlBCeG8zTFRGeDNyWXlNYkhncDd0QWJYeURRSDZEbjB4SjVma1Y1cFZjeklDQzJrSl93?oc=5",
+      "source": "Google News / a16z crypto",
+      "summary": "7 Charts: Tokenized assets have proved the concept. Now comes the hard part. - a16z crypto",
+      "content": "7 Charts: Tokenized assets have proved the concept. Now comes the hard part. - a16z crypto",
+      "category": "blockchain",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-05-22T07:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.244Z",
+      "relevanceScore": 20
+    },
+    {
+      "title": "Valle Capital Token Launches RWA and Agribusiness Ecosystem - CryptoPotato",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPOE1tbGlYcFB0V2FmbUE1MXdtR2hMeEUzeWlvR2dzNXJuclllMExUNmROVVNENGQwZjBfVkt6ekE0Yi1lY1hSNWVyQl9qRWpmSWk4cWx0YzlMZFZhZzFqaGt3aGkwQlRBbUJwZDBLZ0R6clpZSnZxMTR5M2hVNlNEQTlaVmF0cHp5Y1JEaWd3?oc=5",
+      "source": "Google News / CryptoPotato",
+      "summary": "Valle Capital Token Launches RWA and Agribusiness Ecosystem - CryptoPotato",
+      "content": "Valle Capital Token Launches RWA and Agribusiness Ecosystem - CryptoPotato",
+      "category": "rwa",
+      "tags": [
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-07-02T06:25:01.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.244Z",
+      "relevanceScore": 10
+    },
+    {
+      "title": "RWA Tokenization Hits $28.9B Record in May 2026 as Stablecoins Reach $320B ATH - CoinDesk",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPOUJlX2J6X1FqVFhsRlh6R3Y4Z2htN2tmb2U2LVBPYlJ4YWZ6Y2JYZmhEOEpldHFsN0NndF9Ia0IyWkh5SWZBdnc2SFU4ZkR2NTM5TXYyQk5zdnF1WWRHUEozdGR6ZHVDR2txN2lmaDJnQVNQOS1xNmYxbjk1eUo4Y1E1YXp6YnhU?oc=5",
+      "source": "Google News / CoinDesk",
+      "summary": "RWA Tokenization Hits $28.9B Record in May 2026 as Stablecoins Reach $320B ATH - CoinDesk",
+      "content": "RWA Tokenization Hits $28.9B Record in May 2026 as Stablecoins Reach $320B ATH - CoinDesk",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-09T07:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.244Z",
+      "relevanceScore": 26
+    },
+    {
+      "title": "Datavault AI Ties RWA Tokenization To 24 7 Regulated Commodity Trading - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOcVh1S3M0TzJWTnlid2w5N3hRaDhOdnRnaWV3UUNEemRZekFpaEhDMERZdUxLcXBoY01PTEEwem5hSnNfXy0weUc0U2IzWFcta21EcldkTGRLYmNGYnlWR2x5Q3RhRXc2NWV5aEVfT2ZtWEcwdHFPOFBNelFSQWxMYlk0LXhtMFNDRWdPVHBvYl9MT0hXMm5nd0lpZjRQX1BKVDlkWWNUNA?oc=5",
+      "source": "Google News / Yahoo Finance",
+      "summary": "Datavault AI Ties RWA Tokenization To 24 7 Regulated Commodity Trading - Yahoo Finance",
+      "content": "Datavault AI Ties RWA Tokenization To 24 7 Regulated Commodity Trading - Yahoo Finance",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa",
+        "regulation"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-07T07:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.244Z",
+      "relevanceScore": 20
+    },
+    {
+      "title": "Tokenized RWA market cap rises 40% to top $51 billion as industry races to define equity tokenization model: Bernstein - The Block",
+      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNRHVwU1l2SE5UOUgtSUpOQkpVQTY4N3NJT2ZqWUJDQndlYkgxWlVUb001dXRHTWlacC1sbkg3b3JzSG9venhJOGhzTExabzZKblBOM05mT2pVd0tDX0hZZkt3X1VneENYWTlyOFpzZXllTUc0TTlxbnBTVGRQdk1SYzd2bTlaVU5CRjJOWmZyRll2cl9tZmxra2dwdGduZXJES2E2eVpva3d4c3RDakJISUFJQndKcG9Kam5TejEzbjF4ODdjNWdvQ1hZWVRJZHVh?oc=5",
+      "source": "Google News / The Block",
+      "summary": "Tokenized RWA market cap rises 40% to top $51 billion as industry races to define equity tokenization model: Bernstein - The Block",
+      "content": "Tokenized RWA market cap rises 40% to top $51 billion as industry races to define equity tokenization model: Bernstein - The Block",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-22T13:27:52.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.244Z",
+      "relevanceScore": 40
+    },
+    {
+      "title": "'The Token Is The Asset'—Kula's Fix For RWA Tokenization's $31B Gap - Forbes",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNVHkyZlFnOUN4Zy14Nm5Iel9jWHlhSlpoeGRkRVJQVEFoY21KVzZ3M1VDc2M0LTBXSjE2OVFMZDJpclhGT0RNZlFkRW8teUcxSTZwd2tNbGdWSGNEdWwtOVNjVlVrbWQ3OFVmYV8ya1ZhSnlXU2xEOHdjY3ZqVzUxQTBEc2JpeEFnbjdjTU4wU3J5MzM0aW1IR0hJbEpnSUxTaGpJRlphX3lKYUhuWlFvT1lmMTZ6Zw?oc=5",
+      "source": "Google News / Forbes",
+      "summary": "'The Token Is The Asset'—Kula's Fix For RWA Tokenization's $31B Gap - Forbes",
+      "content": "'The Token Is The Asset'—Kula's Fix For RWA Tokenization's $31B Gap - Forbes",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-16T07:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.245Z",
+      "relevanceScore": 20
+    },
+    {
+      "title": "Asset Tokenization in the US: A Practical Guide | Practical Law The Journal - Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNVm03d25rMGhuNVJ1M3gyM2dxd0dQTm1WUmtQZkNtTFBnQnI5ZC1JUVFtZzhhNm0zcDBvcG1KRnBDVno3V2k0amRwQXQxR1RJRW5oRkR1aFh6bWwzVldjbVpraXEzc3Z3OFFYVzFoNnJWRWlvellVRVUtYU5hR0NBb3NVVFE2TERHamdfMkVWaVRlWDdkbkE0bDljQlBINWhSUk1mU3FqaG5BYjJzMm96cG1sSQ?oc=5",
+      "source": "Google News / Reuters",
+      "summary": "Asset Tokenization in the US: A Practical Guide | Practical Law The Journal - Reuters",
+      "content": "Asset Tokenization in the US: A Practical Guide | Practical Law The Journal - Reuters",
+      "category": "general",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-05-01T07:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.246Z",
+      "relevanceScore": 13
+    },
+    {
+      "title": "Philippine SEC signals readiness for RWA tokenization - TradingView",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPWk5YOTByUTJyRGxoYUppbG9uOXdBeWtiRW9WWXd6U2xpYXdmX0VQYTVlaUxxdms3d3Y4T3RfVmN2VmZKbDNhRUsyeDNKblhXWFJWcFd0WUt5Qk5xeGl4Y3cyLVJXVjlmbzJQSXpQOTBxRGRuU3I3NEpQSzhPUlBxTFkwUGREME12anNicG9uU0ZMMVgyYmlPZWQtY0J1d3gzMml5Q1c1TXp1N3dIbVBBMTJjTUd0VElI?oc=5",
+      "source": "Google News / TradingView",
+      "summary": "Philippine SEC signals readiness for RWA tokenization - TradingView",
+      "content": "Philippine SEC signals readiness for RWA tokenization - TradingView",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "North America",
+      "publishedAt": "2026-06-20T07:05:20.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.246Z",
+      "relevanceScore": 24
+    },
+    {
+      "title": "Antier Announces Integrated RWA Tokenization Services Under One Roof - Fidelity",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNWERJaU9fZUprUWMwY3J4UUxfeENMc2FLQ1hvdWZVbkdTZ0tsZEVzaWdSNEJBOENKaTRxWGJXWkZTam95dHNkM3JvNlVRaGlrMnc4ZVlGX0QwaS1DVzRvanBLdUpVVzFyTlRKUWVQV1FVbHozNWlRLV9PdUp0RFRVMlZtenpBbG9vLXc?oc=5",
+      "source": "Google News / Fidelity",
+      "summary": "Antier Announces Integrated RWA Tokenization Services Under One Roof - Fidelity",
+      "content": "Antier Announces Integrated RWA Tokenization Services Under One Roof - Fidelity",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-25T07:43:59.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.246Z",
+      "relevanceScore": 20
+    },
+    {
+      "title": "Real-World Asset (RWA) Tokenization - Wipro",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPd3U1eXIzaDNPbjJJRlgyelJLV2hGeHQ1Vk9ZZ0hLYkJQRGJjMjZ4SUczQXRzRm1HN2xKc1FSYlY2YllreU9tLXJqdWVXSG9kelFsME1NWGZBNm9LNm5aVldmRXlKQzFpSThJVExMLTB5ZGFhWXE3cGJFbG5HN0xFbGZyZlBBV1pYN0JBcDNCaVF5Uk1wS1V1dVcxa1ZaZnhsMUkyMmhtUWV5ZDVTNE44Q2R5UWdEdDFqM1E?oc=5",
+      "source": "Google News / Wipro",
+      "summary": "Real-World Asset (RWA) Tokenization - Wipro",
+      "content": "Real-World Asset (RWA) Tokenization - Wipro",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-05-09T02:29:04.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.247Z",
+      "relevanceScore": 20
+    },
+    {
+      "title": "XDC Network Surpasses $1.1 Billion in Tokenized Assets, Driven by Real-World Credit - Bitget",
+      "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBCRUhMZUk2MGlmZUFYdEU2U0pfaEZlc2dyMVd2RFJSRy12QjZoTDBnQW01SXNLbVg3dDZ3UlVuR01iVldBNnNKWF9yMFI2eV9laUVDaVZ2MFE5QlhRYzRMcUxoTdIBY0FVX3lxTFBCRUhMZUk2MGlmZUFYdEU2U0pfaEZlc2dyMVd2RFJSRy12QjZoTDBnQW01SXNLbVg3dDZ3UlVuR01iVldBNnNKWF9yMFI2eV9laUVDaVZ2MFE5QlhRYzRMcUxoTQ?oc=5",
+      "source": "Google News / Bitget",
+      "summary": "XDC Network Surpasses $1.1 Billion in Tokenized Assets, Driven by Real-World Credit - Bitget",
+      "content": "XDC Network Surpasses $1.1 Billion in Tokenized Assets, Driven by Real-World Credit - Bitget",
+      "category": "general",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-07-01T11:27:06.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.247Z",
+      "relevanceScore": 20
+    },
+    {
+      "title": "Dubai Awards 50th VASP License to RWA Tokenization Platform Tribe - CryptoRank",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOaUMtaVFIMThPZHVqbTNUZEUxdXJwekZSLWNMSzRkTWRCLVBGOWticzdROEQwNlJtWXJwVlNyR3pOanlrY2FhTENJT0pzWE5zejRSVy1yWTZoNHR5SVgtMjc0SmpNc0JaLW1TR2hlYzV1QXA4Ukp6ZGZ5dXZYWFNIZzV1RFRMbW8?oc=5",
+      "source": "Google News / CryptoRank",
+      "summary": "Dubai Awards 50th VASP License to RWA Tokenization Platform Tribe - CryptoRank",
+      "content": "Dubai Awards 50th VASP License to RWA Tokenization Platform Tribe - CryptoRank",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "Middle East",
+      "publishedAt": "2026-06-29T06:04:34.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.247Z",
+      "relevanceScore": 20
+    },
+    {
+      "title": "United States Patent and Trademark Office to Issue Asset Tokenization Patent to Datavault AI - Datavault AI",
+      "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxONFF4eVFDN1otbzFjWVF0WEhGMmxiNWdTZ3hlY1Z6dUpZWm5vaWpjWXl4b2xaUU9uOTg3NnFtVFlibEROYklfdkg2YXp5ZmFua2MzajVMR0RKWUVBWEtOc3BZQi1uQ1RYYThjT0ZISnA2X1daRk9oZjVveXZ6dm52bG4zVEZxajZOVFhSeDllc2VadDBpbjJSZFRPQXJQVmNnUWFxX1lwSERxTzZkcU8taHpZNjA2RjlTQ1hKYnRfNDdwQU9OZlNSMFl5dGpEN2hQampQWGdwb0tHMmZWRGxoTW9aVE5UaXpmLTZhdU83MTM?oc=5",
+      "source": "Google News / Datavault AI",
+      "summary": "United States Patent and Trademark Office to Issue Asset Tokenization Patent to Datavault AI - Datavault AI",
+      "content": "United States Patent and Trademark Office to Issue Asset Tokenization Patent to Datavault AI - Datavault AI",
+      "category": "general",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "North America",
+      "publishedAt": "2026-06-15T07:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.250Z",
+      "relevanceScore": 10
+    },
+    {
+      "title": "How does blockchain analytics support real-world asset tokenization? - Elliptic",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOd2xBblpsNkV2X09oNERxaEJmS0J4MlFncXBvemExZk43aXdtRXRHR0d4ZnVHNHlrXy1xR0dDZ1k5Y2R4UG9VcnQ3VnBqZ2pSN20yN0dkQnJxS1dCbjRxUm5FRnlsSWpmMDZxNlVJVmtWMmhjS0puRzBIUmxLMDJlM2lGMkc4VExYSFdRenUzYzlFWHRaUWpRWEFDNG0?oc=5",
+      "source": "Google News / Elliptic",
+      "summary": "How does blockchain analytics support real-world asset tokenization? - Elliptic",
+      "content": "How does blockchain analytics support real-world asset tokenization? - Elliptic",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-03-05T08:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.250Z",
+      "relevanceScore": 16
+    },
+    {
+      "title": "RWA Boom Accelerates as Ondo Leads Tokenization Surge - CryptoRank",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQcGNTYjV2Q2VBbGNieWc2Mk9sZ1A5ZWdSR25rd1pZbFlvbllESGNzQXBWLUNWV1RHMi1sR0lSNW1EUDVLRFgzMDBSYzZRc3lISmhJZ2IwcG5uR1B2am5YU0p2RlQ4ZlJjUS1WQVVJMGRXWEpDUWR6OFFuMjI1TlUzRi1yQU9kWGRBN3lETWVmUWs0QkFFMnc?oc=5",
+      "source": "Google News / CryptoRank",
+      "summary": "RWA Boom Accelerates as Ondo Leads Tokenization Surge - CryptoRank",
+      "content": "RWA Boom Accelerates as Ondo Leads Tokenization Surge - CryptoRank",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-12T07:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.250Z",
+      "relevanceScore": 20
+    },
+    {
+      "title": "Why tokenizing real-world assets could unlock lending growth in emerging markets - The World Economic Forum",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5sVDU2ekxTTEdoQVRLY2ZFN2drcGJqVXhGekd4REQ3cWl5MmJTWWM0d2M0R1NuS3JWUUUtR1lMX21JSVBhT09FMzRtR0pSbjhZQlRRbmszWWJFWi15WkhROUJoQXFxMk1MNDc2X3lfNF9DY3lOT1BSRmNHSERldw?oc=5",
+      "source": "Google News / The World Economic Forum",
+      "summary": "Why tokenizing real-world assets could unlock lending growth in emerging markets - The World Economic Forum",
+      "content": "Why tokenizing real-world assets could unlock lending growth in emerging markets - The World Economic Forum",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-03-09T07:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.250Z",
+      "relevanceScore": 0
+    },
+    {
+      "title": "Top RWA Crypto Projects 2026: Ondo, Maple, Centrifuge - Bitcoin Foundation",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQV0VtUmNLQUpwVVJ1Zmg3Y0l4MER0bUR2S190R0pDZjVnVjVjUWl6TVpkN1pZSmdZRXpRdkVyT0pTR1hjdlhYdEtrZ1VmWjJrU2RlTXdRbnExVkYtYVFQclJSS0t5WTZfbE1tck56VmNwWjA1TDNvUzlFUUdXN09xTE1mMkFrU1hNUi15M1FCUmtYU0l1emc?oc=5",
+      "source": "Google News / Bitcoin Foundation",
+      "summary": "Top RWA Crypto Projects 2026: Ondo, Maple, Centrifuge - Bitcoin Foundation",
+      "content": "Top RWA Crypto Projects 2026: Ondo, Maple, Centrifuge - Bitcoin Foundation",
+      "category": "rwa",
+      "tags": [
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-05-29T07:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.251Z",
+      "relevanceScore": 10
+    },
+    {
+      "title": "China rolls out updated crypto framework, establishing the legal regime for RWA tokenization - Norton Rose Fulbright",
+      "url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxOak1RdXN0S3diRDVEMk9xeGJXNDNHRDRDT25SNm1MUEloVlBrc1JfRFU0Q2Y3bEVxV2lRdWVHNTVtY1dKTl9DUmlwZFUzaU5HVzl5TmFFQlItNVE4WS0ya3dvMjZLNXBxZmEyOUE3QjRGaEdCN0IxOUE3RGJPMXB0cWc5NF91V09fcmpLVjRiLXZaNWdfcmFOaEZjRWZTYVNvUURXbi02aktGbWtUSFptMDVhb1B0eEtlT2xQY1lWaFhBa2pUOFZLUjRjMExSSHNuLW9uUUxhZVNTTkh5VUQ2VXREbkhiNEdKY3BFVEdnb3ItUl9n?oc=5",
+      "source": "Google News / Norton Rose Fulbright",
+      "summary": "China rolls out updated crypto framework, establishing the legal regime for RWA tokenization - Norton Rose Fulbright",
+      "content": "China rolls out updated crypto framework, establishing the legal regime for RWA tokenization - Norton Rose Fulbright",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "China",
+      "publishedAt": "2026-04-22T21:33:15.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.251Z",
+      "relevanceScore": 20
+    },
+    {
+      "title": "Investing in the Tokenization Megatrend - Grayscale",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPVjdoZUg2azB6Q0JjaXVkSW42S0JCWFFRYmlVVEUyU3RGNjladGdWMERIZVJ5NUVzTVU2LVFDdzloYnp3VG9pZ05KTjFtcENtd3cwXzlBcEJFM0lKNE11UENOWUp0bEFHX2lVcGVRU0ZDTjhFd2tQVmNwTE82Mlp6N3dzcWc?oc=5",
+      "source": "Google News / Grayscale",
+      "summary": "Investing in the Tokenization Megatrend - Grayscale",
+      "content": "Investing in the Tokenization Megatrend - Grayscale",
+      "category": "investment",
+      "tags": [
+        "tokenization",
+        "investment"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-04-29T07:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.251Z",
+      "relevanceScore": 10
+    },
+    {
+      "title": "Bank of Taiwan Explores Tokenized Gold as RWA Push Grows - Bitcoin Foundation",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOVHdTT3VZWmdNeV95WnpYYlZIRDRjVkhoeDByczFNajRDeWw1eFZuZnE1ZmgtajBpVmpyYlhZcWdvTHhzYjNGUmVXOUNVMEhTUlhSYlRaMWtIVW1JX3VEekxQMFh3R3dWSFVJdG52T0ZRMFdPQ2Zucnd3VE91UmZVLTVfaVEydnJ1OTJHQ3JZRUtRVjBZ?oc=5",
+      "source": "Google News / Bitcoin Foundation",
+      "summary": "Bank of Taiwan Explores Tokenized Gold as RWA Push Grows - Bitcoin Foundation",
+      "content": "Bank of Taiwan Explores Tokenized Gold as RWA Push Grows - Bitcoin Foundation",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-05-26T07:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.252Z",
+      "relevanceScore": 30
+    },
+    {
+      "title": "Tokenization Firm Securitize Gets SEC Approval for Public Debut - PYMNTS.com",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPWl9ka3MtazJJRWszZVhTelpROV9xN3ZXX3gzTldvNlJ3eG1kQ1RuVHhWMHFFNXpWamtnNElqQnU5aGU3LTF6dVluRmgzWV9QWTNMeWRIRXNqWXlGNkhpZ1k3ekVJWGZxQkdzblNCY0RLZW5ZMllQQVNzaWZRc1Vaa1Z1MnJ0SG4wcHg5dzRxdm5Ua2ZnbVotZy16Y1JPTVBp?oc=5",
+      "source": "Google News / PYMNTS.com",
+      "summary": "Tokenization Firm Securitize Gets SEC Approval for Public Debut - PYMNTS.com",
+      "content": "Tokenization Firm Securitize Gets SEC Approval for Public Debut - PYMNTS.com",
+      "category": "regulation",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "North America",
+      "publishedAt": "2026-06-08T07:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.252Z",
+      "relevanceScore": 18
+    },
+    {
+      "title": "RWA tokenization nears $30 billion, but DeFi is capturing only a fraction - CryptoSlate",
+      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFBWZDI2WHhFNDFPZ3dqNjBRNTJlbnlFQVFOZW5SR1AzZVlJQTlfX1ZwSFdweUdZbXZmV0Ytcmt4M0FWSVhTLTRDTFU2RXBNNDI2MmpDQVdfZ1h2R2gyaGVicXRMVjEyLTR5N1BrRkI2VFoxQQ?oc=5",
+      "source": "Google News / CryptoSlate",
+      "summary": "RWA tokenization nears $30 billion, but DeFi is capturing only a fraction - CryptoSlate",
+      "content": "RWA tokenization nears $30 billion, but DeFi is capturing only a fraction - CryptoSlate",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-05-19T07:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.256Z",
+      "relevanceScore": 20
+    },
+    {
+      "title": "Ethereum leads $65 billion RWA race as blockchains compete for institutional tokenization flows - The Block",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOS182SFRhSzVUM3FaZVJQNEo5OTh0cTVvN0o4SGtaRUNJcXJ2RjBiRFcta3pGdG1fZF9nVmdXT2VFek9ydFBYOWpFRVNSU1p6ci1MMHBCWTVaQkY4SzZVd2kzNU5tWHdNSGl2UTZ6UUkwRzV4M01lS0stTjU2NHhjdlEzVXZCUXdvZEgwU3BDejNDaW9qWGNKVjJLQzVGZTN6N2pXWkxsVE42ckV4cUpmMG1vMFcxNXQ5NDJxXzVjLXU?oc=5",
+      "source": "Google News / The Block",
+      "summary": "Ethereum leads $65 billion RWA race as blockchains compete for institutional tokenization flows - The Block",
+      "content": "Ethereum leads $65 billion RWA race as blockchains compete for institutional tokenization flows - The Block",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa",
+        "ethereum"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-05-19T07:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.257Z",
+      "relevanceScore": 26
+    },
+    {
+      "title": "RWA.xyz's Bryan Choe: \"People Still Confuse Tokenization With Liquidity\" - Benzinga",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOLWJJV2txQjd4Mms3R1ZiZXM3NTVEdEw3Y2xGNWhiVWJ5eEFlbUQxelBQUG8xcEdUSHNhSkVLcHlGam10dERwUHU5dXgzVjZDQnN1TnNQSHN3SllCcE93N3ByYzlqUk5fTEtKSTlJdm92ZkZDZ3RkQmhRZWJpUFcwN3hhUGtuRXZNLTZsZjdYaUJNWnlZNElRZmdRTk13aGI2MlBDbGRBbUlPa054aGZ1eFRNZ1VBVUU?oc=5",
+      "source": "Google News / Benzinga",
+      "summary": "RWA.xyz's Bryan Choe: \"People Still Confuse Tokenization With Liquidity\" - Benzinga",
+      "content": "RWA.xyz's Bryan Choe: \"People Still Confuse Tokenization With Liquidity\" - Benzinga",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-18T17:59:18.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.258Z",
+      "relevanceScore": 20
+    },
+    {
+      "title": "Centrifuge partners with New York Life to tokenize high-yield corporate bonds with $HYB offering - Crypto Briefing",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQSnQ2UjRlbnNBekxIZXBJeFUyYXNlbUI0cHE1dlhlYVV6TEhjQVptVTBQTzJfOVh6ZmxIa1ZYYUhyLTR6cjFYUTdZaXloYTYtc1NaN2poWnFmdjAxQUVfUDZDbjZkY3VxdnhQcjNQdFd0ZWNWLV9Xc0pFb256U2p4cXVpZ1o?oc=5",
+      "source": "Google News / Crypto Briefing",
+      "summary": "Centrifuge partners with New York Life to tokenize high-yield corporate bonds with $HYB offering - Crypto Briefing",
+      "content": "Centrifuge partners with New York Life to tokenize high-yield corporate bonds with $HYB offering - Crypto Briefing",
+      "category": "investment",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-30T18:33:03.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.258Z",
+      "relevanceScore": 10
+    },
+    {
+      "title": "Roqqu Partners with Ondo Finance to Expand Access to Tokenized Real-World Assets - TechAfrica News",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOVmVIQkhYcE1mc3ZsWjZDcUl4NFdsVXVIckRaN1g5ZzMtTDB1VmtrWnNWTFJQNW1FcGNrODV4T3hRM1VMN1ltUl9OY0QyTVl6N0FUWUxJRFZuX2dtbXEzRVU2Y3djeGF3aW1NRWpDVXB1M1JaTzRra1h2YXN1VFBqVXhnZ3Y2YzI1MTFrOUlaTXVMcFlkUWlDeG1fSHl1djU1UDZBYkROS3MxTnRzeUlzVElLdXRSaGI0RE1z?oc=5",
+      "source": "Google News / TechAfrica News",
+      "summary": "Roqqu Partners with Ondo Finance to Expand Access to Tokenized Real-World Assets - TechAfrica News",
+      "content": "Roqqu Partners with Ondo Finance to Expand Access to Tokenized Real-World Assets - TechAfrica News",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-12T07:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.259Z",
+      "relevanceScore": 20
+    },
+    {
+      "title": "Securitize CEO says tokenized stocks could unlock a $5 trillion crypto market - CoinDesk",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPQlFHZ21EVzZPdmlISXVYSXN4Z1U2bkRiX3pKRDc2aFduOGgyaUc2TktNTExMc3JTNFBYZFVuRmR6X2NXWkJPdlROX1NqWGpWc25kSGc0dkxtbTgtZElrbDNsM3NvYVN5dkJQSWpITDE1X2NodElYWml1WjhpSVFXY25DaTJlRjdUVlR1RG5vMjRKVUQxYUlQSWExb25icXpKS0t3TFhCTjhxRlA5RXVNcXBHLVotd21sbEcxTldGX2JIQQ?oc=5",
+      "source": "Google News / CoinDesk",
+      "summary": "Securitize CEO says tokenized stocks could unlock a $5 trillion crypto market - CoinDesk",
+      "content": "Securitize CEO says tokenized stocks could unlock a $5 trillion crypto market - CoinDesk",
+      "category": "blockchain",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-09T07:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.260Z",
+      "relevanceScore": 40
+    },
+    {
+      "title": "London’s RWA Summit: Where Tokenization Meets Reality - CCN.com",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPWFdIaDlHY2JLV212SFo1OExVQVpQakUwcm1vZUhjdHY0d1hySXdoSTV4bThlRHVVMmw3V0pTU19TVmtIT2VKMWVzdzVjZFdONDBlaDd4V3NmclBTWFNsTm5uM0p3LUFCQXU2akNpU01iRlF1S01fMm11N3lYSjQwUHR3Rkp5NDB3OERLMWlsSWxtcm8?oc=5",
+      "source": "Google News / CCN.com",
+      "summary": "London’s RWA Summit: Where Tokenization Meets Reality - CCN.com",
+      "content": "London’s RWA Summit: Where Tokenization Meets Reality - CCN.com",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-11T07:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.260Z",
+      "relevanceScore": 20
+    },
+    {
+      "title": "A New Frontier for AI and RWA Tokenization: Inveniam to Acquire MANTRA - CCN.com",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPd0o2Y1k3cERSVUM3VUJfZGpZenRLRUJmcWRERFVNOGszOWN4ai1IX3BKWUVtYzc4eTNtZ0JNWklJejJuVHU2MWJjdTlMcDc1UVNack1VQVpZYy1kT0ZKTUpqbmdzTmhsaEVzSDNxXzFESnJxUTF4U0drMnNDYTRzQmdIcGxGaUExb3E0Wm1nV0lyOVlD?oc=5",
+      "source": "Google News / CCN.com",
+      "summary": "A New Frontier for AI and RWA Tokenization: Inveniam to Acquire MANTRA - CCN.com",
+      "content": "A New Frontier for AI and RWA Tokenization: Inveniam to Acquire MANTRA - CCN.com",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-16T13:18:50.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.261Z",
+      "relevanceScore": 20
+    },
+    {
+      "title": "Securitize Lists on NYSE as SECZ: Backed by $400M Raise and BlackRock BUIDL - Cryptonews",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1EV3RfUkhBY1pkQkNlU0ttMk5Va05JM0w0ZjhxY21uWV9RR3dCTllZcFJQTXhDVjNFUEFremR5ejlxZFRnVkNZT0ppT0VqbUpvUnZ1bTZHN09VcFZKR0Z1RFA0enVuNlo2TnNjNmp2c0lONnBi?oc=5",
+      "source": "Google News / Cryptonews",
+      "summary": "Securitize Lists on NYSE as SECZ: Backed by $400M Raise and BlackRock BUIDL - Cryptonews",
+      "content": "Securitize Lists on NYSE as SECZ: Backed by $400M Raise and BlackRock BUIDL - Cryptonews",
+      "category": "blockchain",
+      "tags": [],
+      "region": "Global",
+      "publishedAt": "2026-06-30T13:29:42.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.261Z",
+      "relevanceScore": 8
+    },
+    {
+      "title": "Bank of Korea Chief Says Tokenizing Government Bonds Is the ‘Big Prize’ - finance.biggo.com",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9pZ0lycVZhcldhdFRtY25idG1YQW1kTjR5OFUzV2JpRVBmMzNqZzZrMnJtSG1KUHhPcWR5OVJaQzhESlppN25lMTloNklIUUlsNWRsRFFyUG1mUXQtanJHbDJpQmlzeHYyMGNDbWFnSGZqQW93dmc?oc=5",
+      "source": "Google News / finance.biggo.com",
+      "summary": "Bank of Korea Chief Says Tokenizing Government Bonds Is the ‘Big Prize’ - finance.biggo.com",
+      "content": "Bank of Korea Chief Says Tokenizing Government Bonds Is the ‘Big Prize’ - finance.biggo.com",
+      "category": "general",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "South Korea",
+      "publishedAt": "2026-07-01T18:40:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.261Z",
+      "relevanceScore": 0
+    },
+    {
+      "title": "Live RWA Prices: Tracking Tokenized Assets Onchain - Chainlink",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1yZkxlLXMyR1pjbGpQVEdHMXVvZWExRWtSMkNDN1JyOVE1ZV9YdmJLQXh1M2tWS0haeE1MT01PODNEY1BQQ1VJa1JUUGI3eDN2QW5fcTVLSXJNXzZERHJNTWpLWmFrMnJJelVv?oc=5",
+      "source": "Google News / Chainlink",
+      "summary": "Live RWA Prices: Tracking Tokenized Assets Onchain - Chainlink",
+      "content": "Live RWA Prices: Tracking Tokenized Assets Onchain - Chainlink",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-02-11T08:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.261Z",
+      "relevanceScore": 30
+    },
+    {
+      "title": "Shinhan Investment & Securities and Kaia Investment Partners Develop Tokenized RWA Product Targeting 5% Yield - CryptoRank",
+      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBkbE1zZ0FWWm85OWd1N2VHLVRMOGJOeDU2MGJyZ0w4amY1M1AxbE1weElEVFJ5X0U3SGxVekdaR0QyVjBPdC1tN2IwdHVTOF82Z0swc3NUT2tGUDFvMmJiNU5UaEYtNVFjcDdiMWhnb0ZCVDU0RW1CQ0p3WQ?oc=5",
+      "source": "Google News / CryptoRank",
+      "summary": "Shinhan Investment & Securities and Kaia Investment Partners Develop Tokenized RWA Product Targeting 5% Yield - CryptoRank",
+      "content": "Shinhan Investment & Securities and Kaia Investment Partners Develop Tokenized RWA Product Targeting 5% Yield - CryptoRank",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa",
+        "investment"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-26T06:19:31.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.264Z",
+      "relevanceScore": 34
+    },
+    {
+      "title": "Cap and Matrixdock Bring Tokenized Gold Into Onchain Credit Markets - markets.businessinsider.com",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOaG9qVndyd196WEw4WWFtbFIzWXRSQUduZmg5WFNhanJKWTFreWU5WENodk9DY1I5a3JKS0ZnX1B5TWVJb0tSVFRnRUFsN0NCeFJhZ1E2akFJLVcwSjFTQlhxMGlrOVRmS3Mzc3dXS2NKREpjUm9OODUwTkw0RVRDSThxSjBMM1ZvcDREcXRMejN2OVg5bUsyYnRPVlVtdmVLanJuSmtBa0NHRUtKSm1hSTNYelVDZXpzUHgtVVFvR2ZTdlct?oc=5",
+      "source": "Google News / markets.businessinsider.com",
+      "summary": "Cap and Matrixdock Bring Tokenized Gold Into Onchain Credit Markets - markets.businessinsider.com",
+      "content": "Cap and Matrixdock Bring Tokenized Gold Into Onchain Credit Markets - markets.businessinsider.com",
+      "category": "general",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-10T07:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.264Z",
+      "relevanceScore": 20
+    },
+    {
+      "title": "Symbiotic aims to make tokenized assets easier to cash out with new liquidity network - CoinDesk",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOcUY5WDBfTDZ3V1hSRGY5cVJQdERQaWlnOE5MSk9XUjhrMDVkckFfVTZ4MEZWOFZ3R2FBN3hsN3pxSVdJT3lQS19JNU5UcmU5X0ZZZjkwakFSLUpwcUhwVVpRNkFOdDZGUWtBWk01b1RDQW5WX2dSczV1SzBGWS1HT1Bnd3l5Zmw5ZTB3NE9TTDNYZWMyc0Jqb1IzRGRnTzNGaG92ZmdZNkdud2F2QzZmMm5HQWs5ZmE4NXRqNXVvVXZONVAtbzZwdGVB?oc=5",
+      "source": "Google News / CoinDesk",
+      "summary": "Symbiotic aims to make tokenized assets easier to cash out with new liquidity network - CoinDesk",
+      "content": "Symbiotic aims to make tokenized assets easier to cash out with new liquidity network - CoinDesk",
+      "category": "general",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-02T07:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.265Z",
+      "relevanceScore": 26
+    },
+    {
+      "title": "Standard Chartered Forecasts DeFi TVL Could Hit $2.7 Trillion by 2030 on RWA Tokenization - CryptoRank",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOa3gyY3ZOeEVkdlROd05FNlVDWWdkdmNkWl9SVEpES05EZnV0M2I4OUVUYzdTRjdzYnNPRVllSEt6ZGJ1Rk5qcnFReGpCbXJPaUt3bXNPSzV2UXFxQXJtTFpFLXNTdWtnRGwzXzhfS0o1VFo2NnNlS0I2OXRaQ3VKbFJ5Ukpjdw?oc=5",
+      "source": "Google News / CryptoRank",
+      "summary": "Standard Chartered Forecasts DeFi TVL Could Hit $2.7 Trillion by 2030 on RWA Tokenization - CryptoRank",
+      "content": "Standard Chartered Forecasts DeFi TVL Could Hit $2.7 Trillion by 2030 on RWA Tokenization - CryptoRank",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-15T07:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.265Z",
+      "relevanceScore": 20
+    },
+    {
+      "title": "Everything You Own Will Live On-Chain Thanks to RWA Tokenization - CoinMarketCap",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPTWdnUlJRUEFmeVh1Zmk5REMxNHRjb0tYUFVQdE1WZHh3RlJMME4tTHEwblNpSjNGX2d5QTBJb3VYV0dXYlNyTE43WTV1OW1tdTZLQ1g1dnhmcW9GTWhBQk5nQlY3cTdnLWl4amdxSWFuYVUtX2JlVkZHb1gwQl9NY084cmNBV2wwZWQxYTFMYw?oc=5",
+      "source": "Google News / CoinMarketCap",
+      "summary": "Everything You Own Will Live On-Chain Thanks to RWA Tokenization - CoinMarketCap",
+      "content": "Everything You Own Will Live On-Chain Thanks to RWA Tokenization - CoinMarketCap",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-04T14:36:06.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.265Z",
+      "relevanceScore": 20
+    },
+    {
+      "title": "Tokenized RWAs Gain 13.5% While Crypto Market Sheds $1T - CoinMarketCap",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQd2I0OVJ6cW5CVDdjVGY2QnZVU2xLX0JHMW9mM3VOelBXenNZWnhjV1BtY0RsblF1clNsMUh4Y0FCOFdkcG5tUnNfOEFIVm1saEJVbjNtbDBEYWNEWHVrR2NSMkFwbEZocGFlR1FoVU93b0E1c2o2RVBFTmkyUktXLWs5MVVUMlYyXzZIZlY5N1V4WFJiNjhzOWQwRHJ0OEpxZWJMNGFfdHVhd0E?oc=5",
+      "source": "Google News / CoinMarketCap",
+      "summary": "Tokenized RWAs Gain 13.5% While Crypto Market Sheds $1T - CoinMarketCap",
+      "content": "Tokenized RWAs Gain 13.5% While Crypto Market Sheds $1T - CoinMarketCap",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-19T05:09:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.266Z",
+      "relevanceScore": 30
+    },
+    {
+      "title": "Philippine SEC signals readiness for RWA tokenization - TradingView",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNZ0xTU3R1akxyOURTUnZfYm81NjBDV25iMy1nWE1hOVNCQnpDYmtOMVBfOFJBTVJxdmNCdmd6R3haUEFSSnJJRVZDYi1VUl84VFNUU0UwRlpOM0lTdGRuY1RmNl8zNnpGQWJPSExiTldoNHpkR1ZCbXdkbjRPTER3VjhHa3hQQWhzYXJ5QU80S2RVZ3FLTVdCSlZYQTc1TlFXRnd2TVdkYjlEb2JDMGhkQklhMGpsU055?oc=5",
+      "source": "Google News / TradingView",
+      "summary": "Philippine SEC signals readiness for RWA tokenization - TradingView",
+      "content": "Philippine SEC signals readiness for RWA tokenization - TradingView",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "North America",
+      "publishedAt": "2026-06-20T08:05:20.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.266Z",
+      "relevanceScore": 24
+    },
+    {
+      "title": "Ethena Selects Centrifuge as Strategic Tokenization Partner to Accelerate Institutional RWA Adoption - Business Wire",
+      "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxPYTVQclhpWmtSaGZmTWVyUDY3N0cyOFdYcnl6akhjRjc0cnZKa1BLLXNSWnY2NUpwdTdRSnN6LWllODE3SG85cFZ4RVdjX1NwZmxUVWlJV05XeUVTRmNPYWJpSnZxWEVoeWk4azFuSWlMS0I2aFVGSVNWWkhuUkxHUklQTUhVRkVZNnRaQ2R0aWpUWUl4elkyNElLb05pbXV0eUFpYTNuQ2RLOEFlYi1XU3d5ZmxYWVFJb3VPbTdqSzZsdGxwTk94c3doTWF6X0NGc2dCTFNGdTMtbWo0WXkwbkdNMWNpV3FDWldyd2dn?oc=5",
+      "source": "Google News / Business Wire",
+      "summary": "Ethena Selects Centrifuge as Strategic Tokenization Partner to Accelerate Institutional RWA Adoption - Business Wire",
+      "content": "Ethena Selects Centrifuge as Strategic Tokenization Partner to Accelerate Institutional RWA Adoption - Business Wire",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-09T07:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.266Z",
+      "relevanceScore": 20
+    },
+    {
+      "title": "Tokenization of Real World Assets (RWA) Takes Off - Why 2026 Marks the Breakout Phase for Digital Assets like Real Estate - MoreThanDigital",
+      "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxPNG5xakxpNC1uTDlzMTlVdXI4d1NkRGhOOGxnM2hhZncyZHNwOVFhT2hSM0JWLWhoRVdLclZ1Zm1XM3JXV2lac0JYa3RScUNPcFc4MnpxaTVMTHMyVmZXT3pOQlR3aklodmh5cEhveUZTdGJ4WnBoUGNPNTBMdl9PZC1ZcVF3TGZ0Nk1wSmpIMlJGLWZadEFGZE83TEZYaFdnQ09GZndqX1JFZXl2UE55UVplMlVrN180eFVZNXpSbFVRUGZtcVJFWHR3WlpNZkgtZUt5QmF5a3BoVW92QXNQMnRHbXk?oc=5",
+      "source": "Google News / MoreThanDigital",
+      "summary": "Tokenization of Real World Assets (RWA) Takes Off - Why 2026 Marks the Breakout Phase for Digital Assets like Real Estate - MoreThanDigital",
+      "content": "Tokenization of Real World Assets (RWA) Takes Off - Why 2026 Marks the Breakout Phase for Digital Assets like Real Estate - MoreThanDigital",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-03-30T07:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.266Z",
+      "relevanceScore": 37
+    },
+    {
+      "title": "Unlocking the Future: How Real Assets Turn Digital - Phemex",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFB1OU9sTUdPWktiTlZFUVVWakF4R0NDT3JodTduU2F3eGRneWtrYm1YOWdVbE5BVnpTM29hWXFySlRiVkNwdmZvRUgwSzBoeHFVaEY5bllLSWgxenYxVTRZc20zbHdvRDFxNndDUXNPbEFOdkJVcXdsbG5uNDU?oc=5",
+      "source": "Google News / Phemex",
+      "summary": "Unlocking the Future: How Real Assets Turn Digital - Phemex",
+      "content": "Unlocking the Future: How Real Assets Turn Digital - Phemex",
+      "category": "general",
+      "tags": [],
+      "region": "Global",
+      "publishedAt": "2026-05-28T07:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.266Z",
+      "relevanceScore": 0
+    },
+    {
+      "title": "Datavault AI Signs $2.0 Billion Structured Financing Term Sheet With Exclusive Global Tokenization Mandate - Datavault AI",
+      "url": "https://news.google.com/rss/articles/CBMiggJBVV95cUxOSl9zN0JlTEw5ZlprbUxpN2lfaWcxQ3UwSFJVdGhabExUaFZ1ekpiWUpkYTJ0bUpRZHJQQTVwTmFUdU14bWhsSmN0NGxPdlhmRlM5MHhIYXZkQ210S1ZJTUJSekppS2NWM2FSdFVWVFZKeVp4ajlwanVMSFc1bVU2WWpxQlVLM3ZnenduNjhiUTAtaWFqVklVaHA2UFFpWkcxM2dTd05fYS1UY3BBOWNoTFVOTUpya0J1UDV0YThrQ1N6XzNQMWVUTUFqT2E1Uk1QYUZIaDdwSldhejltSEhlMFp6blBaZXMyT09hNzliTkZ0X0Y5U1l1RDF3NUVHWlVWcXc?oc=5",
+      "source": "Google News / Datavault AI",
+      "summary": "Datavault AI Signs $2.0 Billion Structured Financing Term Sheet With Exclusive Global Tokenization Mandate - Datavault AI",
+      "content": "Datavault AI Signs $2.0 Billion Structured Financing Term Sheet With Exclusive Global Tokenization Mandate - Datavault AI",
+      "category": "general",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-01T07:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.266Z",
+      "relevanceScore": 10
+    },
+    {
+      "title": "How Entrepreneurs Can Create New Revenue Streams Through Real World Asset Tokenization - Vocal",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOMHdiOHJYU0UxSENrUnh2dThMc1JmRUNNaVRzVEFMc3I1YjVsZTBMZXJacHBBV0k4ejhISm5RUXE0Q0ZWblN5OC0wSU5kdkJZMjNlenNTTFI3VU1vSzh3V1ZibEVpZ2tVb1dpdzk4TE5vY0tSWEtyRWoyUDRfWWlGMFQ5akxBSkVlRHdCX1F4NjZna3N5NkluSXJhb3luWEF4WmdQeU04WGxpUDhwbHc?oc=5",
+      "source": "Google News / Vocal",
+      "summary": "How Entrepreneurs Can Create New Revenue Streams Through Real World Asset Tokenization - Vocal",
+      "content": "How Entrepreneurs Can Create New Revenue Streams Through Real World Asset Tokenization - Vocal",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-21T08:07:28.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.266Z",
+      "relevanceScore": 22
+    },
+    {
+      "title": "Stellar (XLM) Swings 3.76% on RWA Tokenization Narrative - CoinMarketCap",
+      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9uTktBY0x4Unc0aTZ3QXFlbVBZQmpDMHBka0JpMWp3MVJRU3VxVFJpQ2Z3VDltYUh5WTZTcUhoQkNUSVFFajlIVkdjWDlRSmNVM2lTZXN2cktXY1l4bVVQS0VhTHU2ZXpxODR4cWpxVlQ?oc=5",
+      "source": "Google News / CoinMarketCap",
+      "summary": "Stellar (XLM) Swings 3.76% on RWA Tokenization Narrative - CoinMarketCap",
+      "content": "Stellar (XLM) Swings 3.76% on RWA Tokenization Narrative - CoinMarketCap",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-07T07:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.267Z",
+      "relevanceScore": 20
+    },
+    {
+      "title": "Wall Street's tokenization push could send trillions of dollars into DeFi, StanChart says - CoinDesk",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOQVBDZ2QzNVJRU0tDY29aWG5YeXZaNGs5SG0xZ0tfRUtDUXlidUI5eXF4Zk4yR09lNmhuZ1RzN3hrWDhoSkUtTTR0eW1lclItNXpJZzE0b24zOGx0NVhzTFViT0Z5T25hWkJCTmNUWXhJeWg0VFpMMDlKNGJkdW1YOXBmUmh1aU0tYUFVemY3YllJd0pDNGlKUHNuMXpRb2RNSGs1dlZYajlYUWdfc25MLUdoZHVjRDY5RWc?oc=5",
+      "source": "Google News / CoinDesk",
+      "summary": "Wall Street's tokenization push could send trillions of dollars into DeFi, StanChart says - CoinDesk",
+      "content": "Wall Street's tokenization push could send trillions of dollars into DeFi, StanChart says - CoinDesk",
+      "category": "general",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-05-18T07:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.267Z",
+      "relevanceScore": 13
+    },
+    {
+      "title": "SEC Prepares Tokenized Stock Rules as Onchain Market Tops $1.4 Billion - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPcV9UcmRiQndvb1d3aXNlWm5HVnRFbWwyTGhHeGpVOGwzZk9JeldvSnBsQ3N4bzFmbVNhazY5d3VpNldzWHBrWmt5ekZ5OVF5NXp4T2Q3UFNTQTBXeF9yUlBpcnQ3V3ZxN1k1OF9OWm5WLTNpWTRLOGFnQ3RuY0FNT2RhQXhGd1BaRktPUWZfTElmbGRZMFBzdjExNlZoMXpV?oc=5",
+      "source": "Google News / Yahoo Finance",
+      "summary": "SEC Prepares Tokenized Stock Rules as Onchain Market Tops $1.4 Billion - Yahoo Finance",
+      "content": "SEC Prepares Tokenized Stock Rules as Onchain Market Tops $1.4 Billion - Yahoo Finance",
+      "category": "regulation",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "North America",
+      "publishedAt": "2026-05-18T07:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.267Z",
+      "relevanceScore": 31
+    },
+    {
+      "title": "Philippine SEC Says It Is Ready for Tokenized Assets, Opening Door for RWA - TradingView",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPR0c5dFVPZG5ZSElwSHlhMHFBV2VaU3UtWmN1UExyMmpUMkFCb2pZVURmSEtqLU41STdGbWNzUnd6NGROR3FNbGoyWV9iMms3OWw4Ty1LYlVSVmNUM3JfTmRQNC1PaHB3cjE5NXRBZWhSSzdRNkRoRnUzM2xCdVlGbEt5S2tZWlZuUDROZEU4XzI3YkxwUk4yc191aU5RQmZES3ZZeHJ3dXozMExnMTdjY0NEVzFoSzROdnVoS3NSaVRYR3VkRDZwNk1mbWQ?oc=5",
+      "source": "Google News / TradingView",
+      "summary": "Philippine SEC Says It Is Ready for Tokenized Assets, Opening Door for RWA - TradingView",
+      "content": "Philippine SEC Says It Is Ready for Tokenized Assets, Opening Door for RWA - TradingView",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "North America",
+      "publishedAt": "2026-06-20T08:55:02.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.267Z",
+      "relevanceScore": 34
+    },
+    {
+      "title": "Solana tops all blockchains in real-world asset holders, reshaping tokenization’s competitive map - Cryptonews.net",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9OaXo5NjA0TUViSnRDVVZ4d0Y2UXBjVnBEak5SXzJHLXFhNGhvYUY4dTFGNTR1ak1XblJHRGx4Tkllbk1fYlBZWmJ4RFNIMTVMeWNDQ2NuVHVvQQ?oc=5",
+      "source": "Google News / Cryptonews.net",
+      "summary": "Solana tops all blockchains in real-world asset holders, reshaping tokenization’s competitive map - Cryptonews.net",
+      "content": "Solana tops all blockchains in real-world asset holders, reshaping tokenization’s competitive map - Cryptonews.net",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-19T07:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.268Z",
+      "relevanceScore": 16
+    },
+    {
+      "title": "RWA Tokenization Growth Centers on Treasuries and Gold - KuCoin",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPN3RnOGtZRlZYWjcxV1lKR0hpOVlwNWh5SngxV1ZnNi1KWEZ3MFk0bkNFZWEzUnR4WDdkN243MGVvdnZ0RGMzQkJpaUM3WFBYQWlwTGZvOUZvSnFOalUwN0IwTGtrOXR1RUhGLVFYT2haa3VjZTNQejRTMHBPa05LZml5UklvNW4wMmk4NGgwNldPZw?oc=5",
+      "source": "Google News / KuCoin",
+      "summary": "RWA Tokenization Growth Centers on Treasuries and Gold - KuCoin",
+      "content": "RWA Tokenization Growth Centers on Treasuries and Gold - KuCoin",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-22T20:03:59.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.268Z",
+      "relevanceScore": 20
+    },
+    {
+      "title": "Standard Chartered Sees Uniswap Rising To $100 By 2030 On RWA Growth - TradingView",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPdF9NZVd0NGJULWlFeV8xVkMtRzEtVWtGdTAzUnNMUnZlNVRQejVuVlZnMjR3SjJ5dW9nQVFSNHRrYXpybWtSV3Y2XzQ3MDRIakdFSnhxbGMxVVB2ckMyZFpoSlRDdl9sMVZnOGU1ZXBiZnBDRTJJZ0tSdWV5OXlBTWl6b1RVTHk1UU5pVmpjWGdHaXY0ZVk2TXlyY29lMzBEMFA3UFVUZWs0TnpGNkdFelpNX0xESjQ3bkF4T245cXVhNTg?oc=5",
+      "source": "Google News / TradingView",
+      "summary": "Standard Chartered Sees Uniswap Rising To $100 By 2030 On RWA Growth - TradingView",
+      "content": "Standard Chartered Sees Uniswap Rising To $100 By 2030 On RWA Growth - TradingView",
+      "category": "rwa",
+      "tags": [
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-17T07:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.268Z",
+      "relevanceScore": 10
+    },
+    {
+      "title": "Philippine SEC Says It Is Ready for Tokenized Assets, Opening Door for RWA - Cryptonews.net",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1BRGhLd20wSXdfNkE5NDJuNVhHRENtQ01XbXZCUldJSVNzbGFsMHZVQkxCWGJjcHhZRlh2eGlLLVpwN3ZoZkxhOGYyZXoxdmRUTVBIeUV3?oc=5",
+      "source": "Google News / Cryptonews.net",
+      "summary": "Philippine SEC Says It Is Ready for Tokenized Assets, Opening Door for RWA - Cryptonews.net",
+      "content": "Philippine SEC Says It Is Ready for Tokenized Assets, Opening Door for RWA - Cryptonews.net",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "North America",
+      "publishedAt": "2026-06-20T13:37:17.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.268Z",
+      "relevanceScore": 34
+    },
+    {
+      "title": "Bitget launches RWA platform Reality in tokenization push - The Block",
+      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5veTNZRk1MOWFzNHJmNXN4QmZUa1h3QlhFZEZNODJrQ2kxZ0NpTnNFN1hNaXlsVFFaTUdwY3NRWEFzeGQtWVZEMGxQeGZZMjg1Nm4zMW5RcDJQdTZ2eDJsSzNRb0pRdWZfWXI4bVMydkQ?oc=5",
+      "source": "Google News / The Block",
+      "summary": "Bitget launches RWA platform Reality in tokenization push - The Block",
+      "content": "Bitget launches RWA platform Reality in tokenization push - The Block",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-05-26T07:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.268Z",
+      "relevanceScore": 20
+    },
+    {
+      "title": "Real World Assets (RWA): Top Tokenized Assets by Market Cap - CoinGecko",
+      "url": "https://news.google.com/rss/articles/CBMiR0FVX3lxTE9ydkViTHdfSkhRYkJuWEJqcXlzdjl2MjNoZ0M3WnF0WU9WRGZrVENuY2FkSU5fZERvbGVoNVpvQ183RWE1aFdR?oc=5",
+      "source": "Google News / CoinGecko",
+      "summary": "Real World Assets (RWA): Top Tokenized Assets by Market Cap - CoinGecko",
+      "content": "Real World Assets (RWA): Top Tokenized Assets by Market Cap - CoinGecko",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-23T05:04:17.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.269Z",
+      "relevanceScore": 42
+    },
+    {
+      "title": "Tokenized RWA market grows 420% since 2025 on regulatory clarity, access - TradingView",
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPeXRmS1NZN1gtODRsYnV0QUx6b1N0Vm9wcC1LdkNSN1ZxMXNzYmxHMDNCVmZWZU84OWNCVVY1NTFwMWZZbDA3WkE4bU5xamxpam9FVmNxZHF6VnJqbzdMNExfV2xlTHRkSGltc0Vrb3UwZHhWOTY4c2MyZlFYc0FJcTQzZmxCNGFQWlFfYXFidUwyWHpJNnJZclRKRTNRejlkU1VNQmtzdUpER0VuaHA4TXVjZVB1cHhiZGVlb2JrMjVjOGhfOHFDU3FIenRSQWM?oc=5",
+      "source": "Google News / TradingView",
+      "summary": "Tokenized RWA market grows 420% since 2025 on regulatory clarity, access - TradingView",
+      "content": "Tokenized RWA market grows 420% since 2025 on regulatory clarity, access - TradingView",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa",
+        "regulation"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-04-30T07:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.269Z",
+      "relevanceScore": 30
+    },
+    {
+      "title": "Tokenized Treasuries Are Moving Onto the XRP Ledger: Does the Growth Reach the XRP Price? - 24/7 Wall St.",
+      "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPeVkyaWhVV21NN2FoaFJXS24wanJmQ2FjUmNfNlBoMXFZVlROdHVURnFrRUJlajFhT1BhMDA3ODQ0dWxNY29WNmFmekN6RC1NSFBILTgxazY5MjNSMm1fZ2d1V1FOeXZRU1pkSllqaGI5bEJjRHlNSUdkcWRqWHh5SklMd2U4ZDAtMUNoSjV0aFVWOW5YUFZlNkxYUVpBSWh1c1JULWhERVhNXzdFbWNBTzd0SnRQYTA3c1BYd0NlZXdHRFlMZkJzZm5KdmR1TElab0lvYWZLUXhwSGQwRkh3?oc=5",
+      "source": "Google News / 24/7 Wall St.",
+      "summary": "Tokenized Treasuries Are Moving Onto the XRP Ledger: Does the Growth Reach the XRP Price? - 24/7 Wall St.",
+      "content": "Tokenized Treasuries Are Moving Onto the XRP Ledger: Does the Growth Reach the XRP Price? - 24/7 Wall St.",
+      "category": "general",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-10T07:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.269Z",
+      "relevanceScore": 20
+    },
+    {
+      "title": "5 Ways XRP Ledger is Changing the RWA Tokenization Map - BeInCrypto",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1sZ1J4VV9aeS1zMmR5aTZOaWJwQU92eDVzWFA3akxnODFaNGh3LWVndEViT3FoZ3FJSVA5bG1qVW0wUVJZV0RJVmJabTJxdldiRlkwUHdQYWliZFh2WG9VN2Iwb0pVd29wS0gtQjBnSG9SUWtFTVVJ?oc=5",
+      "source": "Google News / BeInCrypto",
+      "summary": "5 Ways XRP Ledger is Changing the RWA Tokenization Map - BeInCrypto",
+      "content": "5 Ways XRP Ledger is Changing the RWA Tokenization Map - BeInCrypto",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-05-31T07:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.269Z",
+      "relevanceScore": 20
+    },
+    {
+      "title": "OFA Group Announces $15 Million RWA Tokenization Agreement for $1 Billion Long Island City Development - GlobeNewswire",
+      "url": "https://news.google.com/rss/articles/CBMiggJBVV95cUxPNXo3QUFJbWd4ejIwc1VaQnltYUZoLWJhRjdiMmpidU9tTXk1VDlGZ1VuUXR2Mjhra3BwOWtUQXFRU3ZJTkJIb2hxLU8zdXZYTk9XZlVZdmFHdWFfUmR4bEFuTW80MENnS3BKb2hkNDQxZU5wdVhRUktZcEpCQ0hyaUlaaXoxUjBmMEN4OFdNZTUxQmQ0N1hlSGZTNXFpcWlFNTlhd1M2V0lGMlNtSVlTbFFEZzhqWURPZnBxOVNKSWRKcksyV3Z2ZnRCRmVyM0JfQllIWGhsMjlhdzQwajVmQ1JDdUlWZUFCLVZxY1NJemJtY1V2V0FOTzl5VmV3WDlha0E?oc=5",
+      "source": "Google News / GlobeNewswire",
+      "summary": "OFA Group Announces $15 Million RWA Tokenization Agreement for $1 Billion Long Island City Development - GlobeNewswire",
+      "content": "OFA Group Announces $15 Million RWA Tokenization Agreement for $1 Billion Long Island City Development - GlobeNewswire",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-04-06T07:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.269Z",
+      "relevanceScore": 20
+    },
+    {
+      "title": "Goldman Sachs To Launch Tokenized Real Estate Fund With Apex, Archax - Bisnow",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNd2dvMGEyTVBPS3FOTEtuaXNmOU5xMDA5bkNqczJ1di1oaFhPNlF1V3J4TzNzMm0yZHFOMzJQSjdvdEk0N3JMeDhwTFlGT3JzV3o4Rm91N3dXR2pLdFBEc04wVkxrWmlaaGJFVWZzRl83RENCbFpaeDFSQlFwMGlsRWRpOVRFTEJUcnVjdFVteVZvdl91N0xvTXZYYk5ueFZNY3dxRDBWVTJncG5KUjRYTWRCY0d2ME5IM0tBVEU3U3JTZ0ZPX0E?oc=5",
+      "source": "Google News / Bisnow",
+      "summary": "Goldman Sachs To Launch Tokenized Real Estate Fund With Apex, Archax - Bisnow",
+      "content": "Goldman Sachs To Launch Tokenized Real Estate Fund With Apex, Archax - Bisnow",
+      "category": "investment",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-04T07:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.269Z",
+      "relevanceScore": 20
+    },
+    {
+      "title": "Distributed Tokenized RWA Market to Hit $400B by 2030: Keyrock, Securitize - The Defiant",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPYWwwUThiak1GdkNoOHozZjB4aTJ2QVBlZFdiXzExa3h1MEZGaWNrMVZYaXhHT3RubFU3QVhpQnZOQ0ZLbmtvVlhpRDJtWFc2Y1d3SWN5NXUwYU1TMTRGb3ZwSldGdHdmT2ttMDE1YkN0RmVEUV9iTTdBNXNVNXFwVzJsdW4wUzNvRXdsZV9SQ2w?oc=5",
+      "source": "Google News / The Defiant",
+      "summary": "Distributed Tokenized RWA Market to Hit $400B by 2030: Keyrock, Securitize - The Defiant",
+      "content": "Distributed Tokenized RWA Market to Hit $400B by 2030: Keyrock, Securitize - The Defiant",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-04-09T07:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.269Z",
+      "relevanceScore": 34
+    },
+    {
+      "title": "Stellar (XLM) Surges 5% on Institutional Tokenization Narrative - CoinMarketCap",
+      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE0zV0R6WmpqcVB3OFpMY0N1TDBXOThjbjZBam9vZTMyR0xMRjFqU0FYbHEyU0t6QjVkNHN1ckJfY3ZQeENxUURRamZQSkU2Wlc3U253WEFJb1ZrY0dOX3FibHZ0UjloSXFQMmY1T1hsdGk?oc=5",
+      "source": "Google News / CoinMarketCap",
+      "summary": "Stellar (XLM) Surges 5% on Institutional Tokenization Narrative - CoinMarketCap",
+      "content": "Stellar (XLM) Surges 5% on Institutional Tokenization Narrative - CoinMarketCap",
+      "category": "general",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-17T07:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.269Z",
+      "relevanceScore": 10
+    },
+    {
+      "title": "Tokenized Real-World Assets Surpass $51 Billion as Race for Onchain Equities Heats Up - Blockster",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPQTV4OEVsZnFjWFZCRnM2X2xCYnBCVXlkSEFuQjVPcHFxV1lONHM2UDczZEV4UDhnRWZaLVdJZ1FkY3dNeEZPRWlBT1h6d2E0WDJaUmZ5cGpIQzJocldlNkN4UmVJWkN5eTl3U1pzM0Y0UDRxS0JGNzlDMWtNbVlXcWViSThUQ2lXU1BibzNJd1gwaFRpTUJxTDRRU1c2Ym14aFlUWm1POFZXQQ?oc=5",
+      "source": "Google News / Blockster",
+      "summary": "Tokenized Real-World Assets Surpass $51 Billion as Race for Onchain Equities Heats Up - Blockster",
+      "content": "Tokenized Real-World Assets Surpass $51 Billion as Race for Onchain Equities Heats Up - Blockster",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-22T14:14:01.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.269Z",
+      "relevanceScore": 20
+    },
+    {
+      "title": "BitGo looks to jumpstart RWA tokenization segment via acquisition - Blockworks",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5TUVlVNm1YWDVjRDhpczZNc2NuV1FONnoyeHRvNHU5QU9RUGNhS2djdGNIRUQtdEpIOGJDUGxIUENYUzRKN1RZV0t5a2lfcjBVR1RLSEVCUTdTNU03V2tIVkhxbkxKOWNpOXBLN2NMaw?oc=5",
+      "source": "Google News / Blockworks",
+      "summary": "BitGo looks to jumpstart RWA tokenization segment via acquisition - Blockworks",
+      "content": "BitGo looks to jumpstart RWA tokenization segment via acquisition - Blockworks",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-03-14T04:31:46.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.269Z",
+      "relevanceScore": 20
+    },
+    {
+      "title": "Ethereum leads RWA market cap growth across all sectors over three years - Crypto Briefing",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5PWFZkeS1DcC1PRS10bGZ3S0YxNTJ1Y0ZtS19RN2U4WDFOcndsZmFYekd1R3hmcE9kUnNwWUt3V00tRU1JODE3YVNhbV96enppVmU0aDg4blNhZFl0cFgwNWdCam44WWVtYUE?oc=5",
+      "source": "Google News / Crypto Briefing",
+      "summary": "Ethereum leads RWA market cap growth across all sectors over three years - Crypto Briefing",
+      "content": "Ethereum leads RWA market cap growth across all sectors over three years - Crypto Briefing",
+      "category": "rwa",
+      "tags": [
+        "rwa",
+        "ethereum"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-04T07:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.269Z",
+      "relevanceScore": 14
+    },
+    {
+      "title": "Tokenized RWAs surge 589% despite crypto market pullback in May — Binance Research - FXStreet",
+      "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNTG4yQ2c4RWt0bndybklYRzZkaDZvZURJaHdTci1ZX0ROQlk3REg3RjAyLUdiY1hoeHBpX09yVGRkRWR2UEJsRGF3S2xzcW96cGhkbVg3aF9qWXkzRmVYcEJvLTAwenNYczl3MktKY1RMRms5MzBiMmNLamNUSG03Q3JBcU0xTEUtdm9UNFNzT1JWMENEM0RxQ1ZwQ1V6WDBzVFBPYXhmaVBTa081RTg2MGh0NkxtRDNIZHdON2NxNXh0c2N4ZEFPdzR4VE5YTTZna1dkU2p3?oc=5",
+      "source": "Google News / FXStreet",
+      "summary": "Tokenized RWAs surge 589% despite crypto market pullback in May — Binance Research - FXStreet",
+      "content": "Tokenized RWAs surge 589% despite crypto market pullback in May — Binance Research - FXStreet",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-09T07:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.269Z",
+      "relevanceScore": 30
+    },
+    {
+      "title": "Tokenized Real-World Assets Surge 589% as Crypto Falls — Binance Research Calls 2026 RWA's Maturation Year - Binance",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBSQmptazdlbnQyMHhIN1A5elNNLXBad0tSa0RWQm9SSS1SdkE1QlVzN1ZpQ1JGbXptVDFKREhOb3FEUGJHamZwckRGNU1rVktBaldENnNfaVJTMTFfSHVsTEdrV1Q?oc=5",
+      "source": "Google News / Binance",
+      "summary": "Tokenized Real-World Assets Surge 589% as Crypto Falls — Binance Research Calls 2026 RWA's Maturation Year - Binance",
+      "content": "Tokenized Real-World Assets Surge 589% as Crypto Falls — Binance Research Calls 2026 RWA's Maturation Year - Binance",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-09T07:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.270Z",
+      "relevanceScore": 30
+    },
+    {
+      "title": "Philippine SEC Signals Readiness to Regulate RWA Tokenization - KuCoin",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQmFEZmlJeFVianA5Q0l1T2JVQmt0ejRBVXRSNHVoaWFIa1NacklPaVRxMmU2NzZpVkFjS0R0MkF3UUx0SGREdFNvbk1hRURQZFBjdGw2eF9hYWJzYXZTMDFYWVFYMjB2R2tXY2U4a19UYmFGeGE2d3pRR3JucmowMks1SWdFYU13TjA3Q3Z3NHBrVEFESWxhM0NQWQ?oc=5",
+      "source": "Google News / KuCoin",
+      "summary": "Philippine SEC Signals Readiness to Regulate RWA Tokenization - KuCoin",
+      "content": "Philippine SEC Signals Readiness to Regulate RWA Tokenization - KuCoin",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa",
+        "regulation"
+      ],
+      "region": "North America",
+      "publishedAt": "2026-06-20T07:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.270Z",
+      "relevanceScore": 24
+    },
+    {
+      "title": "Active tokenized RWAs surge almost 600% despite crypto pullback - Binance",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1qcDM2dmY1YzBVM0hBQXRJdGwweGJtWmFQUTNHVU9STl8tWXAxNG9JLTlTY2sxenA4Uk5ZdUprVEI4Zjh3TzBhMGlGV2tKMmgtazZWbi1fUmZheUl0UWdsN2o4UTE?oc=5",
+      "source": "Google News / Binance",
+      "summary": "Active tokenized RWAs surge almost 600% despite crypto pullback - Binance",
+      "content": "Active tokenized RWAs surge almost 600% despite crypto pullback - Binance",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-08T07:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.270Z",
+      "relevanceScore": 30
+    },
+    {
+      "title": "Infrastructure Needed to Turn Tokenized Assets into Functioning Markets - Markets Media",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNV19meG8zcGlDRGtEZl9SZzVMYTFRLWhxbkVmaW5BR2VLLTlCT3lqNHpHZEc2bV9pcm1TcXQyWC1OOEpqYW5rME5fQlpxeVpxNkpsVUhXYngwaWhjUldfVWZZMloyd2ZURl9yUGl1RWZEZXk5UjFCd3dvVGNxTW92Q1h2MjFJN1ZQYU83Wl9KMWdGVjRUY2JmSVNpLTBxRFo5M2ww?oc=5",
+      "source": "Google News / Markets Media",
+      "summary": "Infrastructure Needed to Turn Tokenized Assets into Functioning Markets - Markets Media",
+      "content": "Infrastructure Needed to Turn Tokenized Assets into Functioning Markets - Markets Media",
+      "category": "general",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-04-10T16:11:04.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.270Z",
+      "relevanceScore": 20
+    },
+    {
+      "title": "STO Foundation Launching June 29, 2026 to Advance the Global Tokenization Industry - The Malone Telegram",
+      "url": "https://news.google.com/rss/articles/CBMioAJBVV95cUxOR3U0eHF5by1CSVBCRWd0MUY0aUhxdFpXZzgyQzJGalk4OExkOXc1M3ZFNWtBcVh6UlBZdUkyXzdSR2xLbWZtdVRySHRqZzNTWFJ1OGJvV1E4SlNxREdnSnUxVkkxanIzVUE0OXRGMUw0a01Fd2RXbVZId2NobWtTVnFPR3VwZllnRTNZaVlfWnYwbDhaYXR3d1lRNVZnM3RudGpibmREa3QzamdkcFFVVzc5TmZsVWNMMm9pZGlqazVWdDgzcWdZaGgxb1pyV2wyUWZnV1kyZVlaOVRUV0V5R3NaMHRGVXF5bS1VOUFjd0ZSUWdsWS1oR2RZRndtbXM5aUtFc0dNdVJlM2xrNUFHYUtnTmV4X1BuY09fZFZPbGM?oc=5",
+      "source": "Google News / The Malone Telegram",
+      "summary": "STO Foundation Launching June 29, 2026 to Advance the Global Tokenization Industry - The Malone Telegram",
+      "content": "STO Foundation Launching June 29, 2026 to Advance the Global Tokenization Industry - The Malone Telegram",
+      "category": "general",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-14T14:51:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.270Z",
+      "relevanceScore": 17
+    },
+    {
+      "title": "What are Real-World Assets (RWAs)? - The Block",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE42TG5YTDR2dm1uNVY1WnpxdWZJSWtZUFhqc2owMGRZSGF3RzRZLVVJcEllcE5iQXVjNTZKd1plOW9ILWRROEEzZHZydmVSMlZxTHdPTEtxQ2FpeWxwNnBBYWNxNFZHM3FkR21hSm5nYjFpSUhKcVdj?oc=5",
+      "source": "Google News / The Block",
+      "summary": "What are Real-World Assets (RWAs)? - The Block",
+      "content": "What are Real-World Assets (RWAs)? - The Block",
+      "category": "rwa",
+      "tags": [
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-03T07:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.270Z",
+      "relevanceScore": 10
+    },
+    {
+      "title": "ONDO Surges 68% in a Week amid US Tokenization Push - The Defiant",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQZmZXckRwak5WSG85WVgtbndGZ3VFS1VnR1F0TzZnYnRVeDRwQXc4VTFPb2I2Znl6eVhVanY3OVdZLWdXRW9JVm05ZWUzRHdSOTlXYkNhbmViRnBXX3RrVDFuVjQyQmhfTHpEWHJYdXNWQno0M2hrU0drcW9LLUdQS3BpdkpaZWdzb2c?oc=5",
+      "source": "Google News / The Defiant",
+      "summary": "ONDO Surges 68% in a Week amid US Tokenization Push - The Defiant",
+      "content": "ONDO Surges 68% in a Week amid US Tokenization Push - The Defiant",
+      "category": "general",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-05-08T07:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.270Z",
+      "relevanceScore": 10
+    },
+    {
+      "title": "SurancePlus to Launch Tokenized Reinsurance RWA Securities - GlobeNewswire",
+      "url": "https://news.google.com/rss/articles/CBMiuAJBVV95cUxPd0dRbm9jVEVlVGh6TEtVVElSYmRVMi0tNFlqS1NfbE85NFVqQWNZVElCeTRtT3ppRDNNOWNGV2RmWWNjWWJCMjhHTExmdkJxdWl3dnNZcDd0TElSbzQ2cnVZb3pocTB5RW83cmNzRk5ncnh4X3NJV1J4VW9xSnlaTlcwSS11UzF3V0d2cGJtdlJUNnBRZjMwdG0zOHdMc3IyUk1mM05USWt2eWVUNDlyOE5BS2dPdkpodW5rbC1XWDBWZkFfSUJlbzRJeFlQZzVQaDk2cHFzd1hnWmZmMHp3blBUb01CVV9RcXlQaUpNS2tBVXltbUoyVkgyd3M3aTJBVW5hMUJKRFFWSUZiWDdkNTlGWktxWVRLd20yZ29xa08wLTNLb3ZlT203TkxwRGhRSWo3OWJOaFM?oc=5",
+      "source": "Google News / GlobeNewswire",
+      "summary": "SurancePlus to Launch Tokenized Reinsurance RWA Securities - GlobeNewswire",
+      "content": "SurancePlus to Launch Tokenized Reinsurance RWA Securities - GlobeNewswire",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-10T07:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.270Z",
+      "relevanceScore": 34
+    },
+    {
+      "title": "Tokenization of real-world assets banned - China Daily - Global Edition",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQNmVtbzJSZWt0ODh6UExQenNRTnpseGtyZkE0dUllejVZb3QwdTRoRjRDSlNWb2JFamczUjd4eU1RM25VZVFMZFFzTXFNVjh0Z0JaM21rVjdCelZ5MXlQY1Bta3JOTmh0TUp1VjJLTHVscFlJUmtBNUUyY0NmdDR0eU53?oc=5",
+      "source": "Google News / China Daily - Global Edition",
+      "summary": "Tokenization of real-world assets banned - China Daily - Global Edition",
+      "content": "Tokenization of real-world assets banned - China Daily - Global Edition",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "China",
+      "publishedAt": "2026-02-08T08:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.270Z",
+      "relevanceScore": 10
+    },
+    {
+      "title": "Why Most RWA Tokenization Platforms Fail Before They Launch — And How to Build One That Doesn't - Nasscom",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNWm9xWmF5NUE4ZGJOWFQyUlpmRUJsTXZrTXVmTTd2eVFIVXMwR2UybnZrTWxJd0c5aTcwTHVpSXp5T2R4SnZGc2VMUTROMUdPQzM4SkxLUG5hN05ORFZfRVhpY1E5aUJYdkhyU1BzcjgyNVc2am1NSFRGNDROcDJfekhsMWU2UG5KeXUyS0tFZlRnUUc2aDRESWtuY0lMejhxSzZFTERaUW1FWjZ1UlJjWW5FYlJuZTdyTUZpT3ZqNA?oc=5",
+      "source": "Google News / Nasscom",
+      "summary": "Why Most RWA Tokenization Platforms Fail Before They Launch — And How to Build One That Doesn't - Nasscom",
+      "content": "Why Most RWA Tokenization Platforms Fail Before They Launch — And How to Build One That Doesn't - Nasscom",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-19T07:31:04.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.270Z",
+      "relevanceScore": 20
+    },
+    {
+      "title": "Wall Street’s tokenization boom has a liquidity problem: Axis CEO - TradingView",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOT1p1a01pb1JOcVNWOExGUERjUW1PX3cwQ1lLVXhMeWRxR1NFUXJDdFBoOWRLRGVzV256M3BWYmNrQnVIb2RiMEQ1X3NIZ3RHRGhHZC1mUm1Ba3p4SmRoMXdhejZYeXZGTjYwMmxydEU3QVh1cUdrajQtZEt4NzhMa0VBQzAxUnNiak9MdGdPSWZ2SVdBX1p2SDN2SzBTeGM4b2tVb2ppS2RsbC1FRkZhZ2ZvUFBnTWNHVXl5bFlURTFhVXppdnpR?oc=5",
+      "source": "Google News / TradingView",
+      "summary": "Wall Street’s tokenization boom has a liquidity problem: Axis CEO - TradingView",
+      "content": "Wall Street’s tokenization boom has a liquidity problem: Axis CEO - TradingView",
+      "category": "general",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-05-14T07:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.270Z",
+      "relevanceScore": 10
+    },
+    {
+      "title": "Philippine SEC Says It’s Ready to Enable RWA Tokenization - Binance",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5TV21Kc3EtNWVYMEJ1OFZHc0ZSUnpGcER5TThKTVFmb3ZxWGFkVnNlN0xEcGt2Y2NpUHJQT2prOTk5Qmk1TGEyaWVDRWx6eDU0VmtOblE0TS11d2pva1k0dEwwTmU?oc=5",
+      "source": "Google News / Binance",
+      "summary": "Philippine SEC Says It’s Ready to Enable RWA Tokenization - Binance",
+      "content": "Philippine SEC Says It’s Ready to Enable RWA Tokenization - Binance",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "North America",
+      "publishedAt": "2026-06-20T07:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.271Z",
+      "relevanceScore": 24
+    },
+    {
+      "title": "Ethereum Dominates $65B RWA Market as Tokenization Surges - KuCoin",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQdXJhdU5iNmNVYWlQSGoxdjV2S0xOUEVYa0NOX3JmYXNxdmdFZngwczNqMUNtd2JlQ0tRSkg0SlFpaWpmWmlGbURHNHhQTzRFY0Jzdl96UUdqTGhfZS1KY3EzZ1FYRWJZNExxNWUtc3NlMVk5dVRuQUNhUFBzemMtMHNaVm9vTGRmSDRvUw?oc=5",
+      "source": "Google News / KuCoin",
+      "summary": "Ethereum Dominates $65B RWA Market as Tokenization Surges - KuCoin",
+      "content": "Ethereum Dominates $65B RWA Market as Tokenization Surges - KuCoin",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa",
+        "ethereum"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-05-21T07:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.271Z",
+      "relevanceScore": 20
+    },
+    {
+      "title": "Ethereum Leads $65B RWA Market as Blockchains Compete for Institutional Share - CoinMarketCap",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5QdklmMTdwS19TdVZVZ2ZIWTE3aGFkWjY0cUVIcDE3Ykc3R0JtZV9ZNFFodlI2ZGU4NTkwZ0VqTWt2WnpZV3MtVW0yWGVDVnFNRm1aQmpRcHBmcXo0SW5JR1ZaTndYNk5rZ0Q2ZUE4UUloRzdSZmVB?oc=5",
+      "source": "Google News / CoinMarketCap",
+      "summary": "Ethereum Leads $65B RWA Market as Blockchains Compete for Institutional Share - CoinMarketCap",
+      "content": "Ethereum Leads $65B RWA Market as Blockchains Compete for Institutional Share - CoinMarketCap",
+      "category": "rwa",
+      "tags": [
+        "rwa",
+        "ethereum"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-20T02:01:15.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.271Z",
+      "relevanceScore": 16
+    },
+    {
+      "title": "Mantle Brings Franklin Templeton ETF On-Chain, Pushing RWA Tokenization on Ethereum L2s - Cryptonews.net",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5xZFNRU0QwWS1vVzJUT1ZqNHFaSVE1NWR1S09DY1NnbWlIODZ4NHZYbVp3Mm1qbExPYXUzdmRCOWpUelpVX0tNemxMNjZuc2lPMGNuZnJFQWlhQWM5?oc=5",
+      "source": "Google News / Cryptonews.net",
+      "summary": "Mantle Brings Franklin Templeton ETF On-Chain, Pushing RWA Tokenization on Ethereum L2s - Cryptonews.net",
+      "content": "Mantle Brings Franklin Templeton ETF On-Chain, Pushing RWA Tokenization on Ethereum L2s - Cryptonews.net",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa",
+        "ethereum"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-24T09:46:46.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.271Z",
+      "relevanceScore": 20
+    },
+    {
+      "title": "China clarifies illegality of RWA tokenization, tightens oversight of overseas activities - China Daily - Global Edition",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQRVU1aUF2Zl9FZ01BRTRCSlpCSTJpSHBzSm9HX0VrRkx2bXROeGNfd0ljejFtb3pFWXB2dHRzX0JuXzZZdU8xdlMtSGo1VGdhaWdSeGhWd3RNb0M2N29OV24yTTdnNHlRNExaVXZZZG92Vm1YSzJ1NGM0c2VUQ3pGU1pn?oc=5",
+      "source": "Google News / China Daily - Global Edition",
+      "summary": "China clarifies illegality of RWA tokenization, tightens oversight of overseas activities - China Daily - Global Edition",
+      "content": "China clarifies illegality of RWA tokenization, tightens oversight of overseas activities - China Daily - Global Edition",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "China",
+      "publishedAt": "2026-02-07T08:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.272Z",
+      "relevanceScore": 20
+    },
+    {
+      "title": "Datavault AI Provides Q1 2026 Business Update Highlighting Tokenization Adoption and Infrastructure Progress - Datavault AI",
+      "url": "https://news.google.com/rss/articles/CBMihgJBVV95cUxOeUlTbW1ma0Rtb1E2N2xXRU5BV0xvWVFENVdUTjVkZk9seERzdWw0bHBBaHp2dmp6Wi1oRmlDTnBkeEtOREFUNGhRNnJXdmZXdUtBZWExdUwyMW5QeklsTDNMd29DT1JaMHZTcnJEaTk0ek1RR0Nqem94UW5YQmtOaVZtVVYwNE9wMFgtTlRCT2dpNkl5Y0EyLWtqV2pqQ09ucms0ek5BQzJnS0FPTi1FVEItNERMbHJRcVVFSDRrUXNlZXByYXRLV19PSjl3bHBPRzBaNm5YZlRJYXdSZnlUYVdpMFZTTXJMVUtRYXVmZkYwVGRkejJ4YzRHY1BMMkIyTXYxY1ln?oc=5",
+      "source": "Google News / Datavault AI",
+      "summary": "Datavault AI Provides Q1 2026 Business Update Highlighting Tokenization Adoption and Infrastructure Progress - Datavault AI",
+      "content": "Datavault AI Provides Q1 2026 Business Update Highlighting Tokenization Adoption and Infrastructure Progress - Datavault AI",
+      "category": "general",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-05-15T07:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.272Z",
+      "relevanceScore": 10
+    },
+    {
+      "title": "Dogecoin Price Gets New Bull Case As RWA Tokenization Plan Emerges - TradingView",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNSW9fVU85TUtxczBuM1JLRHNqSG9vb3pSbnllQVNsRDlXVWo3TTFMVHB4WHRCdjRvVXdSNUVZeXZBQzh2R05oaWRxMURzeXZ2N1VscU5UMWo5RERtZWpPVkFNSDJCajJLdmlGWE1hWjhRVy1QNTFmMFhPUWlDLXFzV3l3VlBrSDZMU1NaQkVqanhvSmVaX0hCYlBMdTJsNy1WeExCTnN5LWxPVVBhWlV6dW9MMWN4S1lPeXdHZzAwUDl3Zw?oc=5",
+      "source": "Google News / TradingView",
+      "summary": "Dogecoin Price Gets New Bull Case As RWA Tokenization Plan Emerges - TradingView",
+      "content": "Dogecoin Price Gets New Bull Case As RWA Tokenization Plan Emerges - TradingView",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-02-26T08:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.272Z",
+      "relevanceScore": 20
+    },
+    {
+      "title": "Ondo Finance Posts 24% Rally, Turning RWA Tokens Into The Day’s Hot Trade - Yellow.com",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBoNjV3OVpQM3Iyb1BDX3dYQzVmMnNUdkpsY1NGcE56VDJYQVR0Wld5MURDNlQ5dU5IMEhVZW5ucV9NbDhXM2xKSTBNMU5nNVZfMUhCRjlpazkzS2NyQ04tVVYzRU9nVWE1Ym1TQ3FpRjJLMlhVeFdRWDJkbkl4YjQ?oc=5",
+      "source": "Google News / Yellow.com",
+      "summary": "Ondo Finance Posts 24% Rally, Turning RWA Tokens Into The Day’s Hot Trade - Yellow.com",
+      "content": "Ondo Finance Posts 24% Rally, Turning RWA Tokens Into The Day’s Hot Trade - Yellow.com",
+      "category": "rwa",
+      "tags": [
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-15T04:33:25.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.272Z",
+      "relevanceScore": 10
+    },
+    {
+      "title": "JP Morgan Files for Second Tokenized Fund on Ethereum as RWA Race Heats Up - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPTk02U1dnaXI0bUttbU14WEw1Sk5jM1Y1TkNNR3JfTjBwUkNRSnlPNV9CcHpDSXZsUVNxdGxhRHpBS0p5MWF1NnBtR0ViN1k3X1Y5NWlXVXcwZlJqTV9IUU5vcGp5cVpHSDJhUldXVGZocGNiNkZwd191d1dFNndBSW5aVUstR2p2eUFmRzZaSTlqTFI5NzRmVks4a1ZMUQ?oc=5",
+      "source": "Google News / Yahoo Finance",
+      "summary": "JP Morgan Files for Second Tokenized Fund on Ethereum as RWA Race Heats Up - Yahoo Finance",
+      "content": "JP Morgan Files for Second Tokenized Fund on Ethereum as RWA Race Heats Up - Yahoo Finance",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa",
+        "ethereum"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-05-13T07:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.272Z",
+      "relevanceScore": 34
+    },
+    {
+      "title": "XRP Ledger just flipped Solana in RWA tokenization value and the holder count reveals why - CryptoSlate",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOV0dBektfTVNpUEk0X2FObm9pVlA3QkJhTHNpNm5XNzctWFF5cE93bk02bVdaX0hDNFpBaUR1ekNNNkM5T1dpSHFpREpBN1YyNUEyMXVWamFaRXI3SGpuUkVCM3Q5YmJJcEtwSjlOQ1NpY1lsRzZJVjA1SUNCd19yc0ZaeGc?oc=5",
+      "source": "Google News / CryptoSlate",
+      "summary": "XRP Ledger just flipped Solana in RWA tokenization value and the holder count reveals why - CryptoSlate",
+      "content": "XRP Ledger just flipped Solana in RWA tokenization value and the holder count reveals why - CryptoSlate",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-02-11T08:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.272Z",
+      "relevanceScore": 20
+    },
+    {
+      "title": "Real-World Asset Tokenization: The $25 Billion Market Most Crypto Investors Are Ignoring - BeInCrypto",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBuTnR3cGhVV2xBUWp1WVV4Y1QzaWtaQkZMNTdLZ0s1Wm9GdTNPNEp5SVIzWW1WS0tTVU5tRHd1TEh0NzZVbTVuTXppenp4bmRGdW1XN3R1MTNVaFFpMHc3ektmSjVqNjJqZ2lN?oc=5",
+      "source": "Google News / BeInCrypto",
+      "summary": "Real-World Asset Tokenization: The $25 Billion Market Most Crypto Investors Are Ignoring - BeInCrypto",
+      "content": "Real-World Asset Tokenization: The $25 Billion Market Most Crypto Investors Are Ignoring - BeInCrypto",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa",
+        "investment"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-03-05T08:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.272Z",
+      "relevanceScore": 17
+    },
+    {
+      "title": "China Formalizes Ban on Yuan Stablecoins, RWA Tokenization - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPZ2twWV9rYWhrWlJJVkxTVExVTW04bWp3Nm9NT3hUNnBpMF9tN05mRVJUSFBxeXVvYzhMUTBVeV95UGV6ZjRDbzl5UmtaWFRLOGpGSVRGQldWM1c2ZkhjNmt5NzRNZk54WXlydlNtLUtCdmFUNl9aWkNILW85bTFnNEpDaVlPdGJtbVNB?oc=5",
+      "source": "Google News / Yahoo Finance",
+      "summary": "China Formalizes Ban on Yuan Stablecoins, RWA Tokenization - Yahoo Finance",
+      "content": "China Formalizes Ban on Yuan Stablecoins, RWA Tokenization - Yahoo Finance",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "China",
+      "publishedAt": "2026-02-06T08:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.272Z",
+      "relevanceScore": 20
+    },
+    {
+      "title": "Why XRP Ledger is becoming a $3.6B hot spot for tokenized energy commodities - CryptoSlate",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPc3NOM0xlUTYwTjVTN016a3RWWER1b3diWnJOdWdSM0ttR2lQWDY4OTEzR1E4RzdkWHRVUzJTSklad3dQS2Qza25wLXhXWDBmaTNxNEdsd0lXS2NjRk9abU9PTU5jbHI2YTg3TEViOTBxLU1qbTRNVkZwaXNPUjcyaEpmcnRtX1Y1MGlsdi1mRHdDSFhfenFBYW9WMXlCR1k5cVE?oc=5",
+      "source": "Google News / CryptoSlate",
+      "summary": "Why XRP Ledger is becoming a $3.6B hot spot for tokenized energy commodities - CryptoSlate",
+      "content": "Why XRP Ledger is becoming a $3.6B hot spot for tokenized energy commodities - CryptoSlate",
+      "category": "blockchain",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-05-03T07:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.272Z",
+      "relevanceScore": 20
+    },
+    {
+      "title": "OpenWorld and Figure Technology Solutions to Pursue Tokenization of OpenWorld Securities on Figure's OPEN Network - Business Wire",
+      "url": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxOX2dJTHlVZERtakJmZHhTQ0RUY2o4VDlWTlFUM2hIMTdtUnluWmdCNWVoMUxRdEZDYjA2UVN2cmx5RTNjSWJfT0V3bUhxLS1Da2hwQWVVaXRYLWZtWGgtYjZoa3V6SnJpSWFsd2ZCSEVMSFJEWHFIeEcyVHRtWm1FZGR6TGF1a2p6RTJTQ3lfZk5TeUZiQTF5dHZpcUhmWEhZdVhUMUdKaG1xTVpkbXpYTEVBM2tFWldfVEprYWFrTWp4MnhLYzhvWGZndlBKRHpjQXM0WWdieW84NUZWbjE5d2JJVzdlaGtmei1wRTl0dEhja1N3aGJKZ0hUNHRXUQ?oc=5",
+      "source": "Google News / Business Wire",
+      "summary": "OpenWorld and Figure Technology Solutions to Pursue Tokenization of OpenWorld Securities on Figure's OPEN Network - Business Wire",
+      "content": "OpenWorld and Figure Technology Solutions to Pursue Tokenization of OpenWorld Securities on Figure's OPEN Network - Business Wire",
+      "category": "general",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-05-05T07:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.272Z",
+      "relevanceScore": 14
+    },
+    {
+      "title": "Benchmark Flags Forum Markets, Incorporated (FRMM) Exposure to Expanding RWA Tokenization Trend - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOMWlCOXdiX3dTcV9VbGV1bF85UENkejNSS2UwanVhQi11ekQwOGdOdUNVcnRLcG5fWmVWUjhFTUVPVGd3dHd3TWtpaVR4UHFheVVEd0Q1d3k1MzNGcllhVVNJRDlnbjJXcWRIb2JYR0VYMFlpTkg0bGs4Q3RXQ0QtUUhWVTJvWERJRWpHdFhIZWNmXy04VHJYUzNNX3Q1RjRBalA1eENNQ2NoQ3c?oc=5",
+      "source": "Google News / Yahoo Finance",
+      "summary": "Benchmark Flags Forum Markets, Incorporated (FRMM) Exposure to Expanding RWA Tokenization Trend - Yahoo Finance",
+      "content": "Benchmark Flags Forum Markets, Incorporated (FRMM) Exposure to Expanding RWA Tokenization Trend - Yahoo Finance",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-04-17T07:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.272Z",
+      "relevanceScore": 20
+    },
+    {
+      "title": "Must-Read Articles on Tokenization in 2026 - Fireblocks",
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9qelFUQTNwT2o4UHVrTmlIQndmZlY0YmQ0ZzNyNmtwbk1wOEh6enNlcWJ5aHVfOTFvUHdNb1VjcUNYdVBMYkZxdWttS2wtWHd1Yzk5OHJFMUtVWDB5RkNBZnpyNS13WTlwOXdadVVodVRwTy1xM3VZdg?oc=5",
+      "source": "Google News / Fireblocks",
+      "summary": "Must-Read Articles on Tokenization in 2026 - Fireblocks",
+      "content": "Must-Read Articles on Tokenization in 2026 - Fireblocks",
+      "category": "general",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-02-23T08:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.273Z",
+      "relevanceScore": 10
+    },
+    {
+      "title": "XRP Ledger Ranks Fourth in Tokenization Market with $4B Assets - KuCoin",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPci13MHlueUgxdEtKUWtPT28xNE9mak1iZ29MOV82NFFqUnh4NVRNUWJISjNBdnFrNHVMU092VDhoSlZqNlhfRHIyRFdnQ0wxdEpxSGdXdW94aXFpVU9PT3dmSmZna0FaZGNfYTkwTDVPcGt5NWFfa1Nsamo0ZU90NHFVdWk1WGVwUEZQQl9LOFBablFLQklFUGRLUQ?oc=5",
+      "source": "Google News / KuCoin",
+      "summary": "XRP Ledger Ranks Fourth in Tokenization Market with $4B Assets - KuCoin",
+      "content": "XRP Ledger Ranks Fourth in Tokenization Market with $4B Assets - KuCoin",
+      "category": "general",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-13T07:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.273Z",
+      "relevanceScore": 10
+    },
+    {
+      "title": "The $26 Billion Threshold for Tokenized Real World Assets (RWAs): - HedgeCo.Net",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOZk9LRm9tbVhIcFY1VGFWNlpUamN6MFdmdGxCNFVDdG9jTVgwbDBlRk5iYV9fVE1rS3NpQUtHLXNlZ1pVdGJjV0RiYkYwY2FYeWgzYzJfVjM3eWpUV3NGUWo0aFlnV3JpOHVmVXliU3BSRzdDLTFlZnZFS3FGdVVIeW1lcloxazFiYWl6RXBGY1BuNkYtNTlyWkJCT19EMmdm?oc=5",
+      "source": "Google News / HedgeCo.Net",
+      "summary": "The $26 Billion Threshold for Tokenized Real World Assets (RWAs): - HedgeCo.Net",
+      "content": "The $26 Billion Threshold for Tokenized Real World Assets (RWAs): - HedgeCo.Net",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-03-10T07:00:00.000Z",
+      "scrapedAt": "2026-07-02T11:54:50.273Z",
+      "relevanceScore": 42
+    },
+    {
+      "title": "DL Holdings' Net Profit Soars 168% as It Builds a Wealth Ecosystem for the Digital AI Era",
+      "url": "https://www.prnewswire.com/news-releases/dl-holdings-net-profit-soars-168-as-it-builds-a-wealth-ecosystem-for-the-digital-ai-era-302815694.html",
+      "source": "NewsAPI / PRNewswire",
+      "summary": "HONG KONG, July 1, 2026 /PRNewswire/ -- DL Holdings Group Limited (1709.HK) announced its annual results for the year ended 31 March 2026 on 30 June. During the period, the Group recorded a net profit of HK$367 million, representing a year-on-year increase of…",
+      "content": "HONG KONG, July 1, 2026 /PRNewswire/ -- DL Holdings Group Limited (1709.HK) announced its annual results for the year ended 31 March 2026 on 30 June. During the period, the Group recorded a net profit of HK$367 million, representing a year-on-year increase of… HONG KONG, July 1, 2026 /PRNewswire/ -- DL Holdings Group Limited (1709.HK) announced its annual results for the year ended 31 March 2026 on 30 June. During the period, the Group recorded a net profi… [+9723 chars]",
+      "category": "general",
+      "tags": [],
+      "region": "Global",
+      "publishedAt": "2026-07-01T09:53:00Z",
+      "scrapedAt": "2026-07-02T11:54:50.682Z",
+      "relevanceScore": 0
+    },
+    {
+      "title": "Bitmine Ether buys eclipsed by $345M ETH ETF $345M outflows: Is sub $1.5K next?",
+      "url": "https://cointelegraph.com/markets/bitmine-ether-buys-eclipsed-by-345m-eth-etf-345m-outflows-is-sub-15k-next",
+      "source": "NewsAPI / Cointelegraph",
+      "summary": "Tokenization and RWA TVL growth highlight Ethereum’s fundamentals, but stagnant DApps and spot ETF outflows keep the pressure on ETH price.",
+      "content": "Tokenization and RWA TVL growth highlight Ethereum’s fundamentals, but stagnant DApps and spot ETF outflows keep the pressure on ETH price. Key takeaways:\r\n<ul><li>The Spot Ether ETF outflows overwhelmed BitMines ETH accumulation, raising the chance of a drop below the $1,500 support.</li><li>Falling DApps revenue and weak staking yields… [+3361 chars]",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa",
+        "ethereum",
+        "staking"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-30T21:16:47Z",
+      "scrapedAt": "2026-07-02T11:54:50.682Z",
+      "relevanceScore": 36
+    },
+    {
+      "title": "Centrifuge partners with New York Life to tokenize high-yield corporate bonds with $HYB offering",
+      "url": "https://cryptobriefing.com/centrifuge-new-york-life-tokenize-high-yield-bonds/",
+      "source": "NewsAPI / Crypto Briefing",
+      "summary": "Tokenizing high-yield bonds could revolutionize investment access and efficiency, potentially expanding the tokenized asset market significantly.\nThe post Centrifuge partners with New York Life to tokenize high-yield corporate bonds with $HYB offering appeare…",
+      "content": "Tokenizing high-yield bonds could revolutionize investment access and efficiency, potentially expanding the tokenized asset market significantly.\nThe post Centrifuge partners with New York Life to tokenize high-yield corporate bonds with $HYB offering appeare… An $807 billion asset manager is pushing tokenized funds beyond Treasuries and into riskier territory for the first time New York Life Investment Management, the firm sitting on $807 billion in asset… [+1748 chars]",
+      "category": "investment",
+      "tags": [
+        "tokenization",
+        "investment"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-30T18:33:03Z",
+      "scrapedAt": "2026-07-02T11:54:50.682Z",
+      "relevanceScore": 60
+    },
+    {
+      "title": "REAL launches confidential layer to expand institutional RWA adoption",
+      "url": "https://coinjournal.net/news/real-launches-confidential-layer-to-expand-institutional-rwa-adoption/",
+      "source": "NewsAPI / Coinjournal.net",
+      "summary": "REAL launches private execution layer for RWA institutions. ZKsync tech enables confidential on-chain settlement via Ethereum. Platform aims to bridge the privacy gap in institutional blockchain use. REAL has introduced a confidential execution layer designed…",
+      "content": "REAL launches private execution layer for RWA institutions. ZKsync tech enables confidential on-chain settlement via Ethereum. Platform aims to bridge the privacy gap in institutional blockchain use. REAL has introduced a confidential execution layer designed… <ul><li>REAL launches private execution layer for RWA institutions.</li><li>ZKsync tech enables confidential on-chain settlement via Ethereum.</li><li>Platform aims to bridge the privacy gap in insti… [+3499 chars]",
+      "category": "rwa",
+      "tags": [
+        "rwa",
+        "ethereum"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-30T14:18:15Z",
+      "scrapedAt": "2026-07-02T11:54:50.682Z",
+      "relevanceScore": 36
+    },
+    {
+      "title": "707 Cayman Holdings Appoints New Executive Director",
+      "url": "https://apnews.com/press-release/globenewswire-mobile/press-release-505abb0a1fe3d66212287db87d65a073",
+      "source": "NewsAPI / Associated Press",
+      "summary": "HONG KONG, June 30, 2026 (GLOBE NEWSWIRE) -- 707 Cayman Holdings Limited (“707” or the “Company”) (Nasdaq: JEM), a Hong Kong-based company that sells quality apparel products and provides supply chain management total solutions, today announced that the Compa…",
+      "content": "HONG KONG, June 30, 2026 (GLOBE NEWSWIRE) -- 707 Cayman Holdings Limited (“707” or the “Company”) (Nasdaq: JEM), a Hong Kong-based company that sells quality apparel products and provides supply chain management total solutions, today announced that the Compa… HONG KONG, June 30, 2026 (GLOBE NEWSWIRE) -- 707 Cayman Holdings Limited (707 or the Company) (Nasdaq: JEM), a Hong Kong-based company that sells quality apparel products and provides supply chain ma… [+1764 chars]",
+      "category": "general",
+      "tags": [],
+      "region": "North America",
+      "publishedAt": "2026-06-30T12:49:27Z",
+      "scrapedAt": "2026-07-02T11:54:50.682Z",
+      "relevanceScore": 0
+    },
+    {
+      "title": "707 Cayman Holdings Appoints New Executive Director",
+      "url": "https://www.globenewswire.com/news-release/2026/06/30/3319424/0/en/707-Cayman-Holdings-Appoints-New-Executive-Director.html",
+      "source": "NewsAPI / GlobeNewswire",
+      "summary": "HONG KONG, June 30, 2026 (GLOBE NEWSWIRE) -- 707 Cayman Holdings Limited (“707” or the “Company”) (Nasdaq: JEM), a Hong Kong-based company that sells quality apparel products and provides supply chain management total solutions, today announced that the Compa…",
+      "content": "HONG KONG, June 30, 2026 (GLOBE NEWSWIRE) -- 707 Cayman Holdings Limited (“707” or the “Company”) (Nasdaq: JEM), a Hong Kong-based company that sells quality apparel products and provides supply chain management total solutions, today announced that the Compa… HONG KONG, June 30, 2026 (GLOBE NEWSWIRE) -- 707 Cayman Holdings Limited (707 or the Company) (Nasdaq: JEM), a Hong Kong-based company that sells quality apparel products and provides supply chain ma… [+1759 chars]",
+      "category": "general",
+      "tags": [],
+      "region": "North America",
+      "publishedAt": "2026-06-30T08:00:00Z",
+      "scrapedAt": "2026-07-02T11:54:50.682Z",
+      "relevanceScore": 0
+    },
+    {
+      "title": "Centrifuge’s JAAA becomes first tokenized AAA CLO fund in Kraken Custody",
+      "url": "https://cryptobriefing.com/centrifuge-jaaa-tokenized-clo-kraken-custody/",
+      "source": "NewsAPI / Crypto Briefing",
+      "summary": "JAAA's integration into Kraken Custody signals a pivotal shift towards mainstream adoption of tokenized real-world assets in institutional finance.\nThe post Centrifuge’s JAAA becomes first tokenized AAA CLO fund in Kraken Custody appeared first on Crypto Brie…",
+      "content": "JAAA's integration into Kraken Custody signals a pivotal shift towards mainstream adoption of tokenized real-world assets in institutional finance.\nThe post Centrifuge’s JAAA becomes first tokenized AAA CLO fund in Kraken Custody appeared first on Crypto Brie… Kraken Institutional partners with Centrifuge to bring investment-grade yield onchain for institutional investors Tokenized real-world assets just cleared another institutional hurdle. Kraken Custody… [+2792 chars]",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa",
+        "investment"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-29T15:50:40Z",
+      "scrapedAt": "2026-07-02T11:54:50.682Z",
+      "relevanceScore": 100
+    },
+    {
+      "title": "Ripple proposes lending features for institutions on XRPL",
+      "url": "https://cryptobriefing.com/ripple-xrpl-lending-protocol-institutions/",
+      "source": "NewsAPI / Crypto Briefing",
+      "summary": "Ripple's lending features on XRPL could enhance institutional DeFi adoption, emphasizing compliance and potentially stabilizing XRP demand.\nThe post Ripple proposes lending features for institutions on XRPL appeared first on Crypto Briefing.",
+      "content": "Ripple's lending features on XRPL could enhance institutional DeFi adoption, emphasizing compliance and potentially stabilizing XRP demand.\nThe post Ripple proposes lending features for institutions on XRPL appeared first on Crypto Briefing. A new protocol lets institutions borrow against tokenized real-world assets directly on the XRP Ledger, with validator approval already secured Ripple is pushing the XRP Ledger into institutional len… [+3536 chars]",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-29T15:17:46Z",
+      "scrapedAt": "2026-07-02T11:54:50.682Z",
+      "relevanceScore": 29
+    },
+    {
+      "title": "Aave Crypto News: Standard Chartered Sets $3,500 AAVE Target",
+      "url": "https://www.coinspeaker.com/aave-crypto-price-prediction-standard-chartered-3500-2030/",
+      "source": "NewsAPI / Coinspeaker",
+      "summary": "Aave crypto was trading near $70 when Standard Chartered’s head of digital assets research, Geoff Kendrick, initiated coverage on June 25, 2026, with an end-...",
+      "content": "Aave crypto was trading near $70 when Standard Chartered’s head of digital assets research, Geoff Kendrick, initiated coverage on June 25, 2026, with an end-... Aave crypto was trading near $70 when Standard Chartered's head of digital assets research, Geoff Kendrick, initiated coverage on June 25, 2026, with an end-of-2030 price target of $3,500.\r\nThe leadi… [+5177 chars]",
+      "category": "blockchain",
+      "tags": [],
+      "region": "Global",
+      "publishedAt": "2026-06-29T14:44:08Z",
+      "scrapedAt": "2026-07-02T11:54:50.682Z",
+      "relevanceScore": 10
+    },
+    {
+      "title": "RWA Global Inc Enters Agreement to Advise Golden Dolphin Trading L.L.C. on US$300 Million Tokenization of PRC New-Energy Mobility Real-World Assets",
+      "url": "https://apnews.com/press-release/globenewswire-mobile/press-release-82a4f059a5a51365eca2b1d786989c35",
+      "source": "NewsAPI / Associated Press",
+      "summary": "DUBAI, United Arab Emirates, June 29, 2026 (GLOBE NEWSWIRE) -- RWA Global Inc, an international real-world asset (RWA) tokenization consultancy, today announced that it has entered into a formal advisory agreement with Golden Dolphin Trading L.L.C.",
+      "content": "DUBAI, United Arab Emirates, June 29, 2026 (GLOBE NEWSWIRE) -- RWA Global Inc, an international real-world asset (RWA) tokenization consultancy, today announced that it has entered into a formal advisory agreement with Golden Dolphin Trading L.L.C. DUBAI, United Arab Emirates, June 29, 2026 (GLOBE NEWSWIRE) -- RWA Global Inc, an international real-world asset (RWA) tokenization consultancy, today announced that it has entered into a formal advi… [+7206 chars]",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "Middle East",
+      "publishedAt": "2026-06-29T13:43:28Z",
+      "scrapedAt": "2026-07-02T11:54:50.682Z",
+      "relevanceScore": 80
+    },
+    {
+      "title": "MANTRA launches purpose-built EVM L1 for real-world asset tokenization",
+      "url": "https://cryptobriefing.com/mantra-evm-l1-rwa-tokenization-launch/",
+      "source": "NewsAPI / Crypto Briefing",
+      "summary": "MANTRA's integration into Inveniam could enhance institutional trust in asset tokenization, but may limit its independent innovation trajectory.\nThe post MANTRA launches purpose-built EVM L1 for real-world asset tokenization appeared first on Crypto Briefing.",
+      "content": "MANTRA's integration into Inveniam could enhance institutional trust in asset tokenization, but may limit its independent innovation trajectory.\nThe post MANTRA launches purpose-built EVM L1 for real-world asset tokenization appeared first on Crypto Briefing. The compliance-focused blockchain went live in October 2024 and has since added MultiVM capability, a Dubai regulatory license, and a pending acquisition by Inveniam. Tokenizing real-world assets sou… [+2978 chars]",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa",
+        "regulation"
+      ],
+      "region": "Middle East",
+      "publishedAt": "2026-06-28T10:02:09Z",
+      "scrapedAt": "2026-07-02T11:54:50.682Z",
+      "relevanceScore": 41
+    },
+    {
+      "title": "Who Is JPMorgan’s New Tokenization Executive, Ingrid Glitz?",
+      "url": "https://coingape.com/block-of-fame/cxo-stories/who-is-jpmorgans-new-tokenization-executive-ingrid-glitz/",
+      "source": "NewsAPI / Coingape",
+      "summary": "J.P. Morgan Asset Management, this week, added another key executive to its growing digital assets team. The tradfi giant hired former Paxos executive Ingrid...",
+      "content": "J.P. Morgan Asset Management, this week, added another key executive to its growing digital assets team. The tradfi giant hired former Paxos executive Ingrid... Who Is Ingrid Glitz? JPMorgan's New Hire to Build Out Tokenized Products Source: CoinGape\r\n<ul><li>J.P. Morgan Asset Management hires former Paxos executive Ingrid Glitz to build new tokenized invest… [+3894 chars]",
+      "category": "energy",
+      "tags": [
+        "tokenization",
+        "investment"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-27T08:26:04Z",
+      "scrapedAt": "2026-07-02T11:54:50.682Z",
+      "relevanceScore": 55
+    },
+    {
+      "title": "Tokenized asset value stalls 1% to $32B as stock holders surge 36%",
+      "url": "https://cryptobriefing.com/tokenized-asset-value-stalls-stock-holders-surge/",
+      "source": "NewsAPI / Crypto Briefing",
+      "summary": "The divergence in tokenized asset growth highlights evolving investor preferences and regulatory impacts, signaling a shift in market dynamics.\nThe post Tokenized asset value stalls 1% to $32B as stock holders surge 36% appeared first on Crypto Briefing.",
+      "content": "The divergence in tokenized asset growth highlights evolving investor preferences and regulatory impacts, signaling a shift in market dynamics.\nThe post Tokenized asset value stalls 1% to $32B as stock holders surge 36% appeared first on Crypto Briefing. The broader tokenized real-world asset market is cooling off, but tokenized equities on Solana are telling a very different story. The tokenized real-world asset market has hit a wall. After tripling… [+2928 chars]",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa",
+        "regulation",
+        "investment"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-26T20:34:53Z",
+      "scrapedAt": "2026-07-02T11:54:50.682Z",
+      "relevanceScore": 100
+    },
+    {
+      "title": "Crypto’s RWA boom finds retail demand in physical trading cards as users chase collectibles over Treasuries",
+      "url": "https://cryptoslate.com/cryptos-rwa-boom-finds-retail-demand-in-physical-trading-card-packs-but-buybacks-decide-what-lasts/",
+      "source": "NewsAPI / CryptoSlate",
+      "summary": "DeFiLlama shows real activity, but durability depends on redemption, custody, buybacks and CARDS incentives.\nThe post Crypto’s RWA boom finds retail demand in physical trading cards as users chase collectibles over Treasuries appeared first on CryptoSlate.",
+      "content": "DeFiLlama shows real activity, but durability depends on redemption, custody, buybacks and CARDS incentives.\nThe post Crypto’s RWA boom finds retail demand in physical trading cards as users chase collectibles over Treasuries appeared first on CryptoSlate. Collector Crypt is turning crypto's RWA debate into a consumer stress test: randomized card packs, USDC sellbacks, physical redemption, and CARDS incentives are producing activity outside the tokeniz… [+8630 chars]",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-26T10:10:53Z",
+      "scrapedAt": "2026-07-02T11:54:50.682Z",
+      "relevanceScore": 37
+    },
+    {
+      "title": "Sharplink Buys 5,000 ETH for $7.85M — First Ethereum Purchase in Eight Months",
+      "url": "https://bitcoinfoundation.org/news/ethereum/sharplink-buys-eth/",
+      "source": "NewsAPI / Bitcoinfoundation.org",
+      "summary": "Sharplink, the second-largest public corporate holder of Ethereum, has acquired 5,000 ETH worth $7.85M. This marks its first ETH purchase since October 2025. The tokens...\nThe post Sharplink Buys 5,000 ETH for $7.85M — First Ethereum Purchase in Eight Months …",
+      "content": "Sharplink, the second-largest public corporate holder of Ethereum, has acquired 5,000 ETH worth $7.85M. This marks its first ETH purchase since October 2025. The tokens...\nThe post Sharplink Buys 5,000 ETH for $7.85M — First Ethereum Purchase in Eight Months … Sharplink, the second-largest public corporate holder of Ethereum, has acquired 5,000 ETH$1,571.39 worth $7.85M. This marks its first ETH purchase since October 2025.\r\nThe tokens were sourced from cr… [+2729 chars]",
+      "category": "blockchain",
+      "tags": [
+        "ethereum"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-26T08:29:18Z",
+      "scrapedAt": "2026-07-02T11:54:50.683Z",
+      "relevanceScore": 8
+    },
+    {
+      "title": "Stellar network’s real-world assets market cap surpasses $3B",
+      "url": "https://cryptobriefing.com/stellar-rwa-market-cap-surpasses-3-billion/",
+      "source": "NewsAPI / Crypto Briefing",
+      "summary": "Stellar's milestone highlights its growing role in bridging traditional finance with blockchain, potentially reshaping institutional asset settlement.\nThe post Stellar network’s real-world assets market cap surpasses $3B appeared first on Crypto Briefing.",
+      "content": "Stellar's milestone highlights its growing role in bridging traditional finance with blockchain, potentially reshaping institutional asset settlement.\nThe post Stellar network’s real-world assets market cap surpasses $3B appeared first on Crypto Briefing. A 300% surge from early 2025 levels puts Stellar among the top blockchain networks for tokenized real-world assets Stellar just crossed a threshold that most blockchain networks are still daydreaming… [+2916 chars]",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-25T18:27:46Z",
+      "scrapedAt": "2026-07-02T11:54:50.683Z",
+      "relevanceScore": 45
+    },
+    {
+      "title": "Baillie Gifford Tokenized Bond Fund Adds To Solana And Ethereum RWA Race",
+      "url": "https://bitcoinist.com/baillie-gifford-tokenized-bond-fund-adds-to-solana-and-ethereum-rwa-race/",
+      "source": "NewsAPI / Bitcoinist",
+      "summary": "Baillie Gifford’s reported tokenized bond fund plans add another traditional asset manager to the race to bring regulated funds onto public blockchain rail",
+      "content": "Baillie Gifford’s reported tokenized bond fund plans add another traditional asset manager to the race to bring regulated funds onto public blockchain rail Baillie Giffords reported tokenized bond fund plans add another traditional asset manager to the race to bring regulated funds onto public blockchain rails.\r\n<ul><li>Baillie Gifford is being linked t… [+3507 chars]",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa",
+        "ethereum",
+        "regulation"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-25T18:00:21Z",
+      "scrapedAt": "2026-07-02T11:54:50.683Z",
+      "relevanceScore": 82
+    },
+    {
+      "title": "WhiteBIT Launches Crypto Bundles, Offering Thematic Crypto Portfolios Through Auto-Invest",
+      "url": "https://www.globenewswire.com/news-release/2026/06/25/3317843/0/en/WhiteBIT-Launches-Crypto-Bundles-Offering-Thematic-Crypto-Portfolios-Through-Auto-Invest.html",
+      "source": "NewsAPI / GlobeNewswire",
+      "summary": "VILNIUS, Lithuania, June 25, 2026 (GLOBE NEWSWIRE) -- WhiteBIT, the largest European exchange by traffic, has launched Crypto Bundles\r\n, a new investment product that allows users to gain exposure to portfolios of digital assets built around specific market t…",
+      "content": "VILNIUS, Lithuania, June 25, 2026 (GLOBE NEWSWIRE) -- WhiteBIT, the largest European exchange by traffic, has launched Crypto Bundles\r\n, a new investment product that allows users to gain exposure to portfolios of digital assets built around specific market t… VILNIUS, Lithuania, June 25, 2026 (GLOBE NEWSWIRE) -- WhiteBIT, the largest European exchange by traffic, has launched Crypto Bundles\r\n, a new investment product that allows users to gain exposure to… [+2779 chars]",
+      "category": "investment",
+      "tags": [
+        "investment"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-25T16:41:00Z",
+      "scrapedAt": "2026-07-02T11:54:50.683Z",
+      "relevanceScore": 5
+    },
+    {
+      "title": "Headway NOVA’s Latest Awards Highlight Growing Momentum Behind Tokenized RWA Investments",
+      "url": "https://www.globenewswire.com/news-release/2026/06/25/3317780/0/en/Headway-NOVA-s-Latest-Awards-Highlight-Growing-Momentum-Behind-Tokenized-RWA-Investments.html",
+      "source": "NewsAPI / GlobeNewswire",
+      "summary": "EAST LONDON, South Africa, June 25, 2026 (GLOBE NEWSWIRE) --  Headway NOVA, an international fintech platform for tokenized real estate investment, has received two industry awards, strengthening its position in the asset tokenization market. It was recognize…",
+      "content": "EAST LONDON, South Africa, June 25, 2026 (GLOBE NEWSWIRE) --  Headway NOVA, an international fintech platform for tokenized real estate investment, has received two industry awards, strengthening its position in the asset tokenization market. It was recognize… EAST LONDON, South Africa, June 25, 2026 (GLOBE NEWSWIRE) --  Headway NOVA, an international fintech platform for tokenized real estate investment, has received two industry awards, strengthening its… [+2757 chars]",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa",
+        "investment"
+      ],
+      "region": "Africa",
+      "publishedAt": "2026-06-25T15:41:00Z",
+      "scrapedAt": "2026-07-02T11:54:50.683Z",
+      "relevanceScore": 80
+    },
+    {
+      "title": "Solana’s RWA ecosystem surpasses $3B in total value as tokenized assets gain momentum",
+      "url": "https://cryptobriefing.com/solana-rwa-ecosystem-surpasses-3-billion/",
+      "source": "NewsAPI / Crypto Briefing",
+      "summary": "Solana's RWA growth highlights a shift towards more stable, diversified blockchain investments, potentially reducing speculative risks.\nThe post Solana’s RWA ecosystem surpasses $3B in total value as tokenized assets gain momentum appeared first on Crypto Bri…",
+      "content": "Solana's RWA growth highlights a shift towards more stable, diversified blockchain investments, potentially reducing speculative risks.\nThe post Solana’s RWA ecosystem surpasses $3B in total value as tokenized assets gain momentum appeared first on Crypto Bri… The network now ranks third globally in real-world asset tokenization, trailing only Ethereum and BNB Chain Solana’s real-world asset ecosystem has crossed the $3.1 billion mark, a milestone that cem… [+1958 chars]",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa",
+        "ethereum",
+        "investment"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-25T15:39:26Z",
+      "scrapedAt": "2026-07-02T11:54:50.683Z",
+      "relevanceScore": 93
+    },
+    {
+      "title": "French banking giant Crédit Agricole launches EURXT euro stablecoin",
+      "url": "https://cointelegraph.com/news/credit-agricole-eurxt-euro-stablecoin-caceis",
+      "source": "NewsAPI / Cointelegraph",
+      "summary": "Crédit Agricole’s CACEIS launches a euro-pegged stablecoin on Ethereum with 20.02 million tokens issued, targeting institutional flows and tokenized fund access.",
+      "content": "Crédit Agricole’s CACEIS launches a euro-pegged stablecoin on Ethereum with 20.02 million tokens issued, targeting institutional flows and tokenized fund access. Crédit Agricole, Europe's third-largest bank by assets, has launched the EURO eXchange Token (EURXT), a euro-backed stablecoin issued through its asset servicing arm, Crédit Agricole Caisse d'Epargne… [+2749 chars]",
+      "category": "investment",
+      "tags": [
+        "tokenization",
+        "ethereum"
+      ],
+      "region": "Europe",
+      "publishedAt": "2026-07-01T11:50:01Z",
+      "scrapedAt": "2026-07-02T11:54:55.347Z",
+      "relevanceScore": 26
+    },
+    {
+      "title": "Streamex Corp. Announces First Independent Reserve Attestation by EisnerAmper for GLDY",
+      "url": "https://financialpost.com/globe-newswire/streamex-corp-announces-first-independent-reserve-attestation-by-eisneramper-for-gldy",
+      "source": "NewsAPI / Financial Post",
+      "summary": "Highlights Every GLDY token is independently verified to be backed by real gold. EisnerAmper LLP, a nationally recognized independent accounting firm, has completed an examination confirming that GLDY gold reserves meet or exceed 100% of all outstanding token…",
+      "content": "Highlights Every GLDY token is independently verified to be backed by real gold. EisnerAmper LLP, a nationally recognized independent accounting firm, has completed an examination confirming that GLDY gold reserves meet or exceed 100% of all outstanding token… Henry McPhie, Co-Founder &amp; Chief Executive Officer of Streamex, said:\r\nIndependent verification is foundational to institutional trust. Completing our first third-party reserve attestation for GL… [+2546 chars]",
+      "category": "blockchain",
+      "tags": [],
+      "region": "Global",
+      "publishedAt": "2026-07-01T11:34:11Z",
+      "scrapedAt": "2026-07-02T11:54:55.347Z",
+      "relevanceScore": 0
+    },
+    {
+      "title": "Streamex Corp. Announces First Independent Reserve Attestation by EisnerAmper for GLDY",
+      "url": "https://www.globenewswire.com/news-release/2026/07/01/3320524/22558/en/Streamex-Corp-Announces-First-Independent-Reserve-Attestation-by-EisnerAmper-for-GLDY.html",
+      "source": "NewsAPI / GlobeNewswire",
+      "summary": "Highlights  Every GLDY token is independently verified to be backed by real gold. EisnerAmper LLP, a nationally recognized independent accounting firm, has...",
+      "content": "Highlights  Every GLDY token is independently verified to be backed by real gold. EisnerAmper LLP, a nationally recognized independent accounting firm, has... Highlights\r\n<ul><li>Every GLDY token is independently verified to be backed by real gold. EisnerAmper LLP, a nationally recognized independent accounting firm, has completed an examination confirming… [+5880 chars]",
+      "category": "blockchain",
+      "tags": [],
+      "region": "Global",
+      "publishedAt": "2026-07-01T11:30:00Z",
+      "scrapedAt": "2026-07-02T11:54:55.347Z",
+      "relevanceScore": 0
+    },
+    {
+      "title": "DL Holdings' Net Profit Soars 168% as It Builds a Wealth Ecosystem for the Digital AI Era",
+      "url": "https://www.prnewswire.com/news-releases/dl-holdings-net-profit-soars-168-as-it-builds-a-wealth-ecosystem-for-the-digital-ai-era-302815694.html",
+      "source": "NewsAPI / PRNewswire",
+      "summary": "HONG KONG, July 1, 2026 /PRNewswire/ -- DL Holdings Group Limited (1709.HK) announced its annual results for the year ended 31 March 2026 on 30 June. During the period, the Group recorded a net profit of HK$367 million, representing a year-on-year increase of…",
+      "content": "HONG KONG, July 1, 2026 /PRNewswire/ -- DL Holdings Group Limited (1709.HK) announced its annual results for the year ended 31 March 2026 on 30 June. During the period, the Group recorded a net profit of HK$367 million, representing a year-on-year increase of… HONG KONG, July 1, 2026 /PRNewswire/ -- DL Holdings Group Limited (1709.HK) announced its annual results for the year ended 31 March 2026 on 30 June. During the period, the Group recorded a net profi… [+9723 chars]",
+      "category": "general",
+      "tags": [],
+      "region": "Global",
+      "publishedAt": "2026-07-01T09:53:00Z",
+      "scrapedAt": "2026-07-02T11:54:55.347Z",
+      "relevanceScore": 0
+    },
+    {
+      "title": "Alphabet gains $2T in market cap as investors weigh AI ambitions against regulatory headwinds",
+      "url": "https://cryptobriefing.com/alphabet-gains-2t-market-cap-ai-blockchain/",
+      "source": "NewsAPI / Crypto Briefing",
+      "summary": "Alphabet's market surge highlights investor confidence in AI potential, yet regulatory challenges could impact future growth and innovation.\nThe post Alphabet gains $2T in market cap as investors weigh AI ambitions against regulatory headwinds appeared first …",
+      "content": "Alphabet's market surge highlights investor confidence in AI potential, yet regulatory challenges could impact future growth and innovation.\nThe post Alphabet gains $2T in market cap as investors weigh AI ambitions against regulatory headwinds appeared first … Google's parent company has seen its stock surge 140% in a year, but antitrust battles and an $84.75 billion equity raise are testing investor confidence. Alphabet Inc. has added roughly $2 trillion … [+1807 chars]",
+      "category": "regulation",
+      "tags": [
+        "regulation",
+        "investment"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-07-01T08:45:18Z",
+      "scrapedAt": "2026-07-02T11:54:55.347Z",
+      "relevanceScore": 35
+    },
+    {
+      "title": "Bitmine Ether buys eclipsed by $345M ETH ETF $345M outflows: Is sub $1.5K next?",
+      "url": "https://cointelegraph.com/markets/bitmine-ether-buys-eclipsed-by-345m-eth-etf-345m-outflows-is-sub-15k-next",
+      "source": "NewsAPI / Cointelegraph",
+      "summary": "Tokenization and RWA TVL growth highlight Ethereum’s fundamentals, but stagnant DApps and spot ETF outflows keep the pressure on ETH price.",
+      "content": "Tokenization and RWA TVL growth highlight Ethereum’s fundamentals, but stagnant DApps and spot ETF outflows keep the pressure on ETH price. Key takeaways:\r\n<ul><li>The Spot Ether ETF outflows overwhelmed BitMines ETH accumulation, raising the chance of a drop below the $1,500 support.</li><li>Falling DApps revenue and weak staking yields… [+3361 chars]",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa",
+        "ethereum",
+        "staking"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-30T21:16:47Z",
+      "scrapedAt": "2026-07-02T11:54:55.347Z",
+      "relevanceScore": 36
+    },
+    {
+      "title": "House of Doge Completes Merger with Brag House Holdings and Set to Trade on Nasdaq Under Ticker ‘HODO’",
+      "url": "https://financialpost.com/globe-newswire/house-of-doge-completes-merger-with-brag-house-holdings-and-set-to-trade-on-nasdaq-under-ticker-hodo",
+      "source": "NewsAPI / Financial Post",
+      "summary": "The official corporate arm of the Dogecoin Foundation is now a publicly traded company, marking the start of its next phase of growth across payments, treasury, tokenization, and professional sports MIAMI, June 30, 2026 (GLOBE NEWSWIRE) — House of Doge Inc. (…",
+      "content": "The official corporate arm of the Dogecoin Foundation is now a publicly traded company, marking the start of its next phase of growth across payments, treasury, tokenization, and professional sports MIAMI, June 30, 2026 (GLOBE NEWSWIRE) — House of Doge Inc. (… The official corporate arm of the Dogecoin Foundation is now a publicly traded company, marking the start of its next phase of growth across payments, treasury, tokenization, and professional sports\r… [+5607 chars]",
+      "category": "general",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "North America",
+      "publishedAt": "2026-06-30T20:11:22Z",
+      "scrapedAt": "2026-07-02T11:54:55.347Z",
+      "relevanceScore": 20
+    },
+    {
+      "title": "Centrifuge partners with New York Life to tokenize high-yield corporate bonds with $HYB offering",
+      "url": "https://cryptobriefing.com/centrifuge-new-york-life-tokenize-high-yield-bonds/",
+      "source": "NewsAPI / Crypto Briefing",
+      "summary": "Tokenizing high-yield bonds could revolutionize investment access and efficiency, potentially expanding the tokenized asset market significantly.\nThe post Centrifuge partners with New York Life to tokenize high-yield corporate bonds with $HYB offering appeare…",
+      "content": "Tokenizing high-yield bonds could revolutionize investment access and efficiency, potentially expanding the tokenized asset market significantly.\nThe post Centrifuge partners with New York Life to tokenize high-yield corporate bonds with $HYB offering appeare… An $807 billion asset manager is pushing tokenized funds beyond Treasuries and into riskier territory for the first time New York Life Investment Management, the firm sitting on $807 billion in asset… [+1748 chars]",
+      "category": "investment",
+      "tags": [
+        "tokenization",
+        "investment"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-30T18:33:03Z",
+      "scrapedAt": "2026-07-02T11:54:55.347Z",
+      "relevanceScore": 60
+    },
+    {
+      "title": "US government urged to expand IMF capacity by $650B amid Iran war",
+      "url": "https://cryptobriefing.com/us-imf-expansion-650b-iran-war/",
+      "source": "NewsAPI / Crypto Briefing",
+      "summary": "Expanding IMF capacity could stabilize global markets but may also exacerbate wealth disparities, impacting economic equity and geopolitical dynamics.\nThe post US government urged to expand IMF capacity by $650B amid Iran war appeared first on Crypto Briefing.",
+      "content": "Expanding IMF capacity could stabilize global markets but may also exacerbate wealth disparities, impacting economic equity and geopolitical dynamics.\nThe post US government urged to expand IMF capacity by $650B amid Iran war appeared first on Crypto Briefing. Democratic lawmakers want the US to lead a massive expansion of IMF resources as geopolitical tensions strain global financial systems A group of Democratic lawmakers is pressing the US to spearhead … [+3299 chars]",
+      "category": "blockchain",
+      "tags": [],
+      "region": "Global",
+      "publishedAt": "2026-06-30T16:20:10Z",
+      "scrapedAt": "2026-07-02T11:54:55.347Z",
+      "relevanceScore": 0
+    },
+    {
+      "title": "New York Life Investment Management Bets on Tokenization",
+      "url": "https://www.pymnts.com/blockchain/2026/new-york-life-investment-management-bets-tokenization/",
+      "source": "NewsAPI / pymnts.com",
+      "summary": "The investment arm of insurer New York Life is entering the world of tokenized assets, according to a Tuesday (June 30) press release. New York Life Investment Management (NYLIM) is partnering with tokenization platform Centrifuge to introduce the NYLIM Anemo…",
+      "content": "The investment arm of insurer New York Life is entering the world of tokenized assets, according to a Tuesday (June 30) press release. New York Life Investment Management (NYLIM) is partnering with tokenization platform Centrifuge to introduce the NYLIM Anemo… The investment arm of insurer New York Life is entering the world of tokenized assets, according to a Tuesday (June 30) press release.New York Life Investment Management (NYLIM) is partnering with to… [+2227 chars]",
+      "category": "investment",
+      "tags": [
+        "tokenization",
+        "investment"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-30T14:42:59Z",
+      "scrapedAt": "2026-07-02T11:54:55.347Z",
+      "relevanceScore": 60
+    },
+    {
+      "title": "REAL launches confidential layer to expand institutional RWA adoption",
+      "url": "https://coinjournal.net/news/real-launches-confidential-layer-to-expand-institutional-rwa-adoption/",
+      "source": "NewsAPI / Coinjournal.net",
+      "summary": "REAL launches private execution layer for RWA institutions. ZKsync tech enables confidential on-chain settlement via Ethereum. Platform aims to bridge the privacy gap in institutional blockchain use. REAL has introduced a confidential execution layer designed…",
+      "content": "REAL launches private execution layer for RWA institutions. ZKsync tech enables confidential on-chain settlement via Ethereum. Platform aims to bridge the privacy gap in institutional blockchain use. REAL has introduced a confidential execution layer designed… <ul><li>REAL launches private execution layer for RWA institutions.</li><li>ZKsync tech enables confidential on-chain settlement via Ethereum.</li><li>Platform aims to bridge the privacy gap in insti… [+3499 chars]",
+      "category": "rwa",
+      "tags": [
+        "rwa",
+        "ethereum"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-30T14:18:15Z",
+      "scrapedAt": "2026-07-02T11:54:55.347Z",
+      "relevanceScore": 36
+    },
+    {
+      "title": "Theo becomes first crypto-native investor in Fidelity tokenized fund",
+      "url": "https://cointelegraph.com/news/fidelity-tokenized-fund-first-crypto-native-investor",
+      "source": "NewsAPI / Cointelegraph",
+      "summary": "The onchain capital markets platform allocated $20 million to Fidelity International's tokenized liquidity fund as tokenized Treasury products continue to attract institutional capital.",
+      "content": "The onchain capital markets platform allocated $20 million to Fidelity International's tokenized liquidity fund as tokenized Treasury products continue to attract institutional capital. Theo, an onchain capital markets platform, has invested $20 million in Fidelity International's USD Digital Liquidity Fund (FILQ). Theo said the investment makes it the first crypto-native platform t… [+2443 chars]",
+      "category": "investment",
+      "tags": [
+        "tokenization",
+        "investment"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-30T13:00:00Z",
+      "scrapedAt": "2026-07-02T11:54:55.348Z",
+      "relevanceScore": 87
+    },
+    {
+      "title": "707 Cayman Holdings Appoints New Executive Director",
+      "url": "https://apnews.com/press-release/globenewswire-mobile/press-release-505abb0a1fe3d66212287db87d65a073",
+      "source": "NewsAPI / Associated Press",
+      "summary": "HONG KONG, June 30, 2026 (GLOBE NEWSWIRE) -- 707 Cayman Holdings Limited (“707” or the “Company”) (Nasdaq: JEM), a Hong Kong-based company that sells quality apparel products and provides supply chain management total solutions, today announced that the Compa…",
+      "content": "HONG KONG, June 30, 2026 (GLOBE NEWSWIRE) -- 707 Cayman Holdings Limited (“707” or the “Company”) (Nasdaq: JEM), a Hong Kong-based company that sells quality apparel products and provides supply chain management total solutions, today announced that the Compa… HONG KONG, June 30, 2026 (GLOBE NEWSWIRE) -- 707 Cayman Holdings Limited (707 or the Company) (Nasdaq: JEM), a Hong Kong-based company that sells quality apparel products and provides supply chain ma… [+1764 chars]",
+      "category": "general",
+      "tags": [],
+      "region": "North America",
+      "publishedAt": "2026-06-30T12:49:27Z",
+      "scrapedAt": "2026-07-02T11:54:55.348Z",
+      "relevanceScore": 0
+    },
+    {
+      "title": "New York Life partners with Centrifuge to tokenize institutional high-yield bond strategy",
+      "url": "https://cryptobriefing.com/new-york-life-centrifuge-tokenized-bond/",
+      "source": "NewsAPI / Crypto Briefing",
+      "summary": "Tokenizing high-yield bonds could revolutionize institutional investing by enhancing transparency, efficiency, and access to diverse asset classes.\nThe post New York Life partners with Centrifuge to tokenize institutional high-yield bond strategy appeared fir…",
+      "content": "Tokenizing high-yield bonds could revolutionize institutional investing by enhancing transparency, efficiency, and access to diverse asset classes.\nThe post New York Life partners with Centrifuge to tokenize institutional high-yield bond strategy appeared fir… One of America's oldest insurers is putting its high-yield bond fund on a blockchain, joining a growing wave of institutional tokenization. New York Life Investment Management, the asset management a… [+2780 chars]",
+      "category": "investment",
+      "tags": [
+        "tokenization",
+        "investment"
+      ],
+      "region": "North America",
+      "publishedAt": "2026-06-30T12:11:09Z",
+      "scrapedAt": "2026-07-02T11:54:55.348Z",
+      "relevanceScore": 36
+    },
+    {
+      "title": "New York Life makes tokenization debut with onchain high-yield bond fund with Centrifuge",
+      "url": "https://www.coindesk.com/business/2026/06/29/new-york-life-makes-tokenization-debut-with-onchain-high-yield-bond-fund-with-centrifuge",
+      "source": "NewsAPI / CoinDesk",
+      "summary": "The $807 billion asset manager is bringing a high-yield corporate bond strategy onto blockchain with Centrifuge as Wall Street expands beyond tokenized Treasury funds.",
+      "content": "The $807 billion asset manager is bringing a high-yield corporate bond strategy onto blockchain with Centrifuge as Wall Street expands beyond tokenized Treasury funds. The launch adds another blue-chip asset manager to Wall Street's tokenization push. Firms including BlackRock, Franklin Templeton, Apollo and Janus Henderson have embraced onchain versions of traditi… [+1140 chars]",
+      "category": "investment",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-30T11:20:30Z",
+      "scrapedAt": "2026-07-02T11:54:55.348Z",
+      "relevanceScore": 60
+    },
+    {
+      "title": "Solana Company Partners with Alatau City to Advance Digital Asset Infrastructure and Blockchain Adoption in Central Asia",
+      "url": "https://financialpost.com/globe-newswire/solana-company-partners-with-alatau-city-to-advance-digital-asset-infrastructure-and-blockchain-adoption-in-central-asia",
+      "source": "NewsAPI / Financial Post",
+      "summary": "Partnership will explore institutional blockchain infrastructure, digital asset education, stablecoin payments, and real-world asset tokenization initiatives across Kazakhstan’s emerging digital finance ecosystem PHILADELPHIA, June 30, 2026 (GLOBE NEWSWIRE) —…",
+      "content": "Partnership will explore institutional blockchain infrastructure, digital asset education, stablecoin payments, and real-world asset tokenization initiatives across Kazakhstan’s emerging digital finance ecosystem PHILADELPHIA, June 30, 2026 (GLOBE NEWSWIRE) —… Partnership will explore institutional blockchain infrastructure, digital asset education, stablecoin payments, and real-world asset tokenization initiatives across Kazakhstans emerging digital finan… [+6232 chars]",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-30T11:01:31Z",
+      "scrapedAt": "2026-07-02T11:54:55.348Z",
+      "relevanceScore": 53
+    },
+    {
+      "title": "Commercial Real Estate Finance Is Entering the Crypto Age",
+      "url": "http://commercialobserver.com/2026/06/commercial-real-estate-finance-cryptocurrency-stable-coins/",
+      "source": "NewsAPI / Commercial Observer",
+      "summary": "Change is coming for the national banking system — and, by extension, commercial real estate finance — and it’s arriving through the innovations taking place across the nebulous world of cryptocurrencies, tokenization and stablecoins.  On June 4, Goldman Sach…",
+      "content": "Change is coming for the national banking system — and, by extension, commercial real estate finance — and it’s arriving through the innovations taking place across the nebulous world of cryptocurrencies, tokenization and stablecoins.  On June 4, Goldman Sach… Change is coming for the national banking system and, by extension, commercial real estate finance and it’s arriving through the innovations taking place across the nebulous world of cryptocurrencies… [+18905 chars]",
+      "category": "blockchain",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-30T10:30:01Z",
+      "scrapedAt": "2026-07-02T11:54:55.348Z",
+      "relevanceScore": 10
+    },
+    {
+      "title": "When Will Bitcoin and Crypto Winter End? Fidelity Details Five Historical Catalysts",
+      "url": "https://dailyhodl.com/2026/06/30/when-will-bitcoin-and-crypto-winter-end-fidelity-details-five-historical-catalysts/",
+      "source": "NewsAPI / The Daily Hodl",
+      "summary": "The US financial giant Fidelity is analyzing what it may take to bring Bitcoin and crypto back into a bull market. In a new note to investors, Fidelity details five historical catalysts that have ended past crypto winters since 2011. Bitcoin’s four-year cycle…",
+      "content": "The US financial giant Fidelity is analyzing what it may take to bring Bitcoin and crypto back into a bull market. In a new note to investors, Fidelity details five historical catalysts that have ended past crypto winters since 2011. Bitcoin’s four-year cycle… The US financial giant Fidelity is analyzing what it may take to bring Bitcoin and crypto back into a bull market.\r\nIn a new note to investors, Fidelity details five historical catalysts that have en… [+2239 chars]",
+      "category": "investment",
+      "tags": [
+        "investment"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-30T10:25:16Z",
+      "scrapedAt": "2026-07-02T11:54:55.348Z",
+      "relevanceScore": 35
+    },
+    {
+      "title": "MEXC Lists Ondo’s Tokenized Strategy Preferred Stock on Spot Market",
+      "url": "https://zycrypto.com/mexc-lists-ondos-tokenized-strategy-preferred-stock-on-spot-market/",
+      "source": "NewsAPI / ZyCrypto",
+      "summary": "Victoria, Seychelles, June 30, 2026 – MEXC, a pioneer in 0-fee digital asset trading, today announced the listing of Ondo’s tokenized Strategy’s preferred stock on its spot market, further expanding its tokenized U.S. stock offerings. STRCON tracks Strategy P…",
+      "content": "Victoria, Seychelles, June 30, 2026 – MEXC, a pioneer in 0-fee digital asset trading, today announced the listing of Ondo’s tokenized Strategy’s preferred stock on its spot market, further expanding its tokenized U.S. stock offerings. STRCON tracks Strategy P… Disclaimer: The below article is sponsored, and the views in it do not represent those of ZyCrypto. Readers should conduct independent research before taking any actions related to the project mentio… [+2449 chars]",
+      "category": "blockchain",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-30T10:22:47Z",
+      "scrapedAt": "2026-07-02T11:54:55.348Z",
+      "relevanceScore": 86
+    },
+    {
+      "title": "707 Cayman Holdings Appoints New Executive Director",
+      "url": "https://www.globenewswire.com/news-release/2026/06/30/3319424/0/en/707-Cayman-Holdings-Appoints-New-Executive-Director.html",
+      "source": "NewsAPI / GlobeNewswire",
+      "summary": "HONG KONG, June 30, 2026 (GLOBE NEWSWIRE) -- 707 Cayman Holdings Limited (“707” or the “Company”) (Nasdaq: JEM), a Hong Kong-based company that sells quality apparel products and provides supply chain management total solutions, today announced that the Compa…",
+      "content": "HONG KONG, June 30, 2026 (GLOBE NEWSWIRE) -- 707 Cayman Holdings Limited (“707” or the “Company”) (Nasdaq: JEM), a Hong Kong-based company that sells quality apparel products and provides supply chain management total solutions, today announced that the Compa… HONG KONG, June 30, 2026 (GLOBE NEWSWIRE) -- 707 Cayman Holdings Limited (707 or the Company) (Nasdaq: JEM), a Hong Kong-based company that sells quality apparel products and provides supply chain ma… [+1759 chars]",
+      "category": "general",
+      "tags": [],
+      "region": "North America",
+      "publishedAt": "2026-06-30T08:00:00Z",
+      "scrapedAt": "2026-07-02T11:54:55.348Z",
+      "relevanceScore": 0
+    },
+    {
+      "title": "Intercontinental Exchange launches ICE GreenTrace environmental registry for carbon markets",
+      "url": "https://cryptobriefing.com/ice-greentrace-carbon-registry-launch/",
+      "source": "NewsAPI / Crypto Briefing",
+      "summary": "ICE GreenTrace's launch could centralize control in carbon markets, potentially limiting interoperability with decentralized solutions.\nThe post Intercontinental Exchange launches ICE GreenTrace environmental registry for carbon markets appeared first on Cryp…",
+      "content": "ICE GreenTrace's launch could centralize control in carbon markets, potentially limiting interoperability with decentralized solutions.\nThe post Intercontinental Exchange launches ICE GreenTrace environmental registry for carbon markets appeared first on Cryp… The world's largest environmental derivatives operator migrated 437 million carbon credits onto its new registry platform with Winrock International as launch partner. Intercontinental Exchange, the … [+2189 chars]",
+      "category": "carbon",
+      "tags": [
+        "carbon"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-30T11:55:53Z",
+      "scrapedAt": "2026-07-02T11:54:57.690Z",
+      "relevanceScore": 10
+    },
+    {
+      "title": "Aptos anchors verification for Chad’s $100B environmental assets",
+      "url": "https://cryptobriefing.com/aptos-chad-environmental-assets-verification/",
+      "source": "NewsAPI / Crypto Briefing",
+      "summary": "Chad's blockchain-backed environmental asset management could redefine sovereign climate credit markets, despite inherent political risks.\nThe post Aptos anchors verification for Chad’s $100B environmental assets appeared first on Crypto Briefing.",
+      "content": "Chad's blockchain-backed environmental asset management could redefine sovereign climate credit markets, despite inherent political risks.\nThe post Aptos anchors verification for Chad’s $100B environmental assets appeared first on Crypto Briefing. The Republic of Chad taps blockchain infrastructure from Xange and Aptos to manage sovereign environmental assets under the Paris Agreement A Central African nation with a GDP of roughly $12 billion … [+3471 chars]",
+      "category": "blockchain",
+      "tags": [
+        "aptos"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-25T15:58:03Z",
+      "scrapedAt": "2026-07-02T11:54:57.690Z",
+      "relevanceScore": 48
+    },
+    {
+      "title": "“Breaking the Chains 2026” on BrightU: How privacy coins like Monero and Epic Cash are becoming the last refuge from CBDC tyranny",
+      "url": "https://www.naturalnews.com/2026-06-19-privacy-coins-last-refuge-from-cbdc-tyranny.html",
+      "source": "NewsAPI / Naturalnews.com",
+      "summary": "The rollout of Central Bank Digital Currencies is not about convenience but about total surveillance and control, allowing authorities to track every transaction, cap spending based on social credit scores and instantly cancel the financial activities of diss…",
+      "content": "The rollout of Central Bank Digital Currencies is not about convenience but about total surveillance and control, allowing authorities to track every transaction, cap spending based on social credit scores and instantly cancel the financial activities of diss… <ul><li>The rollout of Central Bank Digital Currencies is not about convenience but about total surveillance and control, allowing authorities to track every transaction, cap spending based on social… [+6056 chars]",
+      "category": "general",
+      "tags": [],
+      "region": "Global",
+      "publishedAt": "2026-06-19T06:00:00Z",
+      "scrapedAt": "2026-07-02T11:54:57.690Z",
+      "relevanceScore": 0
+    },
+    {
+      "title": "iCR's New Integrity Stack Sets a Carbon Market First: Ratings and Insurance Risk Assessment on Every Registered Project",
+      "url": "https://www.prnewswire.com/news-releases/icrs-new-integrity-stack-sets-a-carbon-market-first-ratings-and-insurance-risk-assessment-on-every-registered-project-302801385.html",
+      "source": "NewsAPI / PRNewswire",
+      "summary": "REYKJAVIK, Iceland, June 16, 2026 /PRNewswire/ -- The International Carbon Registry (iCR) today announced a carbon-market first: every project registered on iCR will carry both an independent MSCI Carbon Project Rating and a Kita risk assessment, with optiona…",
+      "content": "REYKJAVIK, Iceland, June 16, 2026 /PRNewswire/ -- The International Carbon Registry (iCR) today announced a carbon-market first: every project registered on iCR will carry both an independent MSCI Carbon Project Rating and a Kita risk assessment, with optiona… REYKJAVIK, Iceland, June 16, 2026 /PRNewswire/ -- The International Carbon Registry (iCR) today announced a carbon-market first: every project registered on iCR will carry both an independent MSCI Ca… [+6271 chars]",
+      "category": "general",
+      "tags": [
+        "carbon"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-16T08:11:00Z",
+      "scrapedAt": "2026-07-02T11:54:57.690Z",
+      "relevanceScore": 0
+    },
+    {
+      "title": "iCR's New Integrity Stack Sets a Carbon Market First: Ratings and Insurance Risk Assessment on Every Registered Project",
+      "url": "https://www.prnewswire.com/news-releases/icrs-new-integrity-stack-sets-a-carbon-market-first-ratings-and-insurance-risk-assessment-on-every-registered-project-302801381.html",
+      "source": "NewsAPI / PRNewswire",
+      "summary": "REYKJAVIK, Iceland, June 16, 2026 /PRNewswire/ -- The International Carbon Registry (iCR) today announced a carbon-market first: every project registered on iCR will carry both an independent MSCI Carbon Project Rating and a Kita risk assessment, with optiona…",
+      "content": "REYKJAVIK, Iceland, June 16, 2026 /PRNewswire/ -- The International Carbon Registry (iCR) today announced a carbon-market first: every project registered on iCR will carry both an independent MSCI Carbon Project Rating and a Kita risk assessment, with optiona… REYKJAVIK, Iceland, June 16, 2026 /PRNewswire/ -- The International Carbon Registry (iCR) today announced a carbon-market first: every project registered on iCR will carry both an independent MSCI Ca… [+6309 chars]",
+      "category": "general",
+      "tags": [
+        "carbon"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-16T08:09:00Z",
+      "scrapedAt": "2026-07-02T11:54:57.690Z",
+      "relevanceScore": 0
+    },
+    {
+      "title": "How Washington is Silently Tokenizing Your Bank Account",
+      "url": "https://www.activistpost.com/how-washington-is-silently-tokenizing-your-bank-account/",
+      "source": "NewsAPI / Activistpost.com",
+      "summary": "“Most Americans don’t realize they live under an expansive surveillance regime that likely violates their constitutional rights. Every purchase, deposit, and transaction, from the smallest Venmo payment for a coffee to a large hospital bill, creates a data po…",
+      "content": "“Most Americans don’t realize they live under an expansive surveillance regime that likely violates their constitutional rights. Every purchase, deposit, and transaction, from the smallest Venmo payment for a coffee to a large hospital bill, creates a data po… Most Americans dont realize they live under an expansive surveillance regime that likely violates their constitutional rights. Every purchase, deposit, and transaction, from the smallest Venmo paymen… [+12897 chars]",
+      "category": "general",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "publishedAt": "2026-06-09T22:00:00Z",
+      "scrapedAt": "2026-07-02T11:54:57.690Z",
+      "relevanceScore": 0
+    },
+    {
+      "title": "Cooperatives key to India’s agricultural growth: NAAS",
+      "url": "https://economictimes.indiatimes.com/news/economy/agriculture/cooperatives-key-to-indias-agricultural-transformation-naas/articleshow/131532710.cms",
+      "source": "NewsAPI / The Times of India",
+      "summary": "Agricultural cooperatives offer vital solutions for small farmers facing market access and cost challenges, says a research paper.",
+      "content": "Agricultural cooperatives offer vital solutions for small farmers facing market access and cost challenges, says a research paper. Despite significant gains in food production, millions of small farmers still face challenges such as limited market access, rising input costs, climate risks and weak bargaining power. As agricultur… [+3682 chars]",
+      "category": "general",
+      "tags": [],
+      "region": "India",
+      "publishedAt": "2026-06-05T13:05:44Z",
+      "scrapedAt": "2026-07-02T11:54:57.690Z",
+      "relevanceScore": 0
+    },
+    {
+      "title": "VCI Global Provides Strategic Business Update as Institutional Shareholder Base Expands",
+      "url": "https://www.globenewswire.com/news-release/2026/06/04/3306686/0/en/VCI-Global-Provides-Strategic-Business-Update-as-Institutional-Shareholder-Base-Expands.html",
+      "source": "NewsAPI / GlobeNewswire",
+      "summary": "Shareholder Base Includes Tether Investment S.A de C.V., CMCC Titan Fund L.P. and 468 Global Opportunities GmbH & Co. KG Shareholder Base Includes Tether Investment S.A de C.V., CMCC Titan Fund L.P. and 468 Global Opportunities GmbH & Co. KG",
+      "content": "Shareholder Base Includes Tether Investment S.A de C.V., CMCC Titan Fund L.P. and 468 Global Opportunities GmbH & Co. KG Shareholder Base Includes Tether Investment S.A de C.V., CMCC Titan Fund L.P. and 468 Global Opportunities GmbH & Co. KG KUALA LUMPUR, Malaysia, June 04, 2026 (GLOBE NEWSWIRE) -- VCI Global Limited (NASDAQ: VCIG) (VCI Global or the Company) today provided a business update regarding its strategic initiatives and recent… [+6517 chars]",
+      "category": "investment",
+      "tags": [
+        "investment"
+      ],
+      "region": "North America",
+      "publishedAt": "2026-06-04T12:00:00Z",
+      "scrapedAt": "2026-07-02T11:54:57.690Z",
+      "relevanceScore": 0
+    },
+    {
+      "title": "Sensex today | Stock Market Highlights: Sensex, Nifty end flat after weak open; Sensex up 14 pts, Nifty gains 11 pts",
+      "url": "https://www.thehindubusinessline.com/markets/sensex-nifty50-today-stock-market-highlights-4th-june-2026/article71056600.ece",
+      "source": "NewsAPI / BusinessLine",
+      "summary": "Sensex, Nifty, Stock Price Highlights: After a negative opening, benchmarks ended flat. Sensex was up 13.84 pts or 0.02% to end at 74,360.01, Nifty 50 inched up 10.95 pts or 0.05% to 23,416.55.",
+      "content": "Sensex, Nifty, Stock Price Highlights: After a negative opening, benchmarks ended flat. Sensex was up 13.84 pts or 0.02% to end at 74,360.01, Nifty 50 inched up 10.95 pts or 0.05% to 23,416.55. <li></li>\r\nJune 4, 2026 16:06Rupee closes marginally weaker ahead of crucial central bank rate review\r\nThe Indian rupee dipped on Thursday, extending a two-session decline, ahead of Fridays all-impor… [+101670 chars]",
+      "category": "general",
+      "tags": [],
+      "region": "Global",
+      "publishedAt": "2026-06-04T10:41:38Z",
+      "scrapedAt": "2026-07-02T11:54:57.690Z",
+      "relevanceScore": 14
+    },
+    {
+      "title": "[Latest] Supply Chain Management (SCM) Market Size Will Attain USD 91.83 Billion by 2034 Registering a Promising CAGR of 12.48% - Exclusive Report by ZMR | Global Supply Chain Management (SCM) Market Size, Share, Trends Analysis Report",
+      "url": "https://www.globenewswire.com/news-release/2026/06/03/3305946/0/en/Latest-Supply-Chain-Management-SCM-Market-Size-Will-Attain-USD-91-83-Billion-by-2034-Registering-a-Promising-CAGR-of-12-48-Exclusive-Report-by-ZMR-Global-Supply-Chain-Management-SC.html",
+      "source": "NewsAPI / GlobeNewswire",
+      "summary": "Supply chain management (SCM) market size is projected to reach USD 91.83 billion by 2034 from its value of USD 31.84 billion in 2024, at a CAGR of 12.48%...",
+      "content": "Supply chain management (SCM) market size is projected to reach USD 91.83 billion by 2034 from its value of USD 31.84 billion in 2024, at a CAGR of 12.48%... NEW YORK, USA, June 03, 2026 (GLOBE NEWSWIRE) -- Zion Market Research has published a new research report titled Supply Chain Management (SCM) Market By Component (Services and Solutions), By Deploym… [+28917 chars]",
+      "category": "general",
+      "tags": [],
+      "region": "North America",
+      "publishedAt": "2026-06-03T11:35:00Z",
+      "scrapedAt": "2026-07-02T11:54:57.690Z",
+      "relevanceScore": 0
+    }
+  ]
+}
