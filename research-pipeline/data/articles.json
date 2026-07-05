@@ -1,0 +1,1687 @@
+{
+  "exportedAt": "2026-07-02T11:46:18.021Z",
+  "stats": {
+    "totalArticles": 96,
+    "byCategory": {
+      "general": 31,
+      "blockchain": 15,
+      "rwa": 15,
+      "investment": 12,
+      "energy": 9,
+      "solar": 8,
+      "regulation": 4,
+      "carbon": 2
+    },
+    "byRegion": {
+      "Global": 83,
+      "China": 3,
+      "South Korea": 3,
+      "North America": 2,
+      "Europe": 1,
+      "India": 1,
+      "Japan": 1,
+      "Latin America": 1,
+      "Singapore": 1
+    },
+    "bySource": {
+      "The Defiant": 10,
+      "Ledger Insights": 9,
+      "Google News / ledgerinsights.com": 6,
+      "Decrypt": 5,
+      "The Block": 5,
+      "CoinTelegraph": 4,
+      "Google News / Binance": 3,
+      "Google News / CoinDesk": 3,
+      "Google News / Nasscom": 3,
+      "Google News / CryptoRank": 2,
+      "Google News / The Block": 2,
+      "Google News / The Defiant": 2,
+      "Google News / Vocal": 2,
+      "CleanTechnica": 1,
+      "CoinDesk": 1,
+      "Google News / 24-7 Press Release Newswire": 1,
+      "Google News / 99Bitcoins": 1,
+      "Google News / Balkan Green Energy News": 1,
+      "Google News / BitPinas": 1,
+      "Google News / Bitget": 1
+    },
+    "recentCount": 96
+  },
+  "totalArticles": 96,
+  "articles": [
+    {
+      "id": 16,
+      "title": "Tokenized Asset Value Stalls Even as Stock Token Holders Surge",
+      "url": "https://thedefiant.io/converge/tradfi-and-fintech/tokenized-asset-value-stalls-even-as-stock-token-holders-surge",
+      "source": "The Defiant",
+      "summary": "Distributed tokenized real-world asset value slipped about 1.4% over the past month to roughly $31.5 billion, the first monthly decline of its institutional-led run, even as the number of holders climbed 14%, led by tokenized stocks, according to data from rwa.xyz.",
+      "content": "Distributed tokenized real-world asset value slipped about 1.4% over the past month to roughly $31.5 billion, the first monthly decline of its institutional-led run, even as the number of holders climbed 14%, led by tokenized stocks, according to data from rwa.xyz.",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "Global",
+      "published_at": "2026-06-26T20:16:02.000Z",
+      "scraped_at": "2026-07-02T11:29:38.400Z",
+      "relevance_score": 84,
+      "created_at": "2026-07-02 11:29:56"
+    },
+    {
+      "id": 18,
+      "title": "Ondo Finance Launches 24/7 Minting and Redemption for Tokenized US Stocks and ETFs",
+      "url": "https://thedefiant.io/converge/tradfi-and-fintech/ondo-finance-24-7-minting-redemption-tokenized-stocks-etfs-ethereum",
+      "source": "The Defiant",
+      "summary": "Ondo Finance has enabled around-the-clock minting and redemption for tokenized US stocks and ETFs on Ethereum and BNB Chain, removing the weekday-only constraint that had tied position creation and cancellation to US market hours.",
+      "content": "Ondo Finance has enabled around-the-clock minting and redemption for tokenized US stocks and ETFs on Ethereum and BNB Chain, removing the weekday-only constraint that had tied position creation and cancellation to US market hours.",
+      "category": "general",
+      "tags": [
+        "tokenization",
+        "ethereum"
+      ],
+      "region": "Global",
+      "published_at": "2026-06-26T16:34:00.000Z",
+      "scraped_at": "2026-07-02T11:29:38.400Z",
+      "relevance_score": 54,
+      "created_at": "2026-07-02 11:29:56"
+    },
+    {
+      "id": 3,
+      "title": "Tradeweb executes real-time tokenized US Treasury transaction on Canton Network",
+      "url": "https://cointelegraph.com/news/tradeweb-executes-real-time-tokenized-us-treasury-transaction-on-canton-network?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "CoinTelegraph",
+      "summary": "Franklin Templeton transferred a tokenized US Treasury to Virtu Financial in what Tradeweb said was the first real-time transaction settled against USDCx.",
+      "content": "<p style=\"float:right; margin:0 0 10px 15px; width:240px;\"><img src=\"https://s3-images.ctmedia.io/media/article-covers/hi-bond-follow-up-bybit.png\" alt=\"Tradeweb executes real-time tokenized US Treasury transaction on Canton Network\" class=\"type:primaryImage\"></p><p>Franklin Templeton transferred a tokenized US Treasury to Virtu Financial in what Tradeweb said was the first real-time transaction settled against USDCx.</p>",
+      "category": "general",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "published_at": "2026-07-01T20:38:39.000Z",
+      "scraped_at": "2026-07-02T11:29:33.432Z",
+      "relevance_score": 52,
+      "created_at": "2026-07-02 11:29:56"
+    },
+    {
+      "id": 5,
+      "title": "Bank of Korea governor outlines tokenized bond vision, unified ledger plan",
+      "url": "https://cointelegraph.com/news/bank-korea-governor-tokenized-government-bonds?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "CoinTelegraph",
+      "summary": "The Bank of Korea’s governor praised tokenized government bonds for easing the issuance and management of government debt during a panel discussion at the ECB Forum.",
+      "content": "<p style=\"float:right; margin:0 0 10px 15px; width:240px;\"><img src=\"https://s3-images.ctmedia.io/media/article-covers/digital-bank-south-korea.jpg\" alt=\"Bank of Korea governor outlines tokenized bond vision, unified ledger plan\" class=\"type:primaryImage\"></p><p>The Bank of Korea’s governor praised tokenized government bonds for easing the issuance and management of government debt during a panel discussion at the ECB Forum.</p>",
+      "category": "general",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "South Korea",
+      "published_at": "2026-07-01T13:36:13.000Z",
+      "scraped_at": "2026-07-02T11:29:33.432Z",
+      "relevance_score": 52,
+      "created_at": "2026-07-02 11:29:56"
+    },
+    {
+      "id": 9,
+      "title": "New York Life Investment Management Debuts First Tokenized Bond Fund",
+      "url": "https://decrypt.co/372457/new-york-life-investment-management-first-tokenized-bond-fund",
+      "source": "Decrypt",
+      "summary": "The tokenized NYLIM Anemoy U.S. High Yield Corporate Bond Segregated Portfolio is launching in collaboration with Centrifuge.",
+      "content": "The tokenized NYLIM Anemoy U.S. High Yield Corporate Bond Segregated Portfolio is launching in collaboration with Centrifuge.",
+      "category": "investment",
+      "tags": [
+        "tokenization",
+        "investment"
+      ],
+      "region": "Global",
+      "published_at": "2026-06-30T20:46:02.000Z",
+      "scraped_at": "2026-07-02T11:29:35.587Z",
+      "relevance_score": 52,
+      "created_at": "2026-07-02 11:29:56"
+    },
+    {
+      "id": 15,
+      "title": "Kraken's xStocks Opens Bending Spoons IPO Registration to EEA Retail",
+      "url": "https://thedefiant.io/news/cefi/kraken-xstocks-bending-spoons-ipo-eea-registration",
+      "source": "The Defiant",
+      "summary": "Kraken's xStocks platform is opening non-binding interest registration for the Bending Spoons IPO to eligible customers in the EEA and select global markets, the tokenized equities infrastructure's second pre-IPO offering after a troubled SpaceX debut.",
+      "content": "Kraken's xStocks platform is opening non-binding interest registration for the Bending Spoons IPO to eligible customers in the EEA and select global markets, the tokenized equities infrastructure's second pre-IPO offering after a troubled SpaceX debut.",
+      "category": "general",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "published_at": "2026-06-27T02:05:50.000Z",
+      "scraped_at": "2026-07-02T11:29:38.400Z",
+      "relevance_score": 45,
+      "created_at": "2026-07-02 11:29:56"
+    },
+    {
+      "id": 2,
+      "title": "Robinhood links with dYdX Labs to launch new DEX Arcus",
+      "url": "https://cointelegraph.com/news/robinhood-links-with-dydx-labs-to-launch-new-dex-arcus?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "CoinTelegraph",
+      "summary": "The crypto protocol dYdX has rebranded as Arcus and is joining Robinhood’s new blockchain to bring perpetual and tokenized stock trading.",
+      "content": "<p style=\"float:right; margin:0 0 10px 15px; width:240px;\"><img src=\"https://s3-images.ctmedia.io/media/article-covers/hi-robinhood-how-the-fast-growing-stock-trading-app-got-into-crypto.jpg\" alt=\"Robinhood links with dYdX Labs to launch new DEX Arcus\" class=\"type:primaryImage\"></p><p>The crypto protocol dYdX has rebranded as Arcus and is joining Robinhood’s new blockchain to bring perpetual and tokenized stock trading. </p>",
+      "category": "blockchain",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "published_at": "2026-07-02T06:05:02.000Z",
+      "scraped_at": "2026-07-02T11:29:33.431Z",
+      "relevance_score": 43,
+      "created_at": "2026-07-02 11:29:56"
+    },
+    {
+      "id": 7,
+      "title": "Ahead of NYSE Listing, Securitize Exec Says DeFi Can Break Wall Street's Grip on Stock Lending",
+      "url": "https://decrypt.co/372493/ahead-nyse-listing-securitize-defi-break-wall-street-stock-lending",
+      "source": "Decrypt",
+      "summary": "Securitize President Brett Redfearn argues that tokenization will bring crypto's core benefit of disintermediation to retail investors.",
+      "content": "Securitize President Brett Redfearn argues that tokenization will bring crypto's core benefit of disintermediation to retail investors.",
+      "category": "investment",
+      "tags": [
+        "tokenization",
+        "investment"
+      ],
+      "region": "Global",
+      "published_at": "2026-07-01T16:36:39.000Z",
+      "scraped_at": "2026-07-02T11:29:35.587Z",
+      "relevance_score": 42,
+      "created_at": "2026-07-02 11:29:56"
+    },
+    {
+      "id": 70,
+      "title": "Neutral Launches Regulated Platform For Tokenized Renewable Energy And Carbon Credits - Carbon Herald",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOQ1p1ODlaWFFMSm9rdGo2NTZVZDJkTHhrNTk2cTlyeU1xTktaTVh2TzhjMDRmaTZCWEFPNE1LbWI4NjZLaEp6ZHI2ekFFNmRTbkt5Y2VQNllpa0JGU0V0Mlg0ZEZhRGs4ZHJCSGM2WXZTMmd2M1BSSmFEeGhLZDhqelpRZ21QYTJFckFUWg?oc=5",
+      "source": "Google News / Carbon Herald",
+      "summary": "Neutral Launches Regulated Platform For Tokenized Renewable Energy And Carbon Credits - Carbon Herald",
+      "content": "Neutral Launches Regulated Platform For Tokenized Renewable Energy And Carbon Credits - Carbon Herald",
+      "category": "carbon",
+      "tags": [
+        "tokenization",
+        "carbon",
+        "regulation"
+      ],
+      "region": "Global",
+      "published_at": "2024-02-27T08:00:00.000Z",
+      "scraped_at": "2026-07-02T11:30:14.202Z",
+      "relevance_score": 38,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 20,
+      "title": "Securitize Wraps Roubini's SEC-Registered ETF as Dubai VARA Digital Security",
+      "url": "https://thedefiant.io/converge/defi/securitize-wraps-roubini-sec-registered-etf-usafi-dubai-vara-digital-security",
+      "source": "The Defiant",
+      "summary": "Securitize has been selected to tokenize economist Nouriel Roubini's Atlas America Fund into USAFi, a digital security issued under Dubai's VARA regulatory framework with BNY custody, designed for 24/7 institutional-grade collateral portability.",
+      "content": "Securitize has been selected to tokenize economist Nouriel Roubini's Atlas America Fund into USAFi, a digital security issued under Dubai's VARA regulatory framework with BNY custody, designed for 24/7 institutional-grade collateral portability.",
+      "category": "regulation",
+      "tags": [
+        "tokenization",
+        "regulation"
+      ],
+      "region": "North America",
+      "published_at": "2026-06-23T20:02:16.000Z",
+      "scraped_at": "2026-07-02T11:29:38.400Z",
+      "relevance_score": 37,
+      "created_at": "2026-07-02 11:29:56"
+    },
+    {
+      "id": 6,
+      "title": "Robinhood Launches 'AI-Native' Ethereum Layer-2 Network, Tokenized Stock Trading",
+      "url": "https://decrypt.co/372614/robinhood-ai-native-ethereum-layer-2-network-tokenized-stock-trading",
+      "source": "Decrypt",
+      "summary": "Brokerage and crypto exchange Robinhood opened the public mainnet for its Arbitrum-powered Ethereum layer-2 network on Wednesday.",
+      "content": "Brokerage and crypto exchange Robinhood opened the public mainnet for its Arbitrum-powered Ethereum layer-2 network on Wednesday.",
+      "category": "blockchain",
+      "tags": [
+        "tokenization",
+        "ethereum"
+      ],
+      "region": "Global",
+      "published_at": "2026-07-01T20:56:38.000Z",
+      "scraped_at": "2026-07-02T11:29:35.587Z",
+      "relevance_score": 35,
+      "created_at": "2026-07-02 11:29:56"
+    },
+    {
+      "id": 11,
+      "title": "dYdX Launches Arcus, a DEX Pairing Stock Tokens With Perpetuals on Robinhood Chain",
+      "url": "https://thedefiant.io/news/defi/dydx-launches-arcus-dex-stock-tokens-perpetuals-robinhood-chain",
+      "source": "The Defiant",
+      "summary": "dYdX Labs founder Antonio Juliano launched Arcus, a new DEX combining tokenized stock trading with perpetual futures, built jointly with Robinhood Crypto on Robinhood Chain.",
+      "content": "dYdX Labs founder Antonio Juliano launched Arcus, a new DEX combining tokenized stock trading with perpetual futures, built jointly with Robinhood Crypto on Robinhood Chain.",
+      "category": "blockchain",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "published_at": "2026-07-01T19:35:00.000Z",
+      "scraped_at": "2026-07-02T11:29:38.400Z",
+      "relevance_score": 34,
+      "created_at": "2026-07-02 11:29:56"
+    },
+    {
+      "id": 40,
+      "title": "Stellar Blockchain to Power Turbo Energy’s Tokenized Clean Energy Financing Initiative - Yahoo Finance Singapore",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPR1JCR3V4elpyUmxEcGJ6OVprTUlxc3hqMEZnNTMyX0Nwa2dOSXRDXzVyU2V2d2VHVjBHMWhzTGhXTURVMnk3blAxU21BUGNLdWNqTXRxUVd1WTZGSWRrQmtSN2Q5UTFDTkw5NFRzelVWdFZWM21DeUZCcGNLWDc0aTk0dzdweGFLT2licTYxQQ?oc=5",
+      "source": "Google News / Yahoo Finance Singapore",
+      "summary": "Stellar Blockchain to Power Turbo Energy’s Tokenized Clean Energy Financing Initiative - Yahoo Finance Singapore",
+      "content": "Stellar Blockchain to Power Turbo Energy’s Tokenized Clean Energy Financing Initiative - Yahoo Finance Singapore",
+      "category": "energy",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Singapore",
+      "published_at": "2025-11-11T08:00:00.000Z",
+      "scraped_at": "2026-07-02T11:30:14.198Z",
+      "relevance_score": 33,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 14,
+      "title": "Securitize Shareholders Approve Merger, Paving Way for First Publicly Traded Tokenization Company",
+      "url": "https://thedefiant.io/converge/tradfi-and-fintech/securitize-shareholders-approve-merger-first-publicly-traded-tokenization-company",
+      "source": "The Defiant",
+      "summary": "Cantor Equity Partners II shareholders voted Monday to approve a business combination with Securitize, expected to close July 1 and list on the NYSE July 2 under ticker SECZ as the first publicly traded tokenization company in the US.",
+      "content": "Cantor Equity Partners II shareholders voted Monday to approve a business combination with Securitize, expected to close July 1 and list on the NYSE July 2 under ticker SECZ as the first publicly traded tokenization company in the US.",
+      "category": "general",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "published_at": "2026-06-30T18:56:55.000Z",
+      "scraped_at": "2026-07-02T11:29:38.400Z",
+      "relevance_score": 32,
+      "created_at": "2026-07-02 11:29:56"
+    },
+    {
+      "id": 62,
+      "title": "Japan’s Mizuho Securities Ventures into Tokenized Renewable Energy Funding - ESG News",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPVndDNmpzUXFuX1l0NU83cFZCZ1A4NEVjMWZ1WWxVandDc2lJVTctMmplNXlFVnI0WHIweERkYWs4TlNSZFNIOTd5a09YMVRDZ3pIR00wUnh3eTVKaktCZXZQZHR6MG0ydjVHeklQWXJFWXd0bzQ5UEczYUJoRGZjdjA5NEQ0ckY0WmRON0JIb3FxQlp6UGZhQWN3?oc=5",
+      "source": "Google News / ESG News",
+      "summary": "Japan’s Mizuho Securities Ventures into Tokenized Renewable Energy Funding - ESG News",
+      "content": "Japan’s Mizuho Securities Ventures into Tokenized Renewable Energy Funding - ESG News",
+      "category": "energy",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Japan",
+      "published_at": "2025-01-06T08:00:00.000Z",
+      "scraped_at": "2026-07-02T11:30:14.201Z",
+      "relevance_score": 32,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 92,
+      "title": "Algorand Featured in VersaBank Tokenized Deposit RWA Pilot - DailyCoin",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPWmFTR1FCcktVMlZWczNsb25zSHBSZXlJMGtuWUdOOVhxVWJkdFVXMll1WnllZ2YtTFhOaUxwcV9MZGFPV2N5bHZXQ3QtalZGaWFvU29iRzY0MmFHYlZzaXRFblg2MFBuZU5vNHNjZG1KWEt2QnFHZ1llNGQ4eXc4ZlpqVkJ5eWdE?oc=5",
+      "source": "Google News / DailyCoin",
+      "summary": "Algorand Featured in VersaBank Tokenized Deposit RWA Pilot - DailyCoin",
+      "content": "Algorand Featured in VersaBank Tokenized Deposit RWA Pilot - DailyCoin",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "Global",
+      "published_at": "2026-03-16T07:00:00.000Z",
+      "scraped_at": "2026-07-02T11:30:14.204Z",
+      "relevance_score": 30,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 21,
+      "title": "Robinhood Chain goes live on mainnet alongside 24/7 tokenized stocks, Lighter perps and planned crypto agentic trading",
+      "url": "https://www.theblock.co/post/406918/robinhood-chain-goes-live-mainnet-alongside-24-7-tokenized-stocks-lighter-perps-planned-crypto-agentic-trading?utm_source=rss&utm_medium=rss",
+      "source": "The Block",
+      "summary": "Robinhood Chain, a Layer 2 built using Arbitrum's tech stack, went live on public mainnet, with partners including Uniswap from day one.",
+      "content": "\n            <p>Robinhood Chain, a Layer 2 built using Arbitrum's tech stack, went live on public mainnet, with partners including Uniswap from day one.</p>\n        ",
+      "category": "blockchain",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "published_at": "2026-07-01T18:45:00.000Z",
+      "scraped_at": "2026-07-02T11:29:40.566Z",
+      "relevance_score": 27,
+      "created_at": "2026-07-02 11:29:56"
+    },
+    {
+      "id": 24,
+      "title": "The Cross-Asset Frontier: Tokenized Equities and Stock Trading on Crypto Platforms",
+      "url": "https://www.theblock.co/post/406198/the-cross-asset-frontier-tokenized-equities-and-stock-trading-on-crypto-platforms?utm_source=rss&utm_medium=rss",
+      "source": "The Block",
+      "summary": "Multi-Asset Trading Terminals The integration of traditional equities into crypto venues represents a fundamental paradigm shift in global trading infrastructure. Rather than managing fragmented positions across siloed traditional brokerages and crypto exchanges, modern cross-asset market participants increasingly demand a singular, frictionless point of access.  This structural convergence between crypto and traditional capital markets is punctuated […]",
+      "content": "\n            <p>Multi-Asset Trading Terminals The integration of traditional equities into crypto venues represents a fundamental paradigm shift in global trading infrastructure. Rather than managing fragmented positions across siloed traditional brokerages and crypto exchanges, modern cross-asset market participants increasingly demand a singular, frictionless point of access.  This structural convergence between crypto and traditional capital markets is punctuated [&hellip;]</p>\n        ",
+      "category": "investment",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "published_at": "2026-07-01T13:02:03.000Z",
+      "scraped_at": "2026-07-02T11:29:40.566Z",
+      "relevance_score": 27,
+      "created_at": "2026-07-02 11:29:56"
+    },
+    {
+      "id": 28,
+      "title": "Korea’s unified ledger paper is silent on privacy. Central banks should take note",
+      "url": "https://www.ledgerinsights.com/koreas-unified-ledger-paper-is-silent-on-privacy-central-banks-should-take-note/",
+      "source": "Ledger Insights",
+      "summary": "In preparation for a talk at the ECB Forum today, the Bank of Korea published a paper on its unified ledger Project Hangang (Han River). It involves tokenized deposits from commercial banks, with interbank settlement using a wholesale CBDC. Seven banks participated in Phase I earlier this year, expanding to nine for Phase II which […]\nThe post Korea’s unified ledger paper is silent on privacy. Central banks should take note appeared first on Ledger Insights - blockchain for enterprise.",
+      "content": "<p>In preparation for a talk at the ECB Forum today, the Bank of Korea published a paper on its unified ledger Project Hangang (Han River). It involves tokenized deposits from commercial banks, with interbank settlement using a wholesale CBDC. Seven banks participated in Phase I earlier this year, expanding to nine for Phase II which [&#8230;]</p>\n<p>The post <a href=\"https://www.ledgerinsights.com/koreas-unified-ledger-paper-is-silent-on-privacy-central-banks-should-take-note/\">Korea&#8217;s unified ledger paper is silent on privacy. Central banks should take note</a> appeared first on <a href=\"https://www.ledgerinsights.com\">Ledger Insights - blockchain for enterprise</a>.</p>\n",
+      "category": "blockchain",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "South Korea",
+      "published_at": "2026-07-01T19:26:20.000Z",
+      "scraped_at": "2026-07-02T11:29:54.696Z",
+      "relevance_score": 26,
+      "created_at": "2026-07-02 11:29:56"
+    },
+    {
+      "id": 8,
+      "title": "Forward Industries Shares Spike as Leading Solana Treasury Adds $38 Million in SOL",
+      "url": "https://decrypt.co/372519/forward-industries-shares-spike-solana-treasury-adds-38-million",
+      "source": "Decrypt",
+      "summary": "Shares in top Solana treasury firm Forward Industries are jumping Wedesday after announcing that it added over 500,000 SOL to its stash.",
+      "content": "Shares in top Solana treasury firm Forward Industries are jumping Wedesday after announcing that it added over 500,000 SOL to its stash.",
+      "category": "rwa",
+      "tags": [
+        "rwa"
+      ],
+      "region": "Global",
+      "published_at": "2026-07-01T15:09:05.000Z",
+      "scraped_at": "2026-07-02T11:29:35.587Z",
+      "relevance_score": 26,
+      "created_at": "2026-07-02 11:29:56"
+    },
+    {
+      "id": 4,
+      "title": "French banking giant Crédit Agricole launches EURXT euro stablecoin",
+      "url": "https://cointelegraph.com/news/credit-agricole-eurxt-euro-stablecoin-caceis?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+      "source": "CoinTelegraph",
+      "summary": "Crédit Agricole’s CACEIS launches a euro-pegged stablecoin on Ethereum with 20.02 million tokens issued, targeting institutional flows and tokenized fund access.",
+      "content": "<p style=\"float:right; margin:0 0 10px 15px; width:240px;\"><img src=\"https://s3-images.ctmedia.io/media/article-covers/hi-euro-pegged-stablecoin-the-ultimate-growth-driver-for-crypto-lending11.jpg\" alt=\"French banking giant Crédit Agricole launches EURXT euro stablecoin\" class=\"type:primaryImage\"></p><p>Crédit Agricole’s CACEIS launches a euro-pegged stablecoin on Ethereum with 20.02 million tokens issued, targeting institutional flows and tokenized fund access.</p>",
+      "category": "investment",
+      "tags": [
+        "tokenization",
+        "ethereum"
+      ],
+      "region": "Global",
+      "published_at": "2026-07-01T14:24:19.000Z",
+      "scraped_at": "2026-07-02T11:29:33.432Z",
+      "relevance_score": 26,
+      "created_at": "2026-07-02 11:29:56"
+    },
+    {
+      "id": 19,
+      "title": "Invesco Files for Tokenized Stablecoin-Reserve Money Market Fund Built on Superstate Rails",
+      "url": "https://thedefiant.io/converge/tradfi-and-fintech/invesco-files-for-tokenized-stablecoin-reserve-money-market-fund-built-on-superstate-rails",
+      "source": "The Defiant",
+      "summary": "US asset manager files for a GENIUS Act reserve money market fund whose shares are recorded directly on public blockchains, with Superstate as sub-transfer agent",
+      "content": "US asset manager files for a GENIUS Act reserve money market fund whose shares are recorded directly on public blockchains, with Superstate as sub-transfer agent",
+      "category": "investment",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "published_at": "2026-06-25T19:50:00.000Z",
+      "scraped_at": "2026-07-02T11:29:38.400Z",
+      "relevance_score": 26,
+      "created_at": "2026-07-02 11:29:56"
+    },
+    {
+      "id": 85,
+      "title": "BNP Paribas issues tokenized bond for EDF on public blockchain - ledgerinsights.com",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPd25CSHVMUXZYbW4zcmx2c1dwZjd3VFVSclA0aFZoRVpJVmJPRU1EVVI5SDZxVnM2bTJPdFppREpaWXREZDNCVTRjOWR6QmVlajE2UlpXV2tVRDZldGFnVzl3TVBIX01sYm8wVTQ5N2JlR3hLSkZOdHVPanQyOEpZbU5TbEUweWlpaFNKejlhd3IzZUlvTmFnSXBB?oc=5",
+      "source": "Google News / ledgerinsights.com",
+      "summary": "BNP Paribas issues tokenized bond for EDF on public blockchain - ledgerinsights.com",
+      "content": "BNP Paribas issues tokenized bond for EDF on public blockchain - ledgerinsights.com",
+      "category": "blockchain",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "published_at": "2022-07-13T07:00:00.000Z",
+      "scraped_at": "2026-07-02T11:30:14.203Z",
+      "relevance_score": 26,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 12,
+      "title": "ENS Community Member Proposes Dissolving DAO After Founder Blocks Security Council Renewal",
+      "url": "https://thedefiant.io/news/nfts-and-web3/ens-community-member-proposes-dissolving-dao-after-founder-blocks-security-council-renewal",
+      "source": "The Defiant",
+      "summary": "Christoph Jentzsch, who wrote code for the original 2016 \"The DAO\" and now runs Tokenize.it, called for ENS DAO to wind down and revoke its own upgrade authority, a day after ENS co-founder Nick Johnson used roughly half of the protocol's active voting power to block a Security Council renewal.",
+      "content": "Christoph Jentzsch, who wrote code for the original 2016 \"The DAO\" and now runs Tokenize.it, called for ENS DAO to wind down and revoke its own upgrade authority, a day after ENS co-founder Nick Johnson used roughly half of the protocol's active voting power to block a Security Council renewal.",
+      "category": "general",
+      "tags": [
+        "tokenization",
+        "dao"
+      ],
+      "region": "Global",
+      "published_at": "2026-07-01T16:38:00.000Z",
+      "scraped_at": "2026-07-02T11:29:38.400Z",
+      "relevance_score": 25,
+      "created_at": "2026-07-02 11:29:56"
+    },
+    {
+      "id": 60,
+      "title": "Mizuho Securities involved in security token for renewable energy - ledgerinsights.com",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNZk03cy1kQjhZMmhrY2RkN05SVGQyWVl5QnJUYTdYSTZ5ZzBYQXFWVW85WlJzSXlHVVlZSGhTaGg2MXU1aEVNdGdwNUZvbGI0Qm5XT093YjZ5QlllTmZBRWZUdWpHd3dsREdpWkt2R2xKRTE4eDI5Sm1oMndvcVUtRkFMZGFicDBWMnk4VG5TYjE1NmxXaUJPZzZNZF9LQQ?oc=5",
+      "source": "Google News / ledgerinsights.com",
+      "summary": "Mizuho Securities involved in security token for renewable energy - ledgerinsights.com",
+      "content": "Mizuho Securities involved in security token for renewable energy - ledgerinsights.com",
+      "category": "energy",
+      "tags": [],
+      "region": "Global",
+      "published_at": "2025-01-02T08:00:00.000Z",
+      "scraped_at": "2026-07-02T11:30:14.201Z",
+      "relevance_score": 24,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 71,
+      "title": "GCL Energy Technology launches first blockchain-based RWA project in photovoltaic industry - China Daily",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE44RS1sTGNpaU9tRVlreEJEamwwUDJwQ0F0TXdCcWFjaFdiU1Q4aEQyV2p1UVhjWTVMaXZSTFZsSnRxNU9kUVZIWVh5NGQ0X0FIcW40bmtBblRGbXExaVJhUE1iT09ZXzJjZVpoZXpxYnNRR0VsSDg5bVg1b0xfdw?oc=5",
+      "source": "Google News / China Daily",
+      "summary": "GCL Energy Technology launches first blockchain-based RWA project in photovoltaic industry - China Daily",
+      "content": "GCL Energy Technology launches first blockchain-based RWA project in photovoltaic industry - China Daily",
+      "category": "solar",
+      "tags": [
+        "rwa"
+      ],
+      "region": "China",
+      "published_at": "2024-12-24T08:00:00.000Z",
+      "scraped_at": "2026-07-02T11:30:14.202Z",
+      "relevance_score": 24,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 83,
+      "title": "Circle Internet Group (CRCL Stock): Boosting Carbon Credit Trust with Blockchain & Digital Climate Solutions - CarbonCredits.com",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQZE5ZdlpyaWVCR0tfYVdUODBBaExrRzBVSEZuSGN2WGRoZ3I4ZG5Rb0xSdnlhZ0NUN3lULWpWX0Z3NmZDTmN4MzRXbGlqeXRBamJwQ0JQSXByTlBZWXRDUHpaNjFCZWdiRU5Zd0hDYlUzUGQybTVxSXhjXzZDX2diOWxmbnR3S1BSYXl4b3QzLUNTVWVMXzZjUzZZSDlDTTZZNzhiZmtrU2I1N21hM3Z4RUxaR3ZXekVfTGZ3NUw4Q3hLUQ?oc=5",
+      "source": "Google News / CarbonCredits.com",
+      "summary": "Circle Internet Group (CRCL Stock): Boosting Carbon Credit Trust with Blockchain & Digital Climate Solutions - CarbonCredits.com",
+      "content": "Circle Internet Group (CRCL Stock): Boosting Carbon Credit Trust with Blockchain & Digital Climate Solutions - CarbonCredits.com",
+      "category": "carbon",
+      "tags": [
+        "carbon"
+      ],
+      "region": "Global",
+      "published_at": "2025-06-24T07:00:00.000Z",
+      "scraped_at": "2026-07-02T11:30:14.203Z",
+      "relevance_score": 23,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 17,
+      "title": "Securitize Goes Public on NYSE July 2 With $400M From SPAC Merger",
+      "url": "https://thedefiant.io/converge/tradfi-and-fintech/securitize-nyse-spac-400m-secz-july-2-cantor-equity",
+      "source": "The Defiant",
+      "summary": "Securitize, the tokenization platform behind BlackRock's BUIDL fund, is set to begin trading on the NYSE on July 2 under the ticker SECZ after a SPAC merger with Cantor Equity Partners II that raised over $400 million, including an oversubscribed $225M PIPE.",
+      "content": "Securitize, the tokenization platform behind BlackRock's BUIDL fund, is set to begin trading on the NYSE on July 2 under the ticker SECZ after a SPAC merger with Cantor Equity Partners II that raised over $400 million, including an oversubscribed $225M PIPE.",
+      "category": "investment",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "published_at": "2026-06-26T19:04:43.000Z",
+      "scraped_at": "2026-07-02T11:29:38.400Z",
+      "relevance_score": 22,
+      "created_at": "2026-07-02 11:29:56"
+    },
+    {
+      "id": 69,
+      "title": "Financely Launches Real World Asset Tokenization Readiness Desk for Structured Finance Originators - 24-7 Press Release Newswire",
+      "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxNVU5iTnhKVkM1T1pZY1E4bWx3bUgwRUJHUktuaWtaMFdwdDRzbEpYQ3d2cDVvcmdMTWIwRWNPVHpFZFZiRWpXdm9laGlnMk9CSHIwZGxoZE5jdFBMTGlNd0p4YkJZYTVaM3h6NzJndDBVS2hvUERtTlNBT25xelhhcURaSmp4SngwT2RicWhOenJBaTR2aWJ6dGN4QWNZMnFqVm1FUHc2RnF0VURMSkJZZVVtRkQ5X3lvZjN2T0tzaDZwNnZHY3JFNVhDaklGc0lHdkJIaFUwVW9DUW84bm1VXzdvbEJTNFU?oc=5",
+      "source": "Google News / 24-7 Press Release Newswire",
+      "summary": "Financely Launches Real World Asset Tokenization Readiness Desk for Structured Finance Originators - 24-7 Press Release Newswire",
+      "content": "Financely Launches Real World Asset Tokenization Readiness Desk for Structured Finance Originators - 24-7 Press Release Newswire",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "Global",
+      "published_at": "2026-05-17T07:00:00.000Z",
+      "scraped_at": "2026-07-02T11:30:14.202Z",
+      "relevance_score": 22,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 29,
+      "title": "JP Morgan calls for guardrails in digital asset, tokenization regulation",
+      "url": "https://www.ledgerinsights.com/jp-morgan-calls-for-guardrails-in-digital-asset-tokenization-regulation/",
+      "source": "Ledger Insights",
+      "summary": "",
+      "content": "",
+      "category": "regulation",
+      "tags": [
+        "tokenization",
+        "regulation"
+      ],
+      "region": "Global",
+      "published_at": "2026-07-02T11:30:03.459Z",
+      "scraped_at": "2026-07-02T11:30:03.459Z",
+      "relevance_score": 21,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 54,
+      "title": "Pharos Foundation’s Strategic 10.71% Stake in GCL Sparks Revolutionary Integration of Blockchain and Solar Energy Assets - CryptoRank",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBCckc3MXpTZDcxVmpxRTBsZ1k1SVBJc0c3aXVWUk11VkNXemo2UTJaSloyR0NhZWZraHNaNFM5ZG1RYjBCOTVtN280aWRvT2NrdWZoQnZzOFpIc3ZhdjFzVTQ3YWc2S3ZiMVBCZ0x3YjlfdDNORmJaU0s1dWY?oc=5",
+      "source": "Google News / CryptoRank",
+      "summary": "Pharos Foundation’s Strategic 10.71% Stake in GCL Sparks Revolutionary Integration of Blockchain and Solar Energy Assets - CryptoRank",
+      "content": "Pharos Foundation’s Strategic 10.71% Stake in GCL Sparks Revolutionary Integration of Blockchain and Solar Energy Assets - CryptoRank",
+      "category": "solar",
+      "tags": [
+        "solar"
+      ],
+      "region": "Global",
+      "published_at": "2026-01-08T08:00:00.000Z",
+      "scraped_at": "2026-07-02T11:30:14.200Z",
+      "relevance_score": 21,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 56,
+      "title": "Blockchain-Backed Sustainability: The Growth of Green Energy Tokenization Services - Nasscom",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNTEJ2REdRZV8zcWZMVGFiZnRrcFBFVjdBX2lLT3pVSHY3ZzMyVUpvUVZrX2NWTE9FXy1IS3VEVm1BUjBQQkpkdEt3S1lMUVFRQU9QZHJhWmRVYV9qSmRrNWN0akNvaTVXamUwMTdXYWViTklTN0Z0ejNrcnZGWF9nTjJwV3ExQlFFT2M3MENmcEtlVlVUbzVxSWRQcXNlT3RSVFJYSlJRN2paQUJqNmxKTjlEaHJpNXl1ZU5va19FMDZVNGsw?oc=5",
+      "source": "Google News / Nasscom",
+      "summary": "Blockchain-Backed Sustainability: The Growth of Green Energy Tokenization Services - Nasscom",
+      "content": "Blockchain-Backed Sustainability: The Growth of Green Energy Tokenization Services - Nasscom",
+      "category": "blockchain",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "published_at": "2025-12-11T08:00:00.000Z",
+      "scraped_at": "2026-07-02T11:30:14.200Z",
+      "relevance_score": 21,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 30,
+      "title": "EIB issues first tokenized commercial paper via Clearstream’s D7",
+      "url": "https://www.ledgerinsights.com/eib-issues-first-tokenized-commercial-paper-via-clearstreams-d7/",
+      "source": "Ledger Insights",
+      "summary": "",
+      "content": "",
+      "category": "general",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "published_at": "2026-07-02T11:30:03.460Z",
+      "scraped_at": "2026-07-02T11:30:03.460Z",
+      "relevance_score": 20,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 31,
+      "title": "Invesco to launch tokenized stablecoin reserve fund",
+      "url": "https://www.ledgerinsights.com/invesco-to-launch-tokenized-stablecoin-reserve-fund/",
+      "source": "Ledger Insights",
+      "summary": "",
+      "content": "",
+      "category": "investment",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "published_at": "2026-07-02T11:30:03.460Z",
+      "scraped_at": "2026-07-02T11:30:03.460Z",
+      "relevance_score": 20,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 32,
+      "title": "Tokenized deposits: the threat and the fix you probably missed",
+      "url": "https://www.ledgerinsights.com/tokenized-deposits-the-threat-and-the-fix-you-probably-missed/",
+      "source": "Ledger Insights",
+      "summary": "",
+      "content": "",
+      "category": "general",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "published_at": "2026-07-02T11:30:03.460Z",
+      "scraped_at": "2026-07-02T11:30:03.460Z",
+      "relevance_score": 20,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 34,
+      "title": "Transcend launches solution to manage tokenized collateral",
+      "url": "https://www.ledgerinsights.com/transcend-launches-solution-to-manage-tokenized-collateral/",
+      "source": "Ledger Insights",
+      "summary": "",
+      "content": "",
+      "category": "general",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "published_at": "2026-07-02T11:30:03.460Z",
+      "scraped_at": "2026-07-02T11:30:03.460Z",
+      "relevance_score": 20,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 22,
+      "title": "Forward Industries jumps 17% after expanding Solana treasury to 7.55 million SOL",
+      "url": "https://www.theblock.co/post/406903/forward-industries-stock-jumps-expanding-solana-treasury-7-55-million-sol?utm_source=rss&utm_medium=rss",
+      "source": "The Block",
+      "summary": "Forward Industries holds more SOL than the next three largest publicly traded Solana treasury companies combined.",
+      "content": "\n            <p>Forward Industries holds more SOL than the next three largest publicly traded Solana treasury companies combined.</p>\n        ",
+      "category": "rwa",
+      "tags": [
+        "rwa"
+      ],
+      "region": "Global",
+      "published_at": "2026-07-01T15:53:25.000Z",
+      "scraped_at": "2026-07-02T11:29:40.566Z",
+      "relevance_score": 20,
+      "created_at": "2026-07-02 11:29:56"
+    },
+    {
+      "id": 13,
+      "title": "New York Life Partners with Centrifuge on Tokenized Corporate Bonds",
+      "url": "https://thedefiant.io/news/tradfi-and-fintech/new-york-life-partners-centrifuge-tokenized-corporate-bonds",
+      "source": "The Defiant",
+      "summary": "New York Life Investment Management is tokenizing a high-yield corporate bond strategy for the first time, partnering with Centrifuge on the NYLIM Anemoy fund settled in USDC.",
+      "content": "New York Life Investment Management is tokenizing a high-yield corporate bond strategy for the first time, partnering with Centrifuge on the NYLIM Anemoy fund settled in USDC.",
+      "category": "investment",
+      "tags": [
+        "tokenization",
+        "investment"
+      ],
+      "region": "Global",
+      "published_at": "2026-07-01T14:38:10.000Z",
+      "scraped_at": "2026-07-02T11:29:38.400Z",
+      "relevance_score": 20,
+      "created_at": "2026-07-02 11:29:56"
+    },
+    {
+      "id": 37,
+      "title": "What Is Tokenized Energy? - Chainlink",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9tUTFZUkh1ZVZpdC1VdGxnVHYyUzZxZjg2LUF1aHhoamRWYmJFVUpwRWl6bjByZUVBUURZdEpZMDdQRlVtMVlGMXp0Z3l5SnVRbGhVVXVB?oc=5",
+      "source": "Google News / Chainlink",
+      "summary": "What Is Tokenized Energy? - Chainlink",
+      "content": "What Is Tokenized Energy? - Chainlink",
+      "category": "general",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "published_at": "2026-02-25T08:00:00.000Z",
+      "scraped_at": "2026-07-02T11:30:14.197Z",
+      "relevance_score": 20,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 44,
+      "title": "Tokenized mining rigs fueling growth of grassroots hubs - CoinGeek",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOSTdfQm5HU3dmRmFtaUVlM2RWcVpPbFkzSmZoaFE4cE5YbFd2RFNuOUhWdUg3NmFNT05uM01WU3A0Y09EbUstNjF6S1JrSFVOYnAybE1ObDhUdG5UTXhiWXlFMERVVkRpT3NSQ1BuQ3FfcW85V0ZGNnFHb2dVUVNHbDVSMA?oc=5",
+      "source": "Google News / CoinGeek",
+      "summary": "Tokenized mining rigs fueling growth of grassroots hubs - CoinGeek",
+      "content": "Tokenized mining rigs fueling growth of grassroots hubs - CoinGeek",
+      "category": "general",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "published_at": "2025-10-27T07:00:00.000Z",
+      "scraped_at": "2026-07-02T11:30:14.198Z",
+      "relevance_score": 20,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 53,
+      "title": "PowerBank and Intellistake Announce Strategic Alliance to Pioneer Digital Currencies, including Bitcoin Treasury Integration and RWA Tokenization - PowerBank Corporation",
+      "url": "https://news.google.com/rss/articles/CBMihgJBVV95cUxPSmVoSUoxNmY5TXhCbmRKR0hsSzRBNzhzdVV0NFRXMXJWenpFb2hqWWFEVXhXM1dMcmJkMG55TzI1NlU5WVExVzdWQUdPdDYzOW1rMzdKRHByWUhwZFNabG5SZi1oMVNkd3pqRHZKZmFleW8wTnpQcjNNcGFwQUNfOUFBeHRBRzNQRjM2T1B3MXprQ3RyZ0t1UUV4VmQtMTNiYzNucDB3YnFLVFBVS1ZaWkRsVDhfS29CZE1VTHBQUkk3MDRSR1JvaVl4OElpeHQ5RW1WaWlIbVlYTmRPSzBNVmJxejZNMENCUmxtak5ITmxDd2w3T21TZFdadWNKTXI5R3ZmcW9R?oc=5",
+      "source": "Google News / PowerBank Corporation",
+      "summary": "PowerBank and Intellistake Announce Strategic Alliance to Pioneer Digital Currencies, including Bitcoin Treasury Integration and RWA Tokenization - PowerBank Corporation",
+      "content": "PowerBank and Intellistake Announce Strategic Alliance to Pioneer Digital Currencies, including Bitcoin Treasury Integration and RWA Tokenization - PowerBank Corporation",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "Global",
+      "published_at": "2025-07-31T07:00:00.000Z",
+      "scraped_at": "2026-07-02T11:30:14.200Z",
+      "relevance_score": 20,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 80,
+      "title": "EDF trials tokenized RECs on Hedera public DLT - ledgerinsights.com",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFA1UFRtd2xUOGcwSmZvUDh2QWZaRWRxQ3NGRFNCR09mLXVlZWRKWEUzMUI2cGdIUUZLRTFvYzRsLUdTdlRxSVFjcEN6T3F6MUNxMVltM2FJaTcyQmRJTFNKbkpaX2R5UmgxeGk1ODlB?oc=5",
+      "source": "Google News / ledgerinsights.com",
+      "summary": "EDF trials tokenized RECs on Hedera public DLT - ledgerinsights.com",
+      "content": "EDF trials tokenized RECs on Hedera public DLT - ledgerinsights.com",
+      "category": "general",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "published_at": "2023-11-29T08:00:00.000Z",
+      "scraped_at": "2026-07-02T11:30:14.203Z",
+      "relevance_score": 20,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 38,
+      "title": "Turbo Energy, Taurus and Stellar Join Forces to Tap Into $74.43 Billion EAAS Market Through Tokenization of Hybrid Renewable Energy Projects - Stellar",
+      "url": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxQY1A1SzV5R2JWM2EyVU9UU1RFZGMtQjFIdzlfdFZWdnloeXVZbTM2Z3JuS3JyenpDazMyTFVHdUFDMUs5c283N0ZuM3ZVczF5TkdSOEZqaHhjR0dTS2k1ejdBV0ZPOFp1RnBrUmFzU1RYWlA5clpmdENCNDhFamplQllpVlJwY0tzNG1ZM1JLUVBLZkNLaTJJUTNnQzRHY3NTbzN1V0VhQXR0M09fVlZ2VnJ4T0tlNm1mWkxtOWtFNVJQaWhlbnRua0UxM3ZaTlU4TldtQkF6cTlMZEIxTHNoQmVTOGNjS0RQLW81N2xKdWhXQWVDcC1JOXNNTQ?oc=5",
+      "source": "Google News / Stellar",
+      "summary": "Turbo Energy, Taurus and Stellar Join Forces to Tap Into $74.43 Billion EAAS Market Through Tokenization of Hybrid Renewable Energy Projects - Stellar",
+      "content": "Turbo Energy, Taurus and Stellar Join Forces to Tap Into $74.43 Billion EAAS Market Through Tokenization of Hybrid Renewable Energy Projects - Stellar",
+      "category": "energy",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "published_at": "2025-11-11T08:00:00.000Z",
+      "scraped_at": "2026-07-02T11:30:14.197Z",
+      "relevance_score": 18,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 57,
+      "title": "Revolutionizing renewable energy certificate markets with tokenization - IBM",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQZWp3d3N3WXdtc0pjT1RadXU5LTY5RFVWVkZFQm1DQjUzLTdIcFFRb2c5S2ZIeUFhd0FkWFNjOU1jNUpRZlQyTTZ6ZnZ3Qy1ZUi1BSlB6M3dLaHRocFhGQmF2MEdiN3Y3SnAxNjRvU3VkYlZlN1ZmOC10RW9XS2lxNGZibw?oc=5",
+      "source": "Google News / IBM",
+      "summary": "Revolutionizing renewable energy certificate markets with tokenization - IBM",
+      "content": "Revolutionizing renewable energy certificate markets with tokenization - IBM",
+      "category": "energy",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "published_at": "2024-10-06T13:29:57.000Z",
+      "scraped_at": "2026-07-02T11:30:14.200Z",
+      "relevance_score": 18,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 65,
+      "title": "Article: Advancing Renewable Energy: The Role of Tokenization in a Growing Market - GMEX Group",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQOW1zMmpxRFFUTXJuTlpnRUZySHlpOHhvdnYyb1BobnBfZ3BncU5PZHRqTW55bGxqUGV3N0lkOG5MWUZuSmI0Z21pbm0tTHdxZzZWQ3EyZy1YNmdPUTloLW11NWRZN1MzRE5jb2prRDlneU0tekhtS0NKUlhFTTJUZ09KZWxUS3pTQ2doS1pJWnVGRUpOX1pNZDVpT3JGNURBaVVlNDdTTjFXY28?oc=5",
+      "source": "Google News / GMEX Group",
+      "summary": "Article: Advancing Renewable Energy: The Role of Tokenization in a Growing Market - GMEX Group",
+      "content": "Article: Advancing Renewable Energy: The Role of Tokenization in a Growing Market - GMEX Group",
+      "category": "energy",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "published_at": "2024-04-17T07:00:00.000Z",
+      "scraped_at": "2026-07-02T11:30:14.201Z",
+      "relevance_score": 18,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 76,
+      "title": "Wien Energie, RIDDLE&CODE tokenize renewable energy installations - ledgerinsights.com",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNQWowS2tuSXc5c1p0b2Fxbjg4OTN5aktlMmxpdGs4TzVUbXE5d2ZnM2h2dUpuR2RhM2Z3eWFKYWdvY2RQVzhEdENQWU9OQ3dBeVpoVEprYnN4S2FzYVVNcVc1NzZfMUREREg2bFhRTEFNOVZRZW52b2RTUnpMMnJnZGdoY2VfVU9DUm9ZM3RsNjJfRnVLOW1jYXpPYmMxTXRJNDI2a1hHWkFxQQ?oc=5",
+      "source": "Google News / ledgerinsights.com",
+      "summary": "Wien Energie, RIDDLE&CODE tokenize renewable energy installations - ledgerinsights.com",
+      "content": "Wien Energie, RIDDLE&CODE tokenize renewable energy installations - ledgerinsights.com",
+      "category": "energy",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "published_at": "2021-06-07T07:00:00.000Z",
+      "scraped_at": "2026-07-02T11:30:14.202Z",
+      "relevance_score": 18,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 96,
+      "title": "Datavault AI Inc. (DVLT) Stock Soars 12% Following $8M Tokenization Agreement with Triton Geothermal - parameter.io",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOM2YxQ2hYY3lRek9ET1N0d2gxVjdvWF8yREFQZHVMTS1zclRxNW0wQkxGT1k0NWZCVDljem5wNEpKNU5JNXVnMnJzTmR6LVJiczQwWjNNVmZsVnprWEhlMVo1bjRBN1MzM0tkOEdtcUJvZ0xrUkthcHpodVB2VDhpMkQyb09qOUh2V0FLWW5XdDJXUXlFcDg3QU1MM2t1ZFZZQWtkX2lEZTREaW9yWGVWSVVtRHpmdGdp?oc=5",
+      "source": "Google News / parameter.io",
+      "summary": "Datavault AI Inc. (DVLT) Stock Soars 12% Following $8M Tokenization Agreement with Triton Geothermal - parameter.io",
+      "content": "Datavault AI Inc. (DVLT) Stock Soars 12% Following $8M Tokenization Agreement with Triton Geothermal - parameter.io",
+      "category": "general",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "published_at": "2025-11-17T08:00:00.000Z",
+      "scraped_at": "2026-07-02T11:30:14.204Z",
+      "relevance_score": 17,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 48,
+      "title": "Turbo Energy to Tokenize Green Finance on Stellar - Blockchain Council",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNUjQzRVlzVHNPV3M0dWZtSnh0V1hzMkVpWEREVkpDaDAza21EekYyYkpzSVd3eDNNUDdvZEU0T0JWc1k1NF9xRXVEekNKMnRmeDBvRjQwekNjX2VYLUV5WkxwRUNjSXlPbkRGakJFdElCU0xnV2hTZVRZb2tyMk55a2VnZlM5SjF2OUFBQUF6YjVoam85M0E?oc=5",
+      "source": "Google News / Blockchain Council",
+      "summary": "Turbo Energy to Tokenize Green Finance on Stellar - Blockchain Council",
+      "content": "Turbo Energy to Tokenize Green Finance on Stellar - Blockchain Council",
+      "category": "blockchain",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "published_at": "2025-11-12T08:00:00.000Z",
+      "scraped_at": "2026-07-02T11:30:14.199Z",
+      "relevance_score": 16,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 51,
+      "title": "Jack Ma's Ant Digital Taps Blockchain to Tokenize $8.4B in China’s Energy Assets: Report - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1hdV9iYVQ1SmVIbWl2TFJzNXVPOUZZVnBTT0NzWGxPTENLcjg5aHFKREU0S01GMDc2b1RGWGNPNnJrbEt5LXJPYk0tNXVwcXNSa2t5N25aTzJOTFFyUG40U3IyUEREVE9aZTdjRDVRRGllamVueGFNbUxFWQ?oc=5",
+      "source": "Google News / Yahoo Finance",
+      "summary": "Jack Ma's Ant Digital Taps Blockchain to Tokenize $8.4B in China’s Energy Assets: Report - Yahoo Finance",
+      "content": "Jack Ma's Ant Digital Taps Blockchain to Tokenize $8.4B in China’s Energy Assets: Report - Yahoo Finance",
+      "category": "blockchain",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "China",
+      "published_at": "2025-09-08T07:00:00.000Z",
+      "scraped_at": "2026-07-02T11:30:14.199Z",
+      "relevance_score": 16,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 49,
+      "title": "Asia’s quiet tokenization revolution shows how the blockchain becomes ‘real’ - Fortune",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOc1pkT0tJMEVHN0xJank3YWhDUGNqb0dfMEhRN2QwRXZwMklQMkRRTFdVY1lpYTI1ak1HeElQb1hnNjlwQnFnOTVZYkU2UGlxZmFybjJZVlJ1cVlBSkNtRWNzYUJrMW04ZmFfbDgwWlhpeWNDSzFmTjZ1SVhVVkVENV91WllSSkEwSFZ3RG03cU9Ga0RHeGwtRkFB?oc=5",
+      "source": "Google News / Fortune",
+      "summary": "Asia’s quiet tokenization revolution shows how the blockchain becomes ‘real’ - Fortune",
+      "content": "Asia’s quiet tokenization revolution shows how the blockchain becomes ‘real’ - Fortune",
+      "category": "blockchain",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "published_at": "2025-08-11T07:00:00.000Z",
+      "scraped_at": "2026-07-02T11:30:14.199Z",
+      "relevance_score": 16,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 55,
+      "title": "Obex Starts Deploying $1B in USDS Into Mortgages, AI Hardware, and Solar Energy - The Defiant",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQaDUzbkRiTGVUa040Zm5fa0RwM0h2OXgzUVBwWjg3dVcteWZnQnBEN1BSWjdOTm5xUUdmRVhxMG4ta3BnNjlzLUFGN1FFMWN6azFSXzR4OXdOZEdYdVU5SldIUVBnQVlhLUxKYmttbVZZUWF2akRYZVFfbEdwZUIybWFEZkhqbUM1LVBZYnpaWDRHaWowdy0wUk1yMHlVR1E0YkN5ZXFFdUoxTXJUVzVoaA?oc=5",
+      "source": "Google News / The Defiant",
+      "summary": "Obex Starts Deploying $1B in USDS Into Mortgages, AI Hardware, and Solar Energy - The Defiant",
+      "content": "Obex Starts Deploying $1B in USDS Into Mortgages, AI Hardware, and Solar Energy - The Defiant",
+      "category": "solar",
+      "tags": [
+        "solar"
+      ],
+      "region": "Global",
+      "published_at": "2026-03-25T07:00:00.000Z",
+      "scraped_at": "2026-07-02T11:30:14.200Z",
+      "relevance_score": 15,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 93,
+      "title": "Power Ledger extends Oz blockchain energy trading trial - ledgerinsights.com",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxONTFBbFZXQVU3MGt2WDJuekVzamdkREZuOFczZTJTcDBVSEYzbkJsZ2taRkdHQ0twWWVuUzNDcU9OeGdpQXFmMDRRR000RVJDSlVvbzgyaFJseTJ5ZDVHMzVQOTllMWNsWkNKUVhUZkFpTkJhMGx1RXJBeFN2LVlkd2YtTlBpZ29lY25hbDA3eXU?oc=5",
+      "source": "Google News / ledgerinsights.com",
+      "summary": "Power Ledger extends Oz blockchain energy trading trial - ledgerinsights.com",
+      "content": "Power Ledger extends Oz blockchain energy trading trial - ledgerinsights.com",
+      "category": "energy",
+      "tags": [
+        "energy-trading"
+      ],
+      "region": "Global",
+      "published_at": "2019-08-21T07:00:00.000Z",
+      "scraped_at": "2026-07-02T11:30:14.204Z",
+      "relevance_score": 15,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 89,
+      "title": "Korea securities firms race to lead global asset tokenization - CHOSUNBIZ - Chosunbiz",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOTEpock13c043WFRiOVVGVlh5ekQ2VVN5aTVEZDc4dlJUMkVyMnB2U3NDZlZmNlp5YmVDU1c1cWFVc2Vka0JHNVVwdWNEMWoyRHhDZzJmdjV3S0lkRHJFQWdSbHE0M3RVcklpbjFPajBsMnBwSUxDOVZHU0NGY05DONIBlAFBVV95cUxNYzJyRUNENm13X2JyWWpvSlVXcFp1ZVdsWW1XVWY1cThacURHc1NVaWpKX1pFOXhuX2ZvTUFlT2FqdTd3bmwxSzNwRFBqVVZrcWltZjBPMUttcWhURTJ4RTRDVi1FYjJpRHE0WjNpZHFWaHpEdUZVUlRtUHJGYUFKSlhtNF9LWVFKUGtObHJDYTM4YnZI?oc=5",
+      "source": "Google News / Chosunbiz",
+      "summary": "Korea securities firms race to lead global asset tokenization - CHOSUNBIZ - Chosunbiz",
+      "content": "Korea securities firms race to lead global asset tokenization - CHOSUNBIZ - Chosunbiz",
+      "category": "general",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "South Korea",
+      "published_at": "2026-02-16T08:00:00.000Z",
+      "scraped_at": "2026-07-02T11:30:14.203Z",
+      "relevance_score": 14,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 61,
+      "title": "Serbia’s first-ever tokenization in energy sector: Saraorci solar project yields 6% interest - Balkan Green Energy News",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOdjFfc2pfZHJ2QkNzWHFYYUJhaWR5LVpjdjhsN2xuZ18tczF0cHlQb3ZaQWZEcGZKZ1pFSGU0Rkp0a0lXbFBaa0hHTjZZZk5TQ1VUNEdMYk5hSXdybkNPZk9aTDAxWDJGZko4SFA5blFoeGN6aVU2TVJaclZUSnEzMXFtejdCMTBRNEVJMnFveHRSVUxzSUxSeFN1Z0NtYzJxS2VHTE1iYWdaQmVlam1EU3A2TlFRR3BfSlFXTmJ4MjZRZw?oc=5",
+      "source": "Google News / Balkan Green Energy News",
+      "summary": "Serbia’s first-ever tokenization in energy sector: Saraorci solar project yields 6% interest - Balkan Green Energy News",
+      "content": "Serbia’s first-ever tokenization in energy sector: Saraorci solar project yields 6% interest - Balkan Green Energy News",
+      "category": "solar",
+      "tags": [
+        "tokenization",
+        "solar"
+      ],
+      "region": "Global",
+      "published_at": "2025-03-13T07:00:00.000Z",
+      "scraped_at": "2026-07-02T11:30:14.201Z",
+      "relevance_score": 14,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 1,
+      "title": "Morpho poised to scale as DeFi infrastructure play, Standard Chartered says",
+      "url": "https://www.coindesk.com/markets/2026/07/01/morpho-poised-to-scale-as-defi-infrastructure-play-standard-chartered-says",
+      "source": "CoinDesk",
+      "summary": "The bank initiated coverage of Morpho with a $60 end-2030 price target, saying its DeFi lending and onchain infrastructure businesses are positioned to benefit from tokenization growth.",
+      "content": "The bank initiated coverage of Morpho with a $60 end-2030 price target, saying its DeFi lending and onchain infrastructure businesses are positioned to benefit from tokenization growth.",
+      "category": "general",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "published_at": "2026-07-01T13:46:40.000Z",
+      "scraped_at": "2026-07-02T11:29:30.952Z",
+      "relevance_score": 13,
+      "created_at": "2026-07-02 11:29:56"
+    },
+    {
+      "id": 10,
+      "title": "Morning Minute: A Change of Strategy",
+      "url": "https://decrypt.co/372411/morning-minute-a-change-of-strategy",
+      "source": "Decrypt",
+      "summary": "Michael Saylor's Strategy is rolling out some major changes to how it handles Bitcoin going forward. And so far, the market likes it.",
+      "content": "Michael Saylor's Strategy is rolling out some major changes to how it handles Bitcoin going forward. And so far, the market likes it.",
+      "category": "rwa",
+      "tags": [
+        "rwa"
+      ],
+      "region": "Global",
+      "published_at": "2026-06-30T12:13:27.000Z",
+      "scraped_at": "2026-07-02T11:29:35.587Z",
+      "relevance_score": 13,
+      "created_at": "2026-07-02 11:29:56"
+    },
+    {
+      "id": 77,
+      "title": "Pharos raises $44 million in Series A to power real-world asset tokenization - CoinDesk",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQNk5ZZWl4elV0OVNScFl4dVFXLXN1U3o4ZXlSczFLUmJRaFhQclI5dHFtYXpwbmdVWVA2eGU1eFhUNGtzbzJ1azBZMTVBT1djd3ZBN0YyVDJXRHY4RDg1M3hCZVFnd3A4dFJaeGZVajlCZG1RREtkNGNUQTBnaXc4czg1N2k0VV9GOWdlYjVWTi01NHJPUlAxVGxJcnMyWWRvVXhGdHh5cVBOSkcyVHpuS25oV1pFZUJMS2czTzBzMW4?oc=5",
+      "source": "Google News / CoinDesk",
+      "summary": "Pharos raises $44 million in Series A to power real-world asset tokenization - CoinDesk",
+      "content": "Pharos raises $44 million in Series A to power real-world asset tokenization - CoinDesk",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "Global",
+      "published_at": "2026-04-08T07:00:00.000Z",
+      "scraped_at": "2026-07-02T11:30:14.202Z",
+      "relevance_score": 13,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 79,
+      "title": "Ant Digital Technologies - The Intersection of Global Innovation For Blockchain, AI and Sustainable Investing - CoinDesk",
+      "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxOcFZyVThwbGlmbFNwNnVSZ2VPV1V1ZUJNemIteXNqOF9MWU5lQ3JZSENheVEwYk9tZktZS3BxTm5PZW56d09XZDM0S1JpckVBb3JzRDdBQ0lTVTJWbURWbEh0MGZZeUs4T3BnRURielZDR1hTTEdaNHN3ckpIclU1MFV0SklTalZUZ3hUZnVOTDJzLUN6RjBlYWlPZ25IXzFTaWpFVF9RS2RoaklHb1BFejlESEtORFdDSmFjX0VtSllGcGdZN0dWOFlXb2JFX2QxQ3BqMDFWZnV5UDZYVDRLcmVwTQ?oc=5",
+      "source": "Google News / CoinDesk",
+      "summary": "Ant Digital Technologies - The Intersection of Global Innovation For Blockchain, AI and Sustainable Investing - CoinDesk",
+      "content": "Ant Digital Technologies - The Intersection of Global Innovation For Blockchain, AI and Sustainable Investing - CoinDesk",
+      "category": "investment",
+      "tags": [
+        "investment"
+      ],
+      "region": "Global",
+      "published_at": "2025-05-12T07:00:00.000Z",
+      "scraped_at": "2026-07-02T11:30:14.203Z",
+      "relevance_score": 13,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 58,
+      "title": "It’s Hard to Fund Midsize Green Assets. This Tokenization Startup Wants to Change That - CoinDesk",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPbDNHdF8wLWRUeTQtaFpmMHdFU01DRTlUVFRscVk4WllpeTN4aVJSMmp0dUFvM0Vnb0hRbzRNUWVvcEJ3RDMyY3lKRDlzZmlBaHhVb2l5VTd6VDAtdmRzRi02cEdhWWYyNjgwOXN5S0FLWk83ZkpEZFdESlZPOVJGOXVUOGpEM3VsWUVEcnY4dW1haGV6UFhKekR2ZmZvSWExelJuVnk5RmpXbDdFcF9TOGZyek1ULW5WZm1TS0gtOGZJQXUzcG1QWmFR?oc=5",
+      "source": "Google News / CoinDesk",
+      "summary": "It’s Hard to Fund Midsize Green Assets. This Tokenization Startup Wants to Change That - CoinDesk",
+      "content": "It’s Hard to Fund Midsize Green Assets. This Tokenization Startup Wants to Change That - CoinDesk",
+      "category": "investment",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "published_at": "2025-01-10T08:00:00.000Z",
+      "scraped_at": "2026-07-02T11:30:14.200Z",
+      "relevance_score": 13,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 66,
+      "title": "Plume Network says it's tokenizing over $1 billion in real-world assets like solar farms, Medicaid claims and mineral rights - The Block",
+      "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxOTk1WZ3AwdmhlYTNHUVZ5S1UwRFl1eXYxM2U0YXVJbHVrMl9RN0pmdWxVNDhDdTJHX0w2ZHB6cU9lVXo1ajRvZXdIN3BuanBkTVFaOVRyU0x3R0dpZ1dBYlNiTG9DaTNUYjNySDNlTmZ6bTNnZEFXTnNOdlRjajVOYllwbVB6SWYtUmFfOTBhRG52dlJpRmVYWm9vSXVidDUwcWFZRDJ3OFRoeGxRX1U4eTR5S2FDM1pHTVM2YzNGYVlhM2tZZUtHWDJJOHM5cFNaWDlpbExBZG81SEd1U2paTDdFRUR5LW82U19WSGtn?oc=5",
+      "source": "Google News / The Block",
+      "summary": "Plume Network says it's tokenizing over $1 billion in real-world assets like solar farms, Medicaid claims and mineral rights - The Block",
+      "content": "Plume Network says it's tokenizing over $1 billion in real-world assets like solar farms, Medicaid claims and mineral rights - The Block",
+      "category": "solar",
+      "tags": [
+        "tokenization",
+        "solar",
+        "rwa"
+      ],
+      "region": "Global",
+      "published_at": "2024-09-21T07:00:00.000Z",
+      "scraped_at": "2026-07-02T11:30:14.201Z",
+      "relevance_score": 12,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 35,
+      "title": "UBS demos permissionless blockchain compliance at infrastructure level",
+      "url": "https://www.ledgerinsights.com/ubs-demos-permissionless-blockchain-compliance-at-infrastructure-level/",
+      "source": "Ledger Insights",
+      "summary": "",
+      "content": "",
+      "category": "regulation",
+      "tags": [],
+      "region": "Global",
+      "published_at": "2026-07-02T11:30:03.460Z",
+      "scraped_at": "2026-07-02T11:30:03.460Z",
+      "relevance_score": 11,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 26,
+      "title": "French company unveils on-site manufacturing concept for modular floating PV systems",
+      "url": "https://www.pv-magazine.com/2026/07/02/french-company-unveils-on-site-manufacturing-concept-for-modular-floating-pv-systems/",
+      "source": "PV Magazine",
+      "summary": "Araymond has developed Neluma, a modular floating PV system using containerized microfactories to manufacture float components directly on-site, reducing transport needs and installation complexity. The company is targeting multi-megawatt projects globally, with pilots and early deployments already underway in Europe, India and Brazil.\nThe post French company unveils on-site manufacturing concept for modular floating PV systems appeared first on pv magazine Global.",
+      "content": "<p>Araymond has developed Neluma, a modular floating PV system using containerized microfactories to manufacture float components directly on-site, reducing transport needs and installation complexity. The company is targeting multi-megawatt projects globally, with pilots and early deployments already underway in Europe, India and Brazil.</p>\n<p>The post <a href=\"https://www.pv-magazine.com/2026/07/02/french-company-unveils-on-site-manufacturing-concept-for-modular-floating-pv-systems/\">French company unveils on-site manufacturing concept for modular floating PV systems</a> appeared first on <a href=\"https://www.pv-magazine.com\">pv magazine Global</a>.</p>\n",
+      "category": "solar",
+      "tags": [
+        "rwa"
+      ],
+      "region": "Europe",
+      "published_at": "2026-07-02T04:57:38.000Z",
+      "scraped_at": "2026-07-02T11:29:43.942Z",
+      "relevance_score": 10,
+      "created_at": "2026-07-02 11:29:56"
+    },
+    {
+      "id": 23,
+      "title": "Panther Hollow launches multi-strategy merchant bank focused on compliant RWA and yield strategies",
+      "url": "https://www.theblock.co/post/406875/panther-hollow-launches-multi-strategy-merchant-bank-focused-on-compliant-rwa-and-yield-strategies?utm_source=rss&utm_medium=rss",
+      "source": "The Block",
+      "summary": "Panther is a hybrid merchant bank, fund complex, and incubator focused on Ethereum, Canton, Solana, and StarkNet.",
+      "content": "\n            <p>Panther is a hybrid merchant bank, fund complex, and incubator focused on Ethereum, Canton, Solana, and StarkNet.</p>\n        ",
+      "category": "rwa",
+      "tags": [
+        "rwa",
+        "ethereum"
+      ],
+      "region": "Global",
+      "published_at": "2026-07-01T13:18:25.000Z",
+      "scraped_at": "2026-07-02T11:29:40.566Z",
+      "relevance_score": 10,
+      "created_at": "2026-07-02 11:29:56"
+    },
+    {
+      "id": 25,
+      "title": "Symbiotic officially pivots to collateral markets with Core V2 launch",
+      "url": "https://www.theblock.co/post/406862/symbiotic-officially-pivots-to-collateral-markets-with-core-v2-launch?utm_source=rss&utm_medium=rss",
+      "source": "The Block",
+      "summary": "Symbiotic now powers shared collateral infrastructure that can support multiple DeFi use cases like insurance, credit, and RWAs.",
+      "content": "\n            <p>Symbiotic now powers shared collateral infrastructure that can support multiple DeFi use cases like insurance, credit, and RWAs.</p>\n        ",
+      "category": "rwa",
+      "tags": [
+        "rwa"
+      ],
+      "region": "Global",
+      "published_at": "2026-07-01T12:00:03.000Z",
+      "scraped_at": "2026-07-02T11:29:40.566Z",
+      "relevance_score": 10,
+      "created_at": "2026-07-02 11:29:56"
+    },
+    {
+      "id": 94,
+      "title": "[Op-Ed] Paul Soliman: A New Funding Engine for the Philippines might be RWA - BitPinas",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPSEl0ZThlNUh2MWZRQ0pFZ2NHX3ZwMnU5a2t6RVFfOW1vZ3ZrSFNidG1VLUVaUDhzZnFvaTFWWWZmaGppbk02RHVWelhvd2d4N0hZXzdVaUdXeEVxUFpSSEtNUE11ZWZTaHBtbmhzRHlVbVlOX2hEYS14WHRLREFhWGJ3emtyaG9LYmJHZEpzZ3U?oc=5",
+      "source": "Google News / BitPinas",
+      "summary": "[Op-Ed] Paul Soliman: A New Funding Engine for the Philippines might be RWA - BitPinas",
+      "content": "[Op-Ed] Paul Soliman: A New Funding Engine for the Philippines might be RWA - BitPinas",
+      "category": "rwa",
+      "tags": [
+        "rwa"
+      ],
+      "region": "Global",
+      "published_at": "2026-07-01T02:06:28.000Z",
+      "scraped_at": "2026-07-02T11:30:14.204Z",
+      "relevance_score": 10,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 27,
+      "title": "Energyminer’s River Turbines Are Real. The Cheap Baseload Claim Needs Operating Data.",
+      "url": "https://cleantechnica.com/2026/06/29/energyminer-river-turbines-cheap-baseload-operating-data/",
+      "source": "CleanTechnica",
+      "summary": "Energyminer has something much better than a rendering. Its Energyfish is a small floating hydrokinetic turbine, mostly underwater, anchored in a river current, sending power to shore through a cable and feeding a land-side power box for grid-compliant electricity. It is not a dam, not a conventional run-of-river hydro plant   ... [continued]\nThe post Energyminer’s River Turbines Are Real. The Cheap Baseload Claim Needs Operating Data. appeared first on CleanTechnica.",
+      "content": "<p>Energyminer has something much better than a rendering. Its Energyfish is a small floating hydrokinetic turbine, mostly underwater, anchored in a river current, sending power to shore through a cable and feeding a land-side power box for grid-compliant electricity. It is not a dam, not a conventional run-of-river hydro plant   ... [continued]</p>\n<p>The post <a href=\"https://cleantechnica.com/2026/06/29/energyminer-river-turbines-cheap-baseload-operating-data/\">Energyminer’s River Turbines Are Real. The Cheap Baseload Claim Needs Operating Data.</a> appeared first on <a href=\"https://cleantechnica.com\">CleanTechnica</a>.</p>\n",
+      "category": "rwa",
+      "tags": [
+        "rwa"
+      ],
+      "region": "Global",
+      "published_at": "2026-06-29T14:17:24.000Z",
+      "scraped_at": "2026-07-02T11:29:49.685Z",
+      "relevance_score": 10,
+      "created_at": "2026-07-02 11:29:56"
+    },
+    {
+      "id": 68,
+      "title": "TGI / Axina Group Inc. (AGI) Publishes \"Terrain to Token\" White Paper: Pioneering the Financialization of In-Ground Assets via AXERP AI-Tokenization - Newswire.com",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOTU5ub0VTTzdsMENuUHBkajdmOVN6S3FHX1N3ZFRKa3FqY0d1eHRjRHBfc3F2LTdSLTlpcUYzQVpGdkRvb1R3UTVYb2MzXzFwQVk1UFRrbjhlS01pU21VVFNnbmI5eHdoQ0J4MUJhT0NYejFHWEpiNUtaeHEyc0xBRVB5dkVQemRZaHpnODBWSk1oTkpweTU1bWVBQlEtTkRHVXAzSFJBTVF2UUU?oc=5",
+      "source": "Google News / Newswire.com",
+      "summary": "TGI / Axina Group Inc. (AGI) Publishes \"Terrain to Token\" White Paper: Pioneering the Financialization of In-Ground Assets via AXERP AI-Tokenization - Newswire.com",
+      "content": "TGI / Axina Group Inc. (AGI) Publishes \"Terrain to Token\" White Paper: Pioneering the Financialization of In-Ground Assets via AXERP AI-Tokenization - Newswire.com",
+      "category": "blockchain",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "published_at": "2026-04-15T07:00:00.000Z",
+      "scraped_at": "2026-07-02T11:30:14.201Z",
+      "relevance_score": 10,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 41,
+      "title": "Green Energy Tokenization Explained: Unlocking Sustainable Wealth - Nasscom",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQVXlhV0k4V2J4azZtanZSODRBQ3V0VEZWNUtVSUp5QW1KVkNMUFAwanJTcU44Ulo1MXpYUmtDaHI4ZTV0Q19tNFFCRnV6TzZ4UWM1d3BEQTE1VzlPQ2ZCcjY0N08wVENnT2dzSzRxbFBnTk9Nd25mWE43Q0FzenFVOFZKZ2tiMXdWUTBvZTU4NVQxTmxTMFhzeVZMRjJhOU9PNHFKbGVmVnNhQTg1a1lqcE1XMjQ0VWs?oc=5",
+      "source": "Google News / Nasscom",
+      "summary": "Green Energy Tokenization Explained: Unlocking Sustainable Wealth - Nasscom",
+      "content": "Green Energy Tokenization Explained: Unlocking Sustainable Wealth - Nasscom",
+      "category": "general",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "published_at": "2026-04-14T04:51:53.000Z",
+      "scraped_at": "2026-07-02T11:30:14.198Z",
+      "relevance_score": 10,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 52,
+      "title": "Energy Tokenization: Unlocking New Revenue Streams and Efficiency in the Digital Energy Market - Nasscom",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOcFBka0FYM1JnaC1EVl9MbnAwMGx6M1hNRVZIRXM2UmNUUWk2LTBlVmZXS1U0SEpRMFdhbGFPeWl6SEZIamVRZm12d1BRUkNlY3dWcWVDSzhsbFppVkFtUEdmLWVzXzVhZFpINmdMM1NlTUkwNUpreWtZTzRlWV9HUkpSWkwwZXpXdjJ4bC1jZ2NocVZld3IxVmwxcFVrTGdESVB3TXZ2TWh2SDJQRjhkeWxrbmhwcmVCYlFaUV9ldGU5Zw?oc=5",
+      "source": "Google News / Nasscom",
+      "summary": "Energy Tokenization: Unlocking New Revenue Streams and Efficiency in the Digital Energy Market - Nasscom",
+      "content": "Energy Tokenization: Unlocking New Revenue Streams and Efficiency in the Digital Energy Market - Nasscom",
+      "category": "general",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "published_at": "2026-04-01T15:38:59.000Z",
+      "scraped_at": "2026-07-02T11:30:14.200Z",
+      "relevance_score": 10,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 39,
+      "title": "Argentina's State-Backed Energy Giant YPF Launches Tokenization Initiative on XRP Ledger - The Defiant",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNeHdCVkZxZHNUY2FiTEE1MktvcXRUVjliaC1fUFNXMjQ2dzE0aFhUYnNsQ1lPZF9FS2xCd2p1V05YUUR4c0hBTHVIbG5Ud0tjeUJyanEwMzA5NTRGUTcxcVA0ZE9ESDl0MndaYlB2b0FjYVR5UTB1dE1IM2ptU3ZfdUtNcVRSVHVudS1fYVpoVWVPNEhBZWpwM0daOGZUTUN3TE15b0RqVzJpTXNjXzFwTVNnZDBERDM1c1BSSA?oc=5",
+      "source": "Google News / The Defiant",
+      "summary": "Argentina's State-Backed Energy Giant YPF Launches Tokenization Initiative on XRP Ledger - The Defiant",
+      "content": "Argentina's State-Backed Energy Giant YPF Launches Tokenization Initiative on XRP Ledger - The Defiant",
+      "category": "general",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "published_at": "2026-03-26T07:00:00.000Z",
+      "scraped_at": "2026-07-02T11:30:14.197Z",
+      "relevance_score": 10,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 78,
+      "title": "Datavault AI (NASDAQ: DVLT) Enters $8M Tokenization Agreement With Triton Geothermal - USA Today",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQeW1jVzQ2dklMdEhFYUFSOG5nSDU2NVRTMlRkMzViZ0pPQTlyaFpsRHdYYnZoOFZQTTBGY0ZVcGIyYUJ4Y2RqTU5JdzFoaG1hWWZzNWtScVhaRGZ6c3Bjem5Cb2h1dWVRM1BPWWxpTzlxRXNTamtMQjBvdEtxelpEUTRoRGl5UlB3WWlVc2JKTVN4b0g0RWJFZzgzWDd6cGdKMXE3R0VzOWdlY3hkYWpzbDhMV1hmVmdRblV1RjFkWGtBaU1aYzRzUXYwbFc?oc=5",
+      "source": "Google News / USA Today",
+      "summary": "Datavault AI (NASDAQ: DVLT) Enters $8M Tokenization Agreement With Triton Geothermal - USA Today",
+      "content": "Datavault AI (NASDAQ: DVLT) Enters $8M Tokenization Agreement With Triton Geothermal - USA Today",
+      "category": "general",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "North America",
+      "published_at": "2026-03-24T09:33:44.000Z",
+      "scraped_at": "2026-07-02T11:30:14.202Z",
+      "relevance_score": 10,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 84,
+      "title": "Top 10 Industries Being Transformed by Real-World Asset Tokenization in 2026 - Vocal",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQQk5QelpVN2trMndxX09fZUJCdWFaa0MyUUtOY1g5RTZVZWNnS2doZS1NRnFtQW1kcnByQWZ5WTBKWDRLZzNzd2hmWE44UnFVbjRVSzRjaUtGMjFHbkIyOUpTclJkSWJhdm96YmdzaFI0V1lmZ2JnWUpqQkZlZnhSaHhkSG02c0xvSURJaDBXZTQzd0F4cERmV3VHNndDRHRYSE16cFFnZ3JDZw?oc=5",
+      "source": "Google News / Vocal",
+      "summary": "Top 10 Industries Being Transformed by Real-World Asset Tokenization in 2026 - Vocal",
+      "content": "Top 10 Industries Being Transformed by Real-World Asset Tokenization in 2026 - Vocal",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "Global",
+      "published_at": "2026-03-04T07:53:35.000Z",
+      "scraped_at": "2026-07-02T11:30:14.203Z",
+      "relevance_score": 10,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 64,
+      "title": "Top 10 Providers of Blockchain Solutions for the Energy Sector - Energies Media",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOTl9La2t1ZGxWZVRCbF8td3JIV2cwUFBseVpqM0QwWVg5cExxY3BzQ1ZINW1zWTVISVc2SkhMOURXMGhra2UyWGdaY0I2QXJ4MlJTUWNXMzFmZmtNSlhQS3NJTFFyZjEzUXAzLVk0aVhISlJvRHNyNFhPSEhaaXItcDVIOXBZQU9uT2dHQkJZRnVYbTg?oc=5",
+      "source": "Google News / Energies Media",
+      "summary": "Top 10 Providers of Blockchain Solutions for the Energy Sector - Energies Media",
+      "content": "Top 10 Providers of Blockchain Solutions for the Energy Sector - Energies Media",
+      "category": "blockchain",
+      "tags": [],
+      "region": "Global",
+      "published_at": "2026-01-12T08:00:00.000Z",
+      "scraped_at": "2026-07-02T11:30:14.201Z",
+      "relevance_score": 10,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 46,
+      "title": "Revolutionary: How Daylight’s New Protocol Lets You Tokenize Electricity Revenue for Crypto Yield - CryptoRank",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNbDNfelpRMG43dmRxcGM5RDBwLVdpVTFMWnlEYzE4MzdHUTBFQldTZlo1RXJxSVBrbkh5REtha2hlTzBJNVpuNEdnM296bWxveTdhVWt3bFRqQm5FMjhKVHNxZjM2aERXMnVfNm5ELWdRbHZOUXpydWJUTTZfZ3BRbFdyQVZBOTg?oc=5",
+      "source": "Google News / CryptoRank",
+      "summary": "Revolutionary: How Daylight’s New Protocol Lets You Tokenize Electricity Revenue for Crypto Yield - CryptoRank",
+      "content": "Revolutionary: How Daylight’s New Protocol Lets You Tokenize Electricity Revenue for Crypto Yield - CryptoRank",
+      "category": "investment",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "published_at": "2025-12-09T08:00:00.000Z",
+      "scraped_at": "2026-07-02T11:30:14.198Z",
+      "relevance_score": 10,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 43,
+      "title": "Datavault AI Signs Multi-Million Dollar Tokenization Services Agreement With Triton Geothermal to Provide Significant Revenue Opportunities - Datavault AI",
+      "url": "https://news.google.com/rss/articles/CBMirwJBVV95cUxPMzJfWlQ4X1NSZ2h0Vms1ZWxZR0VYbkhUS21jWXpqQUtKZ2dDQWxfUjhkRGNNUE1IUGdCRzV3RXRMcUtSdnFnV3lQU3pqbkc4dUpNS1VZOWZMQmpoODFub193WlRSd201d3dmdW94SkQyaVFKSHhTcTZ5aVhRenFJb3BGckR1azdpeWFjdUFXcTlvcnFxRlJXVjFfelNTQ3ZOQTdwUmZGOVlKa0FiLWQ2NG81eldSOGdzYzNHSnMxSFZweUx0VW1SN3d4SzBhVHJyNTJBSUNjcV9SQnlQTE15a2VvcHVSRGszNXVxTU9mb0xGMUVWXzhQU3dlNWhudzNEbFJzNHFxQmlSam1JSmwtcW5oN0p3Z2xhY1Y2VXZQQjhEc09wTXU2Z1Q1N3NuT2c?oc=5",
+      "source": "Google News / Datavault AI",
+      "summary": "Datavault AI Signs Multi-Million Dollar Tokenization Services Agreement With Triton Geothermal to Provide Significant Revenue Opportunities - Datavault AI",
+      "content": "Datavault AI Signs Multi-Million Dollar Tokenization Services Agreement With Triton Geothermal to Provide Significant Revenue Opportunities - Datavault AI",
+      "category": "general",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "published_at": "2025-11-17T08:00:00.000Z",
+      "scraped_at": "2026-07-02T11:30:14.198Z",
+      "relevance_score": 10,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 82,
+      "title": "How ESG Tokenization Platforms Are Transforming the Future of Sustainable Investing in Web3? - Vocal",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOZlRCdTdFcXZsNzQ3R2tVdTJaOWl1UVo5aExybUxpTzd2UlRkX3BWNldLdm13MGw5VjdteDZLTHlMcF9CUzhUVnpHTGw4dDdmb3Q0OTJfdjlIZTA4VTlfVDlVM25OeDZQXzVERl9TRXg2VjNCSWo0Tk93YWtiWFJPV3otNlhWRU9XWGg0a3VPNmR3MWx2OG1WSGJVaEswWnBJbGdMWTBwR0s3a2RCMFFpdm80bHE?oc=5",
+      "source": "Google News / Vocal",
+      "summary": "How ESG Tokenization Platforms Are Transforming the Future of Sustainable Investing in Web3? - Vocal",
+      "content": "How ESG Tokenization Platforms Are Transforming the Future of Sustainable Investing in Web3? - Vocal",
+      "category": "investment",
+      "tags": [
+        "tokenization",
+        "investment"
+      ],
+      "region": "Global",
+      "published_at": "2025-10-28T10:48:38.000Z",
+      "scraped_at": "2026-07-02T11:30:14.203Z",
+      "relevance_score": 10,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 42,
+      "title": "Ant Digital is planning to tokenize $8 billion in energy assets – report - ledgerinsights.com",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQNXJfZHJTMEtkRnFEM3ZySmR4QWxoSFZMeEdETmtUT2k4N19Nd2U1bWhxVkdmcUNFUUswXzBDeGg0djdhSmdzai1SRE81SFdIY29DNlVnR21ORnM1Mmlyc25LTGFLdWVUYkVyNHpOcmRVckpJNm5XTDRjdjg1bzRtMjRNdHA0WG8zd0tlNFhYU0xORTMwWVlPVER0YXU4ZTE1elYw?oc=5",
+      "source": "Google News / ledgerinsights.com",
+      "summary": "Ant Digital is planning to tokenize $8 billion in energy assets – report - ledgerinsights.com",
+      "content": "Ant Digital is planning to tokenize $8 billion in energy assets – report - ledgerinsights.com",
+      "category": "general",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "published_at": "2025-09-09T07:00:00.000Z",
+      "scraped_at": "2026-07-02T11:30:14.198Z",
+      "relevance_score": 10,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 45,
+      "title": "Ant Digital plans to tokenize over $8 billion in energy assets: Bloomberg - The Block",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5ra3Ytc05vVWEzTVQ4R1dGRkcxSzV3YmE3TzRYRXEwQXVPelpjVktfZkR1NDdFVGZXMEt3LWdHblZmWTQwR2E1YWRQajBBYmVVRFdzMGJ2RVFEN3ZxYWZzSkxsRS1xRUp4U2t4RWxZVUt3Vk44T3Vr?oc=5",
+      "source": "Google News / The Block",
+      "summary": "Ant Digital plans to tokenize over $8 billion in energy assets: Bloomberg - The Block",
+      "content": "Ant Digital plans to tokenize over $8 billion in energy assets: Bloomberg - The Block",
+      "category": "general",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "published_at": "2025-09-09T07:00:00.000Z",
+      "scraped_at": "2026-07-02T11:30:14.198Z",
+      "relevance_score": 10,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 90,
+      "title": "Tokenization can strengthen HK’s financial markets and green finance - The Standard (HK)",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPczdRTVcxcGtrZjBBR041d2c0clR1alRDTEdqeG41TnFxdTM3T25RblRPa2RpTmhfV0V5TWVrWDVzZFE5OFFZbnNQbm1qNDEzcXN6V1FWYXlwVWZMeGp5QVB3LW5sYmJTU2dYVFVpS1BKdDEwT1FEc0x0dmk3aUNBRE4xZnFwblNZZ0lKeS0wZndCeHhqemFRRkEwVjBhVWNocDRQS0xQSkNqOFpobFBhLWxtdzlSelAwdEY5ZnlyZw?oc=5",
+      "source": "Google News / The Standard (HK)",
+      "summary": "Tokenization can strengthen HK’s financial markets and green finance - The Standard (HK)",
+      "content": "Tokenization can strengthen HK’s financial markets and green finance - The Standard (HK)",
+      "category": "general",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "published_at": "2025-06-27T07:00:00.000Z",
+      "scraped_at": "2026-07-02T11:30:14.204Z",
+      "relevance_score": 10,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 67,
+      "title": "GCL Energy Technology co-develops China's first technical standard for real-world asset tokenization - China Daily - Global Edition",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOUWltbHFFRVFtN1dnb2pfZVlwWWFtQXhlS3h6ajNNWTlIbW1rN3JVR1dVaU9tSExoZllHbVhEVG96WlRSTHpjRms0cUpfZ01ZQXNVMW0wUlVYQVNZdFhSZnNvLUljVnRFb3hJVm9TZ1ZvamVpdU1mUW5MbGFwQWhXM1Zn?oc=5",
+      "source": "Google News / China Daily - Global Edition",
+      "summary": "GCL Energy Technology co-develops China's first technical standard for real-world asset tokenization - China Daily - Global Edition",
+      "content": "GCL Energy Technology co-develops China's first technical standard for real-world asset tokenization - China Daily - Global Edition",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "China",
+      "published_at": "2025-03-26T07:00:00.000Z",
+      "scraped_at": "2026-07-02T11:30:14.201Z",
+      "relevance_score": 10,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 87,
+      "title": "Brazil’s Petrobras to Explore BTC Mining and Tokenization in R&D Projects - Binance",
+      "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBRMkRZenk2aThkTU9POTFVT0o3QzNCelZYSEJEbWZsYVBJN2xtaWZoMm1HM0ZhZFpkY0J5d0JwUWxyWDFqd3Q1Y2JiV284Q0V4aHNEZ0xSOFB4enA4ZGJfMGhhRQ?oc=5",
+      "source": "Google News / Binance",
+      "summary": "Brazil’s Petrobras to Explore BTC Mining and Tokenization in R&D Projects - Binance",
+      "content": "Brazil’s Petrobras to Explore BTC Mining and Tokenization in R&D Projects - Binance",
+      "category": "general",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Latin America",
+      "published_at": "2025-01-26T08:00:00.000Z",
+      "scraped_at": "2026-07-02T11:30:14.203Z",
+      "relevance_score": 10,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 73,
+      "title": "SolarSX: World’s First Solar-Powered RWA-Based Crypto Mining Platform - Binance",
+      "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBDNnJDeXZPT0ZRYThyUVlMeTU4MW1BRHFjTjd1U25BQUxJcmpEeGRJeDZBNEQxT2pNeER0VkZFNTNYLV9ZWkotTDVJREhPcFFMcjV6aTJQV3dlQlMtUXlxNGNYUQ?oc=5",
+      "source": "Google News / Binance",
+      "summary": "SolarSX: World’s First Solar-Powered RWA-Based Crypto Mining Platform - Binance",
+      "content": "SolarSX: World’s First Solar-Powered RWA-Based Crypto Mining Platform - Binance",
+      "category": "solar",
+      "tags": [
+        "solar",
+        "rwa"
+      ],
+      "region": "Global",
+      "published_at": "2024-11-15T08:00:00.000Z",
+      "scraped_at": "2026-07-02T11:30:14.202Z",
+      "relevance_score": 10,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 72,
+      "title": "Serbia issues approval to AVR Solar Park for solar plant tokenization - SeeNews",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxON2d1V092RkhHWWgtOGVZY3RweklpOFh0cmlKeFFNU2ZINkI2SDNYdnlDZFVwU3hMRTA0c3JLQ2wyMjdLNmZ2THVoV1g3Uzhjc0NBMUxRdm9VWURHc0VPTGNiT1o5QjE5UEg4Z1h3bUlRS2wxdkllR1VQVVpSbXdmUURWcjI3Sng4TUZoODFPUFdaYXktLTI1c0czcjNYaEJtZDIxZQ?oc=5",
+      "source": "Google News / SeeNews",
+      "summary": "Serbia issues approval to AVR Solar Park for solar plant tokenization - SeeNews",
+      "content": "Serbia issues approval to AVR Solar Park for solar plant tokenization - SeeNews",
+      "category": "solar",
+      "tags": [
+        "tokenization",
+        "solar"
+      ],
+      "region": "Global",
+      "published_at": "2024-11-01T07:00:00.000Z",
+      "scraped_at": "2026-07-02T11:30:14.202Z",
+      "relevance_score": 10,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 91,
+      "title": "Understanding real-world assets: A vision for penetration of tokenization in India - The Economic Times",
+      "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxOOVV3V1k1OTB3RHV2NnBkcEl1NlY1Y3k4bDVMdFJUNXFHLW0wQWlOOTdYZHNyaGJmcFgwam90VjliVENQMkhfVE51QmRhUHBFOXJwcWZxcktyczhQemM5REk2OVg3ODF5SHlEZDgxOVQ0ZUNSZmI5N0dHemJwWVpsSXNoZHd3MjhkM0Fnakp4Zzh3SHdpV1lLN1RCTmFCTlVmR2xpMmYtSnVmZ3pZaEMyam00VFg5Z3pyMmg2UDFYTEljUlpRVmxiM0x0RTBYZG5LNFh5cmRQUU9US0MxQlR2YWZIc05pb3ZlTlphX2VGa9IB9AFBVV95cUxNMWNacnJOZ2puTnloYzZGZXN5ckxHN09TZFZ3V1BYSzBkQUFuM2tTaXFrcEhEZXdKV2Z6RnFmdUJPbFVIVWVKSEQwR20wQ090SXhZcXBieGxlOGZ6UDNUQmRWYWtfbC1BY1dnWDNBOUFvOTJrZ1JmRWM5Rld1RENvZUJOYVA1QVg4VmJ5RHFQTFR1V3RZdF9ZSEQxNE1nWElDcWRlOG1LZnB3dHhLaGt3R25vOHNqWWpadmFQczlQRER5aXVGbzhtemlfOGx1c0VHQXB4WC1iRWstRUw2TWVIV0RaRF9uenNuVm9wd0I1V3diTEU3?oc=5",
+      "source": "Google News / The Economic Times",
+      "summary": "Understanding real-world assets: A vision for penetration of tokenization in India - The Economic Times",
+      "content": "Understanding real-world assets: A vision for penetration of tokenization in India - The Economic Times",
+      "category": "rwa",
+      "tags": [
+        "tokenization",
+        "rwa"
+      ],
+      "region": "India",
+      "published_at": "2024-09-27T07:00:00.000Z",
+      "scraped_at": "2026-07-02T11:30:14.204Z",
+      "relevance_score": 10,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 88,
+      "title": "EcoYield Launches $EYE Token Presale to Power Clean Energy and AI Infrastructure - Bitget",
+      "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBmbElRYy1SelpWbk9xS0NqNzdwYVU2b2NKWEl6Z3I4ZTRnamhxNFBCTGxpTy1oampuWVpYY0JuM2dOOE1ydEpjUmFISUJHOVJiVVAyaERFV3NIdHRJQkHSAWNBVV95cUxPWW9XSXcxMW9pZEFMVElTeG1ydHZ6cWRTdVp6QkRQanFHWDNwY01TTGdVd21fRGI3b3NZdUE0XzFKTjhvQTlhSzdZUTgxd2sxcG1OS09RSVdIc0RZWTlxVUY3UHM?oc=5",
+      "source": "Google News / Bitget",
+      "summary": "EcoYield Launches $EYE Token Presale to Power Clean Energy and AI Infrastructure - Bitget",
+      "content": "EcoYield Launches $EYE Token Presale to Power Clean Energy and AI Infrastructure - Bitget",
+      "category": "energy",
+      "tags": [],
+      "region": "Global",
+      "published_at": "2025-10-14T07:00:00.000Z",
+      "scraped_at": "2026-07-02T11:30:14.203Z",
+      "relevance_score": 7,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 36,
+      "title": "BIS identifies stablecoin gaps. Regulation and innovations are already closing them",
+      "url": "https://www.ledgerinsights.com/bis-identifies-stablecoin-gaps-regulation-and-innovations-are-already-closing-them/",
+      "source": "Ledger Insights",
+      "summary": "",
+      "content": "",
+      "category": "regulation",
+      "tags": [
+        "regulation"
+      ],
+      "region": "Global",
+      "published_at": "2026-07-02T11:30:03.460Z",
+      "scraped_at": "2026-07-02T11:30:03.460Z",
+      "relevance_score": 6,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 75,
+      "title": "Polkadot and the Energy Transition: How to Adapt to Success - thestreet.com",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQQnVFSTZfd0lFQ283LTVuZkVXbHB4cE5xUDdwNjAzeGZTYU16VzBZRDJrRHJtd21TY1JtdkFTeExhZ180cTNvdkpQaDd0UnJLUjJXNjNsYTVyMDF0Z243aGNGaEFFTjE3emx2OFVtQWgtSVdjYnJzRU1oY3RGbC0wZkJaeFQydW9VeTNnaXE4dnlHYzd6cDVmeW5kMmNVTFVJ?oc=5",
+      "source": "Google News / thestreet.com",
+      "summary": "Polkadot and the Energy Transition: How to Adapt to Success - thestreet.com",
+      "content": "Polkadot and the Energy Transition: How to Adapt to Success - thestreet.com",
+      "category": "general",
+      "tags": [],
+      "region": "Global",
+      "published_at": "2024-07-31T07:00:00.000Z",
+      "scraped_at": "2026-07-02T11:30:14.202Z",
+      "relevance_score": 6,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 63,
+      "title": "XLM Crypto News: Stellar Secures Major Institutional & Real-World Integrations - CoinDCX",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE01eENkZU9pdkU2aUJCVmdfM3I1d2swNW1NZ1NNXzRJMUZkem1INHNoZmF5VjZQMGVteFoxeTFhbjc4bXViUmtkNDdyVldEMWZfUUZwcklaeURMT0RvYmRvVnZ5RGhxVE1VRHVOZg?oc=5",
+      "source": "Google News / CoinDCX",
+      "summary": "XLM Crypto News: Stellar Secures Major Institutional & Real-World Integrations - CoinDCX",
+      "content": "XLM Crypto News: Stellar Secures Major Institutional & Real-World Integrations - CoinDCX",
+      "category": "blockchain",
+      "tags": [],
+      "region": "Global",
+      "published_at": "2025-11-17T08:00:00.000Z",
+      "scraped_at": "2026-07-02T11:30:14.201Z",
+      "relevance_score": 4,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 33,
+      "title": "Euroclear to adopt SocGen USDCV stablecoin for commercial paper settlement",
+      "url": "https://www.ledgerinsights.com/euroclear-to-adopt-socgen-usdcv-stablecoin-for-commercial-paper-settlement/",
+      "source": "Ledger Insights",
+      "summary": "",
+      "content": "",
+      "category": "general",
+      "tags": [],
+      "region": "Global",
+      "published_at": "2026-07-02T11:30:03.460Z",
+      "scraped_at": "2026-07-02T11:30:03.460Z",
+      "relevance_score": 0,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 74,
+      "title": "Aave Founder Projects $50T Abundance Asset Market by 2050 - CoinMarketCap",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPaENnaHhZWEFtaGxkWlh2THJ1ZTNGYjV3Y0xoYThxUXJTbUI5b0ZWN1I3TzVqN0puaG5WcEx5SWRuQ0hUelB5Nlg2RWt5U3Q3NVk5Z3NHbWZwazhlbFIyYTZoa0xoUXJxWEN4b3pJX251c21ib0phWk9EVzVNcEZPQ0RmRWwwdy1vaE1kTGJ3Q0l4YzNyWkNFNVJOXzhkY2RVUEJWVmdmNA?oc=5",
+      "source": "Google News / CoinMarketCap",
+      "summary": "Aave Founder Projects $50T Abundance Asset Market by 2050 - CoinMarketCap",
+      "content": "Aave Founder Projects $50T Abundance Asset Market by 2050 - CoinMarketCap",
+      "category": "general",
+      "tags": [],
+      "region": "Global",
+      "published_at": "2026-02-16T13:36:41.000Z",
+      "scraped_at": "2026-07-02T11:30:14.202Z",
+      "relevance_score": 0,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 59,
+      "title": "Aave Founder Stani Kulechov's 2050 Vision: A $50T Shift To \"Abundance Assets\" And DeFi's Next Phase - 99Bitcoins",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPYnVEOW90LUhLNlhMQlE3bVJDY3ItcVBNRjF2NXNheWtWaE44UmVySGU0LXVRaGg3ekM2cWE4ODVTVE94T2t3aEh4Y2ZLSkpmV2FuWUFPcURPeV9BQV9HSXFXeTR4UWhjQnNza3BvYmpUY25WSWdGelIySENRRGRHTHpQZ3RCdw?oc=5",
+      "source": "Google News / 99Bitcoins",
+      "summary": "Aave Founder Stani Kulechov's 2050 Vision: A $50T Shift To \"Abundance Assets\" And DeFi's Next Phase - 99Bitcoins",
+      "content": "Aave Founder Stani Kulechov's 2050 Vision: A $50T Shift To \"Abundance Assets\" And DeFi's Next Phase - 99Bitcoins",
+      "category": "general",
+      "tags": [],
+      "region": "Global",
+      "published_at": "2026-02-16T08:00:00.000Z",
+      "scraped_at": "2026-07-02T11:30:14.200Z",
+      "relevance_score": 0,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 47,
+      "title": "Aave founder pitches $50T ‘abundance asset’ boom to drive DeFi - TradingView",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQb19rNl90YXZSWFFhX0pHMmVXOVFpaFRfS1ZIbGIteVktTVlVX1liallIdGxHX2VDWTlBOXZQWWJ1UGdpSl82R3J6U3NzMWFCaVdJRks3ZDZvV3lqejQ5ZGpJTnhFR0hCSm01aXZWWFVLVUFrZk1TQ2xub05IQVB1TjVESlozb2dxcDk3WnRQT3l0Tll5eUhqMWNRc2ZzNF9pdUxGeTJKTXFveVlGYzBaWmpMYnpCY3dCMFpwVFcxNFQ?oc=5",
+      "source": "Google News / TradingView",
+      "summary": "Aave founder pitches $50T ‘abundance asset’ boom to drive DeFi - TradingView",
+      "content": "Aave founder pitches $50T ‘abundance asset’ boom to drive DeFi - TradingView",
+      "category": "general",
+      "tags": [],
+      "region": "Global",
+      "published_at": "2026-02-15T08:00:00.000Z",
+      "scraped_at": "2026-07-02T11:30:14.199Z",
+      "relevance_score": 0,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 81,
+      "title": "Ant Group Accelerates Web3 Layout, Tokenizing 60 Billion Yuan of Chinese Energy Assets 'On-Chain'? - Binance",
+      "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE52LWFqanIzVENfbDJIcnZNWU91UjdxUDRMMXdqd2JjMkUtWjhKU0YyczZUUUg2eVFsOF84WGhSOWZCbkJaR1otNFFMWllfaW9sMGxGVE5ZbXJHdFhEcW4tUVZvQQ?oc=5",
+      "source": "Google News / Binance",
+      "summary": "Ant Group Accelerates Web3 Layout, Tokenizing 60 Billion Yuan of Chinese Energy Assets 'On-Chain'? - Binance",
+      "content": "Ant Group Accelerates Web3 Layout, Tokenizing 60 Billion Yuan of Chinese Energy Assets 'On-Chain'? - Binance",
+      "category": "blockchain",
+      "tags": [
+        "tokenization"
+      ],
+      "region": "Global",
+      "published_at": "2025-09-10T07:00:00.000Z",
+      "scraped_at": "2026-07-02T11:30:14.203Z",
+      "relevance_score": 0,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 50,
+      "title": "Plural Closes $7M Seed Led by Paradigm to Power the Electron Economy - PR Newswire",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOSUdBaXBUaE9OLUhJVTBMbWJxVmtfakFaLUZPUC0tOHE3U3k2blA2cHdwRFhLSGVWcUQxai1ZQko2UjBFS3llNzFRclk5WjZPSGp5TXVjbEU5TjJoTHc0SGdNandsUUhNZVVDQzZ4NEdNNDRYcmE2ZV9mUUpDQnZpeHVlcVJxb1BReW1zTy14SG55c3Y0bXF2R3BVODV2OXZfWU1GMlh4c1p1NjkyZ3phR0FQNHkyVkZTY1l6NC03bHE?oc=5",
+      "source": "Google News / PR Newswire",
+      "summary": "Plural Closes $7M Seed Led by Paradigm to Power the Electron Economy - PR Newswire",
+      "content": "Plural Closes $7M Seed Led by Paradigm to Power the Electron Economy - PR Newswire",
+      "category": "general",
+      "tags": [],
+      "region": "Global",
+      "published_at": "2025-09-04T07:00:00.000Z",
+      "scraped_at": "2026-07-02T11:30:14.199Z",
+      "relevance_score": 0,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 86,
+      "title": "Wien Energie and RIDDLE&CODE Extend Their Partnership to Support and Accelerate Global Decarbonisation Efforts - Business Wire",
+      "url": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxOV3o4clRJNVlONFVDcVB6R1dWUUhLVkItZTlJVl94ZWk1YWRxcGs4VU92NlRSa09Zc1RpbzJ4NzZCdUlSN2hobU05RVZ5Nlc3dW5vYUlaV0xwaVE5X1Ztcm9YMmVFclRZZG95b1pnR3dhQndzZmJyaHd2bWVtcktuTkRqTG01cTA4TFBpeUJhTlBuSmtOOXVmdDNXNV9WRkNMdjUyWUY0M3N0ZjE2VVI3VlNiMm13Y1hxTExXS09MRWJ0cExjZ004Z0xxc1V3RFA1REUtYy02V2YtV3U4bDRKZDF5cWdvVmg2VXM1cThjbFZmbXhWZUNibE1B?oc=5",
+      "source": "Google News / Business Wire",
+      "summary": "Wien Energie and RIDDLE&CODE Extend Their Partnership to Support and Accelerate Global Decarbonisation Efforts - Business Wire",
+      "content": "Wien Energie and RIDDLE&CODE Extend Their Partnership to Support and Accelerate Global Decarbonisation Efforts - Business Wire",
+      "category": "general",
+      "tags": [
+        "carbon"
+      ],
+      "region": "Global",
+      "published_at": "2021-12-15T08:00:00.000Z",
+      "scraped_at": "2026-07-02T11:30:14.203Z",
+      "relevance_score": 0,
+      "created_at": "2026-07-02 11:30:14"
+    },
+    {
+      "id": 95,
+      "title": "WePower ICO Review and WPR Token Analysis - Crypto Briefing",
+      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1kdlY0NzU1SUJBLUc5OTBNZzJxdmM2MmRVcEhJZHhNLU1DcGpFRE55M05uTlZTa1BiZnVpcmlGLVoyeTVxMUVhUWJZVzFZU2J0UW1kSWt4a0UxTUJLMlpCZ2dFQWhtWnZJOUJIUnY5TmNUZU0?oc=5",
+      "source": "Google News / Crypto Briefing",
+      "summary": "WePower ICO Review and WPR Token Analysis - Crypto Briefing",
+      "content": "WePower ICO Review and WPR Token Analysis - Crypto Briefing",
+      "category": "blockchain",
+      "tags": [],
+      "region": "Global",
+      "published_at": "2018-01-11T08:00:00.000Z",
+      "scraped_at": "2026-07-02T11:30:14.204Z",
+      "relevance_score": 0,
+      "created_at": "2026-07-02 11:30:14"
+    }
+  ]
+}

@@ -1,336 +1,351 @@
-import { aptos, MODULE_FUNCTIONS, CONTRACT_CONFIG, aptToOctas, octasToApt } from '../config/aptos.config';
-import { Account, AccountAddress, Aptos } from '@aptos-labs/ts-sdk';
-import { VaultInfo, PlayerInfo, TransactionResponse, StakingStats } from '../models/types';
+import { aptos, MODULE_FUNCTIONS, VIEW_FUNCTIONS, CONTRACT_CONFIG, formatApt, CONSTANTS } from '../config/aptos.config';
+import { Account } from '@aptos-labs/ts-sdk';
+import { VaultInfo, PlayerInfo, TransactionResponse, StakingStats, ProjectVaultInfo, ProjectPlayerStake } from '../models/types';
 
 export class StakingService {
-  
+
+  // ── Per-Project Vault (new) ─────────────────────────────────────────────────
+
   /**
-   * Get vault information
+   * Get vault info for a specific project from StakingHub SimpleMap
    */
-  async getVaultInfo(vaultAuthority: string): Promise<VaultInfo | null> {
+  async getProjectVaultInfo(projectId: number): Promise<ProjectVaultInfo | null> {
     try {
+      const resourceType = `${CONTRACT_CONFIG.CONTRACT_ADDRESS}::state::StakingHub` as `${string}::${string}::${string}`;
+
+      console.log('[getProjectVaultInfo] Fetching StakingHub from:', CONTRACT_CONFIG.HUB_AUTHORITY);
+      console.log('[getProjectVaultInfo] Resource type:', resourceType);
+
       const resource = await aptos.getAccountResource({
-        accountAddress: vaultAuthority,
-        resourceType: `${CONTRACT_CONFIG.CONTRACT_ADDRESS}::state::VaultAccount`,
+        accountAddress: CONTRACT_CONFIG.HUB_AUTHORITY,
+        resourceType,
       });
 
-      const data = resource.data as any;
+      console.log('[getProjectVaultInfo] Resource fetched:', JSON.stringify(resource, null, 2).slice(0, 500));
 
+      const data    = (resource as any).data || resource;
+      const entries: any[] = data?.vaults?.data || [];
+      console.log('[getProjectVaultInfo] Vault entries:', entries.length);
+      
+      const entry   = entries.find((e: any) => Number(e.key) === projectId);
+
+      if (!entry) {
+        console.log('[getProjectVaultInfo] No vault found for project:', projectId);
+        return null;
+      }
+
+      const v = entry.value;
+      console.log('[getProjectVaultInfo] Found vault:', v);
       return {
-        authority: data.authority,
-        staked_amount: data.staked_amount,
-        apy_rate: data.apy_rate,
-        vault_balance: data.vault_coins?.value || '0',
+        project_id:       projectId,
+        authority:        v.authority,
+        total_staked:     v.staked_amount?.toString() || '0',
+        total_staked_apt: formatApt(v.staked_amount || 0),
+        apy_rate:         Number(v.apy_rate),
       };
-    } catch (error) {
-      console.error('Error fetching vault info:', error);
+    } catch (error: any) {
+      console.error('[getProjectVaultInfo] Error:', error.message || error);
+      if (error.status === 404) return null;
       return null;
     }
   }
-
+ 
   /**
-   * Get player staking information
+   * Get a player's stake in a specific project from PlayerHub SimpleMap
    */
-  async getPlayerInfo(playerAddress: string): Promise<PlayerInfo | null> {
+  async getProjectPlayerStake(playerAddress: string, projectId: number): Promise<ProjectPlayerStake | null> {
     try {
+      const resourceType = `${CONTRACT_CONFIG.CONTRACT_ADDRESS}::state::PlayerHub` as `${string}::${string}::${string}`;
+
       const resource = await aptos.getAccountResource({
         accountAddress: playerAddress,
-        resourceType: `${CONTRACT_CONFIG.CONTRACT_ADDRESS}::state::PlayerAccount`,
+        resourceType,
       });
 
-      const data = resource.data as any;
-      const currentTime = Math.floor(Date.now() / 1000);
-      const unlockTime = Number(data.staked_time) + Number(data.duration_time);
+      const data    = (resource as any).data || resource;
+      const entries: any[] = data?.stakes?.data || [];
+      const entry   = entries.find((e: any) => Number(e.key) === projectId);
 
-      // Calculate pending rewards (matching contract formula: staked_amount * apy_rate * elapsed_time / (365 * 24 * 60 * 60 * 100))
-      const vaultInfo = await this.getVaultInfo(CONTRACT_CONFIG.VAULT_AUTHORITY);
-      const timeSinceLastClaim = currentTime - Number(data.reward_time);
-      const pendingRewards = vaultInfo 
-        ? Math.floor(Number(data.staked_amount) * Number(vaultInfo.apy_rate) * timeSinceLastClaim / (31536000 * 100)).toString()
+      if (!entry) return null;
+
+      const v           = entry.value;
+      const currentTime = Math.floor(Date.now() / 1000);
+      const stakedTime  = Number(v.staked_time);
+      const duration    = Number(v.duration_time);
+      const unlockTime  = stakedTime + duration;
+      const timeRemaining = Math.max(0, unlockTime - currentTime);
+
+      // Get APY to calculate pending rewards
+      const vault = await this.getProjectVaultInfo(projectId);
+      const elapsed = currentTime - Number(v.reward_time);
+      const stakedAmount = v.staked_amount?.toString() || '0';
+      const pendingRewards = vault
+        ? Math.floor(Number(stakedAmount) * vault.apy_rate * elapsed / (CONSTANTS.SECONDS_PER_YEAR * 100)).toString()
         : '0';
 
       return {
-        staked_time: data.staked_time,
-        staked_amount: data.staked_amount,
-        reward_time: data.reward_time,
-        duration_time: data.duration_time,
-        reward_amount: data.reward_amount,
-        pending_rewards: pendingRewards,
-        unlock_time: unlockTime.toString(),
-        is_unlocked: currentTime >= unlockTime,
+        player_address:     playerAddress,
+        project_id:         projectId,
+        staked_amount:      stakedAmount,
+        staked_amount_apt:  formatApt(stakedAmount),
+        staked_time:        stakedTime,
+        lock_duration:      duration,
+        unlock_time:        unlockTime,
+        is_locked:          currentTime < unlockTime,
+        time_remaining:     timeRemaining,
+        pending_rewards:    pendingRewards,
+        pending_rewards_apt: formatApt(pendingRewards),
       };
-    } catch (error) {
-      console.error('Error fetching player info:', error);
+    } catch (error: any) {
+      if (error.status === 404) return null;
+      console.error('Error fetching player stake:', error.message || error);
       return null;
     }
   }
 
   /**
-   * Get staking statistics
+   * Admin — create staking vault for an approved project
    */
-  async getStakingStats(): Promise<StakingStats | null> {
+  async createProjectVault(adminAccount: Account, projectId: number, apyRate: number): Promise<TransactionResponse> {
     try {
-      const vaultInfo = await this.getVaultInfo(CONTRACT_CONFIG.VAULT_AUTHORITY);
-      
-      if (!vaultInfo) return null;
+      const transaction = await aptos.transaction.build.simple({
+        sender: adminAccount.accountAddress,
+        data: {
+          function: MODULE_FUNCTIONS.CREATE_PROJECT_VAULT as `${string}::${string}::${string}`,
+          functionArguments: [CONTRACT_CONFIG.HUB_AUTHORITY, projectId, apyRate],
+        },
+      });
 
-      // TODO: Implement total stakers count by tracking events or maintaining a separate index
-      const totalStakers = 0; // Placeholder
+      const committed = await aptos.signAndSubmitTransaction({ signer: adminAccount, transaction });
+      const executed  = await aptos.waitForTransaction({ transactionHash: committed.hash });
 
       return {
-        total_staked: vaultInfo.staked_amount,
-        total_stakers: totalStakers,
-        apy_rate: vaultInfo.apy_rate,
-        vault_balance: vaultInfo.vault_balance,
+        success: executed.success,
+        transaction_hash: committed.hash,
+        message: 'Project vault created — investors can now stake',
       };
-    } catch (error) {
-      console.error('Error fetching staking stats:', error);
-      return null;
+    } catch (error: any) {
+      console.error('Error creating vault:', error);
+      return { success: false, error: error.message || 'Vault creation failed' };
     }
   }
 
   /**
-   * Stake tokens (user transaction)
+   * Investor — stake APT on a specific project
    */
-  async stake(
-    userAccount: Account,
-    amount: string,
-    durationSeconds: number
-  ): Promise<TransactionResponse> {
+  async stake(userAccount: Account, projectId: number, amount: string, durationSeconds: number): Promise<TransactionResponse> {
     try {
       const transaction = await aptos.transaction.build.simple({
         sender: userAccount.accountAddress,
         data: {
           function: MODULE_FUNCTIONS.SOL_STAKE as `${string}::${string}::${string}`,
-          functionArguments: [
-            CONTRACT_CONFIG.VAULT_AUTHORITY,
-            amount,
-            durationSeconds,
-          ],
+          functionArguments: [CONTRACT_CONFIG.HUB_AUTHORITY, projectId, amount, durationSeconds],
         },
       });
 
-      const committedTxn = await aptos.signAndSubmitTransaction({
-        signer: userAccount,
-        transaction,
-      });
-
-      const executedTransaction = await aptos.waitForTransaction({
-        transactionHash: committedTxn.hash,
-      });
+      const committed = await aptos.signAndSubmitTransaction({ signer: userAccount, transaction });
+      const executed  = await aptos.waitForTransaction({ transactionHash: committed.hash });
 
       return {
-        success: executedTransaction.success,
-        transaction_hash: committedTxn.hash,
+        success: executed.success,
+        transaction_hash: committed.hash,
         message: 'Staking successful',
       };
     } catch (error: any) {
       console.error('Error staking:', error);
-      return {
-        success: false,
-        error: error.message || 'Staking failed',
-      };
+      return { success: false, error: error.message || 'Staking failed' };
     }
   }
 
   /**
-   * Unstake tokens (user transaction)
+   * Investor — unstake from a specific project
    */
-  async unstake(userAccount: Account): Promise<TransactionResponse> {
+  async unstake(userAccount: Account, projectId: number): Promise<TransactionResponse> {
     try {
       const transaction = await aptos.transaction.build.simple({
         sender: userAccount.accountAddress,
         data: {
-          function: MODULE_FUNCTIONS.SOL_UNSTAKE as `${string}::${string}::${string}`,// Fixing incorrect function reference
-          functionArguments: [CONTRACT_CONFIG.VAULT_AUTHORITY],
+          function: MODULE_FUNCTIONS.SOL_UNSTAKE as `${string}::${string}::${string}`,
+          functionArguments: [CONTRACT_CONFIG.HUB_AUTHORITY, projectId],
         },
       });
 
-      const committedTxn = await aptos.signAndSubmitTransaction({
-        signer: userAccount,
-        transaction,
-      });
-
-      const executedTransaction = await aptos.waitForTransaction({
-        transactionHash: committedTxn.hash,
-      });
+      const committed = await aptos.signAndSubmitTransaction({ signer: userAccount, transaction });
+      const executed  = await aptos.waitForTransaction({ transactionHash: committed.hash });
 
       return {
-        success: executedTransaction.success,
-        transaction_hash: committedTxn.hash,
+        success: executed.success,
+        transaction_hash: committed.hash,
         message: 'Unstaking successful',
       };
     } catch (error: any) {
       console.error('Error unstaking:', error);
-      return {
-        success: false,
-        error: error.message || 'Unstaking failed',
-      };
+      return { success: false, error: error.message || 'Unstaking failed' };
     }
   }
 
   /**
-   * Claim rewards (user transaction)
+   * Investor — claim rewards from a specific project
    */
-  async claimRewards(userAccount: Account): Promise<TransactionResponse> {
+  async claimRewards(userAccount: Account, projectId: number): Promise<TransactionResponse> {
     try {
       const transaction = await aptos.transaction.build.simple({
         sender: userAccount.accountAddress,
         data: {
-          function: MODULE_FUNCTIONS.CLAIM_REWARDS as `${string}::${string}::${string}`,// Fixing incorrect function reference
-          functionArguments: [CONTRACT_CONFIG.VAULT_AUTHORITY],
+          function: MODULE_FUNCTIONS.CLAIM_REWARDS as `${string}::${string}::${string}`,
+          functionArguments: [CONTRACT_CONFIG.HUB_AUTHORITY, projectId],
         },
       });
 
-      const committedTxn = await aptos.signAndSubmitTransaction({
-        signer: userAccount,
-        transaction,
-      });
-
-      const executedTransaction = await aptos.waitForTransaction({
-        transactionHash: committedTxn.hash,
-      });
+      const committed = await aptos.signAndSubmitTransaction({ signer: userAccount, transaction });
+      const executed  = await aptos.waitForTransaction({ transactionHash: committed.hash });
 
       return {
-        success: executedTransaction.success,
-        transaction_hash: committedTxn.hash,
+        success: executed.success,
+        transaction_hash: committed.hash,
         message: 'Rewards claimed successfully',
       };
     } catch (error: any) {
       console.error('Error claiming rewards:', error);
-      return {
-        success: false,
-        error: error.message || 'Claiming rewards failed',
-      };
+      return { success: false, error: error.message || 'Claim failed' };
     }
   }
 
   /**
-   * Admin: Update APY configuration
+   * Admin — deposit reward APT into a project vault
    */
-  async updateApyRate(adminAccount: Account, apyRate: number): Promise<TransactionResponse> {
+  async depositRewards(adminAccount: Account, projectId: number, amount: string): Promise<TransactionResponse> {
+    try {
+      const transaction = await aptos.transaction.build.simple({
+        sender: adminAccount.accountAddress,
+        data: {
+          function: MODULE_FUNCTIONS.DEPOSIT_REWARDS as `${string}::${string}::${string}`,
+          functionArguments: [CONTRACT_CONFIG.HUB_AUTHORITY, projectId, amount],
+        },
+      });
+
+      const committed = await aptos.signAndSubmitTransaction({ signer: adminAccount, transaction });
+      const executed  = await aptos.waitForTransaction({ transactionHash: committed.hash });
+
+      return {
+        success: executed.success,
+        transaction_hash: committed.hash,
+        message: 'Rewards deposited',
+      };
+    } catch (error: any) {
+      console.error('Error depositing rewards:', error);
+      return { success: false, error: error.message || 'Deposit failed' };
+    }
+  }
+
+  /**
+   * Admin — withdraw from a project vault
+   */
+  async withdraw(adminAccount: Account, projectId: number): Promise<TransactionResponse> {
+    try {
+      const transaction = await aptos.transaction.build.simple({
+        sender: adminAccount.accountAddress,
+        data: {
+          function: MODULE_FUNCTIONS.WITHDRAW as `${string}::${string}::${string}`,
+          functionArguments: [CONTRACT_CONFIG.HUB_AUTHORITY, projectId],
+        },
+      });
+
+      const committed = await aptos.signAndSubmitTransaction({ signer: adminAccount, transaction });
+      const executed  = await aptos.waitForTransaction({ transactionHash: committed.hash });
+
+      return {
+        success: executed.success,
+        transaction_hash: committed.hash,
+        message: 'Withdrawal successful',
+      };
+    } catch (error: any) {
+      console.error('Error withdrawing:', error);
+      return { success: false, error: error.message || 'Withdrawal failed' };
+    }
+  }
+
+  /**
+   * Admin — update APY rate for a project vault
+   */
+  async updateApyRate(adminAccount: Account, projectId: number, apyRate: number): Promise<TransactionResponse> {
     try {
       const transaction = await aptos.transaction.build.simple({
         sender: adminAccount.accountAddress,
         data: {
           function: MODULE_FUNCTIONS.CONFIG as `${string}::${string}::${string}`,
-          functionArguments: [apyRate],
+          functionArguments: [CONTRACT_CONFIG.HUB_AUTHORITY, projectId, apyRate],
         },
       });
 
-      const committedTxn = await aptos.signAndSubmitTransaction({
-        signer: adminAccount,
-        transaction,
-      });
-
-      const executedTransaction = await aptos.waitForTransaction({
-        transactionHash: committedTxn.hash,
-      });
+      const committed = await aptos.signAndSubmitTransaction({ signer: adminAccount, transaction });
+      const executed  = await aptos.waitForTransaction({ transactionHash: committed.hash });
 
       return {
-        success: executedTransaction.success,
-        transaction_hash: committedTxn.hash,
-        message: 'APY rate updated successfully',
+        success: executed.success,
+        transaction_hash: committed.hash,
+        message: 'APY rate updated',
       };
     } catch (error: any) {
       console.error('Error updating APY:', error);
-      return {
-        success: false,
-        error: error.message || 'APY update failed',
-      };
+      return { success: false, error: error.message || 'APY update failed' };
     }
   }
 
-  /**
-   * Admin: Deposit funds to vault
-   */
-  async deposit(adminAccount: Account, amount: string): Promise<TransactionResponse> {
+  // ── Legacy methods — kept for backward compat with old routes ───────────────
+
+  async getVaultInfo(vaultAuthority: string): Promise<VaultInfo | null> {
+    // Reads the first vault in the hub (legacy single-vault behaviour)
     try {
-      const transaction = await aptos.transaction.build.simple({
-        sender: adminAccount.accountAddress,
-        data: {
-          function: MODULE_FUNCTIONS.DEPOSIT as `${string}::${string}::${string}`, // Fixing incorrect function reference
-          functionArguments: [CONTRACT_CONFIG.VAULT_AUTHORITY, amount],
-        },
-      });
-
-      const committedTxn = await aptos.signAndSubmitTransaction({
-        signer: adminAccount,
-        transaction,
-      });
-
-      const executedTransaction = await aptos.waitForTransaction({
-        transactionHash: committedTxn.hash,
-      });
-
+      const resourceType = `${CONTRACT_CONFIG.CONTRACT_ADDRESS}::state::StakingHub` as `${string}::${string}::${string}`;
+      const resource = await aptos.getAccountResource({ accountAddress: vaultAuthority, resourceType });
+      const data     = (resource as any).data || resource;
+      const entries: any[] = data?.vaults?.data || [];
+      if (!entries.length) return null;
+      const v = entries[0].value;
       return {
-        success: executedTransaction.success,
-        transaction_hash: committedTxn.hash,
-        message: 'Deposit successful',
+        authority:        v.authority,
+        total_staked:     v.staked_amount?.toString() || '0',
+        total_staked_apt: formatApt(v.staked_amount || 0),
+        apy_rate:         Number(v.apy_rate),
+        vault_balance:    v.vault_coins?.value?.toString() || '0',
+        vault_balance_apt: formatApt(v.vault_coins?.value || 0),
       };
-    } catch (error: any) {
-      console.error('Error depositing:', error);
-      return {
-        success: false,
-        error: error.message || 'Deposit failed',
-      };
-    }
+    } catch { return null; }
   }
 
-  /**
-   * Admin: Withdraw all funds from vault
-   */
-  async withdraw(adminAccount: Account): Promise<TransactionResponse> {
+  async getPlayerInfo(playerAddress: string): Promise<PlayerInfo | null> {
+    return null; // Legacy — use getProjectPlayerStake for per-project data
+  }
+
+  async getStakingStats(): Promise<StakingStats | null> {
     try {
-      const transaction = await aptos.transaction.build.simple({
-        sender: adminAccount.accountAddress,
-        data: {
-          function: MODULE_FUNCTIONS.WITHDRAW as `${string}::${string}::${string}`, // Fixing incorrect function reference
-          functionArguments: [],
-        },
-      });
-
-      const committedTxn = await aptos.signAndSubmitTransaction({
-        signer: adminAccount,
-        transaction,
-      });
-
-      const executedTransaction = await aptos.waitForTransaction({
-        transactionHash: committedTxn.hash,
-      });
-
+      const vaultInfo = await this.getVaultInfo(CONTRACT_CONFIG.HUB_AUTHORITY);
+      if (!vaultInfo) return null;
       return {
-        success: executedTransaction.success,
-        transaction_hash: committedTxn.hash,
-        message: 'Withdrawal successful',
+        total_staked:  vaultInfo.total_staked,
+        total_stakers: 0,
+        apy_rate:      String(vaultInfo.apy_rate),
+        vault_balance: vaultInfo.vault_balance,
       };
-    } catch (error: any) {
-      console.error('Error withdrawing:', error);
-      return {
-        success: false,
-        error: error.message || 'Withdrawal failed',
-      };
-    }
+    } catch { return null; }
   }
 
-  /**
-   * Get account balance
-   */
   async getAccountBalance(address: string): Promise<string> {
     try {
-      const resources = await aptos.getAccountResources({
-        accountAddress: address,
-      });
-
-      const accountResource = resources.find(
-        (r) => r.type === '0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>'
-      );
-
-      return (accountResource?.data as any)?.coin?.value || '0';
-    } catch (error) {
-      console.error('Error fetching account balance:', error);
+      const balance = await aptos.getAccountAPTAmount({ accountAddress: address });
+      return balance.toString();
+    } catch {
       return '0';
     }
+  }
+
+  // ── Simulate ────────────────────────────────────────────────────────────────
+
+  simulateRewards(amount: string, apyRate: number, durationSeconds: number): string {
+    return Math.floor(
+      Number(amount) * apyRate * durationSeconds / (CONSTANTS.SECONDS_PER_YEAR * 100)
+    ).toString();
   }
 }
 
